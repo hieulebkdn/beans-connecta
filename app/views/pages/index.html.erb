@@ -14,33 +14,22 @@
         </div>
         <div class="collapse navbar-collapse" id="main-navbar">
           <ul class="navbar-nav mr-auto w-100 justify-content-end">
-            <li class="nav-item dropdown active">
-              <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Home
+          
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">
+                <%= t "home" %>
               </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item active" href="index.html">Home 1</a></li>
-                <li><a class="dropdown-item" href="index-2.html">Home 2</a></li>
-              </ul>
             </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">
+                <%= t "job" %>
+              </a>
+            </li>
+            
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Pages
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="about.html">About</a></li>
-                <li><a class="dropdown-item" href="job-page.html">Job Page</a></li>
-                <li><a class="dropdown-item" href="job-details.html">Job Details</a></li>
-                <li><a class="dropdown-item" href="resume.html">Resume Page</a></li>
-                <li><a class="dropdown-item" href="privacy-policy.html">Privacy Policy</a></li>
-                <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
-                <li><a class="dropdown-item" href="pricing.html">Pricing Tables</a></li>
-                <li><a class="dropdown-item" href="contact.html">Contact</a></li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Candidates
+                <%= t "company" %>
               </a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="browse-jobs.html">Browse Jobs</a></li>
@@ -52,7 +41,7 @@
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Employers
+                <%= t "blog" %>
               </a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="post-job.html">Add Job</a></li>
@@ -63,7 +52,7 @@
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Blog
+                <%= t "contact" %>
               </a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="blog.html">Blog - Right Sidebar</a></li>
@@ -72,16 +61,13 @@
                 <li><a class="dropdown-item" href="single-post.html">Blog Single Post</a></li>
               </ul>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">
-                Contact
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="login.html">Sign In</a>
-            </li>
+
             <li class="button-group">
-              <a href="post-job.html" class="button btn btn-common">Post a Job</a>
+              <a href="post-job.html" class="button btn btn-common"><%= t "signup" %></a>
+            </li>
+            
+            <li class="button-group">
+              <a href="post-job.html" class="button btn btn-common"><%= t "signin" %></a>
             </li>
           </ul>
         </div>
@@ -94,9 +80,9 @@
     <div class="row space-100">
       <div class="col-lg-7 col-md-12 col-xs-12">
         <div class="contents">
-          <h2 class="head-title">Find the <br>
-              job that fits your life</h2>
-          <p>Aliquam vestibulum cursus felis. In iaculis iaculis sapien ac condimentum. Vestibulum congue posuere lacus, id tincidunt nisi porta sit amet. Suspendisse et sapien varius, pellentesque dui non.</p>
+          <h2 class="head-title"><%= t ".content0" %> <br>
+              <%= t ".content1" %></h2>
+          <p><%= t ".content2" %></p>
           <div class="job-search-form">
             <form>
               <div class="row">

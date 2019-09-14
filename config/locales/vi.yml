@@ -29,19 +29,18 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
+vi:
   hello: "Hello world"
-  home: "Home"
-  job: "Jobs"
-  company: "Companies"
-  blog: "Blog"
-  contact: "Contact"
-  signup: "Sign up"
-  signin: "Sign in"
-
+  home: "ホーム"
+  job: "ジョブズ"
+  company: "会社"
+  blog: "ブログ"
+  contact: "お問い合わせ"
+  signup: "会員登録(無料)"
+  signin: "ログイン"
+  
   pages:
     index:
-      content0: "Find the"
-      content1: "job that fits your life"
-      content2: "Utilizing the power of the Internet, which can be said to be the industrial revolution of our time, will have a great impact on the world."
-      
+      content0: "あなたの人生に"
+      content1: "合った仕事を見つける"
+      content2: "私たちの時代の産業革命ともいえるこのインターネットの力を活用して、世の中に大きなインパクトを与えていくこと。"
