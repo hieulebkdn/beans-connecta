@@ -6,7 +6,9 @@ ruby "2.6.3"
 gem "rails", "5.2.3"
 gem "puma", "3.8.2"
 gem "mysql2", ">= 0.3.18", "< 0.6.0"
-gem "activerecord-mysql2-adapter"
+
+gem "devise"
+gem "omniauth"
 
 gem "bcrypt", "~> 3.1.7"
 gem "bootstrap-will_paginate", "1.0.0"

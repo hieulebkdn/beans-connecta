@@ -69,6 +69,10 @@
             <li class="button-group">
               <a href="post-job.html" class="button btn btn-common"><%= t "signin" %></a>
             </li>
+
+            <li class="button-group">
+            <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "button btn btn-common" %>
+            </li>
           </ul>
         </div>
       </div>
@@ -502,69 +506,7 @@
     </div>
   </div>
 </section>
-<section id="testimonial" class="section">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">Clients Review</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ellentesque dignissim quam et <br>
-          metus effici turac fringilla lorem facilisis.</p>
-    </div>
-    <div class="row justify-content-center">
-      <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
-        <div id="testimonials" class="touch-slider owl-carousel">
-          <div class="item">
-            <div class="testimonial-item">
-              <div class="author">
-                <div class="img-thumb">
-                  <%= image_tag("testimonial/img1.png") %>
-                </div>
-              </div>
-              <div class="content-inner">
-                <p class="description">Morbi quam enim, cursus non erat pretium veh icula finibus ex stibulum venenatis viverra dui Morbi quam enim, cursus non erat pretium veh icula finibus ex stibulum venenatis viverra dui Morbi quam enim, cursus non erat pretium veh icula finibus ex stibulum venenatis viverra dui.</p>
-                <div class="author-info">
-                  <h2><a href="#">Jessica</a></h2>
-                  <span>Senior Accountant</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="testimonial-item">
-              <div class="author">
-                <div class="img-thumb">
-                  <%= image_tag("testimonial/img2.png") %>
-                </div>
-              </div>
-              <div class="content-inner">
-                <p class="description">Morbi quam enim, cursus non erat pretium veh icula finibus ex stibulum venenatis viverra dui Morbi quam enim, cursus non erat pretium veh icula finibus ex stibulum venenatis viverra dui Morbi quam enim, cursus non erat pretium veh icula finibus ex stibulum venenatis viverra dui.</p>
-                <div class="author-info">
-                  <h2><a href="#">John Doe</a></h2>
-                  <span>Project Menager</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="testimonial-item">
-              <div class="author">
-                <div class="img-thumb">
-                  <%= image_tag("testimonial/img3.png") %>
-                </div>
-              </div>
-              <div class="content-inner">
-                <p class="description">Morbi quam enim, cursus non erat pretium veh icula finibus ex stibulum venenatis viverra dui Morbi quam enim, cursus non erat pretium veh icula finibus ex stibulum venenatis viverra dui Morbi quam enim, cursus non erat pretium veh icula finibus ex stibulum venenatis viverra dui.</p>
-                <div class="author-info">
-                  <h2><a href="#">Helen</a></h2>
-                  <span>Engineer</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+
 <div id="pricing" class="section bg-gray">
   <div class="container">
     <div class="section-header">
