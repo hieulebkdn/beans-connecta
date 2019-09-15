@@ -63,11 +63,11 @@
             </li>
 
             <li class="button-group">
-              <a href="post-job.html" class="button btn btn-common"><%= t "signup" %></a>
+              <%= link_to t("signup"), new_user_registration_path, class: "button btn btn-common" %>
             </li>
             
             <li class="button-group">
-              <a href="post-job.html" class="button btn btn-common"><%= t "signin" %></a>
+              <%= link_to t("signin"), new_user_session_path, class: "button btn btn-common" %>
             </li>
 
             <li class="button-group">

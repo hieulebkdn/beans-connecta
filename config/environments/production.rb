@@ -3,16 +3,10 @@ Rails.application.configure do
   config.public_file_server.enabled = true
   config.serve_static_assets = true
 
-  config.action_mailer.default_url_options = { host: "email-smtp.us-east-1.amazonaws.com", port: 587 }
+  config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :smtp
-  
-  ActionMailer::Base.smtp_settings = {
-    :address              => "email-smtp.us-east-1.amazonaws.com",
-    :port                 => 587,
-    :user_name            => "AKIAR4U6PROLJGAE4OVO",
-    :password             => "BBAs4JPuREIArnXjCMkaPOBibIR5ycRt4w9umip5VhU7",
-    :authentication       => :login
-}
+  config.action_mailer.default_url_options = { host: "http://18.224.82.127/", port: 80 }
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 
