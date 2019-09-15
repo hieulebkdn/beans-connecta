@@ -34,5 +34,5 @@
 # Mysql
 /config/database.yml
 
-/config/locales/environment.rb
+/config/environment.rb
 .vscode/
