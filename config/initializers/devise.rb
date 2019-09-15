@@ -114,7 +114,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 11
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = "7b2fab3ef7880b842268ba91d782fdcc91b960bbdea6888d5cc2c43dcb00c187bb55a49e502a1aa59a04e99881ecb3b16bae12838833b3d795cfc687ba99ad72"
+  config.pepper = "7b2fab3ef7880b842268ba91d782fdcc91b960bbdea6888d5cc2c43dcb00c187bb55a49e502a1aa59a04e99881ecb3b16bae12838833b3d795cfc687ba99ad72"
 
   # Send a notification to the original email when the user"s email is changed.
   # config.send_email_changed_notification = false
@@ -152,7 +152,7 @@ Devise.setup do |config|
 
   # ==> Configuration for :rememberable
   # The time the user will be remembered without asking for credentials again.
-  # config.remember_for = 2.weeks
+  config.remember_for = 2.weeks
 
   # Invalidates all the remember me tokens when the user signs out.
   config.expire_all_remember_me_on_sign_out = true

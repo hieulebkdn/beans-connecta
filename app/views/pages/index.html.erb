@@ -1,91 +1,12 @@
+<%= render "layouts/header" %>
+
 <header id="home" class="hero-area">
-
-  <nav class="navbar navbar-expand-lg fixed-top scrolling-navbar">
-    <div class="container">
-      <div class="theme-header clearfix">
-        <div class="navbar-header">
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            <span class="lni-menu"></span>
-            <span class="lni-menu"></span>
-            <span class="lni-menu"></span>
-          </button>
-          <a href="index.html" class="navbar-brand"><%= image_tag("logo.png") %></a>
-        </div>
-        <div class="collapse navbar-collapse" id="main-navbar">
-          <ul class="navbar-nav mr-auto w-100 justify-content-end">
-          
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">
-                <%= t "home" %>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">
-                <%= t "job" %>
-              </a>
-            </li>
-            
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <%= t "company" %>
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="browse-jobs.html">Browse Jobs</a></li>
-                <li><a class="dropdown-item" href="browse-categories.html">Browse Categories</a></li>
-                <li><a class="dropdown-item" href="add-resume.html">Add Resume</a></li>
-                <li><a class="dropdown-item" href="manage-resumes.html">Manage Resumes</a></li>
-                <li><a class="dropdown-item" href="job-alerts.html">Job Alerts</a></li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <%= t "blog" %>
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="post-job.html">Add Job</a></li>
-                <li><a class="dropdown-item" href="manage-jobs.html">Manage Jobs</a></li>
-                <li><a class="dropdown-item" href="manage-applications.html">Manage Applications</a></li>
-                <li><a class="dropdown-item" href="browse-resumes.html">Browse Resumes</a></li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <%= t "contact" %>
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="blog.html">Blog - Right Sidebar</a></li>
-                <li><a class="dropdown-item" href="blog-left-sidebar.html">Blog - Left Sidebar</a></li>
-                <li><a class="dropdown-item" href="blog-full-width.html"> Blog full width</a></li>
-                <li><a class="dropdown-item" href="single-post.html">Blog Single Post</a></li>
-              </ul>
-            </li>
-
-            <li class="button-group">
-              <%= link_to t("signup"), new_user_registration_path, class: "button btn btn-common" %>
-            </li>
-            
-            <li class="button-group">
-              <%= link_to t("signin"), new_user_session_path, class: "button btn btn-common" %>
-            </li>
-
-            <li class="button-group">
-            <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "button btn btn-common" %>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  <div class="mobile-menu" data-logo=<%= image_path("logo-mobile.png") %>></div>
-  </nav>
-  
   <div class="container">
     <div class="row space-100">
       <div class="col-lg-7 col-md-12 col-xs-12">
         <div class="contents">
           <h2 class="head-title"><%= t ".content0" %> <br>
-              <%= t ".content1" %></h2>
+            <%= t ".content1" %></h2>
           <p><%= t ".content2" %></p>
           <div class="job-search-form">
             <form>
@@ -211,179 +132,153 @@
     </div>
   </div>
 </section>
-<section id="featured" class="section">
+
+<section id="job-listings" class="section bg-cyan">
   <div class="container">
     <div class="section-header">
-      <h2 class="section-title">Featured Jobs</h2>
-      <p>Hand-picked jobs featured depending on popularity and benifits</p>
+      <h2 class="section-title">Recent Job Post</h2>
+      <p>As the world's #1 job site, with over 200 million unique visitors every month from over 60 different countries</p>
     </div>
     <div class="row">
-      <div class="col-lg-4 col-md-6 col-xs-12">
-        <div class="job-featured">
-          <div class="icon">
-            <%= image_tag("features/img1.png") %>
-          </div>
-          <div class="content">
-            <h3><a href="job-details.html">Software Engineer</a></h3>
-            <p class="brand">MizTech</p>
-            <div class="tags">
-              <span><i class="lni-map-marker"></i> New York</span>
-              <span><i class="lni-user"></i>John Smith</span>
+      <div class="col-lg-12 col-md-12 col-xs-12">
+        <a class="job-listings" href="job-details.html">
+          <div class="row">
+            <div class="col-lg-4 col-md-4 col-xs-12">
+              <div class="job-company-logo">
+                <%= image_tag("features/img1.png") %>
+              </div>
+              <div class="job-details">
+                <h3>App Developer</h3>
+                <span class="company-neme">
+                  AmazeSoft
+                </span>
+              </div>
             </div>
-            <span class="full-time">Full Time</span>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 col-xs-12">
-        <div class="job-featured">
-          <div class="icon">
-            <%= image_tag("features/img2.png") %>
-          </div>
-          <div class="content">
-            <h3><a href="job-details.html">Graphic Designer</a></h3>
-            <p class="brand">Hunter Inc.</p>
-            <div class="tags">
-              <span><i class="lni-map-marker"></i> New York</span>
-              <span><i class="lni-user"></i>John Smith</span>
+            <div class="col-lg-2 col-md-2 col-xs-12 text-center">
+              <span class="btn-open">
+                7 Open Jobs
+              </span>
             </div>
-            <span class="part-time">Part Time</span>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 col-xs-12">
-        <div class="job-featured">
-          <div class="icon">
-            <%= image_tag("features/img3.png") %>
-          </div>
-          <div class="content">
-            <h3><a href="job-details.html">Managing Director</a></h3>
-            <p class="brand">MagNews</p>
-            <div class="tags">
-              <span><i class="lni-map-marker"></i> New York</span>
-              <span><i class="lni-user"></i>John Smith</span>
+            <div class="col-lg-2 col-md-2 col-xs-12 text-right">
+              <div class="location">
+                <i class="lni-map-marker"></i> New Yourk, US
+              </div>
             </div>
-            <span class="full-time">Full Time</span>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 col-xs-12">
-        <div class="job-featured">
-          <div class="icon">
-            <%= image_tag("features/img4.png") %>
-          </div>
-          <div class="content">
-            <h3><a href="job-details.html">Software Engineer</a></h3>
-            <p class="brand">AmazeSoft</p>
-            <div class="tags">
-              <span><i class="lni-map-marker"></i> New York</span>
-              <span><i class="lni-user"></i>John Smith</span>
+            <div class="col-lg-2 col-md-2 col-xs-12 text-right">
+              <span class="btn-full-time">Full Time</span>
             </div>
-            <span class="full-time">Full Time</span>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 col-xs-12">
-        <div class="job-featured">
-          <div class="icon">
-            <%= image_tag("features/img5.png") %>
-          </div>
-          <div class="content">
-            <h3><a href="job-details.html">Graphic Designer</a></h3>
-            <p class="brand">Bingo</p>
-            <div class="tags">
-              <span><i class="lni-map-marker"></i> New York</span>
-              <span><i class="lni-user"></i>John Smith</span>
+            <div class="col-lg-2 col-md-2 col-xs-12 text-right">
+              <span class="btn-apply">Apply Now</span>
             </div>
-            <span class="part-time">Part Time</span>
           </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 col-xs-12">
-        <div class="job-featured">
-          <div class="icon">
-            <%= image_tag("features/img6.png") %>
-          </div>
-          <div class="content">
-            <h3><a href="job-details.html">Managing Director</a></h3>
-            <p class="brand">MagNews</p>
-            <div class="tags">
-              <span><i class="lni-map-marker"></i> New York</span>
-              <span><i class="lni-user"></i>John Smith</span>
+        </a>
+        <a class="job-listings" href="job-details.html">
+          <div class="row">
+            <div class="col-lg-4 col-md-4 col-xs-12">
+              <div class="job-company-logo">
+                <%= image_tag("features/img2.png") %>
+              </div>
+              <div class="job-details">
+                <h3>App Developer</h3>
+                <span class="company-neme">
+                  AmazeSoft
+                </span>
+              </div>
             </div>
-            <span class="full-time">Full Time</span>
+            <div class="col-lg-2 col-md-2 col-xs-12 text-center">
+              <span class="btn-open">
+                7 Open Jobs
+              </span>
+            </div>
+            <div class="col-lg-2 col-md-2 col-xs-12 text-right">
+              <div class="location">
+                <i class="lni-map-marker"></i> New Yourk, US
+              </div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-xs-12 text-right">
+              <span class="btn-full-time">Full Time</span>
+            </div>
+            <div class="col-lg-2 col-md-2 col-xs-12 text-right">
+              <span class="btn-apply">Apply Now</span>
+            </div>
           </div>
-        </div>
+        </a>
+        <a class="job-listings" href="job-details.html">
+          <div class="row">
+            <div class="col-lg-4 col-md-4 col-xs-12">
+              <div class="job-company-logo">
+                <%= image_tag("features/img3.png") %>
+              </div>
+              <div class="job-details">
+                <h3>App Developer</h3>
+                <span class="company-neme">
+                  AmazeSoft
+                </span>
+              </div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-xs-12 text-center">
+              <span class="btn-open">
+                7 Open Jobs
+              </span>
+            </div>
+            <div class="col-lg-2 col-md-2 col-xs-12 text-right">
+              <div class="location">
+                <i class="lni-map-marker"></i> New Yourk, US
+              </div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-xs-12 text-right">
+              <span class="btn-full-time">Full Time</span>
+            </div>
+            <div class="col-lg-2 col-md-2 col-xs-12 text-right">
+              <span class="btn-apply">Apply Now</span>
+            </div>
+          </div>
+        </a>
+        <a class="job-listings" href="job-details.html">
+          <div class="row">
+            <div class="col-lg-4 col-md-4 col-xs-12">
+              <div class="job-company-logo">
+                <%= image_tag("features/img4.png") %>
+              </div>
+              <div class="job-details">
+                <h3>App Developer</h3>
+                <span class="company-neme">
+                  AmazeSoft
+                </span>
+              </div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-xs-12 text-center">
+              <span class="btn-open">
+                7 Open Jobs
+              </span>
+            </div>
+            <div class="col-lg-2 col-md-2 col-xs-12 text-right">
+              <div class="location">
+                <i class="lni-map-marker"></i> New Yourk, US
+              </div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-xs-12 text-right">
+              <span class="btn-full-time">Full Time</span>
+            </div>
+            <div class="col-lg-2 col-md-2 col-xs-12 text-right">
+              <span class="btn-apply">Apply Now</span>
+            </div>
+          </div>
+        </a>
       </div>
       <div class="col-12 text-center mt-4">
-        <a href="job-page.html" class="btn btn-common">Browse All Jobs</a>
+        <a href="#" class="btn btn-common">Load more listing</a>
       </div>
     </div>
   </div>
 </section>
-<div id="browse-jobs" class="section bg-gray">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-6 col-md-12 col-sm-12">
-        <div class="text-wrapper">
-          <div>
-            <h3>7,000+ Browse Jobs</h3>
-            <p>Search all the open positions on the web. Get your own personalized salary estimate. Read reviews on over 600,000 companies worldwide. The right job is out there.</p>
-            <a class="btn btn-common" href="#">Search jobs</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-6 col-md-12 col-sm-12">
-        <div class="img-thumb">
-          <%= image_tag("search.png", class:"img-fluid") %>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<section class="how-it-works section">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">How It Works?</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ellentesque dignissim quam et <br>
-          metus effici turac fringilla lorem facilisis.</p>
-    </div>
-    <div class="row">
-      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-        <div class="work-process">
-          <span class="process-icon">
-            <i class="lni-user"></i>
-          </span>
-          <h4>Create an Account</h4>
-          <p>Post a job to tell us about your project. We'll quickly match you with the right freelancers find place best.</p>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-        <div class="work-process step-2">
-          <span class="process-icon">
-            <i class="lni-search"></i>
-          </span>
-          <h4>Search Jobs</h4>
-          <p>Post a job to tell us about your project. We'll quickly match you with the right freelancers find place best.</p>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-        <div class="work-process step-3">
-          <span class="process-icon">
-            <i class="lni-cup"></i>
-          </span>
-          <h4>Apply</h4>
-          <p>Post a job to tell us about your project. We'll quickly match you with the right freelancers find place best.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+
 <section id="latest-jobs" class="section bg-gray">
   <div class="container">
     <div class="section-header">
       <h2 class="section-title">Latest Jobs</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ellentesque dignissim quam et <br>
-          metus effici turac fringilla lorem facilisis.</p>
+        metus effici turac fringilla lorem facilisis.</p>
     </div>
     <div class="row">
       <div class="col-lg-6 col-md-6 col-xs-12">
@@ -507,128 +402,39 @@
   </div>
 </section>
 
-<div id="pricing" class="section bg-gray">
+<section class="how-it-works section">
   <div class="container">
     <div class="section-header">
-      <h2 class="section-title">Pricing Plan</h2>
+      <h2 class="section-title">How It Works?</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ellentesque dignissim quam et <br>
-          metus effici turac fringilla lorem facilisis.</p>
-    </div>
-    <div class="row pricing-tables">
-      <div class="col-lg-4 col-md-4 col-xs-12">
-        <div class="pricing-table border-color-defult">
-          <div class="pricing-details">
-            <div class="icon">
-              <i class="lni-rocket"></i>
-            </div>
-            <h2>Professional</h2>
-            <ul>
-              <li>Post 1 Job</li>
-              <li>No Featured Job</li>
-              <li>Edit Your Job Listing</li>
-              <li>Manage Application</li>
-              <li>30-day Expired</li>
-            </ul>
-            <div class="price"><span>$</span>0<span>/Month</span></div>
-          </div>
-          <div class="plan-button">
-            <a href="#" class="btn btn-border">Get Started</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-4 col-xs-12">
-        <div class="pricing-table pricing-active border-color-red">
-          <div class="pricing-details">
-            <div class="icon">
-              <i class="lni-drop"></i>
-            </div>
-            <h2>Advance</h2>
-            <ul>
-              <li>Post 1 Job</li>
-              <li>No Featured Job</li>
-              <li>Edit Your Job Listing</li>
-              <li>Manage Application</li>
-              <li>30-day Expired</li>
-            </ul>
-            <div class="price"><span>$</span>20<span>/Month</span></div>
-          </div>
-          <div class="plan-button">
-            <a href="#" class="btn btn-border">Get Started</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-4 col-xs-12">
-        <div class="pricing-table border-color-green">
-          <div class="pricing-details">
-            <div class="icon">
-              <i class="lni-briefcase"></i>
-            </div>
-            <h2>Premium</h2>
-            <ul>
-              <li>Post 1 Job</li>
-              <li>No Featured Job</li>
-              <li>Edit Your Job Listing</li>
-              <li>Manage Application</li>
-              <li>30-day Expired</li>
-            </ul>
-            <div class="price"><span>$</span>40<span>/Month</span></div>
-          </div>
-          <div class="plan-button">
-            <a href="#" class="btn btn-border">Get Started</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<section id="blog" class="section">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">Blog Post</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ellentesque dignissim quam et <br>
-          metus effici turac fringilla lorem facilisis.</p>
+         metus effici turac fringilla lorem facilisis.</p>
     </div>
     <div class="row">
-      <div class="col-lg-4 col-md-6 col-xs-12 blog-item">
-        <div class="blog-item-wrapper">
-          <div class="blog-item-img">
-            <a href="single-post.html">
-              <%= image_tag("blog/img1.jpg") %>
-            </a>
-          </div>
-          <div class="blog-item-text">
-            <h3><a href="single-post.html">Tips to write an impressive resume online for beginner</a></h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore praesentium asperiores ad vitae.</p>
-          </div>
-          <a class="readmore" href="#">Read More</a>
+      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
+        <div class="work-process">
+          <span class="process-icon">
+            <i class="lni-user"></i>
+          </span>
+          <h4>Create an Account</h4>
+          <p>Post a job to tell us about your project. We'll quickly match you with the right freelancers find place best.</p>
         </div>
       </div>
-      <div class="col-lg-4 col-md-6 col-xs-12 blog-item">
-        <div class="blog-item-wrapper">
-          <div class="blog-item-img">
-            <a href="single-post.html">
-              <%= image_tag("blog/img2.jpg") %>
-            </a>
-          </div>
-          <div class="blog-item-text">
-            <h3><a href="single-post.html">Let's explore 5 cool new features in JobBoard theme</a></h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore praesentium asperiores ad vitae.</p>
-          </div>
-          <a class="readmore" href="#">Read More</a>
+      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        <div class="work-process step-2">
+          <span class="process-icon">
+            <i class="lni-search"></i>
+          </span>
+          <h4>Search Jobs</h4>
+          <p>Post a job to tell us about your project. We'll quickly match you with the right freelancers find place best.</p>
         </div>
       </div>
-      <div class="col-lg-4 col-md-6 col-xs-12 blog-item">
-        <div class="blog-item-wrapper">
-          <div class="blog-item-img">
-            <a href="single-post.html">
-              <%= image_tag("blog/img3.jpg") %>
-            </a>
-          </div>
-          <div class="blog-item-text">
-            <h3><a href="single-post.html">How to convince recruiters and get your dream job</a></h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore praesentium asperiores ad vitae.</p>
-          </div>
-          <a class="readmore" href="#">Read More</a>
+      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        <div class="work-process step-3">
+          <span class="process-icon">
+            <i class="lni-cup"></i>
+          </span>
+          <h4>Apply</h4>
+          <p>Post a job to tell us about your project. We'll quickly match you with the right freelancers find place best.</p>
         </div>
       </div>
     </div>
@@ -646,9 +452,9 @@
             </div>
             <div class="app-button">
               <a href="#" class="btn btn-border"><i class="lni-MizTech"></i>Download <br>
-                  <span>From MizTech Store</span></a>
+                <span>From MizTech Store</span></a>
               <a href="#" class="btn btn-common btn-effect"><i class="lni-android"></i> Download <br>
-                  <span>From Play Store</span></a>
+                <span>From Play Store</span></a>
             </div>
           </div>
         </div>
@@ -661,71 +467,9 @@
     </div>
   </div>
 </section>
-<footer>
-  <section class="footer-Content">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-3 col-md-3 col-xs-12">
-          <div class="widget">
-            <div class="footer-logo">
-              <%= image_tag("logo-footer.png") %>
-            </div>
-            <div class="textwidget">
-              <p>Sed consequat sapien faus quam bibendum convallis quis in nulla. Pellentesque volutpat odio eget diam cursus semper.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6 col-md-4 col-xs-12">
-          <div class="widget">
-            <h3 class="block-title">Quick Links</h3>
-            <ul class="menu">
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Support</a></li>
-              <li><a href="#">License</a></li>
-              <li><a href="#">Contact</a></li>
-            </ul>
-            <ul class="menu">
-              <li><a href="#">Terms & Conditions</a></li>
-              <li><a href="#">Privacy</a></li>
-              <li><a href="#">Refferal Terms</a></li>
-              <li><a href="#">Product License</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-12">
-          <div class="widget">
-            <h3 class="block-title">Subscribe Now</h3>
-            <p>Sed consequat sapien faus quam bibendum convallis.</p>
-            <form method="post" id="subscribe-form" name="subscribe-form" class="validate">
-              <div class="form-group is-empty">
-                <input type="email" value="" name="Email" class="form-control" id="EMAIL" placeholder="Enter Email..." required="">
-                <button type="submit" name="subscribe" id="subscribes" class="btn btn-common sub-btn"><i class="lni-envelope"></i></button>
-                <div class="clearfix"></div>
-              </div>
-            </form>
-            <ul class="mt-3 footer-social">
-              <li><a class="facebook" href="#"><i class="lni-facebook-filled"></i></a></li>
-              <li><a class="twitter" href="#"><i class="lni-twitter-filled"></i></a></li>
-              <li><a class="linkedin" href="#"><i class="lni-linkedin-fill"></i></a></li>
-              <li><a class="google-plus" href="#"><i class="lni-google-plus"></i></a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <div id="copyright">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="site-info text-center">
-            <p>Developed by <a href="https://www.facebook.com/leehieeu.lee" rel="nofollow">Trong Hieu Le</a></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
+
+<%= render "layouts/footer"%>
+
 <a href="#" class="back-to-top">
   <i class="lni-arrow-up"></i>
 </a>

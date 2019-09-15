@@ -1,0 +1,78 @@
+<nav class="navbar navbar-expand-lg fixed-top scrolling-navbar">
+    <div class="container">
+      <div class="theme-header clearfix">
+        <div class="navbar-header">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            <span class="lni-menu"></span>
+            <span class="lni-menu"></span>
+            <span class="lni-menu"></span>
+          </button>
+          <a href="index.html" class="navbar-brand"><%= image_tag("logo.png") %></a>
+        </div>
+        <div class="collapse navbar-collapse" id="main-navbar">
+          <ul class="navbar-nav mr-auto w-100 justify-content-end">
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">
+                <%= t "home" %>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">
+                <%= t "job" %>
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <%= t "company" %>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="browse-jobs.html">Browse Jobs</a></li>
+                <li><a class="dropdown-item" href="browse-categories.html">Browse Categories</a></li>
+                <li><a class="dropdown-item" href="add-resume.html">Add Resume</a></li>
+                <li><a class="dropdown-item" href="manage-resumes.html">Manage Resumes</a></li>
+                <li><a class="dropdown-item" href="job-alerts.html">Job Alerts</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <%= t "blog" %>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="post-job.html">Add Job</a></li>
+                <li><a class="dropdown-item" href="manage-jobs.html">Manage Jobs</a></li>
+                <li><a class="dropdown-item" href="manage-applications.html">Manage Applications</a></li>
+                <li><a class="dropdown-item" href="browse-resumes.html">Browse Resumes</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <%= t "contact" %>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="blog.html">Blog - Right Sidebar</a></li>
+                <li><a class="dropdown-item" href="blog-left-sidebar.html">Blog - Left Sidebar</a></li>
+                <li><a class="dropdown-item" href="blog-full-width.html"> Blog full width</a></li>
+                <li><a class="dropdown-item" href="single-post.html">Blog Single Post</a></li>
+              </ul>
+            </li>
+
+            <li class="button-group">
+              <%= link_to t("signup"), new_user_registration_path, class: "button btn btn-common" %>
+            </li>
+
+            <% if current_user.present? %>
+              <li class="button-group">
+                <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "button btn btn-common" %>
+              </li>
+            <% else %>
+            <li class="button-group">
+              <%= link_to t("signin"), new_user_session_path, class: "button btn btn-common" %>
+            </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="mobile-menu" data-logo=<%= image_path("logo-mobile.png") %>></div>
+  </nav>

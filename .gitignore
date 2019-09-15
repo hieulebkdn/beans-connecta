@@ -33,3 +33,6 @@
 
 # Mysql
 /config/database.yml
+
+/config/locales/environment.rb
+.vscode/

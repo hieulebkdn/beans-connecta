@@ -9,6 +9,9 @@ Rails.application.routes.draw do
     
     get "/about", to: "pages#about"
     get "/index", to: "pages#index"
+    get "/home", to: "pages#home"
+    get "/login", to: "pages#login"
+
   end
 
 end
