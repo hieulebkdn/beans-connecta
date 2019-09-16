@@ -8,19 +8,16 @@
             <span class="lni-menu"></span>
             <span class="lni-menu"></span>
           </button>
-          <a href="index.html" class="navbar-brand"><%= image_tag("logo.png") %></a>
+          <%= link_to(image_tag("logo.png", class: "navbar-brand"), root_path, method: :get) %>
+
         </div>
         <div class="collapse navbar-collapse" id="main-navbar">
           <ul class="navbar-nav mr-auto w-100 justify-content-end">
             <li class="nav-item">
-              <a class="nav-link" href="contact.html">
-                <%= t "home" %>
-              </a>
+              <%= link_to(t("home"), root_path, method: :get, class: "nav-link") %>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contact.html">
-                <%= t "job" %>
-              </a>
+              <%= link_to(t("job"), root_path, method: :get, class: "nav-link") %>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -58,16 +55,16 @@
             </li>
 
             <li class="button-group">
-              <%= link_to t("signup"), new_user_registration_path, class: "button btn btn-common" %>
+              <%= link_to t("signup"), new_user_registration_path, method: :get, class: "button btn btn-common" %>
             </li>
 
             <% if current_user.present? %>
               <li class="button-group">
-                <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "button btn btn-common" %>
+                <%= link_to t("signout"), destroy_user_session_path, method: :delete, class: "button btn btn-common" %>
               </li>
             <% else %>
             <li class="button-group">
-              <%= link_to t("signin"), new_user_session_path, class: "button btn btn-common" %>
+              <%= link_to t("signin"), new_user_session_path,method: :get, class: "nav-link" %>
             </li>
             <% end %>
           </ul>

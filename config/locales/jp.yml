@@ -30,7 +30,6 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 jp:
-  hello: "Hello world"
   home: "ホーム"
   job: "ジョブズ"
   company: "会社"
@@ -38,6 +37,7 @@ jp:
   contact: "お問い合わせ"
   signup: "会員登録(無料)"
   signin: "ログイン"
+  signout: "サインアウト"
   
   pages:
     index:

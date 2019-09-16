@@ -30,7 +30,6 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
   home: "Home"
   job: "Jobs"
   company: "Companies"
@@ -38,6 +37,7 @@ en:
   contact: "Contact"
   signup: "Sign up"
   signin: "Sign in"
+  signout: "Sign out"
 
   pages:
     index:

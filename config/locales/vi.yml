@@ -30,15 +30,14 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 vi:
-  hello: "Hello world"
-  home: "ホーム"
-  job: "ジョブズ"
-  company: "会社"
-  blog: "ブログ"
-  contact: "お問い合わせ"
-  signup: "会員登録(無料)"
-  signin: "ログイン"
-  
+  home: "Trang chủ"
+  job: "Việc làm"
+  company: "Nhà tuyển dụng"
+  blog: "Bài viết"
+  contact: "Liên hệ"
+  signup: "Đăng kí"
+  signin: "Đăng nhập"
+  signout: "Đăng xuất"
   pages:
     index:
       content0: "あなたの人生に"
