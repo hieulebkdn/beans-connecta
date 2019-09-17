@@ -19,54 +19,28 @@
             <li class="nav-item">
               <%= link_to(t("job"), root_path, method: :get, class: "nav-link") %>
             </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <%= t "company" %>
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="browse-jobs.html">Browse Jobs</a></li>
-                <li><a class="dropdown-item" href="browse-categories.html">Browse Categories</a></li>
-                <li><a class="dropdown-item" href="add-resume.html">Add Resume</a></li>
-                <li><a class="dropdown-item" href="manage-resumes.html">Manage Resumes</a></li>
-                <li><a class="dropdown-item" href="job-alerts.html">Job Alerts</a></li>
-              </ul>
+            <li class="nav-item">
+              <%= link_to(t("company"), root_path, method: :get, class: "nav-link") %>
             </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <%= t "blog" %>
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="post-job.html">Add Job</a></li>
-                <li><a class="dropdown-item" href="manage-jobs.html">Manage Jobs</a></li>
-                <li><a class="dropdown-item" href="manage-applications.html">Manage Applications</a></li>
-                <li><a class="dropdown-item" href="browse-resumes.html">Browse Resumes</a></li>
-              </ul>
+            <li class="nav-item">
+              <%= link_to(t("blog"), root_path, method: :get, class: "nav-link") %>
             </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <%= t "contact" %>
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="blog.html">Blog - Right Sidebar</a></li>
-                <li><a class="dropdown-item" href="blog-left-sidebar.html">Blog - Left Sidebar</a></li>
-                <li><a class="dropdown-item" href="blog-full-width.html"> Blog full width</a></li>
-                <li><a class="dropdown-item" href="single-post.html">Blog Single Post</a></li>
-              </ul>
+            <li class="nav-item">
+              <%= link_to(t("contact"), root_path, method: :get, class: "nav-link") %>
             </li>
-
+            <% if current_user.present? %>
+              <li class="button-group">
+                <%= link_to t("signout"), destroy_user_session_path, method: :delete, class: "nav-link" %>
+              </li>
+            <% else %>
             <li class="button-group">
               <%= link_to t("signup"), new_user_registration_path, method: :get, class: "button btn btn-common" %>
             </li>
-
-            <% if current_user.present? %>
-              <li class="button-group">
-                <%= link_to t("signout"), destroy_user_session_path, method: :delete, class: "button btn btn-common" %>
-              </li>
-            <% else %>
             <li class="button-group">
               <%= link_to t("signin"), new_user_session_path,method: :get, class: "nav-link" %>
             </li>
             <% end %>
+            
           </ul>
         </div>
       </div>

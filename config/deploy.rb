@@ -25,12 +25,3 @@ set :puma_workers, 0
 set :puma_worker_timeout, nil
 set :puma_init_active_record, true
 set :puma_preload_app, false
-
-# task :configure_symlinks do
-#     run "ln -nfs #{shared_path}/public/fonts #{current_path}/public/fonts"
-#     run "ln -nfs #{shared_path}/public/images #{current_path}/public/images"
-#     run "ln -nfs #{shared_path}/public/assets #{current_path}/public/assets"
-#   end
-  
-#   after "deploy", "configure_symlinks"
-
