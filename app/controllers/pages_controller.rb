@@ -3,6 +3,7 @@ class PagesController < ApplicationController
     end
 
     def index
+        @categories = Category.original
     end
 
     def home

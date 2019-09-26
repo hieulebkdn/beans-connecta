@@ -27,6 +27,7 @@
                 <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control", placeholder: "Retype password" %>
               </div>
             </div>
+            <%= f.hidden_field(:profile, :value => params[:profile]) %>
             <div class="actions">
               <%= f.submit "Register", class: "btn btn-common log-btn" %>
             </div>

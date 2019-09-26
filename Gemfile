@@ -11,11 +11,13 @@ gem "devise"
 gem "omniauth"
 
 gem "bcrypt", "~> 3.1.7"
-gem "bootstrap-will_paginate", "1.0.0"
 gem "carrierwave", "1.2.2"
 gem "faker", "1.7.3"
-gem "will_paginate", "3.1.6"
 gem "rails-i18n"
+gem "kaminari"
+gem "pagy", "3.5.1"
+gem "city-state"
+
 
 gem "bootstrap-sass", "3.4.1"
 gem "jquery-rails", "4.3.1"
