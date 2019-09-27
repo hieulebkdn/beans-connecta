@@ -20,6 +20,12 @@ vi:
       most_active_company: "Nhà tuyển dụng năng nổ"
       most_active_company_description: "Hãy trở thành một phần của chúng tôi!"
 
+  date:
+    order:
+      - :day
+      - :month
+      - :year
+
   devise:
     confirmations:
       confirmed: "Your email address has been successfully confirmed."

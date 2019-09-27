@@ -19,6 +19,11 @@ jp:
       recent_job_description: "As the Asia's #1 job site, with over 10 million unique visitors every month from over 15 different countries"
       most_active_company: "最も活発な会社"
       most_active_company_description: "Want to be a part of us? Take it easy!"
+  date:
+    order:
+      - :day
+      - :month
+      - :year
 
   devise:
     confirmations:
