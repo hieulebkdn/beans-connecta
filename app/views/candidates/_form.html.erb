@@ -1,65 +1,103 @@
+<section id="content" class="section-padding">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-12 col-md-12 col-xs-12">
+        <div class="page-login-form box">
+          <h3>
+            1. Create Your Profile
+          </h1>
+          <%= form_for(@candidate, html: {class: "login-form", multipart: true}) do |form| %>
+            <% if candidate.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(candidate.errors.count, "error") %> prohibited this candidate from being saved:</h2>
+                <ul>
+                  <% candidate.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                  <% end %>
+                </ul>
+              </div>
+            <% end %>
 
-<%= form_with(model: candidate, local: true) do |form| %>
-  <% if candidate.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(candidate.errors.count, "error") %> prohibited this candidate from being saved:</h2>
+            <div class="row">
+              <div class="col-md-6 col-xs-6 col-lg-6">
+                <div class="form-group">
+                  <div class="input-icon">
+                    <i class="lni-user"></i>
+                    <%= form.text_field :name, autofocus: true, class: "form-control", placeholder: "Your name" %>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-xs-6 col-lg-6">
+              <div class="form-group">
+                <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
+                  <div class="input-icon">
+                    <i class="lni-user"></i>
+                  </div>
+                    <%= form.text_field(:dob, class: "form-control datetimepicker-input", data: {target:"#datetimepicker1"}, placeholder: "Date of birth") %>
+                  <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+                    <div class="input-group-text"><i class="fa fa-calendar"></i>
+                    </div>
+                  </div>
+                </div>
+                </div>
+              </div>
+              </div>
 
-      <ul>
-      <% candidate.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+              <div class="row">
+              <div class="col-md-2 col-xs-2 col-lg-2">
+                <div class="form-group">
+                  <div class="input-icon">
+                    <i class="lni-user"></i>
+                    <%= form.text_field :gender, class: "form-control", placeholder: "Gender" %>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-5 col-xs-5 col-lg-5">
+                <div class="form-group">
+                  <div class="input-icon">
+                    <i class="lni-user"></i>
+                    <%= form.text_field :city, class: "form-control", placeholder: "City" %>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-5 col-xs-5 col-lg-5">
+                <div class="form-group">
+                  <div class="input-icon">
+                    <i class="lni-user"></i>
+                    <%= form.text_field :address, class: "form-control", placeholder: "Address" %>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-0 col-xs-0 col-lg-0">
+                <div class="form-group">
+                  <div class="input-icon">
+                    <i class="lni-user"></i>
+                    <%= form.text_area :objective, class: "form-control", placeholder: "Write your objective :)" %>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+              <div class="col-md-3 col-xs-3 col-lg-3">
+                <div class="form-group">
+                  <label class="btn btn-primary" disabled>
+                    Upload your avatar
+                    <span style="display:none;">
+                      <%= form.file_field :avatar, required: true, multiple: true, name: "avatar" %>
+                    </span>
+                  </label>
+                </div>
+              </div>
+              </div>
+
+              <div class="actions">
+                <%= form.submit "Create your profile", class: "btn btn-common log-btn" %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-    <div class='form-group col-md-6'>
-  <%= form.label :dob, 'Birthday', class: 'control-label' %>
-  <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
-    <%= form.text_field(:dob, class: "form-control datetimepicker-input", data: {target:"#datetimepicker1"}) %>
-    <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
-      <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-    </div>
-  </div>
-</div>
-
-  <div class="field">
-    <%= form.label :gender %>
-    <%= form.number_field :gender %>
-  </div>
-
-  <div class="field">
-    <%= form.label :avatar %>
-    <%= form.text_field :avatar %>
-  </div>
-
-  <div class="field">
-    <%= form.label :city %>
-    <%= form.text_field :city %>
-  </div>
-
-  <div class="field">
-    <%= form.label :address %>
-    <%= form.text_field :address %>
-  </div>
-
-  <div class="field">
-    <%= form.label :major %>
-    <%= form.text_field :major %>
-  </div>
-
-  <div class="field">
-    <%= form.label :objective %>
-    <%= form.text_area :objective %>
-  </div>
-
-
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+  </section>

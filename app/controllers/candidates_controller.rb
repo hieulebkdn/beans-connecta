@@ -28,8 +28,8 @@ class CandidatesController < ApplicationController
 
     respond_to do |format|
       if @candidate.save
-        format.html { redirect_to @candidate, notice: 'Candidate was successfully created.' }
-        format.json { render :show, status: :created, location: @candidate }
+        flash[:success] = "alo alo"
+        redirect_to controller: 'registrations', action: 'new', profile: @candidate.id
       else
         format.html { render :new }
         format.json { render json: @candidate.errors, status: :unprocessable_entity }
@@ -69,6 +69,6 @@ class CandidatesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def candidate_params
-      params.require(:candidate).permit(:name, :dob, :gender, :avatar, :city, :address, :major, :objective)
+      params.require(:candidate).permit(:name, :dob, :gender, :avatar, :city, :address, :objective)
     end
 end
