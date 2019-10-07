@@ -16,23 +16,20 @@ class CandidatesController < ApplicationController
   end
 
   def create
-    @candidate = Candidate.new(candidate_params)
+    @candidate = Candidate.new candidate_params
 
-    respond_to do |format|
-      if @candidate.save
-        flash[:success] = "alo alo"
-        redirect_to controller: 'registrations', action: 'new', profile: @candidate.id
-      else
-        format.html { render :new }
-        format.json { render json: @candidate.errors, status: :unprocessable_entity }
-      end
+    if @candidate.save
+      flash[:success] = "alo alo"
+      redirect_to controller: "registrations", action: "new", profile: @candidate.id
+    else
+      render :new
     end
   end
 
   def update
     respond_to do |format|
       if @candidate.update(candidate_params)
-        format.html { redirect_to @candidate, notice: 'Candidate was successfully updated.' }
+        format.html { redirect_to @candidate, notice: "Candidate was successfully updated." }
         format.json { render :show, status: :ok, location: @candidate }
       else
         format.html { render :edit }
@@ -44,7 +41,7 @@ class CandidatesController < ApplicationController
   def destroy
     @candidate.destroy
     respond_to do |format|
-      format.html { redirect_to candidates_url, notice: 'Candidate was successfully destroyed.' }
+      format.html { redirect_to candidates_url, notice: "Candidate was successfully destroyed." }
       format.json { head :no_content }
     end
   end

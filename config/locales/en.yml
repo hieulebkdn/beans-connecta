@@ -8,7 +8,8 @@ en:
   signin: "Sign in"
   signout: "Sign out"
   quote: "Utilizing the power of the Internet, which can be said to be the industrial revolution of our time, will have a great impact on the world."
-
+  signup_as_candidate: "Sign up as candidate"
+  signup_as_company: "Sign up as company"
   pages:
     index:
       content0: "Find the"

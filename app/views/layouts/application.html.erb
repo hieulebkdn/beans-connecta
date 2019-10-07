@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Beansconnecta</title>
+    <title>Beans Connecta</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %> 
-    <%= render "layouts/alerts" %>
   </head>
 
   <body>
+    <%= render "layouts/header" %>
+    <div>
+    <%= flash_messages %>
     <%= yield %>
+    <%= render "layouts/footer"%>
+    </div>
     <%= javascript_include_tag "application", media: "all", "data-turbolinks-track": "reload"%>
   </body>
 </html>

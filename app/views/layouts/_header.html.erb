@@ -33,8 +33,18 @@
                 <%= link_to t("signout"), destroy_user_session_path, method: :delete, class: "nav-link" %>
               </li>
             <% else %>
+            <li class="nav-item dropdown button-group">
+            <a class="button btn btn-common" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <%= t("signup")%>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="button-group">
+              <%= link_to t("signup_as_candidate"), new_user_registration_path(:role => "candidate"), method: :get, class: "dropdown-item" %>
+            </li>
             <li class="button-group">
-              <%= link_to t("signup"), new_company_path, method: :get, class: "button btn btn-common" %>
+              <%= link_to t("signup_as_company"), new_user_registration_path(:role => "company"), method: :get, class: "dropdown-item" %>
+            </li>
+            </ul>
             </li>
             <li class="button-group">
               <%= link_to t("signin"), new_user_session_path,method: :get, class: "nav-link" %>

@@ -16,7 +16,7 @@ class CompaniesController < ApplicationController
         @company = Company.new company_params
         if @company.save
             flash[:success] = "alo alo"
-            redirect_to controller: 'pages', action: 'index'
+            redirect_to controller: "registrations", action: "new", profile: @company.id, role: 1
         else
             render :new
         end

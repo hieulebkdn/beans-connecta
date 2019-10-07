@@ -19,6 +19,7 @@ gem "pagy", "3.5.1"
 gem "city-state"
 gem 'bootstrap4-datetime-picker-rails'
 gem "font-awesome-rails"
+gem "addressable"
 
 gem "bootstrap-sass", "3.4.1"
 gem "jquery-rails", "4.3.1"

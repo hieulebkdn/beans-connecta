@@ -8,7 +8,8 @@ jp:
   signin: "ログイン"
   signout: "サインアウト"
   quote: "私たちの時代の産業革命ともいえるこのインターネットの力を活用して、世の中に大きなインパクトを与えていくこと。"
-  
+  signup_as_candidate: "応募者として"
+  signup_as_company: "カンパニーとして"
   pages:
     index:
       content0: "あなたの人生に"
