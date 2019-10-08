@@ -17,9 +17,9 @@ class CandidatesController < ApplicationController
 
   def create
     @candidate = Candidate.new candidate_params
-
     if @candidate.save
-      flash[:success] = "alo alo"
+      update_user_profile
+      flash[:success] = "Create candidate profile suceed!"
       redirect_to controller: "pages", action: "index"
     else
       render :new
@@ -54,4 +54,9 @@ class CandidatesController < ApplicationController
     def candidate_params
       params.require(:candidate).permit(:name, :dob, :gender, :avatar, :city, :address, :objective)
     end
+
+    def update_user_profile
+      current_user.update(profile: @candidate.id)
+    end
+
 end
