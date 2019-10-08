@@ -17,9 +17,10 @@ gem "rails-i18n"
 gem "kaminari"
 gem "pagy", "3.5.1"
 gem "city-state"
-gem 'bootstrap4-datetime-picker-rails'
+gem "bootstrap4-datetime-picker-rails"
 gem "font-awesome-rails"
 gem "addressable"
+gem "cancancan"
 
 gem "bootstrap-sass", "3.4.1"
 gem "jquery-rails", "4.3.1"

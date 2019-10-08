@@ -8,7 +8,7 @@ class RegistrationsController < Devise::RegistrationsController
     def create
       build_resource(sign_up_params)
       unless resource.role == "company" || resource.role == "candidate"
-        flash[:danger] = "Please dont change URL params!"
+        flash[:notice] = "Please dont change URL params!"
         expire_data_after_sign_in!
         redirect_to root_path
       else
@@ -18,7 +18,11 @@ class RegistrationsController < Devise::RegistrationsController
           if resource.active_for_authentication?
             set_flash_message! :notice, :signed_up
             sign_up(resource_name, resource)
-            respond_with resource, location: after_sign_up_path_for(resource)
+            if resource.role == "company"
+              redirect_to controller: "companies", action: "new", user: resource.id
+            else
+              redirect_to controller: "candidates", action: "new", user: resource.id
+            end
           else
             set_flash_message! :notice, :"signed_up_but_#{resource.inactive_message}"
             expire_data_after_sign_in!

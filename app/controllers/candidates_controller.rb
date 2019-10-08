@@ -20,7 +20,7 @@ class CandidatesController < ApplicationController
 
     if @candidate.save
       flash[:success] = "alo alo"
-      redirect_to controller: "registrations", action: "new", profile: @candidate.id
+      redirect_to controller: "pages", action: "index"
     else
       render :new
     end

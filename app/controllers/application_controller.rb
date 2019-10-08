@@ -2,6 +2,13 @@ class ApplicationController < ActionController::Base
 	include Pagy::Backend
 	before_action :configure_permitted_parameters, if: :devise_controller?
 	before_action :set_locale
+
+	rescue_from CanCan::AccessDenied do
+		respond_to do |format|
+			format.json{head :forbidden}
+			format.html{redirect_to root_path, alert: t(".no_permission")}
+		end
+	end
 	
 	def set_locale
 		locale = params[:locale].to_s.strip.to_sym

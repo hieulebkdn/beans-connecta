@@ -64,6 +64,7 @@ GEM
       momentjs-rails (>= 2.10.5, <= 3.0.0)
     builder (3.2.3)
     byebug (11.0.1)
+    cancancan (3.0.1)
     capistrano (3.11.1)
       airbrussh (>= 1.0.0)
       i18n
@@ -290,6 +291,7 @@ DEPENDENCIES
   bootstrap-sass (= 3.4.1)
   bootstrap4-datetime-picker-rails
   byebug
+  cancancan
   capistrano
   capistrano-bundler
   capistrano-rails
