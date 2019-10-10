@@ -10,6 +10,13 @@ en:
   quote: "Utilizing the power of the Internet, which can be said to be the industrial revolution of our time, will have a great impact on the world."
   signup_as_candidate: "Sign up as candidate"
   signup_as_company: "Sign up as company"
+  login: "Login"
+  email: "Email"
+  password: "Password"
+  remember_me: "Remember me"
+  dont_have_account: "Don't have an account?"
+  subscribe: "Follow us"
+  subscribe_content: "Follow BeansConnecta on social media to keep up-to-date with the latest company news, highlights and benefit from a range of useful resources."
   pages:
     index:
       content0: "Find the"

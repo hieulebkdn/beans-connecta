@@ -8,7 +8,16 @@ vi:
   signin: "Đăng nhập"
   signout: "Đăng xuất"
   quote: "Tận dụng sức mạnh của Internet để thay đổi thế giới."
-  
+  signup_as_candidate: "Với tư cách ứng viên"
+  signup_as_company: "Với tư cách công ty"
+  login: "Đăng nhập"
+  email: "Email"
+  password: "Mật khẩu"
+  remember_me: "Nhớ tài khoản"
+  dont_have_account: "Chưa có tài khoản?"
+  subscribe: "Follow us"
+  subscribe_content: "Theo dõi BeansConnecta trên phương tiện truyền thông xã hội để cập nhật những tin tức mới nhất về công ty, những điểm nổi bật và lợi ích từ một loạt các tài nguyên hữu ích."
+
   pages:
     index:
       content0: "Tìm kiếm"

@@ -1,1 +1,1 @@
-$(".alert").fadeOut(8000);
+$(".alert").fadeOut(6000);

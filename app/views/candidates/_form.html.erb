@@ -4,7 +4,7 @@
       <div class="col-lg-12 col-md-12 col-xs-12">
         <div class="page-login-form box">
           <h3>
-            1. Create Your Profile
+            2. Create Your Profile
           </h1>
           <%= form_for(@candidate, html: {class: "login-form", multipart: true}) do |form| %>
             <% if candidate.errors.any? %>
@@ -27,6 +27,26 @@
                   </div>
                 </div>
               </div>
+
+              <div class="col-md-2 col-xs-2 col-lg-2">
+                <div class="form-group">
+                  <div class="input-icon">
+                    <i class="lni-heart"></i>
+                    <%= form.text_field :gender, class: "form-control", placeholder: "Gender" %>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-xs-4 col-lg-4">
+                <div class="form-group">
+                  <div class="input-icon">
+                    <i class="lni-apartment"></i>
+                    <%= form.text_field :city, class: "form-control", placeholder: "City" %>
+                  </div>
+                </div>
+              </div>
+              </div>
+
+              <div class="row">
               <div class="col-md-6 col-xs-6 col-lg-6">
               <div class="form-group">
                 <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
@@ -41,27 +61,7 @@
                 </div>
                 </div>
               </div>
-              </div>
-
-              <div class="row">
-              <div class="col-md-2 col-xs-2 col-lg-2">
-                <div class="form-group">
-                  <div class="input-icon">
-                    <i class="lni-heart"></i>
-                    <%= form.text_field :gender, class: "form-control", placeholder: "Gender" %>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-5 col-xs-5 col-lg-5">
-                <div class="form-group">
-                  <div class="input-icon">
-                    <i class="lni-apartment"></i>
-                    <%= form.text_field :city, class: "form-control", placeholder: "City" %>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-5 col-xs-5 col-lg-5">
+              <div class="col-md-6 col-xs-6 col-lg-6">
                 <div class="form-group">
                   <div class="input-icon">
                     <i class="lni-home"></i>

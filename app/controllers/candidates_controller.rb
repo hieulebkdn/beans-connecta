@@ -19,7 +19,7 @@ class CandidatesController < ApplicationController
     @candidate = Candidate.new candidate_params
     if @candidate.save
       update_user_profile
-      flash[:success] = "Create candidate profile suceed!"
+      flash[:success] = "Your profile successfully created!"
       redirect_to controller: "pages", action: "index"
     else
       render :new

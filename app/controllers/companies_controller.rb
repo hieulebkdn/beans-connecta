@@ -15,7 +15,8 @@ class CompaniesController < ApplicationController
     def create
         @company = Company.new company_params
         if @company.save
-            flash[:success] = "alo alo"
+            update_user_profile
+            flash[:success] = "Your company profile successfully created!"
             redirect_to controller: "pages", action: "index"
         else
             render :new
@@ -30,5 +31,8 @@ class CompaniesController < ApplicationController
     def company_params
         params.require(:company).permit(:name, :description, :address, :country, :city, :scale, :website)
     end
-    
+
+    def update_user_profile
+        current_user.update(profile: @company.id)
+    end
 end

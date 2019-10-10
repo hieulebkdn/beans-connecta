@@ -10,6 +10,14 @@ jp:
   quote: "私たちの時代の産業革命ともいえるこのインターネットの力を活用して、世の中に大きなインパクトを与えていくこと。"
   signup_as_candidate: "応募者として"
   signup_as_company: "カンパニーとして"
+  login: "ログイン"
+  email: "メール"
+  password: "パスワード"
+  remember_me: "次回から入力を省略"
+  dont_have_account: "まだ会員登録してない方はこちらから登録してください"
+  subscribe: "ついてきて"
+  subscribe_content: "ソーシャルメディアでBeansConnectaをフォローして、最新の企業ニュース、ハイライト、さまざまな有用なリソースを活用してください。"
+
   pages:
     index:
       content0: "あなたの人生に"
