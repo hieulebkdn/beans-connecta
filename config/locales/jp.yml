@@ -17,6 +17,16 @@ jp:
   dont_have_account: "まだ会員登録してない方はこちらから登録してください"
   subscribe: "ついてきて"
   subscribe_content: "ソーシャルメディアでBeansConnectaをフォローして、最新の企業ニュース、ハイライト、さまざまな有用なリソースを活用してください。"
+  quick_link: "リンク"
+  how_it_works: "案内"
+  oauth_login_content: "または、以下のアカウントでログインしてください。"
+  create_account: "1. 会員登録（無料）"
+  already_have_account: "すでに会員の方はこちらからログインしてください"
+  your_email: "メール"
+  your_pass: "パスワード (6文字以上)"
+  retype_pass: "確認のためもう一度入力してください"
+  register: "登録"
+
 
   pages:
     index:

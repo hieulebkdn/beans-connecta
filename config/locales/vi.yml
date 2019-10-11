@@ -17,6 +17,15 @@ vi:
   dont_have_account: "Chưa có tài khoản?"
   subscribe: "Follow us"
   subscribe_content: "Theo dõi BeansConnecta trên phương tiện truyền thông xã hội để cập nhật những tin tức mới nhất về công ty, những điểm nổi bật và lợi ích từ một loạt các tài nguyên hữu ích."
+  quick_link: "Lối tắt"
+  how_it_works: "Hướng dẫn"
+  oauth_login_content: "Đăng nhập với mạng xã hội"
+  create_account: "1. Tạo tài khoản"
+  already_have_account: "Bạn đã có tài khoản?"
+  your_email: "Email"
+  your_pass: "Mật khẩu (tối thiểu 6 kí tự)"
+  retype_pass: "Xác nhận mật khẩu"
+  register: "Đăng kí"
 
   pages:
     index:

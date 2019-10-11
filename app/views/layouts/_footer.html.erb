@@ -2,7 +2,7 @@
   <section class="footer-Content">
     <div class="container">
       <div class="row">
-        <div class="col-lg-3 col-md-3 col-xs-12">
+        <div class="col-lg-4 col-md-5 col-xs-12">
           <div class="widget">
             <div class="footer-logo">
               <%= image_tag("logo-footer.png") %>
@@ -12,20 +12,20 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-6 col-md-4 col-xs-12">
+        <div class="col-lg-5 col-md-3 col-xs-12">
           <div class="widget">
-            <h3 class="block-title">Quick Links</h3>
+            <h3 class="block-title"><%= t ("quick_link") %></h3>
             <ul class="menu">
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Support</a></li>
-              <li><a href="#">License</a></li>
-              <li><a href="#">Contact</a></li>
+              <li><a href="#"><%= t ("signin") %></a></li>
+              <li><a href="#"><%= t ("signup_as_company") %></a></li>
+              <li><a href="#"><%= t ("signup_as_candidate") %></a></li>
+              <li><a href="#"><%= t ("how_it_works") %></a></li>
             </ul>
             <ul class="menu">
-              <li><a href="#">Terms & Conditions</a></li>
-              <li><a href="#">Privacy</a></li>
-              <li><a href="#">Refferal Terms</a></li>
-              <li><a href="#">Product License</a></li>
+              <li><a href="#"><%= t ("job") %></a></li>
+              <li><a href="#"><%= t ("company") %></a></li>
+              <li><a href="#"><%= t ("blog") %></a></li>
+              <li><a href="#"><%= t ("contact") %></a></li>
             </ul>
           </div>
         </div>
