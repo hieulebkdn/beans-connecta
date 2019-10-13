@@ -4,8 +4,10 @@
     <title>Beans Connecta</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
     <%= render "layouts/header" %>
-    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %> 
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
+    <%= javascript_include_tag "application", media: "all", "data-turbolinks-track": "reload"%>
   </head>
 
   <body>
@@ -15,7 +17,14 @@
       </div>
       <%= yield %>
     </div>
+
     <%= render "layouts/footer"%>
-    <%= javascript_include_tag "application", media: "all", "data-turbolinks-track": "reload"%>
+
+    <a href="#" class="back-to-top">
+      <i class="lni-arrow-up"></i>
+    </a>
+    <div id="preloader">
+      <div class="loader" id="loader-1"></div>
+    </div>
   </body>
 </html>
