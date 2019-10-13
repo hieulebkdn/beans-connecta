@@ -20,12 +20,13 @@ en:
   quick_link: "Quick links"
   how_it_works: "How it works"
   oauth_login_content: "or login via your social network account"
-  create_account: "1. Create your account"
+  create_account: "Create your account"
   already_have_account: "Already have an account?"
   your_email: "Your email"
   your_pass: "Your password (6 characters minimum)"
   retype_pass: "Retype password"
   register: "Register"
+
   pages:
     index:
       content0: "Find the"

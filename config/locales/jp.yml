@@ -20,7 +20,7 @@ jp:
   quick_link: "リンク"
   how_it_works: "案内"
   oauth_login_content: "または、以下のアカウントでログインしてください。"
-  create_account: "1. 会員登録（無料）"
+  create_account: "会員登録（無料)"
   already_have_account: "すでに会員の方はこちらからログインしてください"
   your_email: "メール"
   your_pass: "パスワード (6文字以上)"
