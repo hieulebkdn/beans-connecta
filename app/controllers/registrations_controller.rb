@@ -19,9 +19,13 @@ class RegistrationsController < Devise::RegistrationsController
             set_flash_message! :notice, :signed_up
             sign_up(resource_name, resource)
             if resource.role == "company"
-              redirect_to controller: "companies", action: "new"
+              respond_to do |format|
+                format.html { redirect_to controller: "companies", action: "new" }
+              end
             else
-              redirect_to controller: "candidates", action: "new"
+              respond_to do |format|
+                format.html { redirect_to controller: "candidates", action: "new" }
+              end
             end
           else
             set_flash_message! :notice, :"signed_up_but_#{resource.inactive_message}"
