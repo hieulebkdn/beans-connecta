@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
 	include Pagy::Backend
 	before_action :configure_permitted_parameters, if: :devise_controller?
 	before_action :set_locale
+	before_action :load_categories
 
 	rescue_from CanCan::AccessDenied do
 		respond_to do |format|
@@ -26,4 +27,9 @@ class ApplicationController < ActionController::Base
 			user_params.permit(:email, :password, :password_confirmation, :role, :profile)
 		end
 	end
+	
+	def load_categories
+		@categories = Category.original
+	end
+
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_27_143846) do
+ActiveRecord::Schema.define(version: 2019_10_29_132632) do
 
   create_table "candidates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -40,7 +40,28 @@ ActiveRecord::Schema.define(version: 2019_09_27_143846) do
     t.string "website"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_companies_on_category_id"
     t.index ["name"], name: "index_companies_on_name", unique: true
+  end
+
+  create_table "experiences", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "position"
+    t.string "companyName"
+    t.string "detail"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "candidate_id"
+    t.index ["candidate_id"], name: "index_experiences_on_candidate_id"
+  end
+
+  create_table "skills", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "tag"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "candidate_id"
+    t.index ["candidate_id"], name: "index_skills_on_candidate_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
@@ -67,4 +88,7 @@ ActiveRecord::Schema.define(version: 2019_09_27_143846) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "companies", "categories"
+  add_foreign_key "experiences", "candidates"
+  add_foreign_key "skills", "candidates"
 end
