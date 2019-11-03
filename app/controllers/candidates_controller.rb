@@ -1,7 +1,8 @@
 class CandidatesController < ApplicationController
   before_action :set_candidate, only: [:show, :edit, :update, :destroy]
-
+  
   def show
+    @candidate = Candidate.find(current_user.id)
   end
 
   def new

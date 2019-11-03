@@ -1,60 +1,68 @@
 <nav class="navbar navbar-expand-lg fixed-top scrolling-navbar">
-    <div class="container">
-      <div class="theme-header clearfix">
-        <div class="navbar-header">
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            <span class="lni-menu"></span>
-            <span class="lni-menu"></span>
-            <span class="lni-menu"></span>
-          </button>
-          <%= link_to(image_tag("logo.png", class: "navbar-brand"), root_path, method: :get) %>
-
-        </div>
-        <div class="collapse navbar-collapse" id="main-navbar">
-          <ul class="navbar-nav mr-auto w-100 justify-content-end">
-            <li class="nav-item">
-              <%= link_to(t("home"), root_path, method: :get, class: "nav-link") %>
-            </li>
-            <li class="nav-item">
-              <%= link_to(t("job"), root_path, method: :get, class: "nav-link") %>
-            </li>
-            <li class="nav-item">
-              <%= link_to(t("company"), companies_path, method: :get, class: "nav-link") %>
-            </li>
-            <li class="nav-item">
-              <%= link_to(t("blog"), root_path, method: :get, class: "nav-link") %>
-            </li>
-            <li class="nav-item">
-              <%= link_to(t("contact"), root_path, method: :get, class: "nav-link") %>
-            </li>
-            <% if current_user.present? %>
+  <div class="container">
+    <div class="theme-header clearfix">
+      <div class="navbar-header">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          <span class="lni-menu"></span>
+          <span class="lni-menu"></span>
+          <span class="lni-menu"></span>
+        </button>
+        <%= link_to(image_tag("logo.png", class: "navbar-brand"), root_path, method: :get) %>
+      </div>
+      <div class="collapse navbar-collapse" id="main-navbar">
+        <ul class="navbar-nav mr-auto w-100 justify-content-end">
+          <li class="nav-item">
+            <%= link_to(t("home"), root_path, method: :get, class: "nav-link") %>
+          </li>
+          <li class="nav-item">
+            <%= link_to(t("job"), root_path, method: :get, class: "nav-link") %>
+          </li>
+          <li class="nav-item">
+            <%= link_to(t("company"), companies_path, method: :get, class: "nav-link") %>
+          </li>
+          <li class="nav-item">
+            <%= link_to(t("blog"), root_path, method: :get, class: "nav-link") %>
+          </li>
+          <li class="nav-item">
+            <%= link_to(t("contact"), root_path, method: :get, class: "nav-link") %>
+          </li>
+          <% if current_user.present? %>
+            <% if !current_user.profile.nil? %>
+            <% if current_user.candidate? %>
               <li class="button-group">
-                <%= link_to t("signout"), destroy_user_session_path, method: :delete, class: "nav-link" %>
+                <%= link_to current_user.candidate_name, candidate_path(id: current_user.profile), method: :get, class: "button btn btn-common" %>
               </li>
             <% else %>
-            <li class="nav-item dropdown button-group">
-            <a class="button btn btn-common" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= t("signup")%>
-            </a>
-            <ul class="dropdown-menu">
               <li class="button-group">
-              <%= link_to t("signup_as_candidate"), new_user_registration_path(:role => "candidate"), method: :get, class: "dropdown-item" %>
-            </li>
+                <%= link_to current_user.company_name, company_path(id: current_user.profile), method: :get, class: "button btn btn-common" %>
+              </li>
+            <% end %>
+            <% end %>
             <li class="button-group">
-              <%= link_to t("signup_as_company"), new_user_registration_path(:role => "company"), method: :get, class: "dropdown-item" %>
+              <%= link_to t("signout"), destroy_user_session_path, method: :delete, class: "nav-link" %>
             </li>
-            </ul>
+          <% else %>
+            <li class="nav-item dropdown button-group">
+              <a class="button btn btn-common" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <%= t("signup")%>
+              </a>
+              <ul class="dropdown-menu">
+                <li class="button-group">
+                  <%= link_to t("signup_as_candidate"), new_user_registration_path(:role => "candidate"), method: :get, class: "dropdown-item" %>
+                </li>
+                <li class="button-group">
+                  <%= link_to t("signup_as_company"), new_user_registration_path(:role => "company"), method: :get, class: "dropdown-item" %>
+                </li>
+              </ul>
             </li>
             <li class="button-group">
               <%= link_to t("signin"), new_user_session_path,method: :get, class: "nav-link" %>
             </li>
-            <% end %>
-            
-          </ul>
-        </div>
+          <% end %>
+        </ul>
       </div>
     </div>
-    <div class="mobile-menu" data-logo=<%= image_path("logo-mobile.png") %>></div>
-  </nav>
-  
+  </div>
+  <div class="mobile-menu" data-logo=<%= image_path("logo-mobile.png") %>></div>
+</nav>

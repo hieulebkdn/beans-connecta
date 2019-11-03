@@ -1,5 +1,5 @@
 class CompaniesController < ApplicationController
-    before_action :set_company, only: [:show]
+    before_action :set_company, only: [:show, :edit]
 
     def index
       @companies = Company.all
@@ -22,10 +22,14 @@ class CompaniesController < ApplicationController
             render :new
         end
     end
+
+    def edit
+        
+    end
     
     private
     def set_company
-        @company = Company.find(params[:id])
+        @company = Company.find(current_user.profile)
     end
 
     def company_params

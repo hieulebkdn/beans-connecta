@@ -38,6 +38,12 @@ vi:
       most_active_company: "Nhà tuyển dụng năng nổ"
       most_active_company_description: "Hãy trở thành một phần của chúng tôi!"
 
+  candidates: 
+    show:
+      profile: Hồ sơ
+      aboutme: About me
+      experience: Kinh nghiệm
+      skill : Kĩ năng
   date:
     order:
       - :day
