@@ -1,5 +1,5 @@
 class CandidatesController < ApplicationController
-  before_action :set_candidate, only: [:show, :edit, :update, :destroy]
+  before_action :set_candidate, only: [:show, :edit_profile, :edit_experience, :edit_skill, :update_profile, :destroy]
   
   def show
   end
@@ -9,6 +9,18 @@ class CandidatesController < ApplicationController
   end
 
   def edit_profile
+  end
+
+  def update_profile
+    respond_to do |format|
+      if @candidate.update_attributes(candidate_params)
+        format.html { redirect_to @candidate, notice: "Candidate was successfully updated." }
+        format.json { render :show, status: :ok, location: @candidate }
+      else
+        format.html { render :edit }
+        format.json { render json: @candidate.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def edit_experience
@@ -25,18 +37,6 @@ class CandidatesController < ApplicationController
       redirect_to controller: "pages", action: "index"
     else
       render :new
-    end
-  end
-
-  def update
-    respond_to do |format|
-      if @candidate.update(candidate_params)
-        format.html { redirect_to @candidate, notice: "Candidate was successfully updated." }
-        format.json { render :show, status: :ok, location: @candidate }
-      else
-        format.html { render :edit }
-        format.json { render json: @candidate.errors, status: :unprocessable_entity }
-      end
     end
   end
 

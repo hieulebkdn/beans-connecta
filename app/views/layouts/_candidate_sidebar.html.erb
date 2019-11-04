@@ -3,7 +3,7 @@
     <h4><%= t("manage_account") %></h4>
     <ul class="list-item">
       <li><%= link_to t("my_profile"), candidate_path(id: current_user.profile), method: :get %></li>
-      <li><%= link_to t("update_profile"), edit_candidate_path(id: current_user.profile), method: :get %></li>
+      <li><%= link_to t("update_profile"), candidate_edit_profile_path(id: current_user.profile), method: :get %></li>
       <li><%= link_to t("update_experience"), edit_candidate_path(id: current_user.profile), method: :get %></li>
       <li><%= link_to t("update_skill"), edit_candidate_path(id: current_user.profile), method: :get %></li>
       <li><%= link_to t("bookmark"), candidate_path(id: current_user.profile)%> <span class="notinumber">2</span></li>

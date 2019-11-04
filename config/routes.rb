@@ -6,7 +6,11 @@ Rails.application.routes.draw do
   scope "(:locale)", locale: /en|vi|jp/ do
     root to:"pages#index"
     devise_for :users, skip: :omniauth_callbacks, :controllers => {:registrations => "registrations"}
-    resources :candidates
+
+    resources :candidates 
+    get "/candidates/:id/edit_profile", to: "candidates#edit_profile", as: "candidate_edit_profile"
+    patch "/candidates/:id/update_profile", to:"candidates#update_profile", as: "candidate_update_profile"
+    
     resources :companies
     get "/about", to: "pages#about"
     get "/index", to: "pages#index"

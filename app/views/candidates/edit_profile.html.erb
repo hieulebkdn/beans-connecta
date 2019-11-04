@@ -3,181 +3,124 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="inner-header">
-          <h3>Create Resume</h3>
+          <h3><%= t("profile") %></h3>
         </div>
       </div>
     </div>
   </div>
 </div>
-<section id="content">
+<div class="section">
   <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-9 col-md-12 col-xs-12">
-        <div class="add-resume box">
-          <form class="form-ad">
-            <h3>Basic information</h3>
-            <div class="form-group">
-              <label class="control-label">Name</label>
-              <input type="text" class="form-control" placeholder="Name">
-            </div>
-            <div class="form-group">
-              <label class="control-label"></label>
-              <label class="control-label">Email</label>
-              <input type="text" class="form-control" placeholder="Your@domain.com">
-            </div>
-            <div class="form-group">
-              <label class="control-label">Profession Title</label>
-              <input type="text" class="form-control" placeholder="Headline (e.g. Front-end developer)">
-            </div>
-            <div class="form-group">
-              <label class="control-label">Location</label>
-              <input type="text" class="form-control" placeholder="Location, e.g">
-            </div>
-            <div class="form-group">
-              <label class="control-label">Web</label>
-              <input type="text" class="form-control" placeholder="Website address">
-            </div>
-            <div class="form-group">
-              <label class="control-label">Pre Hour</label>
-              <input type="text" class="form-control" placeholder="Salary, e.g. 85">
-            </div>
-            <div class="form-group">
-              <label class="control-label">Age</label>
-              <input type="text" class="form-control" placeholder="Years old">
-            </div>
-            <div class="form-group">
-              <div class="button-group">
-                <div class="action-buttons">
-                  <div class="upload-button">
-                    <button class="btn btn-common">Choose a cover image</button>
-                    <input id="cover_img_file_2" type="file">
-                  </div>
+    <div class="row">
+      <%= render ("layouts/candidate_sidebar")%>
+      <div class="col-lg-8 col-md-8 col-xs-12">
+        <section id="content" class="section-padding">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-12 col-md-12 col-xs-12">
+                <div class="page-login-form box">
+                  <h3>
+                    <%= t("create_profile") %>
+                  </h3>
+                  <%= form_for(@candidate, url: candidate_update_profile_path(id: @candidate.id), html: {class: "login-form", multipart: true}) do |form| %>
+                    <div class="row">
+                      <div class="col-md-6 col-xs-6 col-lg-6">
+                        <div class="form-group">
+                          <div class="input-icon">
+                            <i class="lni-user"></i>
+                            <%= form.text_field :name, autofocus: true, class: "form-control", placeholder: t("yourname") %>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-2 col-xs-2 col-lg-2">
+                        <div class="form-group">
+                          <div class="input-icon">
+                            <i class="lni-heart"></i>
+                            <%= form.text_field :gender, class: "form-control", placeholder: t("gender") %>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-4 col-xs-4 col-lg-4">
+                        <div class="form-group">
+                          <div class="input-icon">
+                            <i class="lni-apartment"></i>
+                            <%= form.text_field :city, class: "form-control", placeholder: t("city") %>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6 col-xs-6 col-lg-6">
+                        <div class="form-group">
+                          <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
+                            <div class="input-icon">
+                              <i class="lni-gift"></i>
+                            </div>
+                            <%= form.text_field(:dob, class: "form-control datetimepicker-input", data: {target:"#datetimepicker1"}, placeholder: t("dob") ) %>
+                            <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+                              <div class="input-group-text"><i class="fa fa-calendar"></i>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6 col-xs-6 col-lg-6">
+                        <div class="form-group">
+                          <div class="input-icon">
+                            <i class="lni-home"></i>
+                            <%= form.text_field :address, class: "form-control", placeholder: t("address") %>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6 col-xs-6 col-lg-6">
+                        <div class="form-group">
+                          <div class="input-icon">
+                            <i class="lni-phone"></i>
+                            <%= form.text_field :phone, class: "form-control", placeholder: t("phone") %>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6 col-xs-6 col-lg-6">
+                        <div class="form-group">
+                          <div class="input-icon">
+                            <i class="lni-book"></i>
+                            <%= form.text_field :specialty, class: "form-control", placeholder: t("specialty") %>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-0 col-xs-0 col-lg-0">
+                      <div class="form-group">
+                        <div class="input-icon">
+                          <i class="lni-pencil"></i>
+                          <%= form.text_area :objective, class: "form-control", placeholder: t("objective") %>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-3 col-xs-3 col-lg-3">
+                        <div class="form-group">
+                          <label class="btn btn-primary" disabled>
+                            <%= t("upload_avatar") %>
+                            <span style="display:none;">
+                              <%= form.file_field :avatar, multiple: true, name: t("avatar") %>
+                            </span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="actions">
+                      <%= form.submit t("update"), class: "btn btn-common log-btn" %>
+                    </div>
+                  <% end %>
                 </div>
               </div>
             </div>
-            <h3>Education</h3>
-            <div class="form-group">
-              <label class="control-label">Degree</label>
-              <input type="text" class="form-control" placeholder="Degree, e.g. Bachelor">
-            </div>
-            <div class="form-group">
-              <label class="control-label">Field of Study</label>
-              <input type="text" class="form-control" placeholder="Major, e.g Computer Science">
-            </div>
-            <div class="form-group">
-              <label class="control-label">School</label>
-              <input type="text" class="form-control" placeholder="School name, e.g. Massachusetts Institute of Technology">
-            </div>
-            <div class="form-group">
-              <div class="row">
-                <div class="col-md-6">
-                  <label class="control-label">From</label>
-                  <input type="text" class="form-control" placeholder="e.g 2014">
-                </div>
-                <div class="col-md-6">
-                  <label class="control-label">To</label>
-                  <input type="text" class="form-control" placeholder="e.g 2020">
-                </div>
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="control-label">Description</label>
-              <textarea class="form-control" rows="7"></textarea>
-            </div>
-            <div class="form-group">
-              <div class="button-group">
-                <div class="action-buttons">
-                  <div class="upload-button">
-                    <button class="btn btn-common">Choose a cover Logo</button>
-                    <input id="cover_img_file_3" type="file">
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="add-post-btn">
-              <div class="float-left">
-                <a href="#" class="btn-added"><i class="ti-plus"></i> Add New Education</a>
-              </div>
-              <div class="float-right">
-                <a href="#" class="btn-delete"><i class="ti-trash"></i> Delete This</a>
-              </div>
-            </div>
-            <div class="divider">
-              <h3>Work Experience</h3>
-            </div>
-            <div class="form-group">
-              <label class="control-label">Company Name</label>
-              <input type="text" class="form-control" placeholder="Company name">
-            </div>
-            <div class="form-group">
-              <label class="control-label">Title</label>
-              <input type="text" class="form-control" placeholder="e.g UI/UX Researcher">
-            </div>
-            <div class="form-group">
-              <div class="row">
-                <div class="col-md-6">
-                  <label class="control-label">Date Form</label>
-                  <input type="text" class="form-control" placeholder="e.g 2014">
-                </div>
-                <div class="col-md-6">
-                  <label class="control-label">Date To</label>
-                  <input type="text" class="form-control" placeholder="e.g 2020">
-                </div>
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="control-label">Description</label>
-            </div>
-            <section id="editor" style="margin-bottom: 30px;">
-              <div id="summernote">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem quia aut modi fugit, ratione saepe perferendis odio optio repellat dolorum voluptas excepturi possimus similique veritatis nobis. Provident cupiditate delectus, optio?</p>
-              </div>
-            </section>
-            <div class="form-group">
-              <div class="button-group">
-                <div class="action-buttons">
-                  <div class="upload-button">
-                    <button class="btn btn-common">Choose a cover Logo</button>
-                    <input id="cover_img_file_1" type="file">
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="add-post-btn">
-              <div class="float-left">
-                <a href="#" class="btn-added"><i class="ti-plus"></i> Add New Experience</a>
-              </div>
-              <div class="float-right">
-                <a href="#" class="btn-delete"><i class="ti-trash"></i> Delete This</a>
-              </div>
-            </div>
-            <div class="divider">
-              <h3>Skills</h3>
-            </div>
-            <div class="form-group">
-              <div class="row">
-                <div class="col-md-6">
-                  <label class="control-label">Skill Name</label>
-                  <input class="form-control" placeholder="Skill name, e.g. HTML" type="text">
-                </div>
-                <div class="col-md-6">
-                  <label class="control-label">% (1-100)</label>
-                  <input class="form-control" placeholder="Skill proficiency, e.g. 90" type="text">
-                </div>
-              </div>
-            </div>
-            <div class="add-post-btn">
-              <div class="float-left">
-                <a href="#" class="btn-added"><i class="ti-plus"></i> Add New Skills</a>
-              </div>
-              <div class="float-right">
-                <a href="#" class="btn-delete"><i class="ti-trash"></i> Delete This</a>
-              </div>
-            </div>
-          </form>
-          <a href="resume.html" class="btn btn-common">Save</a>
-        </div>
+          </div>
+        </section>
       </div>
     </div>
   </div>
-</section>
+</div>

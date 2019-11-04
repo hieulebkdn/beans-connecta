@@ -27,6 +27,7 @@ jp:
   retype_pass: "確認のためもう一度入力してください"
   register: "登録"
 
+  profile: プロフィール
   manage_account: アカウント管理
   my_profile: マイプロフィール
   update_profile: プロフィールを更新する
@@ -35,6 +36,7 @@ jp:
   bookmark: ブックマーク
   noti: 通知
   change_password: パスワードを変更する
+  update: 更新
 
   create_profile: プロフィールを作成する
   yourname: 氏名
