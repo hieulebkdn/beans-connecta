@@ -22,22 +22,19 @@
             <%= link_to(t("company"), companies_path, method: :get, class: "nav-link") %>
           </li>
           <li class="nav-item">
-            <%= link_to(t("blog"), root_path, method: :get, class: "nav-link") %>
-          </li>
-          <li class="nav-item">
             <%= link_to(t("contact"), root_path, method: :get, class: "nav-link") %>
           </li>
           <% if current_user.present? %>
             <% if !current_user.profile.nil? %>
-            <% if current_user.candidate? %>
-              <li class="button-group">
-                <%= link_to current_user.candidate_name, candidate_path(id: current_user.profile), method: :get, class: "button btn btn-common" %>
-              </li>
-            <% else %>
-              <li class="button-group">
-                <%= link_to current_user.company_name, company_path(id: current_user.profile), method: :get, class: "button btn btn-common" %>
-              </li>
-            <% end %>
+              <% if current_user.candidate? %>
+                <li class="button-group">
+                  <%= link_to current_user.candidate_name, candidate_path(id: current_user.profile), method: :get, class: "button btn btn-common" %>
+                </li>
+              <% else %>
+                <li class="button-group">
+                  <%= link_to current_user.company_name, company_path(id: current_user.profile), method: :get, class: "button btn btn-common" %>
+                </li>
+              <% end %>
             <% end %>
             <li class="button-group">
               <%= link_to t("signout"), destroy_user_session_path, method: :delete, class: "nav-link" %>

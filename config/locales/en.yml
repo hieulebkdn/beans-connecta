@@ -27,6 +27,28 @@ en:
   retype_pass: "Retype password"
   register: "Register"
 
+  manage_account: Manage account
+  my_profile: My profile
+  update_profile: Update profile
+  update_experience: Update experiences
+  update_skill: Update skills
+  bookmark: Bookmark Jobs
+  noti: Notifications
+  change_password: Change password
+
+  create_profile: Create Your Profile
+  yourname: Your name
+  gender: Gender
+  city: City
+  dob: Date of birth
+  address: Address
+  phone: Phone
+  specialty: Specialty
+  objective: Self introduction
+  avatar: avatar
+  upload_avatar: Upload your avatar
+  create: Submit
+
   pages:
     index:
       content0: "Find the"

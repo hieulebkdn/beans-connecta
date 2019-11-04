@@ -27,6 +27,28 @@ jp:
   retype_pass: "確認のためもう一度入力してください"
   register: "登録"
 
+  manage_account: アカウント管理
+  my_profile: マイプロフィール
+  update_profile: プロフィールを更新する
+  update_experience: 経験を更新する
+  update_skill: スキルを更新する
+  bookmark: ブックマーク
+  noti: 通知
+  change_password: パスワードを変更する
+
+  create_profile: プロフィールを作成する
+  yourname: 氏名
+  gender: 性別
+  city: 都市
+  dob: 生年月日
+  address: アドレス
+  phone: 電話番号
+  specialty: 専門
+  objective: 自己紹介
+  avatar: アバター
+  upload_avatar: アバターをアップする
+  create: 作成！
+
   pages:
     index:
       content0: "あなたの人生に"
@@ -37,7 +59,7 @@ jp:
       recent_job_description: "As the Asia's #1 job site, with over 10 million unique visitors every month from over 15 different countries"
       most_active_company: "最も活発な会社"
       most_active_company_description: "Want to be a part of us? Take it easy!"
-  
+
   candidates: 
     show:
       profile: プロフィール

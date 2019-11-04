@@ -2,14 +2,19 @@ class CandidatesController < ApplicationController
   before_action :set_candidate, only: [:show, :edit, :update, :destroy]
   
   def show
-    @candidate = Candidate.find(current_user.id)
   end
 
   def new
     @candidate = Candidate.new
   end
 
-  def edit
+  def edit_profile
+  end
+
+  def edit_experience
+  end
+
+  def edit_skill
   end
 
   def create
@@ -49,7 +54,7 @@ class CandidatesController < ApplicationController
     end
 
     def candidate_params
-      params.require(:candidate).permit(:name, :dob, :gender, :avatar, :city, :address, :objective)
+      params.require(:candidate).permit(:name, :dob, :gender, :avatar, :city, :address, :objective, :phone, :specialty)
     end
 
     def update_user_profile
