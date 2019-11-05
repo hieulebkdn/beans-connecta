@@ -10,3 +10,7 @@
     @extend .control-group;
     @extend .error;
 }
+
+.space_bound {
+    margin-top: 20px;
+}

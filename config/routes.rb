@@ -10,8 +10,14 @@ Rails.application.routes.draw do
     resources :candidates 
     get "/candidates/:id/edit_profile", to: "candidates#edit_profile", as: "candidate_edit_profile"
     patch "/candidates/:id/update_profile", to:"candidates#update_profile", as: "candidate_update_profile"
+    get "/candidates/:id/edit_experience", to: "candidates#edit_experience", as: "candidate_edit_experience"
+    get "/candidates/:id/edit_skill", to: "candidates#edit_skill", as: "candidate_edit_skill"
+
     
     resources :companies
+
+    resources :experiences
+    
     get "/about", to: "pages#about"
     get "/index", to: "pages#index"
     get "/home", to: "pages#home"

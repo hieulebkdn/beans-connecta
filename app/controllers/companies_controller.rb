@@ -24,7 +24,6 @@ class CompaniesController < ApplicationController
     end
 
     def edit
-        
     end
     
     private

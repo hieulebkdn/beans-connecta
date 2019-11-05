@@ -31,7 +31,10 @@ jp:
   manage_account: アカウント管理
   my_profile: マイプロフィール
   update_profile: プロフィールを更新する
+  experience: 経験
+  skill: スキル
   update_experience: 経験を更新する
+  manage_experience: 経験を管理する
   update_skill: スキルを更新する
   bookmark: ブックマーク
   noti: 通知
