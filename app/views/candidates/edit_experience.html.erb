@@ -37,7 +37,7 @@
                   <%= exp.description %>
                 </p>
                 <div class="action-btn">
-                  <a class="btn btn-xs btn-gray" href="#">Edit</a>
+                  <%= link_to t("edit"), edit_experience_path(id: exp.id), remote: true, class:"btn btn-xs btn-gray" %>
                   <%= link_to t("delete"), exp, method: :delete, data: {confirm: "Are you sure?", remote: true}, class: "btn btn-xs btn-danger" %>
                 </div>
               </div>
@@ -45,7 +45,7 @@
           </div>
           <% end %>
           <div id="new-experience">
-            <%= link_to 'Add new experience', new_experience_path, remote: true, class:"btn btn-common btn-sm" %>
+            <%= link_to t("new_experience"), new_experience_path, remote: true, class:"btn btn-common btn-sm" %>
           </div>
         </div>
       </div>

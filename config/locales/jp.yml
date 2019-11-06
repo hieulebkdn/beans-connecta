@@ -52,9 +52,13 @@ jp:
   objective: 自己紹介
   avatar: アバター
   upload_avatar: アバターをアップする
+
   create: 作成！
   delete: 削除
+  edit: 編集
+  cancel: キャンセル
 
+  new_experience: 新しい経験
   add_experience: この経験を追加する
   company_name: 会社
 
