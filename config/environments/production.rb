@@ -5,7 +5,7 @@ Rails.application.configure do
 
   config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { host: "http://18.224.82.127/", port: 80 }
+  config.action_mailer.default_url_options = { host: "http://18.217.190.19/", port: 80 }
 
   # Code is not reloaded between requests.
   config.cache_classes = true
