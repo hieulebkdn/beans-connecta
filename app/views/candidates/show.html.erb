@@ -39,16 +39,14 @@
           </div>
           <div class="work-experence item">
             <h3><%= t(".experience") %></h3>
-            <h4>UI/UX Designer</h4>
-            <h5>Bannana INC.</h5>
-            <span class="date">Fab 2017-Present(5year)</span>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero vero, dolores, officia quibusdam architecto sapiente eos voluptas odit ab veniam porro quae possimus itaque, quas! Tempora sequi nobis, atque incidunt!</p>
-            <br>
-            <h4>UI Designer</h4>
-            <h5>Whale Creative</h5>
-            <span class="date">Fab 2017-Present(2year)</span>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero vero, dolores, officia quibusdam architecto sapiente eos voluptas odit ab veniam porro quae possimus itaque, quas! Tempora sequi nobis, atque incidunt!</p>
-          </div>
+
+            <% @experiences.each do |exp| %>
+              <h4><%= exp.position %></h4>
+              <h5><%= exp.company_name %></h5>
+              <span class="date">From <%= exp.first_day %> to <%= exp.last_day %></span>
+              <p><%= exp.description %></p>
+              <br>
+            <% end %>
           <div class="education item">
             <h3><%= t(".skill") %></h3>
             <h4>Massachusetts Institute Of Technology</h4>

@@ -16,102 +16,34 @@
       <div class="col-lg-8 col-md-12 col-xs-12">
         <div class="job-alerts-item candidates">
           <h3 class="alerts-title"><%= t("manage_experience") %></h3>
-          <div class="manager-resumes-item">
-            <div class="manager-content">
-              <div class="manager-info">
-                <div class="manager-name">
-                  <h4><a href="#">Zane Joyner</a></h4>
-                  <h5>Front-end developer</h5>
-                </div>
-                <div class="manager-meta">
-                  <span class="location"><i class="lni-map-marker"></i> Cupertino, CA, USA</span>
-                  <span class="rate"><i class="lni-alarm-clock"></i> $55 per hour</span>
+
+          <% @experiences.each do |exp| %>
+          <div id= <%= exp.id %>>
+            <div class="manager-resumes-item">
+              <div class="manager-content">
+                <div class="manager-info">
+                  <div class="manager-name">
+                    <h4><a href="#"><%= exp.company_name %></a></h4>
+                    <h5><%= exp.position %></h5>
+                  </div>
+                  <div class="manager-meta">
+                    <span class="location"><i class="lni-music"></i> From <%= exp.first_day %></span>
+                    <span class="rate"><i class="lni-dropbox"></i> To <%= exp.last_day %></span>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="update-date">
-              <p class="status">
-                <strong>Updated on:</strong> Fab 22, 2020
-              </p>
-              <div class="action-btn">
-                <a class="btn btn-xs btn-gray" href="#">Hide</a>
-                <a class="btn btn-xs btn-gray" href="#">Edit</a>
-                <a class="btn btn-xs btn-danger" href="#">Delete</a>
+              <div class="update-date">
+                <p class="status">
+                  <%= exp.description %>
+                </p>
+                <div class="action-btn">
+                  <a class="btn btn-xs btn-gray" href="#">Edit</a>
+                  <%= link_to t("delete"), exp, method: :delete, data: {confirm: "Are you sure?", remote: true}, class: "btn btn-xs btn-danger" %>
+                </div>
               </div>
             </div>
           </div>
-          <div class="manager-resumes-item">
-            <div class="manager-content">
-              <div class="manager-info">
-                <div class="manager-name">
-                  <h4><a href="#">Zane Joyner</a></h4>
-                  <h5>Front-end developer</h5>
-                </div>
-                <div class="manager-meta">
-                  <span class="location"><i class="lni-map-marker"></i> Cupertino, CA, USA</span>
-                  <span class="rate"><i class="lni-alarm-clock"></i> $55 per hour</span>
-                </div>
-              </div>
-            </div>
-            <div class="update-date">
-              <p class="status">
-                <strong>Updated on:</strong> Fab 22, 2020
-              </p>
-              <div class="action-btn">
-                <a class="btn btn-xs btn-gray" href="#">Hide</a>
-                <a class="btn btn-xs btn-gray" href="#">Edit</a>
-                <a class="btn btn-xs btn-danger" href="#">Delete</a>
-              </div>
-            </div>
-          </div>
-          <div class="manager-resumes-item">
-            <div class="manager-content">
-              <div class="manager-info">
-                <div class="manager-name">
-                  <h4><a href="#">Zane Joyner</a></h4>
-                  <h5>Front-end developer</h5>
-                </div>
-                <div class="manager-meta">
-                  <span class="location"><i class="lni-map-marker"></i> Cupertino, CA, USA</span>
-                  <span class="rate"><i class="lni-alarm-clock"></i> $55 per hour</span>
-                </div>
-              </div>
-            </div>
-            <div class="update-date">
-              <p class="status">
-                <strong>Updated on:</strong> Fab 22, 2020
-              </p>
-              <div class="action-btn">
-                <a class="btn btn-xs btn-gray" href="#">Hide</a>
-                <a class="btn btn-xs btn-gray" href="#">Edit</a>
-                <a class="btn btn-xs btn-danger" href="#">Delete</a>
-              </div>
-            </div>
-          </div>
-          <div class="manager-resumes-item">
-            <div class="manager-content">
-              <div class="manager-info">
-                <div class="manager-name">
-                  <h4><a href="#">Zane Joyner</a></h4>
-                  <h5>Front-end developer</h5>
-                </div>
-                <div class="manager-meta">
-                  <span class="location"><i class="lni-map-marker"></i> Cupertino, CA, USA</span>
-                  <span class="rate"><i class="lni-alarm-clock"></i> $55 per hour</span>
-                </div>
-              </div>
-            </div>
-            <div class="update-date">
-              <p class="status">
-                <strong>Updated on:</strong> Fab 22, 2020
-              </p>
-              <div class="action-btn">
-                <a class="btn btn-xs btn-gray" href="#">Hide</a>
-                <a class="btn btn-xs btn-gray" href="#">Edit</a>
-                <a class="btn btn-xs btn-danger" href="#">Delete</a>
-              </div>
-            </div>
-          </div>
+          <% end %>
           <div id="new-experience">
             <%= link_to 'Add new experience', new_experience_path, remote: true, class:"btn btn-common btn-sm" %>
           </div>

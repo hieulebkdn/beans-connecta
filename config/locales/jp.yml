@@ -53,6 +53,10 @@ jp:
   avatar: アバター
   upload_avatar: アバターをアップする
   create: 作成！
+  delete: 削除
+
+  add_experience: この経験を追加する
+  company_name: 会社
 
   pages:
     index:

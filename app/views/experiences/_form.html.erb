@@ -1,41 +1,44 @@
+<%= form_with(model: experience, html: {class: "login-form"}, id: "add-experience") do |form| %>
+
 <div class="form-group space-bound"">
-  <label class="control-label"><%= Company Name %></label>
-  <input type="text" class="form-control" placeholder="Company name">
+  <label class="control-label"><%= t("company_name")%></label>
+  <%= form.text_field :company_name, class: "form-control", placeholder: "e.g BeansConnecta Company" %>
+
 </div>
 
 <div class="form-group">
-  <label class="control-label">Title</label>
-  <input type="text" class="form-control" placeholder="e.g UI/UX Researcher">
+  <label class="control-label"><%= t("position") %></label>
+  <%= form.text_field :position, class: "form-control", placeholder: "e.g UI/UX Researcher" %>
+
 </div>
 
 <div class="form-group">
   <div class="row">
     <div class="col-md-6">
-      <label class="control-label">Date Form</label>
-      <input type="text" class="form-control" placeholder="e.g 2014">
+      <label class="control-label"><%= t("from") %></label>
+      <%= form.text_field :first_day, class: "form-control", placeholder: "e.g 2014-11 (YYYY-MM)" %>
+
     </div>
     <div class="col-md-6">
-      <label class="control-label">Date To</label>
-      <input type="text" class="form-control" placeholder="e.g 2020">
+      <label class="control-label"><%= t("to") %></label>
+      <%= form.text_field :last_day, class: "form-control", placeholder: "e.g 2015-11 (YYYY-MM)" %>
     </div>
   </div>
 </div>
 
 <div class="form-group">
-  <label class="control-label">Description</label>
+  <label class="control-label"><%= t("description") %></label>
+  <%= form.text_area :description, class: "form-control", placeholder: t("objective") %>
 </div>
-
-<section id="editor" style="margin-bottom: 30px;">
-  <div id="summernote">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem quia aut modi fugit, ratione saepe perferendis odio optio repellat dolorum voluptas excepturi possimus similique veritatis nobis. Provident cupiditate delectus, optio?</p>
-  </div>
-</section>
+<%= form.hidden_field :candidate_id, :value => current_user.profile %>
 
 <div class="add-post-btn">
   <div class="float-left">
-    <a href="#" class="btn-added"><i class="ti-plus"></i> Add this experience</a>
+    <a href="javascript:$('#add-experience').submit();", class="btn-added"><i class="ti-plus"></i> <%= t("add_experience") %></a>
   </div>
+
   <div class="float-right">
-    <a href="#" class="btn-delete"><i class="ti-trash"></i> Delete This</a>
+    <a href="#" class="btn-delete"><i class="ti-trash"></i> <%= t("delete") %></a>
   </div>
 </div>
+<% end %>
