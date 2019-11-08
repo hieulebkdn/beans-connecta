@@ -1,1 +1,1 @@
-$('#<%= params[:id] %>').replaceWith("<%= j render 'edit', skill: @skill %>");
+$('#<%= params[:id] %>').html("<%= j render 'edit', skill: @skill %>");

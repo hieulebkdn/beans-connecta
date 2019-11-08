@@ -1,6 +1,9 @@
 class SkillsController < ApplicationController
     before_action :set_skill, only: %i(edit update destroy)
-    before_action :load_candidate_skills, only: %i(create update destroy)
+    before_action :load_candidate_skills, only: %i(index update)
+
+    def index
+    end
 
     def new
         @skill =Skill.new
@@ -25,16 +28,11 @@ class SkillsController < ApplicationController
     end
     
     def update
-        if @skill.update_attributes(skill_params)
+        if @skill.update(skill_params)
             respond_to do |format|
                 format.js
-                format.html { redirect_to candidate_edit_skill_path(current_user.profile), notice: "Skill was successfuly udate."}
+                format.html { redirect_to candidate_edit_skill_path(current_user.profile), notice: "Skill was successfuly delete."}
                 format.json {head :no_content}
-            end
-        else
-            respond_to do |format|
-                format.html { redirect_to candidate_edit_skill_path(current_user.profile), notice: "Skill was unsuccessfuly update."}
-                format.json { render json: @skill.errors, status: :unprocessable_entity }
             end
         end
     end

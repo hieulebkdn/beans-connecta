@@ -23,6 +23,9 @@
           <div id="skills">
             <%= render @skills%>
           </div>
+          <div id="new-skill">
+            <%= link_to t("new_skill"), new_skill_path, remote: true, class:"btn btn-common btn-sm" %>
+          </div>
 
         </div>
       </div>

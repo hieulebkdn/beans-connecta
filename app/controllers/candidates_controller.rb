@@ -1,7 +1,7 @@
 class CandidatesController < ApplicationController
-  prepend_before_action :set_candidate, only: %i(show edit_profile edit_experience edit_skill update_profile destroy)
-  before_action :load_candidate_experiences , only: %i(show edit_experience)
-  before_action :load_candidate_skills , only: %i(show edit_skill)
+  prepend_before_action :set_candidate, only: %i(show edit update destroy)
+  before_action :load_candidate_experiences , only: %i(show)
+  before_action :load_candidate_skills , only: %i(show)
 
   def show
   end
@@ -10,10 +10,10 @@ class CandidatesController < ApplicationController
     @candidate = Candidate.new
   end
 
-  def edit_profile
+  def edit
   end
 
-  def update_profile
+  def update
     respond_to do |format|
       if @candidate.update_attributes(candidate_params)
         format.html { redirect_to @candidate, notice: "Candidate was successfully updated." }
@@ -23,12 +23,6 @@ class CandidatesController < ApplicationController
         format.json { render json: @candidate.errors, status: :unprocessable_entity }
       end
     end
-  end
-
-  def edit_experience
-  end
-
-  def edit_skill
   end
 
   def create
@@ -70,5 +64,4 @@ class CandidatesController < ApplicationController
     def load_candidate_skills
       @skills = Skill.owned_by(@candidate.id)
     end
-
 end

@@ -1,0 +1,25 @@
+<div id= <%= experience.id %>>
+  <div class="manager-resumes-item">
+    <div class="manager-content">
+      <div class="manager-info">
+        <div class="manager-name">
+          <h4><a href="#"><%= experience.company_name %></a></h4>
+          <h5><%= experience.position %></h5>
+        </div>
+        <div class="manager-meta">
+          <span class="location"><i class="lni-music"></i> From <%= experience.first_day %></span>
+          <span class="rate"><i class="lni-dropbox"></i> To <%= experience.last_day %></span>
+        </div>
+      </div>
+    </div>
+    <div class="update-date">
+      <p class="status">
+        <%= experience.description %>
+      </p>
+      <div class="action-btn">
+        <%= link_to t("edit"), edit_experience_path(id: experience.id), remote: true, class:"btn btn-xs btn-gray" %>
+        <%= link_to t("delete"), experience, method: :delete, data: {confirm: "Are you sure?", remote: true}, class: "btn btn-xs btn-danger" %>
+      </div>
+    </div>
+  </div>
+</div>

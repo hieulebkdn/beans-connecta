@@ -1,4 +1,3 @@
-<% @skills.each do |skill| %>
   <div id= <%= skill.id %>>
     <div class="manager-resumes-item">
 
@@ -22,8 +21,3 @@
 
     </div>
   </div>
-<% end %>
-
-<div id="new-skill">
-  <%= link_to t("new_skill"), new_skill_path, remote: true, class:"btn btn-common btn-sm" %>
-</div>

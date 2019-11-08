@@ -1,0 +1,29 @@
+<div class="page-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="inner-header">
+          <h3><%= t("profile") %></h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <%= render ("layouts/candidate_sidebar")%>
+      <div class="col-lg-8 col-md-12 col-xs-12">
+        <div class="job-alerts-item candidates">
+          <h3 class="alerts-title"><%= t("manage_experience") %></h3>
+          <div id="experiences">
+            <%= render @experiences %>
+          </div>
+          <div id="new-experience">
+            <%= link_to t("new_experience"), new_experience_path, remote: true, class:"btn btn-common btn-sm" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

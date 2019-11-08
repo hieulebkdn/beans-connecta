@@ -6,10 +6,10 @@ Rails.application.routes.draw do
     devise_for :users, skip: :omniauth_callbacks, :controllers => {:registrations => "registrations"}
 
     resources :candidates 
-    get "/candidates/:id/edit_profile", to: "candidates#edit_profile", as: "candidate_edit_profile"
-    patch "/candidates/:id/update_profile", to:"candidates#update_profile", as: "candidate_update_profile"
-    get "/candidates/:id/edit_experience", to: "candidates#edit_experience", as: "candidate_edit_experience"
-    get "/candidates/:id/edit_skill", to: "candidates#edit_skill", as: "candidate_edit_skill"
+    get "/candidates/:id/edit", to: "candidates#edit", as: "candidate_edit_profile"
+    patch "/candidates/:id/update", to:"candidates#update", as: "candidate_update_profile"
+    get "/candidates/:id/edit_experience", to: "experiences#index", as: "candidate_edit_experience"
+    get "/candidates/:id/edit_skill", to: "skills#index", as: "candidate_edit_skill"
 
     
     resources :companies

@@ -1,5 +1,9 @@
 class ExperiencesController < ApplicationController
     before_action :set_experience, only: %i(edit update destroy)
+    before_action :load_candidate_experiences, only: %i(index)
+
+    def index
+    end
 
     def new
         @experience =Experience.new
@@ -46,5 +50,9 @@ class ExperiencesController < ApplicationController
 
     def experience_params
         params.require(:experience).permit(:company_name, :position, :description, :first_day, :last_day, :candidate_id)
+    end
+
+    def load_candidate_experiences
+        @experiences = Experience.owned_by(current_user.profile)
     end
 end
