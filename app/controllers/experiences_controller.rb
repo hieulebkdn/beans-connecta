@@ -9,7 +9,7 @@ class ExperiencesController < ApplicationController
         @experience = Experience.new experience_params
         if @experience.save
             flash[:success] = "Your experience profile successfully created!"
-            redirect_to experience_edit_experience_path(current_user.profile)
+            redirect_to candidate_edit_experience_path(current_user.profile)
         else
             render :new
         end
@@ -23,7 +23,7 @@ class ExperiencesController < ApplicationController
             if @experience.update_attributes(experience_params)
               format.html { redirect_to candidate_edit_experience_path(current_user.profile), notice: "Experience was successfuly udate."}
             else
-              format.html { redirect_to experience_edit_experience_path(current_user.profile), notice: "Experience was unsuccessfuly update."}
+              format.html { redirect_to candidate_edit_experience_path(current_user.profile), notice: "Experience was unsuccessfuly update."}
               format.json { render json: @experience.errors, status: :unprocessable_entity }
             end
           end
@@ -45,6 +45,6 @@ class ExperiencesController < ApplicationController
     end
 
     def experience_params
-        params.require(:experience).permit(:company_name, :position, :description, :experience_id, :first_day, :last_day)
+        params.require(:experience).permit(:company_name, :position, :description, :first_day, :last_day, :candidate_id)
     end
 end

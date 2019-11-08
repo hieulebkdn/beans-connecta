@@ -1,6 +1,7 @@
 class CandidatesController < ApplicationController
   prepend_before_action :set_candidate, only: %i(show edit_profile edit_experience edit_skill update_profile destroy)
-  before_action :load_candidate_experiences, only: %i(show edit_experience)
+  before_action :load_candidate_experiences , only: %i(show edit_experience)
+  before_action :load_candidate_skills , only: %i(show edit_skill)
 
   def show
   end
@@ -64,6 +65,10 @@ class CandidatesController < ApplicationController
 
     def load_candidate_experiences
       @experiences = Experience.owned_by(@candidate.id)
+    end
+
+    def load_candidate_skills
+      @skills = Skill.owned_by(@candidate.id)
     end
 
 end

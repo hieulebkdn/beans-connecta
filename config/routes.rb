@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-
-
   devise_for :users, only: :omniauth_callbacks, controllers: {omniauth_callbacks: "users/omniauth_callbacks"}
 
   scope "(:locale)", locale: /en|vi|jp/ do
@@ -17,10 +15,11 @@ Rails.application.routes.draw do
     resources :companies
 
     resources :experiences
+
+    resources :skills
     
     get "/about", to: "pages#about"
     get "/index", to: "pages#index"
-    get "/home", to: "pages#home"
     get "/login", to: "pages#login"
   end
 

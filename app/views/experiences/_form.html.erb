@@ -38,7 +38,7 @@
   </div>
 
   <div class="float-right">
-    <a href="#" class="btn-delete"><i class="ti-trash"></i> <%= t("delete") %></a>
+    <a href= <%= candidate_edit_experience_path(current_user.profile)%> class="btn-delete" method="get" data-turbolinks="false"><i class="ti-trash"></i> <%= t("delete") %></a>
   </div>
 </div>
 <% end %>

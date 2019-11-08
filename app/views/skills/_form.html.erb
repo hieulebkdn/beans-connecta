@@ -1,0 +1,24 @@
+<%= form_with(model: skill, html: {class: "login-form"}, id: "add-skill") do |form| %>
+  <div class="form-group">
+    <div class="row">
+      <div class="col-md-6">
+        <label class="control-label">Skill Name</label>
+        <%= form.text_field :tag, class: "form-control", placeholder: "Skill name, e.g. HTML" %>
+      </div>
+      <div class="col-md-6">
+        <label class="control-label">Description</label>
+        <%= form.text_field :description, class: "form-control", placeholder: "Skill proficiency, description" %>
+      </div>
+      <%= form.hidden_field :candidate_id, :value => current_user.profile %>
+    </div>
+  </div>
+  <div class="add-post-btn">
+    <div class="float-left">
+    <a href="javascript:$('#add-skill').submit();", class="btn-added"><i class="ti-plus"></i> <%= t("add_skill") %></a>
+
+    </div>
+    <div class="float-right">
+      <a href= <%= candidate_edit_skill_path(current_user.profile)%> class="btn-delete" method="get" data-turbolinks="false"><i class="ti-trash"></i> <%= t("cancel") %></a>
+    </div>
+  </div>
+<% end %>
