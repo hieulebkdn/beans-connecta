@@ -1,0 +1,29 @@
+<% @skills.each do |skill| %>
+  <div id= <%= skill.id %>>
+    <div class="manager-resumes-item">
+
+      <div class="manager-content">
+        <div class="manager-info">
+          <div class="manager-name">
+            <h4><a href="#"><%= skill.tag %></a></h4>
+          </div>
+        </div>
+      </div>
+
+      <div class="update-date">
+        <p class="status">
+          <%= skill.description %>
+        </p>
+        <div class="action-btn">
+          <%= link_to t("edit"), edit_skill_path(id: skill.id), remote: true, class:"btn btn-xs btn-gray" %>
+          <%= link_to t("delete"), skill, method: :delete, data: {confirm: "Are you sure?", remote: true}, class: "btn btn-xs btn-danger" %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+<% end %>
+
+<div id="new-skill">
+  <%= link_to t("new_skill"), new_skill_path, remote: true, class:"btn btn-common btn-sm" %>
+</div>

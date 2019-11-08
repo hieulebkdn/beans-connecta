@@ -33,13 +33,14 @@
               </div>
             </div>
           </div>
+          
           <div class="about-me item">
             <h3><%= t(".aboutme") %></h3>
             <p><%= @candidate.objective %></p>
           </div>
+
           <div class="work-experence item">
             <h3><%= t(".experience") %></h3>
-
             <% @experiences.each do |exp| %>
               <h4><%= exp.position %></h4>
               <h5><%= exp.company_name %></h5>
@@ -47,15 +48,14 @@
               <p><%= exp.description %></p>
               <br>
             <% end %>
+
           <div class="education item">
             <h3><%= t(".skill") %></h3>
-            <h4>Massachusetts Institute Of Technology</h4>
-            <p>Bachelor of Computer Science</p>
-            <span class="date">2010-2014</span>
+            <% @skills.each do |skill| %>
+            <h4><%= skill.tag %></h4>
+            <p><%= skill.description %></p>
             <br>
-            <h4>Massachusetts Institute Of Technology</h4>
-            <p>Bachelor of Computer Science</p>
-            <span class="date">2010-2014</span>
+            <% end %>
           </div>
         </div>
       </div>

@@ -1,5 +1,6 @@
 class SkillsController < ApplicationController
     before_action :set_skill, only: %i(edit update destroy)
+    before_action :load_candidate_skills, only: %i(create update destroy)
 
     def new
         @skill =Skill.new
@@ -8,10 +9,15 @@ class SkillsController < ApplicationController
     def create
         @skill = Skill.new skill_params
         if @skill.save
-            flash[:success] = "Your skill profile successfully created!"
-            redirect_to candidate_edit_skill_path(current_user.profile)
+            respond_to do |format|
+                format.html { redirect_to candidate_edit_skill_path(current_user.profile), notice: "Skill was successfully create."}
+                format.json {head :no_content}
+                format.js { render layout: false }
+            end
         else
-            render :new
+            respond_to do |format|
+                format.html { redirect_to candidate_edit_skill_path(current_user.profile), notice: "Skill was unsuccessfully create."}
+            end
         end
     end
 
@@ -19,14 +25,18 @@ class SkillsController < ApplicationController
     end
     
     def update
-        respond_to do |format|
-            if @skill.update_attributes(skill_params)
-              format.html { redirect_to candidate_edit_skill_path(current_user.profile), notice: "Skill was successfuly udate."}
-            else
-              format.html { redirect_to candidate_edit_skill_path(current_user.profile), notice: "Skill was unsuccessfuly update."}
-              format.json { render json: @skill.errors, status: :unprocessable_entity }
+        if @skill.update_attributes(skill_params)
+            respond_to do |format|
+                format.js
+                format.html { redirect_to candidate_edit_skill_path(current_user.profile), notice: "Skill was successfuly udate."}
+                format.json {head :no_content}
             end
-          end
+        else
+            respond_to do |format|
+                format.html { redirect_to candidate_edit_skill_path(current_user.profile), notice: "Skill was unsuccessfuly update."}
+                format.json { render json: @skill.errors, status: :unprocessable_entity }
+            end
+        end
     end
 
     def destroy
@@ -47,4 +57,8 @@ class SkillsController < ApplicationController
     def skill_params
         params.require(:skill).permit(:tag, :description, :candidate_id)
     end
+
+    def load_candidate_skills
+        @skills = Skill.owned_by(current_user.profile)
+      end
 end
