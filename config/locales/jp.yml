@@ -52,6 +52,10 @@ jp:
   objective: 自己紹介
   avatar: アバター
   upload_avatar: アバターをアップする
+  detail: 細部
+  from: From
+  to: To
+  position: ポジション
 
   create: 作成！
   delete: 削除
@@ -79,6 +83,39 @@ jp:
       aboutme: 私について
       experience: 経験
       skill : スキル
+
+  skills:
+    create:
+      create_flash: スキルが正常に作成されました!
+      create_fail_flash: スキルの作成に失敗しました。
+    edit:
+      tag: スキルタグ
+      tag_placeholder: スキルタグ, e.g. HTML
+      detail_placeholder: スキル習熟度、説明
+    update:
+      update_flash: スキルが正常に更新されました。
+    form:
+      tag: スキルタグ
+      tag_placeholder: スキルタグ, e.g. HTML
+      detail_placeholder: スキル習熟度、説明
+    index: 
+      new_skill: 新しいスキル
+      manage_skill: スキルを管理する
+    delete:
+      delete_flash: スキルは正常に削除されました。
+      delete_fail_flash: スキルの削除に失敗しました。
+
+  experiences:
+    create:
+      create_flash: 経験が正常に作成されました!
+      create_fail_flash: 経験の作成に失敗しました。
+    update:
+      update_flash: 経験が正常に更新されました。
+      update_fail_flash: 経験の更新に失敗しました。
+    delete:
+      delete_flash: 経験は正常に削除されました。
+      delete_fail_flash: 経験の削除に失敗しました。
+
   date:
     order:
       - :day

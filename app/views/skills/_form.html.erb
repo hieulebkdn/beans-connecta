@@ -2,12 +2,12 @@
   <div class="form-group">
     <div class="row">
       <div class="col-md-6">
-        <label class="control-label">Skill Name</label>
-        <%= form.text_field :tag, class: "form-control", placeholder: "Skill name, e.g. HTML" %>
+        <label class="control-label"><%= t(".tag") %></label>
+        <%= form.text_field :tag, class: "form-control", placeholder: t(".tag_placeholder") %>
       </div>
       <div class="col-md-6">
-        <label class="control-label">Description</label>
-        <%= form.text_field :description, class: "form-control", placeholder: "Skill proficiency, description" %>
+        <label class="control-label"><%= t("detail") %></label>
+        <%= form.text_field :description, class: "form-control", placeholder: t(".detail_placeholder") %>
       </div>
       <%= form.hidden_field :candidate_id, :value => current_user.profile %>
     </div>

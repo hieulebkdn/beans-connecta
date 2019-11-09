@@ -13,13 +13,13 @@ class SkillsController < ApplicationController
         @skill = Skill.new skill_params
         if @skill.save
             respond_to do |format|
-                format.html { redirect_to candidate_edit_skill_path(current_user.profile), notice: "Skill was successfully create."}
+                format.html { redirect_to candidate_edit_skill_path(current_user.profile), notice: t(".create_flash")}
                 format.json {head :no_content}
                 format.js { render layout: false }
             end
         else
             respond_to do |format|
-                format.html { redirect_to candidate_edit_skill_path(current_user.profile), notice: "Skill was unsuccessfully create."}
+                format.html { redirect_to candidate_edit_skill_path(current_user.profile), notice: t(".create_fail_flash")}
             end
         end
     end
@@ -31,7 +31,7 @@ class SkillsController < ApplicationController
         if @skill.update(skill_params)
             respond_to do |format|
                 format.js
-                format.html { redirect_to candidate_edit_skill_path(current_user.profile), notice: "Skill was successfuly delete."}
+                format.html { redirect_to candidate_edit_skill_path(current_user.profile), notice: t(".update_flash")}
                 format.json {head :no_content}
             end
         end
@@ -41,7 +41,7 @@ class SkillsController < ApplicationController
         if @skill.destroy
             respond_to do |format|
                 format.js
-                format.html { redirect_to candidate_edit_skill_path(current_user.profile), notice: "Skill was successfuly delete."}
+                format.html { redirect_to candidate_edit_skill_path(current_user.profile), notice: t(".delete_flash")}
                 format.json {head :no_content}
             end
         end

@@ -12,7 +12,7 @@ class ExperiencesController < ApplicationController
     def create
         @experience = Experience.new experience_params
         if @experience.save
-            flash[:success] = "Your experience profile successfully created!"
+            flash[:success] = t(".create_flash")
             redirect_to candidate_edit_experience_path(current_user.profile)
         else
             render :new
@@ -25,9 +25,9 @@ class ExperiencesController < ApplicationController
     def update
         respond_to do |format|
             if @experience.update_attributes(experience_params)
-              format.html { redirect_to candidate_edit_experience_path(current_user.profile), notice: "Experience was successfuly udate."}
+              format.html { redirect_to candidate_edit_experience_path(current_user.profile), notice: t(".update_flash")}
             else
-              format.html { redirect_to candidate_edit_experience_path(current_user.profile), notice: "Experience was unsuccessfuly update."}
+              format.html { redirect_to candidate_edit_experience_path(current_user.profile), notice: t(".update_fail_flash")}
               format.json { render json: @experience.errors, status: :unprocessable_entity }
             end
           end
@@ -37,7 +37,7 @@ class ExperiencesController < ApplicationController
         if @experience.destroy
             respond_to do |format|
                 format.js
-                format.html { redirect_to candidate_edit_experience_path(current_user.profile), notice: "Experience was successfuly delete."}
+                format.html { redirect_to candidate_edit_experience_path(current_user.profile), notice: t(".delete_flash")}
                 format.json {head :no_content}
             end
         end
