@@ -1,5 +1,5 @@
 class CompaniesController < ApplicationController
-    before_action :set_company, only: [:show, :edit]
+    before_action :set_company, only: %i(show edit)
 
     def index
       @companies = Company.all
@@ -16,7 +16,7 @@ class CompaniesController < ApplicationController
         @company = Company.new company_params
         if @company.save
             update_user_profile
-            flash[:success] = "Your company profile successfully created!"
+            flash[:success] = t(".flash_create")
             redirect_to controller: "pages", action: "index"
         else
             render :new
@@ -28,7 +28,7 @@ class CompaniesController < ApplicationController
     
     private
     def set_company
-        @company = Company.find(current_user.profile)
+        @company = Company.find(params[:id])
     end
 
     def company_params

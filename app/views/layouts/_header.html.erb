@@ -24,6 +24,7 @@
           <li class="nav-item">
             <%= link_to(t("contact"), root_path, method: :get, class: "nav-link") %>
           </li>
+
           <% if current_user.present? %>
             <% if !current_user.profile.nil? %>
               <% if current_user.candidate? %>
@@ -33,6 +34,16 @@
               <% else %>
                 <li class="button-group">
                   <%= link_to current_user.company_name, company_path(id: current_user.profile), method: :get, class: "button btn btn-common" %>
+                </li>
+              <% end %>
+            <% else %>
+              <% if current_user.candidate? %>
+                <li class="button-group">
+                  <%= link_to t("create_profile"),new_candidate_path, method: :get, class: "button btn btn-common" %>
+                </li>
+              <% else %>
+                <li class="button-group">
+                  <%= link_to t("create_company"), new_company_path, method: :get, class: "button btn btn-common" %>
                 </li>
               <% end %>
             <% end %>
@@ -54,9 +65,10 @@
               </ul>
             </li>
             <li class="button-group">
-              <%= link_to t("signin"), new_user_session_path,method: :get, class: "nav-link" %>
+              <%= link_to t("signin"), new_user_session_path, method: :get, class: "nav-link" %>
             </li>
           <% end %>
+
         </ul>
       </div>
     </div>

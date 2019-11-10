@@ -56,6 +56,10 @@ jp:
   from: From
   to: To
   position: ポジション
+  company_description: 会社の説明
+  scale: e.g 200-500
+  company_website: ウェブサイトのリンク
+  already_have_company: すでに会社を持っています？
 
   create: 作成！
   delete: 削除
@@ -64,7 +68,9 @@ jp:
 
   new_experience: 新しい経験
   add_experience: この経験を追加する
-  company_name: 会社
+  create_company: 会社のプロフィールを作成
+  create_candidate: プロフィールを作成
+  company_name: 会社名
 
   pages:
     index:
@@ -84,16 +90,20 @@ jp:
       experience: 経験
       skill : スキル
 
+  companies:
+    create:
+      flash_create: "会社のプロフィールが正常に作成されました！"
+
   skills:
     create:
-      create_flash: スキルが正常に作成されました!
-      create_fail_flash: スキルの作成に失敗しました。
+      flash_create_: スキルが正常に作成されました!
+      flash_create_fail: スキルの作成に失敗しました。
     edit:
       tag: スキルタグ
       tag_placeholder: スキルタグ, e.g. HTML
       detail_placeholder: スキル習熟度、説明
     update:
-      update_flash: スキルが正常に更新されました。
+      flash_update: スキルが正常に更新されました。
     form:
       tag: スキルタグ
       tag_placeholder: スキルタグ, e.g. HTML
@@ -102,19 +112,19 @@ jp:
       new_skill: 新しいスキル
       manage_skill: スキルを管理する
     delete:
-      delete_flash: スキルは正常に削除されました。
-      delete_fail_flash: スキルの削除に失敗しました。
+      flash_delete: スキルは正常に削除されました。
+      flash_delete_fail: スキルの削除に失敗しました。
 
   experiences:
     create:
-      create_flash: 経験が正常に作成されました!
-      create_fail_flash: 経験の作成に失敗しました。
+      flash_create: 経験が正常に作成されました!
+      flash_create_fail: 経験の作成に失敗しました。
     update:
-      update_flash: 経験が正常に更新されました。
-      update_fail_flash: 経験の更新に失敗しました。
+      flash_update: 経験が正常に更新されました。
+      flash_update_fail: 経験の更新に失敗しました。
     delete:
-      delete_flash: 経験は正常に削除されました。
-      delete_fail_flash: 経験の削除に失敗しました。
+      flash_delete: 経験は正常に削除されました。
+      flash_delete_fail: 経験の削除に失敗しました。
 
   date:
     order:
