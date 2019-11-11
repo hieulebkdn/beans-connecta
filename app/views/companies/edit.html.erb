@@ -1,0 +1,103 @@
+<div class="page-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="inner-header">
+          <h3><%= t("profile") %></h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <%= render ("layouts/company_sidebar")%>
+      <div class="col-lg-9 col-md-9 col-xs-12">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-12 col-md-12 col-xs-12">
+                <div class="page-login-form box">
+                  <h3>
+                    <%= t("update_company_profile") %>
+                  </h3>
+                  <%= form_for(@company, url: update_company_path(id: @company.id), html: {class: "login-form", multipart: true}) do |form| %>
+                    
+                    <div class="row">
+                      <div class="col-md-6 col-xs-6 col-lg-6">
+                        <div class="form-group">
+                          <div class="input-icon">
+                            <i class="lni-user"></i>
+                            <%= form.text_field :name, autofocus: true, class: "form-control", placeholder: t("company_name") %>
+                          </div>
+                        </div>
+                      </div>
+                    <div class="col-md-6 col-xs-6 col-lg-6">
+                    <div class="form-group">
+                      <div class="input-icon">
+                        <i class="lni-home"></i>
+                        <%= form.text_field :address, autofocus: true, class: "form-control", placeholder: t("address") %>
+                      </div>
+                    </div>
+                    </div>
+                    </div>
+
+                  <div class="row">
+                    <div class="col-md-6 col-xs-6 col-lg-6">
+                    <div class="form-group">
+                      <div class="input-icon">
+                        <i class="lni-apartment"></i>
+                        <%= form.text_field :city, autofocus: true, class: "form-control", placeholder: t("city") %>
+                      </div>
+                    </div>
+                    </div>
+                    <div class="col-md-6 col-xs-6 col-lg-6">
+                    <div class="form-group">
+                      <div class="input-icon">
+                        <i class="lni-flag"></i>
+                        <%= form.text_field :country, autofocus: true, class: "form-control", placeholder: t("country") %>
+                      </div>
+                    </div>
+                    </div>
+                    </div>
+                    <div class="col-md-0 col-xs-0 col-lg-0">
+                        <div class="form-group">
+                          <div class="input-icon">
+                            <i class="lni-pencil"></i>
+                            <%= form.text_area :description, class: "form-control", placeholder: t("company_description"), rows: 7 %>
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                    <div class="col-md-6 col-xs-6 col-lg-6">
+                    <div class="form-group">
+                      <div class="input-icon">
+                        <i class="lni-heart"></i>
+                        <%= form.text_field :scale,id: "input_scale", class: "form-control", placeholder: t("scale")  %>
+                      </div>
+                    </div>
+                    </div>
+                    <div class="col-md-6 col-xs-6 col-lg-6">
+                    <div class="form-group">
+                      <div class="input-icon">
+                        <i class="lni-clipboard"></i>
+                        <%= form.text_field :website, class: "form-control", placeholder: t("company_website") %>
+                      </div>
+                    </div>
+                    </div>
+                    </div>
+            
+                    <div class="actions">
+                      <%= form.submit t("update"), class: "btn btn-common log-btn" %>
+                    </div>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

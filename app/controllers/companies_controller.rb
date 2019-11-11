@@ -1,5 +1,5 @@
 class CompaniesController < ApplicationController
-    before_action :set_company, only: %i(show edit)
+    before_action :set_company, only: %i(show edit update)
 
     def index
       @companies = Company.all
@@ -25,10 +25,26 @@ class CompaniesController < ApplicationController
 
     def edit
     end
+
+    def update
+        if @company.update_attributes(company_params)
+            flash[:notice] = "Company was successfully updated." 
+            redirect_to edit_company_path
+        else
+            format.html { render :edit }
+            format.json { render json: @company.errors, status: :unprocessable_entity }
+        end
+    end
+
+    def show_notifications
+    end
     
     private
     def set_company
         @company = Company.find(params[:id])
+        return if @company
+        flash[:danger] = t "error_notfound"
+        redirect_to root_path
     end
 
     def company_params

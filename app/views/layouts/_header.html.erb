@@ -33,7 +33,7 @@
                 </li>
               <% else %>
                 <li class="button-group">
-                  <%= link_to current_user.company_name, company_path(id: current_user.profile), method: :get, class: "button btn btn-common" %>
+                  <%= link_to current_user.company_name, company_notifications_path(id: current_user.profile), method: :get, class: "button btn btn-common" %>
                 </li>
               <% end %>
             <% else %>

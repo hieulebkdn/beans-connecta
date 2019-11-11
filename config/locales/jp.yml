@@ -1,47 +1,47 @@
 jp:
-  home: "ホーム"
-  job: "求人"
-  company: "会社"
-  blog: "ブログ"
-  contact: "お問い合わせ"
-  signup: "会員登録(無料)"
-  signin: "ログイン"
-  signout: "サインアウト"
-  quote: "私たちの時代の産業革命ともいえるこのインターネットの力を活用して、世の中に大きなインパクトを与えていくこと。"
-  signup_as_candidate: "応募者として"
-  signup_as_company: "カンパニーとして"
-  login: "ログイン"
-  email: "メール"
-  password: "パスワード"
-  remember_me: "次回から入力を省略"
-  dont_have_account: "まだ会員登録してない方はこちらから登録してください"
-  subscribe: "ついてきて"
-  subscribe_content: "ソーシャルメディアでBeansConnectaをフォローして、最新の企業ニュース、ハイライト、さまざまな有用なリソースを活用してください。"
-  quick_link: "リンク"
-  how_it_works: "案内"
-  oauth_login_content: "または、以下のアカウントでログインしてください。"
-  create_account: "会員登録（無料)"
-  already_have_account: "すでに会員の方はこちらからログインしてください"
-  your_email: "メール"
-  your_pass: "パスワード (6文字以上)"
-  retype_pass: "確認のためもう一度入力してください"
-  register: "登録"
+  home: ホーム
+  job: 求人
+  company: 会社
+  blog: ブログ
+  contact: お問い合わせ
+  signup: 会員登録(無料)
+  signin: ログイン
+  signout: サインアウト
+  quote: 私たちの時代の産業革命ともいえるこのインターネットの力を活用して、世の中に大きなインパクトを与えていくこと。
+  signup_as_candidate: 応募者として
+  signup_as_company: カンパニーとして
+  login: ログイン
+  email: メール
+  password: パスワード
+  remember_me: 次回から入力を省略
+  dont_have_account: まだ会員登録してない方はこちらから登録してください
+  subscribe: ついてきて
+  subscribe_content: ソーシャルメディアでBeansConnectaをフォローして、最新の企業ニュース、ハイライト、さまざまな有用なリソースを活用してください。
+  quick_link: リンク
+  how_it_works: 案内
+  oauth_login_content: または、以下のアカウントでログインしてください。
+  create_account: 会員登録（無料)
+  already_have_account: すでに会員の方はこちらからログインしてください
+  your_email: メール
+  your_pass: パスワード (6文字以上)
+  retype_pass: 確認のためもう一度入力してください
+  register: 登録
 
   profile: プロフィール
   manage_account: アカウント管理
   my_profile: マイプロフィール
-  update_profile: プロフィールを更新する
+  update_profile: プロフィール更新
   experience: 経験
   skill: スキル
-  update_experience: 経験を更新する
-  manage_experience: 経験を管理する
-  update_skill: スキルを更新する
+  update_experience: 経験更新
+  manage_experience: 経験管理
+  update_skill: スキル更新
   bookmark: ブックマーク
   noti: 通知
-  change_password: パスワードを変更する
+  change_password: パスワード変更
   update: 更新
 
-  create_profile: プロフィールを作成する
+  create_profile: プロフィール作成
   yourname: 氏名
   gender: 性別
   city: 都市
@@ -61,27 +61,33 @@ jp:
   company_website: ウェブサイトのリンク
   already_have_company: すでに会社を持っています？
 
+  notifications: 通知 
+  update_company_profile: 会社のプロフィール更新
+  manage_job: 求人管理
+  manage_interview: 面接のスケージュール管理
+  manage_company: 会社管理
+
   create: 作成！
   delete: 削除
   edit: 編集
   cancel: キャンセル
 
   new_experience: 新しい経験
-  add_experience: この経験を追加する
-  create_company: 会社のプロフィールを作成
-  create_candidate: プロフィールを作成
+  add_experience: この経験を追加
+  create_company: 会社のプロフィール作成
+  create_candidate: プロフィール作成
   company_name: 会社名
 
   pages:
     index:
-      content0: "あなたの人生に"
-      content1: "合った仕事を見つける"
-      category: "カテゴリ"
-      category_description: "Most popular categories of portal"
-      recent_job: "最近の求人ポスト "
+      content0: あなたの人生に
+      content1: 合った仕事を見つける
+      category: カテゴリ
+      category_description: Most popular categories of portal
+      recent_job: 最近の求人ポスト 
       recent_job_description: "As the Asia's #1 job site, with over 10 million unique visitors every month from over 15 different countries"
-      most_active_company: "最も活発な会社"
-      most_active_company_description: "Want to be a part of us? Take it easy!"
+      most_active_company: 最も活発な会社
+      most_active_company_description: Want to be a part of us? Take it easy!
 
   candidates: 
     show:
@@ -92,7 +98,7 @@ jp:
 
   companies:
     create:
-      flash_create: "会社のプロフィールが正常に作成されました！"
+      flash_create: 会社のプロフィールが正常に作成されました！
 
   skills:
     create:
@@ -134,65 +140,65 @@ jp:
 
   devise:
     confirmations:
-      confirmed: "Your email address has been successfully confirmed."
-      send_instructions: "You will receive an email with instructions for how to confirm your email address in a few minutes."
-      send_paranoid_instructions: "If your email address exists in our database, you will receive an email with instructions for how to confirm your email address in a few minutes."
+      confirmed: Your email address has been successfully confirmed.
+      send_instructions: You will receive an email with instructions for how to confirm your email address in a few minutes.
+      send_paranoid_instructions: If your email address exists in our database, you will receive an email with instructions for how to confirm your email address in a few minutes.
     failure:
-      already_authenticated: "You are already signed in."
-      inactive: "Your account is not activated yet."
-      invalid: "Invalid %{authentication_keys} or password."
-      locked: "Your account is locked."
-      last_attempt: "You have one more attempt before your account is locked."
-      not_found_in_database: "Invalid %{authentication_keys} or password."
-      timeout: "Your session expired. Please sign in again to continue."
-      unauthenticated: "You need to sign in or sign up before continuing."
-      unconfirmed: "You have to confirm your email address before continuing."
+      already_authenticated: You are already signed in.
+      inactive: Your account is not activated yet.
+      invalid: Invalid %{authentication_keys} or password.
+      locked: Your account is locked.
+      last_attempt: You have one more attempt before your account is locked.
+      not_found_in_database: Invalid %{authentication_keys} or password.
+      timeout: Your session expired. Please sign in again to continue.
+      unauthenticated: You need to sign in or sign up before continuing.
+      unconfirmed: You have to confirm your email address before continuing.
     mailer:
       confirmation_instructions:
-        subject: "Confirmation instructions"
+        subject: Confirmation instructions
       reset_password_instructions:
-        subject: "Reset password instructions"
+        subject: Reset password instructions
       unlock_instructions:
-        subject: "Unlock instructions"
+        subject: Unlock instructions
       email_changed:
-        subject: "Email Changed"
+        subject: Email Changed
       password_change:
-        subject: "Password Changed"
+        subject: Password Changed
     omniauth_callbacks:
-      failure: "Could not authenticate you from %{kind} because \"%{reason}\"."
-      success: "Successfully authenticated from %{kind} account."
+      failure: Could not authenticate you from %{kind} because \%{reason}\.
+      success: Successfully authenticated from %{kind} account.
     passwords:
-      no_token: "You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided."
-      send_instructions: "You will receive an email with instructions on how to reset your password in a few minutes."
-      send_paranoid_instructions: "If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes."
-      updated: "Your password has been changed successfully. You are now signed in."
-      updated_not_active: "Your password has been changed successfully."
+      no_token: You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided.
+      send_instructions: You will receive an email with instructions on how to reset your password in a few minutes.
+      send_paranoid_instructions: If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes.
+      updated: Your password has been changed successfully. You are now signed in.
+      updated_not_active: Your password has been changed successfully.
     registrations:
-      destroyed: "Bye! Your account has been successfully cancelled. We hope to see you again soon."
-      signed_up: "Welcome! You have signed up successfully."
-      signed_up_but_inactive: "You have signed up successfully. However, we could not sign you in because your account is not yet activated."
-      signed_up_but_locked: "You have signed up successfully. However, we could not sign you in because your account is locked."
-      signed_up_but_unconfirmed: "A message with a confirmation link has been sent to your email address. Please follow the link to activate your account."
-      update_needs_confirmation: "You updated your account successfully, but we need to verify your new email address. Please check your email and follow the confirmation link to confirm your new email address."
-      updated: "Your account has been updated successfully."
-      updated_but_not_signed_in: "Your account has been updated successfully, but since your password was changed, you need to sign in again"
+      destroyed: Bye! Your account has been successfully cancelled. We hope to see you again soon.
+      signed_up: Welcome! You have signed up successfully.
+      signed_up_but_inactive: You have signed up successfully. However, we could not sign you in because your account is not yet activated.
+      signed_up_but_locked: You have signed up successfully. However, we could not sign you in because your account is locked.
+      signed_up_but_unconfirmed: A message with a confirmation link has been sent to your email address. Please follow the link to activate your account.
+      update_needs_confirmation: You updated your account successfully, but we need to verify your new email address. Please check your email and follow the confirmation link to confirm your new email address.
+      updated: Your account has been updated successfully.
+      updated_but_not_signed_in: Your account has been updated successfully, but since your password was changed, you need to sign in again
     sessions:
-      signed_in: "Signed in successfully."
-      signed_out: "Signed out successfully."
-      already_signed_out: "Signed out successfully."
+      signed_in: Signed in successfully.
+      signed_out: Signed out successfully.
+      already_signed_out: Signed out successfully.
     unlocks:
-      send_instructions: "You will receive an email with instructions for how to unlock your account in a few minutes."
-      send_paranoid_instructions: "If your account exists, you will receive an email with instructions for how to unlock it in a few minutes."
-      unlocked: "Your account has been unlocked successfully. Please sign in to continue."
+      send_instructions: You will receive an email with instructions for how to unlock your account in a few minutes.
+      send_paranoid_instructions: If your account exists, you will receive an email with instructions for how to unlock it in a few minutes.
+      unlocked: Your account has been unlocked successfully. Please sign in to continue.
   errors:
     messages:
-      already_confirmed: "was already confirmed, please try signing in"
-      confirmation_period_expired: "needs to be confirmed within %{period}, please request a new one"
-      expired: "has expired, please request a new one"
-      not_found: "not found"
-      not_locked: "was not locked"
+      already_confirmed: was already confirmed, please try signing in
+      confirmation_period_expired: needs to be confirmed within %{period}, please request a new one
+      expired: has expired, please request a new one
+      not_found: not found
+      not_locked: was not locked
       not_saved:
         one: "1 error prohibited this %{resource} from being saved:"
-        other: "%{count} errors prohibited this %{resource} from being saved:"    
+        other: "%{count} errors prohibited this %{resource} from being saved:"
 
 
