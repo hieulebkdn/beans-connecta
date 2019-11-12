@@ -7,13 +7,13 @@
           <h3>
             <%= t("create_company") %>
           </h1>
-          <%= form_for(@company, html: {class: "login-form" }) do |f| %>
+          <%= form_for(@company, html: {class: "login-form" }) do |form| %>
           <div class="row">
               <div class="col-md-6 col-xs-6 col-lg-6">
             <div class="form-group">
               <div class="input-icon">
                 <i class="lni-user"></i>
-                <%= f.text_field :name, autofocus: true, class: "form-control", placeholder: t("company_name") %>
+                <%= form.text_field :name, autofocus: true, class: "form-control", placeholder: t("company_name") %>
               </div>
             </div>
             </div>
@@ -22,7 +22,7 @@
             <div class="form-group">
               <div class="input-icon">
                 <i class="lni-home"></i>
-                <%= f.text_field :address, autofocus: true, class: "form-control", placeholder: t("address") %>
+                <%= form.text_field :address, autofocus: true, class: "form-control", placeholder: t("address") %>
               </div>
             </div>
             </div>
@@ -33,7 +33,7 @@
             <div class="form-group">
               <div class="input-icon">
                 <i class="lni-apartment"></i>
-                <%= f.text_field :city, autofocus: true, class: "form-control", placeholder: t("city") %>
+                <%= form.text_field :city, autofocus: true, class: "form-control", placeholder: t("city") %>
               </div>
             </div>
             </div>
@@ -41,7 +41,7 @@
             <div class="form-group">
               <div class="input-icon">
                 <i class="lni-flag"></i>
-                <%= f.text_field :country, autofocus: true, class: "form-control", placeholder: t("country") %>
+                <%= form.text_field :country, autofocus: true, class: "form-control", placeholder: t("country") %>
               </div>
             </div>
             </div>
@@ -50,7 +50,7 @@
                 <div class="form-group">
                   <div class="input-icon">
                     <i class="lni-pencil"></i>
-                    <%= f.text_area :description, class: "form-control", placeholder: t("company_description") %>
+                    <%= form.text_area :description, class: "form-control", placeholder: t("company_description") %>
                   </div>
                 </div>
             </div>
@@ -60,7 +60,7 @@
             <div class="form-group">
               <div class="input-icon">
                 <i class="lni-heart"></i>
-                <%= f.text_field :scale,id: "input_scale", class: "form-control", placeholder: t("scale")  %>
+                <%= form.text_field :scale,id: "input_scale", class: "form-control", placeholder: t("scale")  %>
               </div>
             </div>
             </div>
@@ -68,14 +68,17 @@
             <div class="form-group">
               <div class="input-icon">
                 <i class="lni-clipboard"></i>
-                <%= f.text_field :website, class: "form-control", placeholder: t("company_website") %>
+                <%= form.text_field :website, class: "form-control", placeholder: t("company_website") %>
               </div>
             </div>
             </div>
             </div>
+            <div class="form-group">
+              <%= form.file_field :logo, direct_upload: true, class: "form-control" %>
+            </div>
             
             <div class="actions">
-              <%= f.submit "Create company", class: "btn btn-common log-btn" %>
+              <%= form.submit "Create company", class: "btn btn-common log-btn" %>
             </div>
             <p class="text-center">
             <%= link_to( t("already_have_company"), new_user_session_path, method: :get) %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_10_101259) do
+ActiveRecord::Schema.define(version: 2019_11_12_042437) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -79,6 +79,22 @@ ActiveRecord::Schema.define(version: 2019_11_10_101259) do
     t.index ["candidate_id"], name: "index_experiences_on_candidate_id"
   end
 
+  create_table "jobs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title"
+    t.string "position"
+    t.integer "quantity", default: 1
+    t.text "description"
+    t.text "requirement"
+    t.decimal "min_pay", precision: 10, default: "500"
+    t.decimal "max_pay", precision: 10, default: "500"
+    t.boolean "is_active", default: true
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "company_id"
+    t.index ["company_id"], name: "index_jobs_on_company_id"
+    t.index ["title"], name: "index_jobs_on_title"
+  end
+
   create_table "skills", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "tag"
     t.text "description"
@@ -115,5 +131,6 @@ ActiveRecord::Schema.define(version: 2019_11_10_101259) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "companies", "categories"
   add_foreign_key "experiences", "candidates"
+  add_foreign_key "jobs", "companies"
   add_foreign_key "skills", "candidates"
 end

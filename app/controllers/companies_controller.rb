@@ -48,7 +48,7 @@ class CompaniesController < ApplicationController
     end
 
     def company_params
-        params.require(:company).permit(:name, :description, :address, :country, :city, :scale, :website)
+        params.require(:company).permit(:name, :description, :address, :country, :city, :scale, :website, :logo)
     end
 
     def update_user_profile
