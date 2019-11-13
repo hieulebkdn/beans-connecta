@@ -4,7 +4,7 @@
     <ul class="list-item">
       <li><%= link_to t("notifications"), company_notifications_path(id: current_user.profile), method: :get , class: "active" %><span class="notinumber">2</span></li>
       <li><%= link_to t("update_company_profile"), edit_company_path(id: current_user.profile), method: :get %></li>
-      <li><%= link_to t("manage_job"), candidate_edit_experience_path(id: current_user.profile), method: :get %></li>
+      <li><%= link_to t("manage_job"), edit_job_path(id: current_user.profile), method: :get %></li>
       <li><%= link_to t("manage_interview"), candidate_edit_experience_path(id: current_user.profile), method: :get %></li>
       <li><%= link_to t("signout"), destroy_user_session_path, method: :delete %></li>
     </ul>

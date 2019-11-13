@@ -39,6 +39,8 @@ gem "capistrano-bundler", require: false
 gem "capistrano-rvm"
 gem "aws-sdk-s3", require: false
 gem "figaro"
+gem 'material_icons'
+
 
 gem "listen", ">= 3.0.5", "< 3.2"
 group :development, :test do

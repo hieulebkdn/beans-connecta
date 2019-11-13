@@ -1,0 +1,25 @@
+<div id= <%= job.id %>>
+  <div class="manager-resumes-item">
+    <div class="manager-content">
+      <div class="manager-info">
+        <div class="manager-name">
+          <h4><a href="#"><%= job.title %></a></h4>
+          <h5><%= job.position %></h5>
+        </div>
+        <div class="manager-meta">
+          <span class="location"> Minimum pay <%= job.min_pay %><i class="material-icons material-center">attach_money</i></span>
+          <span class="rate"> Maximum pay <%= job.max_pay %><i class="material-icons material-center">attach_money</i></span>
+        </div>
+      </div>
+    </div>
+    <div class="update-date">
+      <p class="status">
+        <%= job.description %>
+      </p>
+      <div class="action-btn">
+        <%= link_to t("edit"), edit_job_path(id: job.id), remote: true, class:"btn btn-xs btn-gray" %>
+        <%= link_to t("delete"), job, method: :delete, data: {confirm: "Are you sure?", remote: true}, class: "btn btn-xs btn-danger" %>
+      </div>
+    </div>
+  </div>
+</div>

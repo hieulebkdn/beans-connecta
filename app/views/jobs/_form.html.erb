@@ -1,57 +1,55 @@
-<%= form_with(model: job, local: true) do |form| %>
-  <% if job.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(job.errors.count, "error") %> prohibited this job from being saved:</h2>
+<%= form_with(model: job, html: {class: "login-form"}, id: "add-job") do |form| %>
 
-      <ul>
-        <% job.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+<div class="form-group space-bound"">
+  <label class="control-label"><%= t("job_title")%></label>
+  <%= form.text_field :title, class: "form-control", placeholder: "e.g Job Title" %>
+</div>
+
+<div class="form-group">
+  <div class="row">
+    <div class="col-md-9">
+      <label class="control-label"><%= t("position") %></label>
+      <%= form.text_field :position, class: "form-control", placeholder: "e.g UI/UX Researcher" %>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+    <div class="col-md-3">
+     <label class="control-label"><%= t("quantity") %></label>
+      <%= form.number_field :quantity, class: "form-control", placeholder: "e.g 3(方)",  min: 1, max: 9999999, step: 100 %>
+    </div>
+  </div>
   </div>
 
-  <div class="field">
-    <%= form.label :position %>
-    <%= form.text_field :position %>
+<div class="form-group">
+  <div class="row">
+    <div class="col-md-6">
+      <label class="control-label"><%= t("minpay") %></label>
+      <%= form.number_field :min_pay, class: "form-control", placeholder: "e.g 500($)",  min: 100, max: 9999999, step: 100 %>
+
+    </div>
+    <div class="col-md-6">
+      <label class="control-label"><%= t("maxpay") %></label>
+      <%= form.number_field :max_pay, class: "form-control", placeholder: "e.g 1000($)", min: 100, max: 9999999, step: 100 %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="control-label"><%= t("description") %></label>
+  <%= form.text_area :description, class: "form-control", placeholder: t("description") %>
+</div>
+<div class="form-group">
+  <label class="control-label"><%= t("requirement") %></label>
+  <%= form.text_area :requirement, class: "form-control", placeholder: t("requirement") %>
+</div>
+
+<%= form.hidden_field :company_id, :value => current_user.profile %>
+
+<div class="add-post-btn">
+  <div class="float-left">
+    <a href="javascript:$('#add-job').submit();", class="btn-added"><i class="ti-plus"></i> <%= t("add_job") %></a>
   </div>
 
-  <div class="field">
-    <%= form.label :quantity %>
-    <%= form.number_field :quantity %>
+  <div class="float-right">
+    <a href= <%= company_edit_job_path(current_user.profile)%> class="btn-delete" method="get" data-turbolinks="false"><i class="ti-trash"></i> <%= t("delete") %></a>
   </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :requirement %>
-    <%= form.text_area :requirement %>
-  </div>
-
-  <div class="field">
-    <%= form.label :min_pay %>
-    <%= form.text_field :min_pay %>
-  </div>
-
-  <div class="field">
-    <%= form.label :max_pay %>
-    <%= form.text_field :max_pay %>
-  </div>
-
-  <div class="field">
-    <%= form.label :is_active %>
-    <%= form.check_box :is_active %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+</div>
 <% end %>
