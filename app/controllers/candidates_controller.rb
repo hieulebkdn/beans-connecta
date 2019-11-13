@@ -3,24 +3,20 @@ class CandidatesController < ApplicationController
   before_action :load_candidate_experiences , only: %i(show)
   before_action :load_candidate_skills , only: %i(show)
 
-  def show
-  end
+  def show; end
 
   def new
     @candidate = Candidate.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     respond_to do |format|
       if @candidate.update_attributes(candidate_params)
-        format.html { redirect_to @candidate, notice: "Candidate was successfully updated." }
-        format.json { render :show, status: :ok, location: @candidate }
+        format.html { redirect_to @candidate, notice: t(".flash_update") }
       else
         format.html { render :edit }
-        format.json { render json: @candidate.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -29,18 +25,10 @@ class CandidatesController < ApplicationController
     @candidate = Candidate.new candidate_params
     if @candidate.save
       update_user_profile
-      flash[:success] = "Your profile successfully created!"
+      flash[:success] = t(".flash_create")
       redirect_to controller: "pages", action: "index"
     else
       render :new
-    end
-  end
-
-  def destroy
-    @candidate.destroy
-    respond_to do |format|
-      format.html { redirect_to candidates_url, notice: "Candidate was successfully destroyed." }
-      format.json { head :no_content }
     end
   end
 

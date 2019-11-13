@@ -13,3 +13,8 @@
 .material-center {
     vertical-align: middle;
 }
+
+.logo-image {
+    width: 100px;
+    height: 100px;
+}

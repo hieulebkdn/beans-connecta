@@ -14,7 +14,6 @@ class SkillsController < ApplicationController
         if @skill.save
             respond_to do |format|
                 format.html { redirect_to candidate_edit_skill_path(current_user.profile), notice: t(".flash_create")}
-                format.json {head :no_content}
                 format.js { render layout: false }
             end
         else
@@ -32,7 +31,6 @@ class SkillsController < ApplicationController
             respond_to do |format|
                 format.js
                 format.html { redirect_to candidate_edit_skill_path(current_user.profile), notice: t(".flash_update")}
-                format.json {head :no_content}
             end
         end
     end
@@ -42,7 +40,6 @@ class SkillsController < ApplicationController
             respond_to do |format|
                 format.js
                 format.html { redirect_to candidate_edit_skill_path(current_user.profile), notice: t(".flash_delete")}
-                format.json {head :no_content}
             end
         end
     end

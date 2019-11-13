@@ -95,6 +95,10 @@ jp:
       aboutme: 私について
       experience: 経験
       skill : スキル
+    update:
+      flash_update: プロフィールが正常に更新されました!
+    create:
+      flash_create: プロフィールが正常に作成されました！
 
   companies:
     create:
@@ -109,7 +113,7 @@ jp:
       tag_placeholder: スキルタグ, e.g. HTML
       detail_placeholder: スキル習熟度、説明
     update:
-      flash_update: スキルが正常に更新されました。
+      flash_update: スキルが正常に更新されました！
     form:
       tag: スキルタグ
       tag_placeholder: スキルタグ, e.g. HTML
@@ -118,7 +122,7 @@ jp:
       new_skill: 新しいスキル
       manage_skill: スキルを管理する
     delete:
-      flash_delete: スキルは正常に削除されました。
+      flash_delete: スキルは正常に削除されました！
       flash_delete_fail: スキルの削除に失敗しました。
 
   experiences:
@@ -126,10 +130,10 @@ jp:
       flash_create: 経験が正常に作成されました!
       flash_create_fail: 経験の作成に失敗しました。
     update:
-      flash_update: 経験が正常に更新されました。
+      flash_update: 経験が正常に更新されました！
       flash_update_fail: 経験の更新に失敗しました。
     delete:
-      flash_delete: 経験は正常に削除されました。
+      flash_delete: 経験は正常に削除されました！
       flash_delete_fail: 経験の削除に失敗しました。
 
   date:

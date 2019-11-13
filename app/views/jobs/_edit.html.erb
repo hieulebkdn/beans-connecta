@@ -1,0 +1,53 @@
+<%= form_with(model: job, html: {class: "login-form"}, id: "edit-job") do |form| %>
+
+<div class="form-group space-bound"">
+  <label class="control-label"><%= t("job_title")%></label>
+  <%= form.text_field :title, class: "form-control", placeholder: "e.g Job Title" %>
+</div>
+
+<div class="form-group">
+  <div class="row">
+    <div class="col-md-9">
+      <label class="control-label"><%= t("position") %></label>
+      <%= form.text_field :position, class: "form-control", placeholder: "e.g UI/UX Researcher" %>
+    </div>
+    <div class="col-md-3">
+     <label class="control-label"><%= t("quantity") %></label>
+      <%= form.number_field :quantity, class: "form-control", placeholder: "e.g 3(方)",  min: 1, max: 9999999, step: 100 %>
+    </div>
+  </div>
+  </div>
+
+<div class="form-group">
+  <div class="row">
+    <div class="col-md-6">
+      <label class="control-label"><%= t("minpay") %></label>
+      <%= form.number_field :min_pay, class: "form-control", placeholder: "e.g 500($)",  min: 100, max: 9999999, step: 100 %>
+
+    </div>
+    <div class="col-md-6">
+      <label class="control-label"><%= t("maxpay") %></label>
+      <%= form.number_field :max_pay, class: "form-control", placeholder: "e.g 1000($)", min: 100, max: 9999999, step: 100 %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="control-label"><%= t("description") %></label>
+  <%= form.text_area :description, class: "form-control", placeholder: t("description") %>
+</div>
+<div class="form-group">
+  <label class="control-label"><%= t("requirement") %></label>
+  <%= form.text_area :requirement, class: "form-control", placeholder: t("requirement") %>
+</div>
+
+<div class="add-post-btn">
+  <div class="float-left">
+    <a href="javascript:$('#edit-job').submit();", class="btn-added"><i class="ti-plus"></i> <%= t("add_job") %></a>
+  </div>
+
+  <div class="float-right">
+    <a href= <%= company_edit_job_path(current_user.profile)%> class="btn-delete" method="get" data-turbolinks="false"><i class="ti-trash"></i> <%= t("cancel") %></a>
+  </div>
+</div>
+<% end %>
