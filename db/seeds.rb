@@ -30,12 +30,35 @@ companies = [
 	["VNG Corporation", "VNG Corporation (VNG) is a Vietnamese technology company, founded in 2004, specializing in digital content and online entertainment, social networking, and e-commerce. VNG focuses on four main businesses, including online games, platforms, digital payments and cloud services. Many key products developed by VNG have attracted hundreds of millions of users such as Zalo, ZaloPay, Zingmp3, and 123phim…", "182 Le Dai Hanh st., Ward 15, Dist. 11, Ho Chi Minh City Vietnam", "Vietnam", "Ho Chi Minh", "1500-1700", "https://www.vng.com.vn/"]
 ]
 
-existing_nameCategory = Category.all.map { |c| c.name }
+ranks = [
+	"Intern", "Junior", "Senior", "Manager", "Expert"
+]
+
+benefits = [
+	"Health insurance", "Life insurance", "Retirement benefits or accounts", "Company trip", "Training", "Annual Leave", "Bonus", "Salary Increase"
+]
+
+existing_categories = Category.all.map { |c| c.name }
 existing_companies = Company.all.map { |c| c.name }
+existing_benefits = Benefit.all.map { |c| c.name }
+existing_ranks = Rank.all.map { |c| c.name }
+
 
 categories.each do |n, co|
-	unless existing_nameCategory.include?(n)
+	unless existing_categories.include?(n)
 		Category.create(name: n, childof: co)
+	end
+end
+
+benefits.each do |tag|
+	unless existing_categories.include?(tag)
+		Category.create(tag: tag)
+	end
+end
+
+ranks.each do |tag|
+	unless existing_ranks.include?(tag)
+		Rank.create(tag: tag)
 	end
 end
 
