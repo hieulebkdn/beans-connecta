@@ -53,11 +53,11 @@ jp:
   avatar: アバター
   upload_avatar: アバターをアップする
   detail: 細部
-  from: From
-  to: To
+  from: スタート
+  to: 終わり
   position: ポジション
   company_description: 会社の説明
-  scale: e.g 200-500
+  scale: 例 200-500
   company_website: ウェブサイトのリンク
   already_have_company: すでに会社を持っています？
 
@@ -78,6 +78,16 @@ jp:
   create_company: 会社のプロフィール作成
   create_candidate: プロフィール作成
   company_name: 会社名
+
+  minpay: 最低給与
+  maxpay: 最高給与
+  title: 表題
+  quantity: 数量
+  description: 説明
+  new_job: 新しい求人
+  add_job: この求人を追加
+  benefit: 福利
+  rank: 水準
 
   pages:
     index:
