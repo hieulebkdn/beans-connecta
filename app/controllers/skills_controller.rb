@@ -38,7 +38,7 @@ class SkillsController < ApplicationController
     def destroy
         if @skill.destroy
             respond_to do |format|
-                format.js
+                format.js { flash.now[:notice] = t(".flash_delete") }
                 format.html { redirect_to candidate_edit_skill_path(current_user.profile), notice: t(".flash_delete")}
             end
         end

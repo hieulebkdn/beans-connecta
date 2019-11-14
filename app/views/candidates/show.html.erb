@@ -17,45 +17,54 @@
         <div class="inner-box my-resume">
           <div class="author-resume">
             <div class="thumb">
-              <% if @candidate.avatar.attached %>
+              <% if @candidate.avatar.attached? %>
                 <%= image_tag(@candidate.avatar)%>
-              </div>
-              <div class="author-info">
-                <h3><%= @candidate.name %></h3>
-                <p class="sub-title"><%= @candidate.specialty %></p>
-                <p><span class="address"><i class="lni-map-marker"></i><%= @candidate.address %></span>, <strong><%= @candidate.city %></strong></p>
-                <p><span><i class="ti-phone"></i><%= @candidate.phone %></span></p>
-                <div class="social-link">
-                  <a href="#" class="Twitter"><i class="lni-twitter-filled"></i></a>
-                  <a href="#" class="facebook"><i class="lni-facebook-filled"></i></a>
-                  <a href="#" class="google"><i class="lni-google-plus"></i></a>
-                  <a href="#" class="linkedin"><i class="lni-linkedin-fill"></i></a>
-                </div>
-              </div>
-            </div>
-            <div class="about-me item">
-              <h3><%= t(".aboutme") %></h3>
-              <p><%= @candidate.objective %></p>
-            </div>
-            <div class="work-experence item">
-              <h3><%= t(".experience") %></h3>
-              <% @experiences.each do |exp| %>
-                <h4><%= exp.position %></h4>
-                <h5><%= exp.company_name %></h5>
-                <span class="date">From <%= exp.first_day %> to <%= exp.last_day %></span>
-                <p><%= exp.description %></p>
-                <br>
               <% end %>
-              <div class="education item">
-                <h3><%= t(".skill") %></h3>
-                <% @skills.each do |skill| %>
-                  <h4><%= skill.tag %></h4>
-                  <p><%= skill.description %></p>
-                  <br>
-                <% end %>
+            </div>
+            <div class="author-info">
+              <h3><%= @candidate.name %></h3>
+              <p class="sub-title"><%= @candidate.specialty %></p>
+              <p><span class="address"><i class="lni-map-marker"></i><%= @candidate.address %></span>, <strong><%= @candidate.city %></strong></p>
+              <p><span><i class="ti-phone"></i><%= @candidate.phone %></span></p>
+              <div class="social-link">
+                <a href="#" class="Twitter"><i class="lni-twitter-filled"></i></a>
+                <a href="#" class="facebook"><i class="lni-facebook-filled"></i></a>
+                <a href="#" class="google"><i class="lni-google-plus"></i></a>
+                <a href="#" class="linkedin"><i class="lni-linkedin-fill"></i></a>
               </div>
             </div>
+          </div>
+          <div class="about-me item">
+            <h3><%= t(".aboutme") %></h3>
+            <p><%= @candidate.objective %></p>
+          </div>
+          <div class="work-experence item">
+            <h3><%= t(".experience") %></h3>
+            <% if @experiences.count == 0 %>
+              <%= t("no_experience") %>
+            <% end %>
+            <% @experiences.each do |exp| %>
+              <h4><%= exp.position %></h4>
+              <h5><%= exp.company_name %></h5>
+              <span class="date">From <%= exp.first_day %> to <%= exp.last_day %></span>
+              <p><%= exp.description %></p>
+              <br>
+            <% end %>
+          </div>
+          <div class="education item">
+            <h3><%= t(".skill") %></h3>
+            <% if @skills.count == 0 %>
+              <%= t("no_skill") %>
+            <% end %>
+            <% @skills.each do |skill| %>
+              <h4><%= skill.tag %></h4>
+              <p><%= skill.description %></p>
+              <br>
+            <% end %>
           </div>
         </div>
       </div>
     </div>
+  </div>
+</div>
+</div>

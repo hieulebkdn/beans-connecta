@@ -138,6 +138,8 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.5)
     crass (1.0.5)
+    data-confirm-modal (1.6.2)
+      railties (>= 3.0)
     devise (4.7.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -219,6 +221,7 @@ GEM
       rack (>= 1.6.2, < 3)
     orm_adapter (0.5.0)
     pagy (3.5.1)
+    popper_js (1.14.5)
     public_suffix (4.0.1)
     puma (3.8.2)
     rack (2.0.7)
@@ -321,7 +324,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  addressable
   aws-sdk-s3
   bcrypt (~> 3.1.7)
   bootsnap (>= 1.1.0)
@@ -339,6 +341,7 @@ DEPENDENCIES
   chromedriver-helper
   city-state
   coffee-rails (~> 4.2)
+  data-confirm-modal
   devise
   faker (= 1.7.3)
   figaro
@@ -352,6 +355,7 @@ DEPENDENCIES
   mysql2 (>= 0.3.18, < 0.6.0)
   omniauth
   pagy (= 3.5.1)
+  popper_js (~> 1.14.5)
   puma (= 3.8.2)
   rails (= 6.0.0)
   rails-i18n

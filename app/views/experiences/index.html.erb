@@ -16,11 +16,11 @@
       <div class="col-lg-9 col-md-9 col-xs-12">
         <div class="job-alerts-item candidates">
           <h3 class="alerts-title"><%= t("manage_experience") %></h3>
-          <div id="experiences">
-            <%= render @experiences %>
-          </div>
           <div id="new-experience">
             <%= link_to t("new_experience"), new_experience_path, remote: true, class:"btn btn-common btn-sm" %>
+          </div>
+          <div id="experiences">
+            <%= render @experiences %>
           </div>
         </div>
       </div>

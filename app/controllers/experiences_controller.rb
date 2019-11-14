@@ -28,7 +28,6 @@ class ExperiencesController < ApplicationController
               format.html { redirect_to candidate_edit_experience_path(current_user.profile), notice: t(".flash_update")}
             else
               format.html { redirect_to candidate_edit_experience_path(current_user.profile), notice: t(".flash_update_fail")}
-              format.json { render json: @experience.errors, status: :unprocessable_entity }
             end
           end
     end
@@ -38,7 +37,6 @@ class ExperiencesController < ApplicationController
             respond_to do |format|
                 format.js
                 format.html { redirect_to candidate_edit_experience_path(current_user.profile), notice: t(".flash_delete")}
-                format.json {head :no_content}
             end
         end
     end

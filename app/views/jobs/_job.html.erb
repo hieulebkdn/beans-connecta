@@ -18,7 +18,7 @@
       </p>
       <div class="action-btn">
         <%= link_to t("edit"), edit_job_path(id: job.id), remote: true, class:"btn btn-xs btn-gray" %>
-        <%= link_to t("delete"), job, method: :delete, data: {confirm: "Are you sure?", remote: true}, class: "btn btn-xs btn-danger" %>
+        <%= link_to t("delete"), job, method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-xs btn-danger" %>
       </div>
     </div>
   </div>

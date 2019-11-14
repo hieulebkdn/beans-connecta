@@ -12,12 +12,14 @@
 //
 
 //= require jquery
+//= require popper
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require bootstrap
 //= require activestorage
 //= require turbolinks
 //= require_tree
+//= require data-confirm-modal
 //= require moment
 //= require tempusdominus-bootstrap-4
 

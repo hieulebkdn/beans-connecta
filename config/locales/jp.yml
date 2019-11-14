@@ -61,6 +61,9 @@ jp:
   company_website: ウェブサイトのリンク
   already_have_company: すでに会社を持っています？
 
+  no_experience: 経験がまだ設定されなかった。
+  no_skill: スキルがまだ設定されなかった。
+
   notifications: 通知 
   update_company_profile: 会社のプロフィール更新
   manage_job: 求人管理
@@ -117,7 +120,7 @@ jp:
 
   skills:
     create:
-      flash_create_: スキルが正常に作成されました!
+      flash_create: スキルが正常に作成されました!
       flash_create_fail: スキルの作成に失敗しました。
     edit:
       tag: スキルタグ
