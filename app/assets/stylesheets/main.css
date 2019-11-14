@@ -1,7 +1,7 @@
 @import "https://fonts.googleapis.com/css?family=Rubik:400,500,700";
 body {
     font-family: rubik, sans-serif;
-    color: #9a9a9a;
+    color: #252525;
     font-size: 14px;
     font-weight: 400;
     background: #fff;
@@ -14,7 +14,7 @@ html {
 
 p {
     font-size: 14px;
-    color: #9a9a9a;
+    color: #252525;
     line-height: 26px;
     font-family: rubik, sans-serif;
     margin-bottom: 0
@@ -271,7 +271,7 @@ button:focus {
 }
 
 .page-header {
-    padding: 115px 0 50px;
+    padding: 90px 0 25px;
     position: relative;
     background: url(../images/banner1.jpg)
 }
@@ -608,7 +608,7 @@ button:focus {
 
 .navbar-expand-lg .navbar-nav .nav-link {
     font-size: 14px;
-    color: #9a9a9a;
+    color: #252525;
     padding: 0 17px;
     letter-spacing: .5px;
     border-radius: 4px;
@@ -695,7 +695,7 @@ button:focus {
     margin-bottom: 2px;
     border-radius: 4px;
     font-size: 14px;
-    color: #9a9a9a;
+    color: #252525;
     text-decoration: none;
     display: inline-block;
     float: left;
@@ -889,7 +889,7 @@ button:focus {
         line-height: 22px
     }
     .top-nav-collapse .navbar-nav .nav-link {
-        color: #9a9a9a!important
+        color: #252525!important
     }
 }
 
@@ -919,7 +919,7 @@ button:focus {
 }
 
 .hero-area .contents p {
-    color: #9a9a9a;
+    color: #252525;
     font-size: 14px;
     line-height: 26px
 }
@@ -956,7 +956,7 @@ button:focus {
 .job-search-form .form-group i {
     position: absolute;
     top: 14px;
-    color: #9a9a9a;
+    color: #252525;
     right: 30px;
     font-size: 18px
 }
@@ -1263,7 +1263,7 @@ button:focus {
 }
 
 .jobs-services .services-inner .detail span {
-    color: #9a9a9a;
+    color: #252525;
     font-size: 14px;
     float: left
 }
@@ -1467,7 +1467,7 @@ button:focus {
 }
 
 .f-category p {
-    color: #9a9a9a
+    color: #252525
 }
 
 .f-category:hover .icon {
@@ -1780,7 +1780,7 @@ button:focus {
 
 .job-listings .location {
     display: inline-block;
-    color: #9a9a9a;
+    color: #252525;
     line-height: 22px;
     margin: 15px 0
 }
@@ -2048,7 +2048,7 @@ button:focus {
 }
 
 .pricing-table .pricing-details ul li {
-    color: #9a9a9a;
+    color: #252525;
     padding: 7px;
     font-size: 14px
 }
@@ -2345,7 +2345,7 @@ button:focus {
 .right-sideabr .list-item li a {
     font-size: 14px;
     font-weight: 400;
-    color: #9a9a9a
+    color: #252525
 }
 
 .right-sideabr .list-item li a:hover {
@@ -2394,11 +2394,11 @@ button:focus {
 }
 
 .job-alerts-item .alerts-content .location {
-    color: #9a9a9a
+    color: #252525
 }
 
 .job-alerts-item .alerts-content p {
-    color: #9a9a9a;
+    color: #252525;
     margin-top: 15px;
     line-height: 20px
 }
@@ -2425,7 +2425,7 @@ button:focus {
 
 .my-resume .item h3 i {
     margin-right: 5px;
-    color: #9a9a9a
+    color: #252525
 }
 
 .my-resume .item h4 {
@@ -2437,7 +2437,7 @@ button:focus {
 
 .my-resume .item h5 {
     font-size: 13px;
-    color: #9a9a9a;
+    color: #252525;
     text-transform: uppercase;
     letter-spacing: .5px;
     margin-bottom: 5px
@@ -2446,11 +2446,11 @@ button:focus {
 .my-resume .item .date {
     margin-top: 10px;
     font-size: 14px;
-    color: #9a9a9a
+    color: #252525
 }
 
 .my-resume .item p {
-    color: #9a9a9a
+    color: #252525
 }
 
 .my-resume .item br {
@@ -2510,7 +2510,7 @@ button:focus {
 
 .my-resume .skill h3 i {
     margin-right: 5px;
-    color: #9a9a9a
+    color: #252525
 }
 
 .add-resume h3 {
@@ -2590,7 +2590,7 @@ button:focus {
 
 .manager-resumes-item .item-body .tag-list span {
     background-color: #f1f1f1;
-    color: #9a9a9a;
+    color: #252525;
     padding: 4px 8px;
     margin-right: 8px;
     font-size: 12px;
@@ -2628,7 +2628,7 @@ button:focus {
     font-size: 15px;
     margin-top: 5px;
     font-weight: 400;
-    color: #9a9a9a
+    color: #252525
 }
 
 .manager-resumes-item .manager-content .manager-info .manager-meta {
@@ -2638,7 +2638,7 @@ button:focus {
 
 .manager-resumes-item .manager-content .manager-info .manager-meta span {
     display: block;
-    color: #9a9a9a;
+    color: #252525;
     font-size: 15px;
     line-height: 30px
 }
@@ -2765,7 +2765,7 @@ button:focus {
 }
 
 .all-categories .cat-title span {
-    color: #9a9a9a;
+    color: #252525;
     font-size: 12px
 }
 
@@ -2782,7 +2782,7 @@ button:focus {
 }
 
 .all-categories ul li a {
-    color: #9a9a9a
+    color: #252525
 }
 
 .all-categories ul li a:hover {
@@ -2875,7 +2875,7 @@ button:focus {
 
 .sideber .share-job .meta-tag .meta-part a {
     font-size: 16px;
-    color: #9a9a9a
+    color: #252525
 }
 
 .sideber .share-job .meta-tag .meta-part a i {
@@ -2946,7 +2946,7 @@ button:focus {
     border-radius: 30px;
     border: 1px solid #ddd;
     border-radius: 30px;
-    color: #9a9a9a;
+    color: #252525;
     padding: 0 15px;
     display: block
 }
@@ -3471,7 +3471,7 @@ label {
 
 #sidebar .cat-list li a {
     text-decoration: none;
-    color: #9a9a9a;
+    color: #252525;
     display: inline-block;
     transition: all .2s ease-in-out;
     -moz-transition: all .2s ease-in-out;
@@ -3514,7 +3514,7 @@ label {
 }
 
 #sidebar .posts-list .widget-content span {
-    color: #9a9a9a;
+    color: #252525;
     font-size: 12px;
     display: block;
     margin: 3px 0
@@ -3735,11 +3735,11 @@ textarea {
     margin: 15px 30px;
     padding: 10px 0 10px 60px;
     position: relative;
-    color: #9a9a9a
+    color: #252525
 }
 
 .contact-info .single-contact p a {
-    color: #9a9a9a
+    color: #252525
 }
 
 .contact-info .contact-icon {
@@ -3814,7 +3814,7 @@ textarea {
 }
 
 .page-login-form .form-links li a {
-    color: #9a9a9a
+    color: #252525
 }
 
 .page-login-form .form-links li a:hover {

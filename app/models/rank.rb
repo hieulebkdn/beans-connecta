@@ -4,5 +4,6 @@ class Rank < ApplicationRecord
 
   validates :tag, presence: true
 
+  scope :load_ranks_from_ids, ->(ids){where "id IN (?)", ids}
   scope :alphabet, ->{order name: :asc}
 end

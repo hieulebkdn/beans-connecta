@@ -51,8 +51,8 @@ categories.each do |n, co|
 end
 
 benefits.each do |tag|
-	unless existing_categories.include?(tag)
-		Category.create(tag: tag)
+	unless existing_benefits.include?(tag)
+		Benefit.create(tag: tag)
 	end
 end
 

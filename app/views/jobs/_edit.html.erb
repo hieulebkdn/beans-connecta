@@ -23,7 +23,6 @@
     <div class="col-md-6">
       <label class="control-label"><%= t("minpay") %></label>
       <%= form.number_field :min_pay, class: "form-control", placeholder: "e.g 500($)",  min: 100, max: 9999999, step: 100 %>
-
     </div>
     <div class="col-md-6">
       <label class="control-label"><%= t("maxpay") %></label>
@@ -40,7 +39,6 @@
   <label class="control-label"><%= t("requirement") %></label>
   <%= form.text_area :requirement, class: "form-control", placeholder: t("requirement") %>
 </div>
-
 <div class="add-post-btn">
   <div class="float-left">
     <a href="javascript:$('#edit-job').submit();", class="btn-added"><i class="ti-plus"></i> <%= t("add_job") %></a>

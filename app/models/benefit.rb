@@ -4,5 +4,6 @@ class Benefit < ApplicationRecord
 
   validates :tag, presence: true
 
+  scope :load_benefits_from_ids, ->(ids){where "id IN (?)", ids}
   scope :alphabet, ->{order name: :asc}
 end

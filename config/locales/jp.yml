@@ -66,6 +66,7 @@ jp:
   manage_job: 求人管理
   manage_interview: 面接のスケージュール管理
   manage_company: 会社管理
+  requirement: 要求
 
   create: 作成！
   delete: 削除
