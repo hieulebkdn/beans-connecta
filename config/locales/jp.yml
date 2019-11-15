@@ -89,9 +89,15 @@ jp:
   description: 説明
   new_job: 新しい求人
   add_job: この求人を追加
-  benefit: 福利
+  update_job: この求人を更新
+  benefit: 待遇
   rank: 水準
-
+  new_job_title: 新しい求人
+  deadline: 締め切り
+  exp_year: 数年経験
+  job_title: IT Business Analyst in Tokyo, Japan
+  job_position: Osin
+  
   pages:
     index:
       content0: あなたの人生に
@@ -155,6 +161,14 @@ jp:
       - :day
       - :month
       - :year
+
+  datetime:
+    order:
+      - :day
+      - :month
+      - :year
+      - :hour
+      - :minute
 
   devise:
     confirmations:

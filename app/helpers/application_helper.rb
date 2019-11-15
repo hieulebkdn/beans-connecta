@@ -5,13 +5,18 @@ module ApplicationHelper
         { success: "alert-success", error: "alert-danger", alert: "alert-warning", notice: "alert-info" }.stringify_keys[flash_type.to_s] || flash_type.to_s
       end
     
-      def flash_messages(opts = {})
-        flash.each do |msg_type, message|
-          concat(content_tag(:div, message, class: "container alert alert #{bootstrap_class_for(msg_type)}", style: "z-index: 9999;", role: "alert") do 
-                  concat content_tag(:button, 'x', class: "close", data: { dismiss: 'alert' })
-                  concat message 
-                end)
-        end
-        nil
+    def flash_messages(opts = {})
+      flash.each do |msg_type, message|
+        concat(content_tag(:div, message, class: "container alert alert #{bootstrap_class_for(msg_type)}", style: "z-index: 9999;", role: "alert") do 
+                concat content_tag(:button, 'x', class: "close", data: { dismiss: 'alert' })
+                concat message 
+              end)
       end
+      nil
+    end
+
+    def format_date_default(datetime)
+      datetime.strftime("Created on %m %b %Y at %I:%M%p")
+    end
+
 end

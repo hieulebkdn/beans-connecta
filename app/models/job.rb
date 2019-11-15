@@ -13,4 +13,6 @@ class Job < ApplicationRecord
   delegate :city, to: :company, prefix: true, allow_nil: true	
 	
 	scope :owned_by, -> (company_id){ where(:company_id => company_id)}
+
+
 end

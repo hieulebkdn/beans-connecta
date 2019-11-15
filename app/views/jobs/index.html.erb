@@ -16,11 +16,11 @@
       <div class="col-lg-9 col-md-9 col-xs-12">
         <div class="job-alerts-item jobs">
           <h3 class="alerts-title"><%= t("manage_job") %></h3>
-          <div id="jobs">
-            <%= render @jobs %>
-          </div>
           <div id="new-job">
             <%= link_to t("new_job"), new_job_path, remote: true, class:"btn btn-common btn-sm" %>
+          </div>
+          <div id="jobs">
+            <%= render @jobs %>
           </div>
         </div>
       </div>

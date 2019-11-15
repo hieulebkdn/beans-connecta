@@ -1,51 +1,137 @@
-<%= form_with(model: job, html: {class: "login-form"}, id: "edit-job") do |form| %>
-
-<div class="form-group space-bound"">
-  <label class="control-label"><%= t("job_title")%></label>
-  <%= form.text_field :title, class: "form-control", placeholder: "e.g Job Title" %>
-</div>
-
-<div class="form-group">
-  <div class="row">
-    <div class="col-md-9">
-      <label class="control-label"><%= t("position") %></label>
-      <%= form.text_field :position, class: "form-control", placeholder: "e.g UI/UX Researcher" %>
+<div class="page-login-form box">
+  <h3>
+    <%= t("update_job") %>
+  </h3>
+  <%= form_with(model: job, html: {class: "login-form"}, id: "edit-job") do |form| %>
+    <div class="form-group space-bound"">
+      <label class="control-label"><%= t("title")%></label>
+      <div class="input-icon">
+        <i class="lni-apartment"></i>
+        <%= form.text_field :title, class: "form-control", placeholder: t("job_title") %>
+      </div>
     </div>
-    <div class="col-md-3">
-     <label class="control-label"><%= t("quantity") %></label>
-      <%= form.number_field :quantity, class: "form-control", placeholder: "e.g 3(方)",  min: 1, max: 9999999, step: 100 %>
+    <div class="form-group">
+      <div class="row">
+        <div class="col-md-9">
+          <label class="control-label"><%= t("position") %></label>
+          <div class="input-icon">
+            <i class="lni-apartment"></i>
+            <%= form.text_field :position, class: "form-control", placeholder: t("job_position") %>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-  </div>
-
-<div class="form-group">
-  <div class="row">
-    <div class="col-md-6">
-      <label class="control-label"><%= t("minpay") %></label>
-      <%= form.number_field :min_pay, class: "form-control", placeholder: "e.g 500($)",  min: 100, max: 9999999, step: 100 %>
+    <div class="form-group">
+      <div class="row">
+        <div class="col-md-6">
+          <label class="control-label"><%= t("deadline") %></label>
+          <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
+            <div class="input-icon">
+              <i class="lni-gift"></i>
+            </div>
+            <%= form.text_field(:deadline, class: "form-control datetimepicker-input", data: {target:"#datetimepicker1"}, placeholder: t("deadline") ) %>
+            <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+              <div class="input-group-text"><i class="fa fa-calendar"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <label class="control-label"><%= t("quantity") %></label>
+          <div class="input-icon">
+            <i class="lni-apartment"></i>
+            <%= form.number_field :quantity, class: "form-control", placeholder: t("job_quantity"),  min: 1, max: 100, step: 1 %>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <label class="control-label"><%= t("exp_year") %></label>
+          <div class="input-icon">
+            <i class="lni-apartment"></i>
+            <%= form.number_field :exp_year, class: "form-control", placeholder: t("job_expyear"),  min: 0, max: 60, step: 1 %>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="col-md-6">
-      <label class="control-label"><%= t("maxpay") %></label>
-      <%= form.number_field :max_pay, class: "form-control", placeholder: "e.g 1000($)", min: 100, max: 9999999, step: 100 %>
+    <div class="form-group">
+      <div class="row">
+        <div class="col-md-6">
+          <label class="control-label"><%= t("minpay") %></label>
+          <div class="input-icon">
+            <i class="lni-apartment"></i>
+            <%= form.number_field :min_pay, class: "form-control", placeholder: t("minpay"),  min: 100, max: 9999999, step: 100 %>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label class="control-label"><%= t("maxpay") %></label>
+          <div class="input-icon">
+            <i class="lni-apartment"></i>
+            <%= form.number_field :max_pay, class: "form-control", placeholder: t("maxpay"), min: 100, max: 9999999, step: 100 %>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
+    <div class="form-group">
+      <label class="control-label"><%= t("description") %></label>
+      <div class="input-icon">
+        <i class="lni-apartment"></i>
+        <%= form.text_area :description, class: "form-control", placeholder: t("job_description"), rows: 7 %>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label"><%= t("requirement") %></label>
+      <div class="input-icon">
+        <i class="lni-apartment"></i>
+        <%= form.text_area :requirement, class: "form-control", placeholder: t("job_requirement"), rows: 7 %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-header"><%= t("benefit") %></div>
+            <ul class="list-group list-group-flush">
+              <% @benefits.each do |benefit| %>
+                <li class="list-group-item">
+                  <%= benefit.tag %>
+                  <label class="switch ">
+                    <%= check_box_tag 'benefit_ids[]', benefit.id, @benefits_status[benefit.id], class: "success" %>
+                    <span class="slider"></span>
+                  </label>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-header"><%= t("rank") %></div>
+            <ul class="list-group list-group-flush">
+              <% @ranks.each do |rank|  %>
+                <li class="list-group-item">
+                  <%= rank.tag %>
+                  <label class="switch ">
+                    <%= check_box_tag 'rank_ids[]', rank.id, @ranks_status[rank.id], class: "success" %>
+                    <span class="slider round"></span>
+                  </label>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="add-post-btn">
+      <div class="float-left">
+        <a href="javascript:$('#edit-job').submit();", class="btn-added"><i class="ti-plus"></i> <%= t("update_job") %></a>
+      </div>
+      <div class="float-right">
+        <a href= <%= company_edit_job_path(current_user.profile)%> class="btn-delete" method="get" data-turbolinks="false"><i class="ti-trash"></i> <%= t("cancel") %></a>
+      </div>
+    </div>
+  <% end %>
 </div>
-
-<div class="form-group">
-  <label class="control-label"><%= t("description") %></label>
-  <%= form.text_area :description, class: "form-control", placeholder: t("description") %>
-</div>
-<div class="form-group">
-  <label class="control-label"><%= t("requirement") %></label>
-  <%= form.text_area :requirement, class: "form-control", placeholder: t("requirement") %>
-</div>
-<div class="add-post-btn">
-  <div class="float-left">
-    <a href="javascript:$('#edit-job').submit();", class="btn-added"><i class="ti-plus"></i> <%= t("add_job") %></a>
-  </div>
-
-  <div class="float-right">
-    <a href= <%= company_edit_job_path(current_user.profile)%> class="btn-delete" method="get" data-turbolinks="false"><i class="ti-trash"></i> <%= t("cancel") %></a>
-  </div>
-</div>
-<% end %>
+<script>
+  $('#datetimepicker1').datetimepicker({
+      format: 'YYYY-MM-DD HH:mm'
+  })
+</script>
