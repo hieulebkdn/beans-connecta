@@ -7,7 +7,8 @@ class JobsController < ApplicationController
 
   def show; end
 
-  def index; end
+  def index
+  end
 
   def new
       @job =Job.new
@@ -64,7 +65,7 @@ class JobsController < ApplicationController
     end
 
     def load_company_jobs 
-      @jobs = Job.owned_by(current_user.profile)
+      @pagy, @jobs = pagy(Job.owned_by(current_user.profile), items: 5)
     end
 
     def load_default_benefits_ranks
