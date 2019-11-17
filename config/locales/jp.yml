@@ -89,15 +89,26 @@ jp:
   description: 説明
   new_job: 新しい求人
   add_job: この求人を追加
-  update_job: この求人を更新
+  update_job: この求人を更新する
   benefit: 待遇
   rank: 水準
   new_job_title: 新しい求人
   deadline: 締め切り
   exp_year: 数年経験
-  job_title: IT Business Analyst in Tokyo, Japan
-  job_position: Osin
-  
+  update_job_title: 求人の更新
+  workplace: 職場
+  job_title: "(例) RubyonRailsバックエンドエンジニアを探しています [Sernior]"
+  job_position: バックエンドエンジニア
+  job_deadline: "2019-12-24 00:00"
+  job_quantity: ~(人)
+  job_expyear: ~(年)
+  job_minpay: アメリカ合衆国ドル
+  job_maxpay: アメリカ合衆国ドル
+  job_description: 求人の説明や仕事詳細の記載
+  job_requirement: 求人の要求の記載
+  job_workplace: (例) 東京都渋谷区渋谷2-15-1 Aタワー2F
+  job_field: 領域
+
   pages:
     index:
       content0: あなたの人生に
@@ -155,6 +166,17 @@ jp:
     delete:
       flash_delete: 経験は正常に削除されました！
       flash_delete_fail: 経験の削除に失敗しました。
+    
+  jobs:
+    create:
+      flash_create: 求人が正常に作成されました!
+      flash_create_fail: 求人の作成に失敗しました。
+    update:
+      flash_update: 求人が正常に更新されました！
+      flash_update_fail: 求人の更新に失敗しました。
+    delete:
+      flash_delete: 求人は正常に削除されました！
+      flash_delete_fail: 求人の削除に失敗しました。
 
   date:
     order:

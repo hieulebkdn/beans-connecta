@@ -61,7 +61,7 @@ class JobsController < ApplicationController
 
     def job_params
       params.require(:job).permit(:title, :position, :quantity, :description, :requirement, :min_pay, 
-            :max_pay, :is_active, :exp_year, :deadline, :company_id, job_rank_join_models_attributes: [ :job_id, :rank_id ])
+            :max_pay, :is_active, :exp_year, :deadline, :workplace, :company_id, :category_id, job_rank_join_models_attributes: [ :job_id, :rank_id ])
     end
 
     def load_company_jobs 
@@ -90,28 +90,32 @@ class JobsController < ApplicationController
     end
 
     def save_benefits_to_job job, benefit_ids
+      return if benefit_ids.nil?
       Benefit.load_benefits_from_ids(benefit_ids).each do |benefit|
-        job.benefits << benefit if job.benefits.exclude? benefit
+        job.benefits << benefit if @benefits_status[benefit.id] == false
       end
     end
 
     def save_ranks_to_job job, rank_ids
+      return if rank_ids.nil?
       Rank.load_ranks_from_ids(rank_ids).each do |rank|
-        job.ranks << rank if job.ranks.exclude? rank
+        job.ranks << rank if @ranks_status[rank.id] == false
       end
     end
 
     def remove_benefits_from_job job, benefit_ids
-      benefit_to_remove_ids = Benefit.pluck(:id) - benefit_ids.map(&:to_i)
-      benefit_to_remove_ids.each do |benefit|
-        job.benefits.delete(benefit) if job.benefits.pluck(:id).include? benefit
+      return if benefit_ids.nil?
+      benefit_to_remove_ids = @benefits.pluck(:id) - benefit_ids.map(&:to_i)
+      benefit_to_remove_ids.each do |benefit_id|
+        job.benefits.delete(benefit_id) if @benefits_status[benefit_id] == true
       end
     end
 
     def remove_ranks_from_job job, rank_ids
-      rank_to_remove_ids = Rank.pluck(:id) - rank_ids.map(&:to_i)
-      rank_to_remove_ids.each do |rank|
-        job.ranks.delete(rank) if job.ranks.pluck(:id).include? rank
+      return if rank_ids.nil?
+      rank_to_remove_ids = @ranks.pluck(:id) - rank_ids.map(&:to_i)
+      rank_to_remove_ids.each do |rank_id|
+        job.ranks.delete(rank_id) if @ranks_status[rank_id] == true
       end
     end
 end

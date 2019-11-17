@@ -29,7 +29,7 @@ class ApplicationController < ActionController::Base
 	end
 	
 	def load_categories
-		@categories = Category.original
+		@categories = Category.all
 	end
 
 end

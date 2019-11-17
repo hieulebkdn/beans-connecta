@@ -22,7 +22,9 @@
           <div id="jobs">
             <%= render @jobs %>
           </div>
+          <% if @jobs.size!=0 %>
           <%== pagy_bootstrap_nav(@pagy) %>
+          <% end %>
         </div>
       </div>
     </div>

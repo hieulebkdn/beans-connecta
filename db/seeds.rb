@@ -7,15 +7,14 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 categories = [
-	["All"], #1
-	["Finance", 1],#2	
-	["Sale/Marketing", 1],#3
-	["Education/Training", 1],#4
-	["Technologies", 1],#5
-	["Art/Design", 1],#6
-	["Healthcare", 1],#7
-	["Science", 1],#8
-	["Food Service", 1],#9
+  "Finance",
+  "Sale/Marketing",
+  "Education/Training",
+  "Technologies",
+  "Art/Design",
+  "Healthcare",
+  "Science",
+  "Part-Time Job",
 ]
 
 companies = [
@@ -40,13 +39,12 @@ benefits = [
 
 existing_categories = Category.all.map { |c| c.name }
 existing_companies = Company.all.map { |c| c.name }
-existing_benefits = Benefit.all.map { |c| c.name }
-existing_ranks = Rank.all.map { |c| c.name }
+existing_benefits = Benefit.all.map { |c| c.tag }
+existing_ranks = Rank.all.map { |c| c.tag }
 
-
-categories.each do |n, co|
+categories.each do |n|
 	unless existing_categories.include?(n)
-		Category.create(name: n, childof: co)
+		Category.create(name: n)
 	end
 end
 

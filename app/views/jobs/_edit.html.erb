@@ -1,6 +1,6 @@
 <div class="page-login-form box">
   <h3>
-    <%= t("update_job") %>
+    <%= t("update_job_title") %>
   </h3>
   <%= form_with(model: job, html: {class: "login-form"}, id: "edit-job") do |form| %>
     <div class="form-group space-bound"">
@@ -12,13 +12,27 @@
     </div>
     <div class="form-group">
       <div class="row">
-        <div class="col-md-9">
+        <div class="col-md-6">
           <label class="control-label"><%= t("position") %></label>
           <div class="input-icon">
             <i class="lni-apartment"></i>
             <%= form.text_field :position, class: "form-control", placeholder: t("job_position") %>
           </div>
         </div>
+        <div class="col-md-6">
+          <div class="search-category-container">
+            <label class="styled-select"><%= t("job_field") %>
+              <%= form.select :category_id, options_from_collection_for_select(@categories, "id", "name", "1"), class: "form-control styled-select" %>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label"><%= t("workplace") %></label>
+      <div class="input-icon">
+        <i class="lni-apartment"></i>
+        <%= form.text_field :workplace, class: "form-control", placeholder: t("job_workplace") %>
       </div>
     </div>
     <div class="form-group">
@@ -58,14 +72,14 @@
           <label class="control-label"><%= t("minpay") %></label>
           <div class="input-icon">
             <i class="lni-apartment"></i>
-            <%= form.number_field :min_pay, class: "form-control", placeholder: t("minpay"),  min: 100, max: 9999999, step: 100 %>
+            <%= form.number_field :min_pay, class: "form-control", placeholder: t("job_minpay"),  min: 100, max: 9999999, step: 100 %>
           </div>
         </div>
         <div class="col-md-6">
           <label class="control-label"><%= t("maxpay") %></label>
           <div class="input-icon">
             <i class="lni-apartment"></i>
-            <%= form.number_field :max_pay, class: "form-control", placeholder: t("maxpay"), min: 100, max: 9999999, step: 100 %>
+            <%= form.number_field :max_pay, class: "form-control", placeholder: t("job_maxpay"), min: 100, max: 9999999, step: 100 %>
           </div>
         </div>
       </div>
