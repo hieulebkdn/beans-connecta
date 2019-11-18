@@ -38,16 +38,10 @@
     <div class="form-group">
       <div class="row">
         <div class="col-md-6">
-          <label class="control-label"><%= t("deadline") %></label>
-          <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
-            <div class="input-icon">
-              <i class="lni-gift"></i>
-            </div>
-            <%= form.text_field(:deadline, class: "form-control datetimepicker-input", data: {target:"#datetimepicker1"}, placeholder: t("deadline") ) %>
-            <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
-              <div class="input-group-text"><i class="fa fa-calendar"></i>
-              </div>
-            </div>
+          <label class="control-label"><%= t("annual_salary") %></label>
+          <div class="input-icon">
+            <i class="lni-apartment"></i>
+            <%= form.number_field :annual_salary, class: "form-control", placeholder: t("job_annual_salary"), min: 5000, max: 1000000, step: 1000 %>
           </div>
         </div>
         <div class="col-md-3">
@@ -69,17 +63,16 @@
     <div class="form-group">
       <div class="row">
         <div class="col-md-6">
-          <label class="control-label"><%= t("minpay") %></label>
-          <div class="input-icon">
-            <i class="lni-apartment"></i>
-            <%= form.number_field :min_pay, class: "form-control", placeholder: t("minpay"),  min: 100, max: 9999999, step: 100 %>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <label class="control-label"><%= t("maxpay") %></label>
-          <div class="input-icon">
-            <i class="lni-apartment"></i>
-            <%= form.number_field :max_pay, class: "form-control", placeholder: t("maxpay"), min: 100, max: 9999999, step: 100 %>
+          <label class="control-label"><%= t("deadline") %></label>
+          <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
+            <div class="input-icon">
+              <i class="lni-gift"></i>
+            </div>
+            <%= form.text_field(:deadline, class: "form-control datetimepicker-input", data: {target:"#datetimepicker1"}, placeholder: t("deadline") ) %>
+            <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+              <div class="input-group-text"><i class="fa fa-calendar"></i>
+              </div>
+            </div>
           </div>
         </div>
       </div>

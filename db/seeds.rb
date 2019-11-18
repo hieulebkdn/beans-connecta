@@ -7,14 +7,14 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 categories = [
-  "Finance",
-  "Sale/Marketing",
-  "Education/Training",
-  "Technologies",
-  "Art/Design",
-  "Healthcare",
-  "Science",
-  "Part-Time Job",
+  ["Finance", "lni-keyboard"],
+  ["Sale/Marketing", "lni-world"],
+  ["Education/Training", "lni-book"],
+  ["Technologies", "lni-display"],
+  ["Art/Design", "lni-brush"],
+  ["Healthcare", "lni-heart"],
+  ["Science", "lni-funnel"],
+  ["Part-Time Job", "lni-dinner"],
 ]
 
 companies = [
@@ -34,7 +34,14 @@ ranks = [
 ]
 
 benefits = [
-	"Health insurance", "Life insurance", "Retirement benefits or accounts", "Company trip", "Training", "Annual Leave", "Bonus", "Salary Increase"
+	["Insurance", "fa fa-medkit"],
+	["Shuttle service", "fa fa-taxi"],
+	["Allowances", "fa fa-money"],
+	["Company trip", "fa fa-plane"],
+	["Training", "fa fa-graduation-cap"],
+	["Annual leave", "fa fa-briefcase"],
+	["Incentive bonus", "fa fa-usd"],
+	["Salary review", "fa fa-line-chart"]
 ]
 
 existing_categories = Category.all.map { |c| c.name }
@@ -42,15 +49,15 @@ existing_companies = Company.all.map { |c| c.name }
 existing_benefits = Benefit.all.map { |c| c.tag }
 existing_ranks = Rank.all.map { |c| c.tag }
 
-categories.each do |n|
+categories.each do |n, icon|
 	unless existing_categories.include?(n)
-		Category.create(name: n)
+		Category.create(name: n, icon_class: icon)
 	end
 end
 
-benefits.each do |tag|
+benefits.each do |tag, icon|
 	unless existing_benefits.include?(tag)
-		Benefit.create(tag: tag)
+		Benefit.create(tag: tag, icon_class: icon)
 	end
 end
 

@@ -60,8 +60,8 @@ class JobsController < ApplicationController
     end
 
     def job_params
-      params.require(:job).permit(:title, :position, :quantity, :description, :requirement, :min_pay, 
-            :max_pay, :is_active, :exp_year, :deadline, :workplace, :company_id, :category_id, job_rank_join_models_attributes: [ :job_id, :rank_id ])
+      params.require(:job).permit(:title, :position, :quantity, :description, :requirement, :annual_salary,
+         :is_active, :exp_year, :deadline, :workplace, :company_id, :category_id, job_rank_join_models_attributes: [ :job_id, :rank_id ])
     end
 
     def load_company_jobs 

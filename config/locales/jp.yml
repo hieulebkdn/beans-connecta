@@ -108,6 +108,8 @@ jp:
   job_requirement: 求人の要求の記載
   job_workplace: (例) 東京都渋谷区渋谷2-15-1 Aタワー2F
   job_field: 領域
+  job_annual_salary: 年給
+  annual_salary: 年給
 
   pages:
     index:

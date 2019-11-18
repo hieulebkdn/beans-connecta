@@ -10,7 +10,10 @@ class Job < ApplicationRecord
 
 	delegate :name, to: :company, prefix: true, allow_nil: true	
 	delegate :logo, to: :company, prefix: true, allow_nil: true	
-  delegate :city, to: :company, prefix: true, allow_nil: true	
+	delegate :address, to: :company, prefix: true, allow_nil: true	
+  delegate :website, to: :company, prefix: true, allow_nil: true	
+	delegate :scale, to: :company, prefix: true, allow_nil: true	
+  delegate :description, to: :company, prefix: true, allow_nil: true	
 	
 	scope :owned_by, -> (company_id){ where(:company_id => company_id)}
 

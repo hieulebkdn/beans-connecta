@@ -8,16 +8,30 @@
             <h3 class="product-title"><%= @job.title %></h3>
             <p class="brand"><%= @job.company_name %></p>
             <div class="tags">
-              <span><i class="lni-map-marker"></i> <%= @job.company_city %></span>
-              <span><i class="lni-calendar"></i> <%= @job.updated_at %></span>
+              <span><i class="fa fa-user"></i> <%= @job.position %></span>
+              <span><i class="fa fa-map-marker"></i> <%= @job.workplace %></span>
+            </div>
+          </div>
+          <div class="content">
+            <p class="brand benefit-section">Benefit</p>
+            <div class="tags">
+              <% @job.benefits.each_slice(3) do |benefits| %>
+                <div class="row">
+                  <% benefits.each do |benefit| %>
+                    <div class= "col-md-4">
+                      <span><i class="<%= benefit.icon_class%>"></i> <%= benefit.tag %></span>
+                    </div>
+                  <% end %>
+                </div>
+              <% end %>
             </div>
           </div>
         </div>
       </div>
       <div class="col-lg-4 col-md-6 col-xs-12">
         <div class="month-price">
-          <span class="year">Yearly</span>
-          <div class="price">$65,000</div>
+          <span class="year"><%= t "annual_salary" %></span>
+          <div class="price">$<%= @job.annual_salary %></div>
         </div>
       </div>
     </div>
@@ -28,17 +42,28 @@
     <div class="row justify-content-between">
       <div class="col-lg-8 col-md-12 col-xs-12">
         <div class="content-area">
-          <h4>Job Description</h4>
-          <p><%= @job.description %></p>
+          <h5>Job Description</h5>
+          <%= simple_format @job.description %>
           <h5>What You Need for this Position</h5>
-          <p><%= @job.requirement %></p>
-          <h5>How To Apply</h5>
-          <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.</p>
-          <a href="#" class="btn btn-common">Apply job</a>
+          <p><%= simple_format @job.requirement %></p>
+          <h5>Deadline</h5>
+          <p><%= format_date_default @job.deadline %></p>
+          <div class= row>
+              <a href="#" class="btn btn-common">応募</a>
+              <a href="#" class="btn btn-info btn-bookmark">気になる</a>
+          </div>
         </div>
       </div>
       <div class="col-lg-4 col-md-12 col-xs-12">
         <div class="sideber">
+          <div class="widghet">
+            <h3>About <%= @job.company_name %></h3>
+            <%= image_tag @job.company_logo, class: "img-about-section"%>
+            <p><i class="fa fa-map-marker fa-fw green-icon"></i> <%= @job.company_address %></p>
+            <p><i class="fa fa-group fa-fw green-icon"></i> <%= @job.company_scale %> 社員</p>
+            <p><i class="fa fa-internet-explorer fa-fw green-icon"></i> <%= @job.company_website %></p>
+            <p><i class="fa fa-info fa-fw green-icon"></i> <%= @job.company_description %></p>
+          </div>
           <div class="widghet">
             <h3>Job Location</h3>
             <div class="maps">
@@ -82,7 +107,7 @@
       <div class="col-lg-4 col-md-6 col-xs-12">
         <div class="job-featured">
           <div class="icon">
-            <img src="assets/img/features/img1.png" alt="">
+            <%= image_tag 'features/img1.png' %>
           </div>
           <div class="content">
             <h3><a href="job-page.html">Software Engineer</a></h3>
@@ -98,7 +123,7 @@
       <div class="col-lg-4 col-md-6 col-xs-12">
         <div class="job-featured">
           <div class="icon">
-            <img src="assets/img/features/img2.png" alt="">
+            <%= image_tag 'features/img2.png' %>
           </div>
           <div class="content">
             <h3><a href="job-page.html">Graphic Designer</a></h3>
@@ -114,7 +139,7 @@
       <div class="col-lg-4 col-md-6 col-xs-12">
         <div class="job-featured">
           <div class="icon">
-            <img src="assets/img/features/img3.png" alt="">
+            <%= image_tag 'features/img3.png' %>
           </div>
           <div class="content">
             <h3><a href="job-page.html">Managing Director</a></h3>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_17_015824) do
+ActiveRecord::Schema.define(version: 2019_11_18_044132) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 2019_11_17_015824) do
 
   create_table "benefits", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "tag"
+    t.string "icon_class", default: "lni-world"
   end
 
   create_table "candidates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -53,6 +54,7 @@ ActiveRecord::Schema.define(version: 2019_11_17_015824) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
+    t.string "icon_class", default: "lni-world"
   end
 
   create_table "companies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -102,8 +104,6 @@ ActiveRecord::Schema.define(version: 2019_11_17_015824) do
     t.integer "quantity", default: 1
     t.text "description"
     t.text "requirement"
-    t.decimal "min_pay", precision: 10, default: "500"
-    t.decimal "max_pay", precision: 10, default: "500"
     t.boolean "is_active", default: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -112,6 +112,7 @@ ActiveRecord::Schema.define(version: 2019_11_17_015824) do
     t.datetime "deadline"
     t.string "workplace"
     t.bigint "category_id"
+    t.string "annual_salary", default: "12000"
     t.index ["category_id"], name: "index_jobs_on_category_id"
     t.index ["company_id"], name: "index_jobs_on_company_id"
     t.index ["title"], name: "index_jobs_on_title"

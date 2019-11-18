@@ -337,10 +337,10 @@ button:focus {
 .page-header .breadcrumb-wrapper .img-wrapper {
     float: left;
     position: relative;
-    width: 70px;
+    width: 90px;
     text-align: center;
     display: inline-block;
-    height: 70px;
+    height: 90px;
     line-height: 70px;
     box-shadow: 0 0 7px rgba(203, 203, 203, .23)
 }

@@ -108,3 +108,30 @@ input:checked+.slider:before {
 .slider.round:before {
     border-radius: 50%;
 }
+
+.benefit-section {
+    margin-top: 15px;
+    margin-bottom: 0px !important;
+}
+
+.apply-button {
+    background: #26ae61;
+    padding: 12px 30px;
+    float: right;
+    text-align: center;
+    color: #fff;
+    border-radius: 4px;
+}
+
+.green-icon {
+    color: #26ae61;
+}
+
+.img-about-section {
+    width: 150px;
+    height: 80px;
+}
+
+.btn-bookmark {
+    margin-left: 10px;
+}
