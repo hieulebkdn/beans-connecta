@@ -135,3 +135,8 @@ input:checked+.slider:before {
 .btn-bookmark {
     margin-left: 10px;
 }
+
+.job-icon {
+    width: 40px;
+    height: 40px;
+}

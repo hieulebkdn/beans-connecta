@@ -1,5 +1,14 @@
 class Job < ApplicationRecord
-	belongs_to :company, class_name: Company.name, foreign_key: "company_id"
+	searchkick word_middle: %i(title position)
+
+	def search_data
+		{
+			title: title,
+			position: position
+		}
+	end
+
+	belongs_to :company, class_name: Company.name, foreign_key: "company_id", optional: true
 	has_many :job_rank_join_models, class_name: JobRankJoinModel.name, foreign_key: "job_id"
 	has_many :job_benefit_join_models, class_name: JobBenefitJoinModel.name, foreign_key: "job_id"
 	has_many :ranks, through: :job_rank_join_models

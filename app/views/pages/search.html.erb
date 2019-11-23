@@ -1,0 +1,88 @@
+<div class="page-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="inner-header">
+          <h3>Find Job</h3>
+        </div>
+        <div class="job-search-form bg-cyan job-featured-search">
+          <%= form_with(url: search_path, id: "search-form", method: :get) do |form| %>
+            <div class="row justify-content-center">
+              <div class="col-lg-5 col-md-5 col-xs-12">
+                <div class="form-group">
+                  <%= form.text_field :term, class: "form-control", placeholder: "Job Title or Company Name" %>
+                </div>
+              </div>
+              <div class="col-lg-5 col-md-5 col-xs-12">
+                <div class="form-group">
+                  <div class="search-category-container">
+                    <label class="styled-select">
+                      <select>
+                        <option value="none">Locations</option>
+                        <option value="none">New York</option>
+                        <option value="none">California</option>
+                        <option value="none">Washington</option>
+                        <option value="none">Birmingham</option>
+                        <option value="none">Chicago</option>
+                        <option value="none">Phoenix</option>
+                      </select>
+                    </label>
+                  </div>
+                  <i class="lni-map-marker"></i>
+                </div>
+              </div>
+              <div class="col-lg-1 col-md-1 col-xs-12">
+                <a href="javascript:$('#search-form').submit();", class="button"><i class="lni-search"></i></a>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<section id="job-listings" class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-xs-12">
+        <% @jobs.each do |job|%>
+          <a class="job-listings" href="job-details.html">
+            <div class="row">
+              <div class="col-lg-4 col-md-4 col-xs-12">
+                <div class="job-company-logo">
+                <% if job.company_logo.attached? %>
+                  <%= image_tag(job.company_logo, class: "job-icon")%>
+                  <% else %>
+                  <%= image_tag 'features/img2.png' %>
+                  <% end%>
+                </div>
+                <div class="job-details">
+                  <h3><%= job.position %></h3>
+                  <span class="company-neme">
+                    AmazeSoft
+                  </span>
+                </div>
+              </div>
+              <div class="col-lg-2 col-md-2 col-xs-12 text-center">
+                <span class="btn-open">
+                  7 Open Jobs
+                </span>
+              </div>
+              <div class="col-lg-2 col-md-2 col-xs-12 text-right">
+                <div class="location">
+                  <i class="lni-map-marker"></i> New Yourk, US
+                </div>
+              </div>
+              <div class="col-lg-2 col-md-2 col-xs-12 text-right">
+                <span class="btn-full-time">Full Time</span>
+              </div>
+              <div class="col-lg-2 col-md-2 col-xs-12 text-right">
+                <span class="btn-apply">Apply Now</span>
+              </div>
+            </div>
+          </a>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>

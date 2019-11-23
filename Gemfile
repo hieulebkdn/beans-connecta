@@ -18,6 +18,7 @@ gem "faker", "1.7.3"
 gem "rails-i18n"
 gem "pagy", "3.5.1"
 gem "cancancan"
+gem "searchkick"
 
 #UI gem
 gem "city-state"
