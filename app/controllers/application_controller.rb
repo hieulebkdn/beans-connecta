@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
 	before_action :configure_permitted_parameters, if: :devise_controller?
 	before_action :set_locale
 	before_action :load_categories
+	require 'company_recommender'
+	require 'job_recommender'
 
 	rescue_from CanCan::AccessDenied do
 		respond_to do |format|
@@ -31,5 +33,6 @@ class ApplicationController < ActionController::Base
 	def load_categories
 		@categories = Category.all
 	end
+
 
 end

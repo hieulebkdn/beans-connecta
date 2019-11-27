@@ -7,10 +7,10 @@ class PagesController < ApplicationController
 
     def search
         search = params[:term].present? ? params[:term] : nil
-        @jobs = if search
-            Job.search(search)
+        if search
+            @jobs = Job.search(search)
         else
-            Job.all
+            @pagy, @jobs = pagy(Job.all, items: 10)
         end
     end
 

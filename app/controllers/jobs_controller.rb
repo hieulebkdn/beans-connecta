@@ -1,11 +1,16 @@
 class JobsController < ApplicationController
+  require 'job_recommender'
+
   prepend_before_action :set_job, only: %i(edit update destroy show)
   before_action :load_company_jobs, only: %i(index)
   before_action :load_default_benefits_ranks, only: %i(new create edit update)
   before_action :load_job_benefits_status, only: %i(edit update)
   before_action :load_job_ranks_status, only: %i(edit update)
 
-  def show; end
+  def show 
+    load_recommender
+    byebug
+  end
 
   def index
   end
@@ -117,5 +122,10 @@ class JobsController < ApplicationController
       rank_to_remove_ids.each do |rank_id|
         job.ranks.delete(rank_id) if @ranks_status[rank_id] == true
       end
+    end
+
+    def load_recommender
+      @recommender = JobRecommender.new
+      @ids = @recommender.similarities_for(@job.id)
     end
 end

@@ -3,7 +3,11 @@
     <div class="row">
       <div class="col-lg-8 col-md-6 col-xs-12">
         <div class="breadcrumb-wrapper">
-          <%= image_tag @job.company_logo, class: "img-wrapper" %>
+          <% if @job.company_logo.attached? %>
+            <%= image_tag(@job.company_logo, class: "img-wrapper")%>
+          <% else %>
+            <%= image_tag('features/img2.png', class: "img-wrapper") %>
+          <% end%>
           <div class="content">
             <h3 class="product-title"><%= @job.title %></h3>
             <p class="brand"><%= @job.company_name %></p>
@@ -49,8 +53,8 @@
           <h5>Deadline</h5>
           <p><%= format_date_default @job.deadline %></p>
           <div class= row>
-              <a href="#" class="btn btn-common">応募</a>
-              <a href="#" class="btn btn-info btn-bookmark">気になる</a>
+            <a href="#" class="btn btn-common">応募</a>
+            <a href="#" class="btn btn-info btn-bookmark">気になる</a>
           </div>
         </div>
       </div>
@@ -58,7 +62,11 @@
         <div class="sideber">
           <div class="widghet">
             <h3>About <%= @job.company_name %></h3>
-            <%= image_tag @job.company_logo, class: "img-about-section"%>
+            <% if @job.company_logo.attached? %>
+              <%= image_tag(@job.company_logo, class: "img-about-section")%>
+            <% else %>
+              <%= image_tag('features/img2.png', class: "img-about-section")%>
+            <% end %>
             <p><i class="fa fa-map-marker fa-fw green-icon"></i> <%= @job.company_address %></p>
             <p><i class="fa fa-group fa-fw green-icon"></i> <%= @job.company_scale %> 社員</p>
             <p><i class="fa fa-internet-explorer fa-fw green-icon"></i> <%= @job.company_website %></p>

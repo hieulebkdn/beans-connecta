@@ -19,7 +19,8 @@ gem "rails-i18n"
 gem "pagy", "3.5.1"
 gem "cancancan"
 gem "searchkick"
-
+gem 'predictor'
+gem 'redis'
 #UI gem
 gem "city-state"
 gem "bootstrap4-datetime-picker-rails"

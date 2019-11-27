@@ -1,10 +1,12 @@
+require 'job_recommender'
 class Job < ApplicationRecord
-	searchkick word_middle: %i(title position)
+	searchkick word_middle: %i(title position company_name), synonyms: [["specialist", "chuyên viên"], ["manager", "quản lý"]]
 
 	def search_data
 		{
 			title: title,
-			position: position
+			position: position,
+			company_name: company_name
 		}
 	end
 
@@ -26,5 +28,11 @@ class Job < ApplicationRecord
 	
 	scope :owned_by, -> (company_id){ where(:company_id => company_id)}
 
+	after_commit ->(job) do
+			JobRecommender.add_job(job)
+	end, if: :persisted?
 
+	after_commit ->(job) do
+			JobRecommender.delete_job(job)
+	end, on: :destroy
 end
