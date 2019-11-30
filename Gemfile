@@ -21,6 +21,7 @@ gem "cancancan"
 gem "searchkick"
 gem 'predictor'
 gem 'redis'
+
 #UI gem
 gem "city-state"
 gem "bootstrap4-datetime-picker-rails"

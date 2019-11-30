@@ -1,82 +1,80 @@
 <section class="category section bg-gray">
   <div class="container">
     <div class="section-header">
-      <h2 class="section-title"><%= t (".category") %></h2>
-      <p><%= t (".category_description") %></p>
+      <h2 class="section-title"><%= t ("category") %></h2>
+      <p><%= t ("category_description") %></p>
     </div>
     <div class="row">
-    
       <div class="col-lg-3 col-md-6 col-xs-12 f-category">
         <a href="browse-jobs.html">
           <div class="icon bg-color-1">
-            <i class="lni-keyboard"></i>
+            <i class="<%= @categories[0].icon_class%>"></i>
           </div>
           <h3><%= @categories[0].name %></h3>
-          <p>(4286 jobs)</p>
+          <p>(<%= @quantity_per_category[0] %> jobs)</p>
         </a>
       </div>
-
       <div class="col-lg-3 col-md-6 col-xs-12 f-category">
         <a href="browse-jobs.html">
           <div class="icon bg-color-2">
-            <i class="lni-world"></i>
+            <i class="<%= @categories[1].icon_class%>"></i>
           </div>
           <h3><%= @categories[1].name %></h3>
-          <p>(2000 jobs)</p>
+          <p>(<%= @quantity_per_category[1] %> jobs)</p>
         </a>
       </div>
       <div class="col-lg-3 col-md-6 col-xs-12 f-category">
         <a href="browse-jobs.html">
           <div class="icon bg-color-3">
-            <i class="lni-book"></i>
+            <i class="<%= @categories[2].icon_class%>"></i>
           </div>
           <h3><%= @categories[2].name %></h3>
-          <p>(1450 jobs)</p>
+          <p>(<%= @quantity_per_category[2] %> jobs)</p>
         </a>
       </div>
       <div class="col-lg-3 col-md-6 col-xs-12 f-category">
         <a href="browse-jobs.html">
           <div class="icon bg-color-4">
-            <i class="lni-display"></i>
+            <i class="<%= @categories[3].icon_class%>"></i>
           </div>
           <h3><%= @categories[3].name %></h3>
-          <p>(5100 jobs)</p>
+          <p>(<%= @quantity_per_category[3] %> jobs)</p>
         </a>
       </div>
       <div class="col-lg-3 col-md-6 col-xs-12 f-category">
         <a href="browse-jobs.html">
           <div class="icon bg-color-5">
-            <i class="lni-brush"></i>
+            <i class="<%= @categories[4].icon_class%>"></i>
           </div>
           <h3><%= @categories[4].name %></h3>
-          <p>(5079 jobs)</p>
+          <p>(<%= @quantity_per_category[4] %> jobs)</p>
         </a>
       </div>
       <div class="col-lg-3 col-md-6 col-xs-12 f-category">
         <a href="browse-jobs.html">
           <div class="icon bg-color-6">
-            <i class="lni-heart"></i>
+            <i class="<%= @categories[5].icon_class%>"></i>
           </div>
           <h3> <%= @categories[5].name %></h3>
-          <p>(3235 jobs)</p>
+          <p>(<%= @quantity_per_category[5] %> jobs)</p>
         </a>
       </div>
       <div class="col-lg-3 col-md-6 col-xs-12 f-category">
         <a href="browse-jobs.html">
           <div class="icon bg-color-7">
-            <i class="lni-funnel"></i>
+            <i class="<%= @categories[6].icon_class%>"></i>
           </div>
           <h3><%= @categories[6].name %></h3>
-          <p>(1800 jobs)</p>
+          <p>(<%= @quantity_per_category[6] %> jobs)</p>
         </a>
       </div>
       <div class="col-lg-3 col-md-6 col-xs-12 f-category">
         <a href="browse-jobs.html">
           <div class="icon bg-color-8">
-            <i class="lni-dinner"></i>
+            <i class="<%= @categories[7].icon_class%>"></i>
           </div>
           <h3><%= @categories[7].name %></h3>
-          <p>(4286 jobs)</p>
+          <p>(<%= @quantity_per_category[7] %> jobs)</p>
         </a>
       </div>
     </div>

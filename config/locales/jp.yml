@@ -61,6 +61,7 @@ jp:
   company_website: ウェブサイトのリンク
   already_have_company: すでに会社を持っています？
 
+  findjob: 求人の検索
   no_experience: 経験がまだ設定されなかった。
   no_skill: スキルがまだ設定されなかった。
 
@@ -110,13 +111,17 @@ jp:
   job_field: 領域
   job_annual_salary: 年給
   annual_salary: 年給
+  search_placeholder: "タイトルやポジションの入力"
+  location: "職場"
+  category: カテゴリ
+  category_description: 最も人気があるカテゴリ
 
   pages:
     index:
       content0: あなたの人生に
       content1: 合った仕事を見つける
       category: カテゴリ
-      category_description: Most popular categories of portal
+      category_description: 最も人気があるカテゴリ
       recent_job: 最近の求人ポスト 
       recent_job_description: "As the Asia's #1 job site, with over 10 million unique visitors every month from over 15 different countries"
       most_active_company: 最も活発な会社

@@ -11,6 +11,7 @@ class Job < ApplicationRecord
 	end
 
 	belongs_to :company, class_name: Company.name, foreign_key: "company_id", optional: true
+	belongs_to :category, class_name: Category.name, foreign_key: "category_id", optional: true
 	has_many :job_rank_join_models, class_name: JobRankJoinModel.name, foreign_key: "job_id"
 	has_many :job_benefit_join_models, class_name: JobBenefitJoinModel.name, foreign_key: "job_id"
 	has_many :ranks, through: :job_rank_join_models
@@ -27,7 +28,6 @@ class Job < ApplicationRecord
   delegate :description, to: :company, prefix: true, allow_nil: true	
 	
 	scope :owned_by, -> (company_id){ where(:company_id => company_id)}
-
 	after_commit ->(job) do
 			JobRecommender.add_job(job)
 	end, if: :persisted?

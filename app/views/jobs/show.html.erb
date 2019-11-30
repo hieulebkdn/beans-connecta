@@ -70,7 +70,8 @@
             <p><i class="fa fa-map-marker fa-fw green-icon"></i> <%= @job.company_address %></p>
             <p><i class="fa fa-group fa-fw green-icon"></i> <%= @job.company_scale %> 社員</p>
             <p><i class="fa fa-internet-explorer fa-fw green-icon"></i> <%= @job.company_website %></p>
-            <p><i class="fa fa-info fa-fw green-icon"></i> <%= @job.company_description %></p>
+            <p><i class="fa fa-info fa-fw green-icon"></i> <%= truncate @job.company_description, length: 200 %></p>
+            <%= link_to 'read more', company_path(@job.company.id) %> 
           </div>
           <div class="widghet">
             <h3>Job Location</h3>

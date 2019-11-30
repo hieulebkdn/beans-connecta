@@ -9,7 +9,6 @@ class JobsController < ApplicationController
 
   def show 
     load_recommender
-    byebug
   end
 
   def index
@@ -125,7 +124,7 @@ class JobsController < ApplicationController
     end
 
     def load_recommender
-      @recommender = JobRecommender.new
+      @recommender = JobRecommender.instance
       @ids = @recommender.similarities_for(@job.id)
     end
 end

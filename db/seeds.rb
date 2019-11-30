@@ -11,9 +11,9 @@ categories = [
   ["Finance", "lni-keyboard"],
   ["Sale/Marketing", "lni-world"],
   ["Education/Training", "lni-book"],
-  ["Manage", "lni-display"],
+  ["Manage", "lni-heart"],
   ["Art/Design", "lni-brush"],
-  ["Healthcare", "lni-heart"],
+  ["IT", "lni-display"],
   ["Specialist", "lni-funnel"],
   ["Part-Time Job", "lni-dinner"],
 ]

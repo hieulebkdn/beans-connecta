@@ -32,6 +32,7 @@ class ApplicationController < ActionController::Base
 	
 	def load_categories
 		@categories = Category.all
+		@quantity_per_category = Category.quantity_per_each
 	end
 
 
