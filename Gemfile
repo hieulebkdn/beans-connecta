@@ -26,9 +26,8 @@ gem 'redis'
 gem "city-state"
 gem "bootstrap4-datetime-picker-rails"
 gem "font-awesome-rails"
-gem "bootstrap-sass", "3.4.1"
+gem "bootstrap-sass"
 gem "material_icons"
-gem "data-confirm-modal"
 gem "popper_js", "~> 1.14.5"
 
 #Rails"s defautlt

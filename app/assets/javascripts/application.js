@@ -15,12 +15,13 @@
 //= require popper
 //= require jquery_ujs
 //= require bootstrap
+//= require bootstrap-sprockets
 //= require activestorage
-//= require_tree
+//= require_tree .
 //= require moment
 //= require tempusdominus-bootstrap-4
-
 // direct_uploads.js
+
 addEventListener("direct-upload:initialize", event => {
     const { target, detail } = event
     const { id, file } = detail

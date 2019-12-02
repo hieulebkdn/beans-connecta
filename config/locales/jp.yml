@@ -111,11 +111,21 @@ jp:
   job_field: 領域
   job_annual_salary: 年給
   annual_salary: 年給
-  search_placeholder: "タイトルやポジションの入力"
-  location: "職場"
+  search_placeholder: タイトルやポジションの入力
+  location: 職場
   category: カテゴリ
   category_description: 最も人気があるカテゴリ
+  apply: すぐに申し込み
+  job_description: 仕事内容
+  job_requirement: 応募条件
+  similar_job: 同様の仕事
+  job_location: 職場
+  share_job: この求人を共有する
 
+  write_review: 評価記載
+  report: 報告
+  share: 共有
+  
   pages:
     index:
       content0: あなたの人生に

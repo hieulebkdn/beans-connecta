@@ -17,7 +17,7 @@
             </div>
           </div>
           <div class="content">
-            <p class="brand benefit-section">Benefit</p>
+            <p class="brand benefit-section"><%= t "benefit" %></p>
             <div class="tags">
               <% @job.benefits.each_slice(3) do |benefits| %>
                 <div class="row">
@@ -46,11 +46,11 @@
     <div class="row justify-content-between">
       <div class="col-lg-8 col-md-12 col-xs-12">
         <div class="content-area">
-          <h5>Job Description</h5>
+          <h5><%= t "job_description" %></h5>
           <%= simple_format @job.description %>
-          <h5>What You Need for this Position</h5>
+          <h5><%= t "job_description" %></h5>
           <p><%= simple_format @job.requirement %></p>
-          <h5>Deadline</h5>
+          <h5><%= t "deadline" %></h5>
           <p><%= format_date_default @job.deadline %></p>
           <div class= row>
             <a href="#" class="btn btn-common">応募</a>
@@ -61,12 +61,12 @@
       <div class="col-lg-4 col-md-12 col-xs-12">
         <div class="sideber">
           <div class="widghet">
-            <h3>About <%= @job.company_name %></h3>
             <% if @job.company_logo.attached? %>
               <%= image_tag(@job.company_logo, class: "img-about-section")%>
             <% else %>
               <%= image_tag('features/img2.png', class: "img-about-section")%>
             <% end %>
+            <h3>About <%= @job.company_name %></h3>
             <p><i class="fa fa-map-marker fa-fw green-icon"></i> <%= @job.company_address %></p>
             <p><i class="fa fa-group fa-fw green-icon"></i> <%= @job.company_scale %> 社員</p>
             <p><i class="fa fa-internet-explorer fa-fw green-icon"></i> <%= @job.company_website %></p>
@@ -74,7 +74,7 @@
             <%= link_to 'read more', company_path(@job.company.id) %> 
           </div>
           <div class="widghet">
-            <h3>Job Location</h3>
+            <h3><%= t "job_location" %></h3>
             <div class="maps">
               <div id="map" class="map-full">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d405691.57240383344!2d-122.3212843181106!3d37.40247298383319!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb68ad0cfc739%3A0x7eb356b66bd4b50e!2sSilicon+Valley%2C+CA%2C+USA!5e0!3m2!1sen!2sbd!4v1538319316724" allowfullscreen=""></iframe>
@@ -82,7 +82,7 @@
             </div>
           </div>
           <div class="widghet">
-            <h3>Share This Job</h3>
+            <h3><%= t "share_job" %></h3>
             <div class="share-job">
               <form method="post" class="subscribe-form">
                 <div class="form-group">
@@ -98,9 +98,9 @@
                 <li><a class="google-plus" href="#"><i class="lni-google-plus"></i></a></li>
               </ul>
               <div class="meta-tag">
-                <span class="meta-part"><a href="#"><i class="lni-star"></i> Write a Review</a></span>
-                <span class="meta-part"><a href="#"><i class="lni-warning"></i> Reports</a></span>
-                <span class="meta-part"><a href="#"><i class="lni-share"></i> Share</a></span>
+                <span class="meta-part"><a href="#"><i class="lni-star"></i><%= t "write_review" %></a></span>
+                <span class="meta-part"><a href="#"><i class="lni-warning"></i><%= t "report" %></a></span>
+                <span class="meta-part"><a href="#"><i class="lni-share"></i><%= t "share" %></a></span>
               </div>
             </div>
           </div>
@@ -111,7 +111,7 @@
 </section>
 <section id="featured" class="section bg-gray pb-45">
   <div class="container">
-    <h4 class="small-title text-left">Similar Jobs</h4>
+    <h4 class="small-title text-left"><%= t "similar_job" %></h4>
     <div class="row">
       <div class="col-lg-4 col-md-6 col-xs-12">
         <div class="job-featured">

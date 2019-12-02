@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_18_044132) do
+ActiveRecord::Schema.define(version: 2019_12_01_143559) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -31,6 +31,17 @@ ActiveRecord::Schema.define(version: 2019_11_18_044132) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "applies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "cover_letter"
+    t.integer "status", default: 0
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "candidate_id"
+    t.bigint "job_id"
+    t.index ["candidate_id"], name: "index_applies_on_candidate_id"
+    t.index ["job_id"], name: "index_applies_on_job_id"
   end
 
   create_table "benefits", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -156,6 +167,8 @@ ActiveRecord::Schema.define(version: 2019_11_18_044132) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "applies", "candidates"
+  add_foreign_key "applies", "jobs"
   add_foreign_key "companies", "categories"
   add_foreign_key "experiences", "candidates"
   add_foreign_key "jobs", "categories"

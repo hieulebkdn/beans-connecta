@@ -1,12 +1,14 @@
 require 'job_recommender'
 class Job < ApplicationRecord
-	searchkick word_middle: %i(title position company_name), synonyms: [["specialist", "chuyên viên"], ["manager", "quản lý"]]
+  has_many :applies, class_name: Apply.name, foreign_key: "job_id"
+
+	searchkick word_middle: %i(title position workplace), synonyms: [["specialist", "chuyên viên"], ["manager", "quản lý"], ["Hồ Chí Minh", "HCM"]]
 
 	def search_data
 		{
 			title: title,
 			position: position,
-			company_name: company_name
+			workplace: workplace
 		}
 	end
 

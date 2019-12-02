@@ -50,6 +50,8 @@ en:
   upload_avatar: Upload your avatar
   create: Submit
 
+  job_requirement: What You Need for this Position
+
   pages:
     index:
       content0: "Find the"

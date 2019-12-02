@@ -20,7 +20,7 @@ Rails.application.routes.draw do
     
     resources :skills
     resources :jobs
-    
+    resources :applies
     get "/about", to: "pages#about"
     get "/index", to: "pages#index"
     get "/login", to: "pages#login"

@@ -17,5 +17,5 @@ Rails.application.config.assets.precompile += %w(bootstrap.min.js
                     owl.carousel.min.js popper.min.js summernote.js waypoints.min.js
                     animate.css bootstrap.min.css line-icons.css main.css owl.carousel.min.css
                     owl.theme.default.css responsive.css slicknav.min.css summernote.css main.js 
-                    custom.css custom.js tempusdominus-bootstrap-4.css direct_uploads.css)
+                    custom.css custom.js tempusdominus-bootstrap-4.css direct_uploads.css boostrap-modal.css)
 
