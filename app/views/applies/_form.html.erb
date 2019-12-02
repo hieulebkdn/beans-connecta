@@ -1,0 +1,9 @@
+<%= form_with(model: @apply, html: {class: "login-form"}, id: "add-apply") do |form| %>
+  <div class="form-group">
+    <label class="control-label"><%= t("coverletter") %></label>
+    <%= form.text_field :cover_letter, class: "form-control", placeholder: "e.g UI/UX Researcher" %>
+  </div>
+  <%= form.hidden_field :candidate_id, :value => current_user.profile %>
+  <%= form.hidden_field :job_id, :value => params[:job_id] %>
+</div>
+<% end %>

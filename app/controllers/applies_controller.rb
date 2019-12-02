@@ -1,16 +1,16 @@
 class AppliesController < ApplicationController
-  def create
-    apllicant_id, job_id = params[:candidate_id], params[:job_id]
-    cover_letter = params[:cover_letter]
-    Apply.create(candidate_id: applicant_id, job_id: job_id, cover_letter: cover_letter)
-    byebug
-  end
-  def index
-  end
   def new
+    @apply = Apply.new
     respond_to do |format|
       format.html
       format.js
+    end
+  end
+
+  def create        
+    @apply = Apply.new apply_params
+    if @apply.save
+      flash[:success] = t(".flash_create")
     end
   end
 
