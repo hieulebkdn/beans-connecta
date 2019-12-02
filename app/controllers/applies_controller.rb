@@ -11,6 +11,7 @@ class AppliesController < ApplicationController
     @apply = Apply.new apply_params
     if @apply.save
       flash[:success] = t(".flash_create")
+      redirect_to job_path @apply.job_id
     end
   end
 

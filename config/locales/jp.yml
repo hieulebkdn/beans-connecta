@@ -121,6 +121,10 @@ jp:
   similar_job: 同様の仕事
   job_location: 職場
   share_job: この求人を共有する
+  view_detail: 詳細に見る
+  apply_this: この求人に応募する
+  coverletter: 自己紹介
+  coverletter_placeholder: 自分について特別点だと思うものを書いて頂き
 
   write_review: 評価記載
   report: 報告
@@ -136,6 +140,10 @@ jp:
       recent_job_description: "As the Asia's #1 job site, with over 10 million unique visitors every month from over 15 different countries"
       most_active_company: 最も活発な会社
       most_active_company_description: Want to be a part of us? Take it easy!
+
+  applies:
+    create:
+      flash_create: この求人に応募済み
 
   candidates: 
     show:
