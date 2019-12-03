@@ -1,7 +1,9 @@
+<script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
 <div class="page-header">
   <div class="container">
     <div class="row">
-      <div class="col-lg-8 col-md-6 col-xs-12">
+      <div class="col-lg-6 col-md-6 col-xs-12">
         <div class="breadcrumb-wrapper">
           <% if @job.company_logo.attached? %>
             <%= image_tag(@job.company_logo, class: "img-wrapper")%>
@@ -12,36 +14,35 @@
             <h3 class="product-title"><%= @job.title %></h3>
             <p class="brand"><%= @job.company_name %></p>
             <div class="tags">
-              <span><i class="fa fa-user"></i> <%= @job.position %></span>
+              <span><i class="fa fa-id-card"></i> <%= @job.position %></span>
               <span><i class="fa fa-map-marker"></i> <%= @job.workplace %></span>
+              <span><i class="fa fa-users"></i> <%= @job.quantity %> open position</span>
             </div>
           </div>
           <div class="content">
-            <p class="brand benefit-section"><%= t "benefit" %></p>
-            <div class="tags">
-              <% @job.benefits.each_slice(3) do |benefits| %>
-                <div class="row">
-                  <% benefits.each do |benefit| %>
-                    <div class= "col-md-4">
-                      <span><i class="<%= benefit.icon_class%>"></i> <%= benefit.tag %></span>
-                    </div>
-                  <% end %>
-                </div>
-              <% end %>
-            </div>
+            <div class="counter" data-counterup-time="1500" data-counterup-delay="30" data-counterup-beginat="100"><%= @job.annual_salary.to_f %></div>
           </div>
         </div>
       </div>
-      <div class="col-lg-4 col-md-6 col-xs-12">
-        <div class="month-price">
-          <span class="year"><%= t "annual_salary" %></span>
-          <div class="price">$<%= @job.annual_salary %></div>
-          <%= link_to '応募', new_apply_path(job_id: @job.id),  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window', class: 'btn btn-info btn-bookmark'}  %>
-          <%= link_to like_job_path(@job), method: :put, class: "btn btn-warning btn-bookmark" do %>
-            気になる
-            <%= @job.get_upvotes.size %>
-          <% end %>
+      <div class="col-lg-4 col-md-4 col-xs-12">
+        <div class="content">
+          <p class="brand benefit-section"><%= t "benefit" %></p>
+          <div class="tags">
+            <% @job.benefits.each_slice(2) do |benefits| %>
+              <div class="row">
+                <% benefits.each do |benefit| %>
+                  <div class= "col-md-6">
+                    <span><i class="<%= benefit.icon_class%> fa-fw green-icon"></i> <%= benefit.tag %></span>
+                  </div>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
         </div>
+      </div>
+      <div class="col-lg-2 col-md-2 col-xs-12">
+        <%= link_to 'Apply', new_apply_path(job_id: @job.id),  
+          {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window', class: 'btn-oubo'}  %>
       </div>
     </div>
   </div>
@@ -51,9 +52,11 @@
     <div class="row justify-content-between">
       <div class="col-lg-8 col-md-12 col-xs-12">
         <div class="content-area">
+          <h5><%= t "annual_salary" %></h5>
+          <div>$<%= @job.annual_salary %></div>
           <h5><%= t "job_description" %></h5>
           <%= simple_format @job.description %>
-          <h5><%= t "job_description" %></h5>
+          <h5><%= t "job_requirement" %></h5>
           <p><%= simple_format @job.requirement %></p>
           <h5><%= t "deadline" %></h5>
           <p><%= format_date_default @job.deadline %></p>
@@ -192,3 +195,14 @@
     </div>
   </div>
 </section>
+<script>
+  $('.counter').counterUp({
+      delay: 10,
+      time: 1000,
+      offset: 70,
+      beginAt: 100,
+      formatter: function (n) {
+        return n.replace(/,/g, '.');
+      }
+  });
+</script>

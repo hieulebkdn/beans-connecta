@@ -110,8 +110,9 @@ input:checked+.slider:before {
 }
 
 .benefit-section {
-    margin-top: 15px;
+    margin-top: 0px;
     margin-bottom: 0px !important;
+    font-size: medium;
 }
 
 .apply-button {
@@ -146,4 +147,32 @@ input:checked+.slider:before {
     left: 50% !important;
     top: 50% !important;
     transform: translate(-50%, -50%);
+}
+
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+.btn-oubo {
+    display: inline-block;
+    background: transparent;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1.2rem;
+    letter-spacing: 0.2em;
+    color: rgba(0, 0, 0, 0.7);
+    border-radius: 0;
+    padding: 18px 50px 18px;
+    transition: all 0.7s ease-out;
+    background-image: linear-gradient(to right, #6db5e6 0%, #927be6 51%, #5ebfff 100%);
+    background-position: 1% 50%;
+    background-size: 300% 300%;
+    text-decoration: none;
+    margin: 0.5rem;
+    border: none;
+    border: 1px solid rgba(223, 190, 106, 0.3);
+}
+
+.btn-oubo:hover {
+    color: rgb(255, 255, 255);
+    border: 1px solid rgba(223, 190, 106, 0);
+    background-position: right center;
 }
