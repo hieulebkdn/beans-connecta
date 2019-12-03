@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   enum role: %i(candidate company admin)
+  acts_as_voter
 
   belongs_to :candidate, class_name: Candidate.name, foreign_key: "profile"
   belongs_to :company, class_name: Company.name, foreign_key: "profile"

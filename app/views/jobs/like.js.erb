@@ -1,0 +1,2 @@
+$("#like_<%= @job.id %>").removeClass('fa-heart-o').addClass('fa-heart');
+$("#like_<%= @job.id %>").attr("href", '/jobs/<%= @job.id %>/unlike');

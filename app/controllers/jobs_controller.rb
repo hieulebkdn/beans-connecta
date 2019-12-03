@@ -1,7 +1,7 @@
 class JobsController < ApplicationController
   require 'job_recommender'
 
-  prepend_before_action :set_job, only: %i(edit update destroy show)
+  prepend_before_action :set_job, only: %i(edit update destroy show like unlike)
   before_action :load_company_jobs, only: %i(index)
   before_action :load_default_benefits_ranks, only: %i(new create edit update)
   before_action :load_job_benefits_status, only: %i(edit update)
@@ -56,6 +56,24 @@ class JobsController < ApplicationController
               format.html { redirect_to company_edit_job_path(current_user.profile), notice: t(".flash_delete")}
           end
       end
+  end
+
+  def like 
+    if @job.liked_by current_user
+    respond_to do |format|
+      format.js
+      format.html { redirect_to @job }
+      end
+    end
+  end  
+  
+  def unlike
+    if @job.unliked_by current_user
+      respond_to do |format|
+        format.js
+        format.html { redirect_to @job }
+      end
+    end
   end
 
   private

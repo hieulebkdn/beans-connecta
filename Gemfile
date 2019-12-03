@@ -19,8 +19,9 @@ gem "rails-i18n"
 gem "pagy", "3.5.1"
 gem "cancancan"
 gem "searchkick"
-gem 'predictor'
-gem 'redis'
+gem "predictor"
+gem "redis"
+gem "acts_as_votable"
 
 #UI gem
 gem "city-state"

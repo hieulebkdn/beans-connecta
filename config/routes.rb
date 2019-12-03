@@ -25,6 +25,9 @@ Rails.application.routes.draw do
     get "/index", to: "pages#index"
     get "/login", to: "pages#login"
     get "/search", to: "pages#search", as: "search"
+
+    put "/jobs/:id/like", to: "jobs#like", as:"like_job"
+    put "/jobs/:id/dislike", to: "jobs#unlike", as: "unlike_job"
   end
 
 end

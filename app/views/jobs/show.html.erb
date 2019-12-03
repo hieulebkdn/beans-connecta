@@ -36,6 +36,11 @@
         <div class="month-price">
           <span class="year"><%= t "annual_salary" %></span>
           <div class="price">$<%= @job.annual_salary %></div>
+          <%= link_to '応募', new_apply_path(job_id: @job.id),  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window', class: 'btn btn-info btn-bookmark'}  %>
+          <%= link_to like_job_path(@job), method: :put, class: "btn btn-warning btn-bookmark" do %>
+            気になる
+            <%= @job.get_upvotes.size %>
+          <% end %>
         </div>
       </div>
     </div>
@@ -54,7 +59,21 @@
           <p><%= format_date_default @job.deadline %></p>
           <div class= row>
             <%= link_to '応募', new_apply_path(job_id: @job.id),  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window', class: 'btn btn-common'}  %>
-            <a href="#" class="btn btn-info btn-bookmark">気になる</a>
+            <%= link_to like_job_path(@job), method: :put, class: "btn btn-info btn-bookmark" do %>
+              気になる
+              <%= @job.get_upvotes.size %>
+            <% end %>
+            <% if current_user.liked? @job %>
+              <%= link_to "", like_job_path(@job), remote: true,
+                        id: "like_#{@job.id}",
+                        class: "fa fa-heart",
+                        method: :put %>
+            <% else %>
+              <%= link_to "", like_job_path(@job), remote: true,
+                        id: "like_#{@job.id}",
+                        class: "fa fa-heart-o",
+                        method: :put %>
+            <% end %>
           </div>
         </div>
       </div>
@@ -66,11 +85,15 @@
       <div class="col-lg-4 col-md-12 col-xs-12">
         <div class="sideber">
           <div class="widghet">
+            <% 
+=begin %>
             <% if @job.company_logo.attached? %>
               <%= image_tag(@job.company_logo, class: "img-about-section")%>
             <% else %>
               <%= image_tag('features/img2.png', class: "img-about-section")%>
             <% end %>
+            <% 
+=end %>
             <h3>About <%= @job.company_name %></h3>
             <p><i class="fa fa-map-marker fa-fw green-icon"></i> <%= @job.company_address %></p>
             <p><i class="fa fa-group fa-fw green-icon"></i> <%= @job.company_scale %> 社員</p>
