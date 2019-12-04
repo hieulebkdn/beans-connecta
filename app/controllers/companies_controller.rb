@@ -38,6 +38,7 @@ class CompaniesController < ApplicationController
 
     def show_notifications
     end
+
     
     private
     def set_company

@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     patch "/companies/:id/update", to: "companies#update", as: "update_company"
     get "/companies/:id/notifications", to: "companies#show_notifications", as: "company_notifications"
     get "/companies/:id/edit_job", to: "jobs#index", as: "company_edit_job"
+    get "/companies/:id/applies", to: "applies#manage", as: "company_applies"
     
     resources :experiences
     

@@ -131,6 +131,8 @@ jp:
   share: 共有
 
   alljob: すべての求人
+  manage_apply: 応募書の管理
+  view_cv: 応募者の履歴書
   
   pages:
     index:

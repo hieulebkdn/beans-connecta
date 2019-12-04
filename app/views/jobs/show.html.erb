@@ -20,7 +20,7 @@
             </div>
           </div>
           <div class="content">
-            <div class="counter" data-counterup-time="1500" data-counterup-delay="30" data-counterup-beginat="100"><%= @job.annual_salary.to_f %></div>
+            <div class="counter" data-counterup-time="1500" data-counterup-delay="30" data-counterup-beginat="100"><%= @job.annual_salary.to_i %></div>
           </div>
         </div>
       </div>
@@ -198,7 +198,7 @@
 <script>
   $('.counter').counterUp({
       delay: 10,
-      time: 1000,
+      time: 2000,
       offset: 70,
       beginAt: 100,
       formatter: function (n) {
