@@ -2608,9 +2608,9 @@ button:focus {
 }
 
 .manager-resumes-item .manager-content .resume-thumb {
-    max-width: 64px;
-    width: auto;
-    margin-right: 30px;
+    width: 80px;
+    height: 80px;
+    margin-right: 25px;
     border-radius: 50%;
     float: left
 }

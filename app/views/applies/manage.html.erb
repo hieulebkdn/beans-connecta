@@ -17,10 +17,15 @@
         <div class="job-alerts-item jobs">
           <h3 class="alerts-title"><%= t("manage_job") %></h3>
           <div id="applies">
-          <%= render @applies %>
+            <div id="modal-window" class="modal hide" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+                <div class="modal-content"></div>
+              </div>
+            </div>
+            <%= render @applies %>
           </div>
           <% if @applies.size!=0 %>
-          <%== pagy_bootstrap_nav(@pagy) %>
+            <%== pagy_bootstrap_nav(@pagy) %>
           <% end %>
         </div>
       </div>

@@ -1,7 +1,7 @@
 class CandidatesController < ApplicationController
-  prepend_before_action :set_candidate, only: %i(show edit update destroy)
-  before_action :load_candidate_experiences , only: %i(show)
-  before_action :load_candidate_skills , only: %i(show)
+  prepend_before_action :set_candidate, only: %i(show edit update destroy preview)
+  before_action :load_candidate_experiences , only: %i(show preview)
+  before_action :load_candidate_skills , only: %i(show preview)
 
   def show; end
 
@@ -29,6 +29,13 @@ class CandidatesController < ApplicationController
       redirect_to controller: "pages", action: "index"
     else
       render :new
+    end
+  end
+  
+  def preview
+    respond_to do |format|
+      format.html
+      format.js
     end
   end
 

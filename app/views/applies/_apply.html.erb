@@ -1,13 +1,16 @@
 <div id= <%= apply.id %>>
   <div class="manager-resumes-item">
-
     <div class="manager-content">
-    <a href="<%= candidate_path(apply.candidate_id) %>">
-    <%= image_tag 'jobs/avatar-1.jpg', class: "resume-thumb" %>
-    </a>
+      <a href="<%= candidate_path(apply.candidate_id) %>">
+        <% if apply.candidate.avatar.attached? %>
+          <%= image_tag(apply.candidate.avatar, class: "resume-thumb")%>
+        <% else %>
+          <%= image_tag 'jobs/avatar-1.jpg', class: "resume-thumb" %>
+        <% end %>
+      </a>
       <div class="manager-info">
         <div class="manager-name">
-          <h4><%= link_to apply.candidate_name, candidate_path(apply.candidate_id) %></h4> 
+          <h4><%= link_to apply.candidate_name, candidate_path(apply.candidate_id) %></h4>
           <h5><%= apply.candidate_specialty %></h5>
         </div>
         <div class="manager-meta">
@@ -21,10 +24,10 @@
         <%= apply.cover_letter %>
       </p>
       <div class="action-btn">
-        <%= link_to t("view_cv"), 'google.com', remote: true, class:"btn btn-xs btn-gray" %>
+        <%= link_to t("view_cv"), preview_path(id: apply.candidate_id), 
+          {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window', class: 'btn btn-xs btn-gray'}  %>
         <%= link_to t("delete"), 'google.com', method: :delete, data: {confirm: "Are you sure?", remote: true}, class: "btn btn-xs btn-danger" %>
       </div>
     </div>
-    
   </div>
 </div>
