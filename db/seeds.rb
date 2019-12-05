@@ -111,6 +111,7 @@ Company.create(name: "CÔNG TY TNHH DỆT VÀ NHUỘM HƯNG YÊN", description: 
 
 logivan_job = [
   {
+    "category_id": 7,
     "title": "BI Specialist làm việc tại TPHCM",
     "position": "BI Specialist",
     "quantity": 3,
@@ -123,6 +124,7 @@ logivan_job = [
     "requirement": "Bachelors' degree in quantitative scientific fieldExperience and post-graduate study in data and statisticsBeing very analytical and numbers-drivenProficient in SQL and Python Knowledge of data mining and data visualizationGreat communication skills including professional standard of English language"
   },
   {
+    "category_id": 4,
     "title": "Trucking Director/ Giám Đốc Dịch Vụ Vận Tải tại Hà Nội",
     "position": "Trucking Director",
     "quantity": 1,
@@ -135,6 +137,7 @@ logivan_job = [
     "requirement": "University degree in transportation management, Import & Export5 years of experience in working at 3PL, 4PL, Forwarder, Supply chain, and Logistics companiesNegotiation and communication skillsHuman resources managementTeamwork skillsHandle high work pressureHaving much knowledge in Vietnamese traffic lawsEnglish knowledge is an advantage"
   },
   {
+    "category_id": 4,
     "title": "Trưởng nhóm điều phối vận tải tại Hà Nội",
     "position": "Trưởng nhóm điều phối vận tải",
     "quantity": 1,
@@ -147,6 +150,7 @@ logivan_job = [
     "requirement": "- Đại học chuyên ngành : Quản lý vận tải, Xuất nhập khẩu - Tốt nghiệp Cao đẳng trở lên- Tối thiểu 3 làm việc tại các vị trí: Điều phối vận tải cho các công ty 3PL , 4PL, Forwarder bộ phận hậu cần (Supply Chain) tại các công ty sản xuất, thương mại  - Đàm phán - Cẩn thận trong công việc - Học hỏi nhanh - Thường xuyên sử dụng các App đặt xe, mua hàng online, phần mềm quản lý (TMS, SAP,...)- Tiếng Anh là một lợi thế"
   },
   {
+    "category_id": 4,
     "title": "5 Trucking Executive / Nhân Viên Điều Phối Vận Tải (ca ngày)",
     "position": "Nhân Viên Điều Phối Vận Tải",
     "quantity": 5,    
@@ -159,6 +163,7 @@ logivan_job = [
     "requirement": "Yêu cầu công việc:- Tính cách vui vẻ, dễ gần, giao tiếp và làm việc nhóm tốt.- Tinh thần trách nhiệm cao và tự giác, chủ động làm việc.- Có laptop, xe máy và smartphone.- Có kinh nghiệm trong ngành vận tải đường bộ, thuê xe tải 1 năm trở lên.Phúc lợi:- Hưởng hoa hồng theo hiệu quả công việc hàng tháng- Đánh giá tăng lương 2 lần/năm- Tham gia đầy đủ chế độ bảo hiểm theo quy định của nhà nước- Nghỉ lễ theo quy định nhà nước- Môi trường start-up làm việc thoải mái, năng động- Có đào tạo workshop để nâng cao kỹ năng và hoàn thiện bản thân- Làm việc từ xa 2-4 ngày/ tháng"
   },
   {
+    "category_id": 2,
     "title": "3 Chuyên Viên Kinh Doanh (Vận tải nội địa)",
     "position": "Chuyên Viên Kinh Doanh",
     "quantity": 3,
@@ -175,7 +180,7 @@ logivan_job = [
 logivan_job.each do |job|
 	Job.create(title: job[:title], position: job[:position], quantity: job[:quantity], company_id: job[:company_id], 
 		workplace: job[:workplace], exp_year: job[:exp_year], annual_salary: job[:annual_salary], deadline: job[:deadline],
-		description: job[:description], requirement: job[:requirement])
+		description: job[:description], requirement: job[:requirement], category_id: job[:category_id])
 end
 
 tpbank_job = [

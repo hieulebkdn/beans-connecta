@@ -3,6 +3,7 @@ class PagesController < ApplicationController
     end
 
     def index
+        @latest_jobs = Job.latest
     end 
 
     def search

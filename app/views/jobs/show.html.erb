@@ -153,7 +153,7 @@
               <% end%>
             </div>
             <div class="content">
-              <h3><a href="job-page.html"><%= similar_job.position %></a></h3>
+              <h3><%= link_to similar_job.position, job_path(similar_job.id) %></h3>
               <p class="brand"><%= similar_job.company_name %></p>
               <div class="tags">
                 <span><i class="fa fa-map-marker"></i><%= similar_job.workplace %></span>

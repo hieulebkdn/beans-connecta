@@ -8,8 +8,9 @@ set :pty, true
 set :linked_files, %w(config/database.yml config/application.yml config/environment.rb config/application.yml config/storage.yml)
 set :linked_dirs, %w(log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads)
 set :keep_releases, 5
-set :rvm_type, :user
 set :user, 'socold'
+set :rbenv_type, :user # or :system, depends on your rbenv setup
+set :rbenv_ruby, '2.6.3'
 
 set :puma_rackup, -> {File.join(current_path, "config.ru")}
 set :puma_state, -> {"#{shared_path}/tmp/pids/puma.state"}

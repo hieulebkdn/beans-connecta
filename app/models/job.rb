@@ -32,6 +32,7 @@ class Job < ApplicationRecord
 	
 	scope :owned_by, -> (company_id){ where(:company_id => company_id)}
 	scope :load_in_list, -> (ids) {where "id IN (?)", ids}
+	scope :latest, -> {order(created_at: :desc).limit 5}
 
 	after_commit ->(job) do
 			JobRecommender.add_job(job)

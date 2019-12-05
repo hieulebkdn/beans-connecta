@@ -50,7 +50,7 @@ gem "capistrano"
 gem "capistrano3-puma"
 gem "capistrano-rails", require: false
 gem "capistrano-bundler", require: false
-gem "capistrano-rvm"
+gem "capistrano-rbenv"
 
 gem "listen", ">= 3.0.5", "< 3.2"
 group :development, :test do
