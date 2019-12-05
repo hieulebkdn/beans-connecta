@@ -143,6 +143,7 @@ class JobsController < ApplicationController
 
     def load_recommender
       @recommender = JobRecommender.instance
-      @ids = @recommender.similarities_for(@job.id)
+      similar_ids = @recommender.similarities_for(@job.id).map(&:to_i).first(3)
+      @similar_jobs = Job.load_in_list similar_ids
     end
 end

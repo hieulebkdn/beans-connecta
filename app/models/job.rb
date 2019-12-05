@@ -28,8 +28,11 @@ class Job < ApplicationRecord
   delegate :website, to: :company, prefix: true, allow_nil: true	
 	delegate :scale, to: :company, prefix: true, allow_nil: true	
   delegate :description, to: :company, prefix: true, allow_nil: true	
+  delegate :name, to: :category, prefix: true, allow_nil: true	
 	
 	scope :owned_by, -> (company_id){ where(:company_id => company_id)}
+	scope :load_in_list, -> (ids) {where "id IN (?)", ids}
+
 	after_commit ->(job) do
 			JobRecommender.add_job(job)
 	end, if: :persisted?

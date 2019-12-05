@@ -293,3 +293,7 @@ input:checked+.slider:before {
     color: #e91e63;
     transform: rotateY(360deg);
 }
+.logo-small-icon {
+    max-width: 50px;
+    max-height: 45px;
+}

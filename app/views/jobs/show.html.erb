@@ -52,8 +52,6 @@
     <div class="row justify-content-between">
       <div class="col-lg-8 col-md-12 col-xs-12">
         <div class="content-area">
-          <h5><%= t "annual_salary" %></h5>
-          <div>$<%= @job.annual_salary %></div>
           <h5><%= t "job_description" %></h5>
           <%= simple_format @job.description %>
           <h5><%= t "job_requirement" %></h5>
@@ -144,54 +142,28 @@
   <div class="container">
     <h4 class="small-title text-left"><%= t "similar_job" %></h4>
     <div class="row">
-      <div class="col-lg-4 col-md-6 col-xs-12">
-        <div class="job-featured">
-          <div class="icon">
-            <%= image_tag 'features/img1.png' %>
-          </div>
-          <div class="content">
-            <h3><a href="job-page.html">Software Engineer</a></h3>
-            <p class="brand">MizTech</p>
-            <div class="tags">
-              <span><i class="lni-map-marker"></i> New York</span>
-              <span><i class="lni-user"></i>John Smith</span>
+      <% @similar_jobs.each do |similar_job| %>
+        <div class="col-lg-4 col-md-6 col-xs-12">
+          <div class="job-featured">
+            <div class="icon">
+              <% if similar_job.company_logo.attached? %>
+                <%= image_tag similar_job.company_logo, class: "logo-small-icon" %>
+              <% else%>
+                <%= image_tag('features/img2.png') %>
+              <% end%>
             </div>
-            <span class="full-time">Full Time</span>
+            <div class="content">
+              <h3><a href="job-page.html"><%= similar_job.position %></a></h3>
+              <p class="brand"><%= similar_job.company_name %></p>
+              <div class="tags">
+                <span><i class="fa fa-map-marker"></i><%= similar_job.workplace %></span>
+                <span><i class="fa fa-briefcase"></i><%= similar_job.category_name %></span>
+              </div>
+              <span class="full-time">Yearly <%= similar_job.annual_salary %> $</span>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-lg-4 col-md-6 col-xs-12">
-        <div class="job-featured">
-          <div class="icon">
-            <%= image_tag 'features/img2.png' %>
-          </div>
-          <div class="content">
-            <h3><a href="job-page.html">Graphic Designer</a></h3>
-            <p class="brand">Hunter Inc.</p>
-            <div class="tags">
-              <span><i class="lni-map-marker"></i> New York</span>
-              <span><i class="lni-user"></i>John Smith</span>
-            </div>
-            <span class="part-time">Part Time</span>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 col-xs-12">
-        <div class="job-featured">
-          <div class="icon">
-            <%= image_tag 'features/img3.png' %>
-          </div>
-          <div class="content">
-            <h3><a href="job-page.html">Managing Director</a></h3>
-            <p class="brand">MagNews</p>
-            <div class="tags">
-              <span><i class="lni-map-marker"></i> New York</span>
-              <span><i class="lni-user"></i>John Smith</span>
-            </div>
-            <span class="full-time">Full Time</span>
-          </div>
-        </div>
-      </div>
+      <% end %>
     </div>
   </div>
 </section>
