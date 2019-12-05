@@ -22,6 +22,9 @@ gem "searchkick"
 gem "predictor"
 gem "redis"
 gem "acts_as_votable"
+gem "elasticsearch-ruby"
+gem "elasticsearch-model"
+gem "elasticsearch-rails"
 
 #UI gem
 gem "city-state"

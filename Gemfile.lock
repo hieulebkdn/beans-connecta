@@ -150,6 +150,14 @@ GEM
       elasticsearch-transport (= 7.4.0)
     elasticsearch-api (7.4.0)
       multi_json
+    elasticsearch-model (7.0.0)
+      activesupport (> 3)
+      elasticsearch (> 1)
+      hashie
+    elasticsearch-rails (7.0.0)
+    elasticsearch-ruby (0.0.4)
+      activesupport (>= 3.0.0)
+      thrift
     elasticsearch-transport (7.4.0)
       faraday
       multi_json
@@ -301,6 +309,7 @@ GEM
       net-ssh (>= 2.8.0)
     thor (0.20.3)
     thread_safe (0.3.6)
+    thrift (0.11.0.0)
     tilt (2.0.10)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
@@ -343,6 +352,9 @@ DEPENDENCIES
   city-state
   coffee-rails (~> 4.2)
   devise
+  elasticsearch-model
+  elasticsearch-rails
+  elasticsearch-ruby
   faker (= 1.7.3)
   figaro
   font-awesome-rails
