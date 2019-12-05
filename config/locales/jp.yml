@@ -133,6 +133,11 @@ jp:
   alljob: すべての求人
   manage_apply: 応募書の管理
   view_cv: 応募者の履歴書
+  applicant_list: 候補者リスト
+  manage_applicant: 候補者の管理
+
+  approve: 承認
+  decline: 断り
   
   pages:
     index:
@@ -148,6 +153,10 @@ jp:
   applies:
     create:
       flash_create: この求人に応募済み
+    apply:
+      flash_approve: 承認しました！
+    decline:
+      flash_decline: 断りました！
 
   candidates: 
     show:

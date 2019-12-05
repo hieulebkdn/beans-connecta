@@ -12,6 +12,13 @@
         <div class="manager-name">
           <h4><%= link_to apply.candidate_name, candidate_path(apply.candidate_id) %></h4>
           <h5><%= apply.candidate_specialty %></h5>
+          <% if apply.status == "WAITING"%>
+            <h5 class = "badge badge-pill badge-info">WATING</h5>
+            <% elsif apply.status == "APPROVED" %>
+            <h5 class = "badge badge-pill badge-success">APPROVED</h5>
+            <% else %>
+            <h5 class = "badge badge-pill badge-warning">DECLINED</h5>
+            <% end %>
         </div>
         <div class="manager-meta">
           <span class="rate"><%= apply.job_title %></span>
@@ -26,7 +33,8 @@
       <div class="action-btn">
         <%= link_to t("view_cv"), preview_path(id: apply.candidate_id), 
           {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window', class: 'btn btn-xs btn-gray'}  %>
-        <%= link_to t("delete"), 'google.com', method: :delete, data: {confirm: "Are you sure?", remote: true}, class: "btn btn-xs btn-danger" %>
+        <%= link_to t("decline"), decline_path(apply.id), method: :put, data: {confirm: "Are you sure?", remote: true}, class: "btn btn-xs btn-danger" %>
+        <%= link_to t("approve"), approve_path(apply.id), method: :put, data: {confirm: "Are you sure?", remote: true}, class: "btn btn-xs btn-success" %>
       </div>
     </div>
   </div>

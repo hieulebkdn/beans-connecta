@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   
   scope "(:locale)", locale: /en|vi|jp/ do
     root to:"pages#index"
+    get "/search", to: "pages#search", as: "search"
     devise_for :users, skip: :omniauth_callbacks, :controllers => {:registrations => "registrations"}
     
     resources :candidates 
@@ -17,19 +18,20 @@ Rails.application.routes.draw do
     get "/companies/:id/notifications", to: "companies#show_notifications", as: "company_notifications"
     get "/companies/:id/edit_job", to: "jobs#index", as: "company_edit_job"
     get "/companies/:id/applies", to: "applies#manage", as: "company_applies"
-    
-    resources :experiences
-    
-    resources :skills
-    resources :jobs
+
     resources :applies
+    put "applies/:id/approve", to: "applies#approve", as: "approve"
+    put "applies/:id/decline", to: "applies#decline", as: "decline"
+    
+    resources :jobs
+    put "/jobs/:id/like", to: "jobs#like", as:"like_job"
+    put "/jobs/:id/dislike", to: "jobs#unlike", as: "unlike_job"
+
+    resources :experiences
+    resources :skills
+
     get "/about", to: "pages#about"
     get "/index", to: "pages#index"
     get "/login", to: "pages#login"
-    get "/search", to: "pages#search", as: "search"
-
-    put "/jobs/:id/like", to: "jobs#like", as:"like_job"
-    put "/jobs/:id/dislike", to: "jobs#unlike", as: "unlike_job"
   end
-
 end

@@ -10,7 +10,7 @@ class Company < ApplicationRecord
 
     def get_applies
         jobs_ids = self.jobs.pluck :id
-        applies_ids = Apply.load_from_job_ids job_ids
+        applies_ids = Apply.load_from_job_ids(job_ids).latest
         return applies_ids
     end
 end
