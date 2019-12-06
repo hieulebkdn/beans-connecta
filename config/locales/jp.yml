@@ -125,6 +125,8 @@ jp:
   apply_this: この求人に応募する
   coverletter: 自己紹介
   coverletter_placeholder: 自分について特別点だと思うものを書いて頂き
+  browse_jobs: 求人情報一覧
+  browse_companies: 会社情報一覧
 
   write_review: 評価記載
   report: 報告

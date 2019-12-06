@@ -4,6 +4,9 @@ class PagesController < ApplicationController
 
     def index
         @latest_jobs = Job.latest
+        activity_companies_jobs = Company.most_activity
+        @activity_companies = Company.find activity_companies_jobs.map(&:first)
+        @jobs_count = activity_companies_jobs.map(&:second)
     end 
 
     def search

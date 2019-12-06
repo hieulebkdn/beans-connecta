@@ -4,7 +4,10 @@ class Company < ApplicationRecord
     has_one_attached :logo
 
     scope :alphabet, ->{order name: :asc}
-    scope :job_ids, ->{}
+    scope :load_in_list, ->(ids){where "id IN (?)", ids}
+    scope :most_activity, -> {joins("LEFT OUTER JOIN jobs on companies.id=jobs.company_id")
+        .group("companies.id")
+        .count("jobs.id").sort_by{|k, v| -v}.take(6)}
 
     validates :name, presence: true, uniqueness: {case_sensitive: false}
 

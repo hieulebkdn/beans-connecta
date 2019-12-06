@@ -96,7 +96,7 @@
           <% end%>
         </div>
         <div class="col-12 text-center mt-4">
-          <a href="#" class="btn btn-common">Load more listing</a>
+          <%= link_to t("browse_jobs"), search_path, class: "btn btn-common" %>
         </div>
       </div>
     </div>
@@ -108,122 +108,34 @@
         <p><%= t (".most_active_company_description") %></p>
       </div>
       <div class="row">
-        <div class="col-lg-6 col-md-6 col-xs-12">
-          <div class="jobs-latest">
-            <div class="img-thumb">
-              <%= image_tag("features/img1.png") %>
-            </div>
-            <div class="content">
-              <h3><a href="job-details.html">UX Designer</a></h3>
-              <p class="brand">MizTech</p>
-              <div class="tags">
-                <span><i class="lni-map-marker"></i> New York</span>
-                <span><i class="lni-user"></i>John Smith</span>
+        <% @activity_companies.each_with_index do |company,index| %>
+          <div class="col-lg-6 col-md-6 col-xs-12">
+            <div class="jobs-latest">
+              <div class="img-thumb">
+                <% if company.logo.attached? %>
+                  <%= image_tag(company.logo)%>
+                <% else %>
+                  <%= image_tag('features/img2.png') %>
+                <% end%>
               </div>
-              <span class="full-time">Full Time</span>
-            </div>
-            <div class="save-icon">
-              <a href="#"><i class="lni-heart-filled"></i></a>
+              <div class="content">
+                <h3><a href="job-details.html"><%= company.name %></a></h3>
+                <p class="brand"><i class="fa fa-map-marker"></i> <%= company.address %></p>
+                <div class="tags">
+                  <span><i class="fa fa-globe"></i><%= company.country %></span>
+                  <span><i class="fa fa-users"></i><%= company.scale %></span>
+                </div>
+                <span class="full-time"><%= @jobs_count[index] %> active jobs</span>
+              </div>
+              <div class="save-icon">
+                <a href="#"><i class="lni-heart-filled"></i></a>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-lg-6 col-md-6 col-xs-12">
-          <div class="jobs-latest">
-            <div class="img-thumb">
-              <%= image_tag("features/img2.png") %>
-            </div>
-            <div class="content">
-              <h3><a href="job-details.html">UI Designer</a></h3>
-              <p class="brand">Hunter Inc.</p>
-              <div class="tags">
-                <span><i class="lni-map-marker"></i> New York</span>
-                <span><i class="lni-user"></i>John Smith</span>
-              </div>
-              <span class="part-time">Part Time</span>
-            </div>
-            <div class="save-icon">
-              <a href="#"><i class="lni-heart-filled"></i></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6 col-md-6 col-xs-12">
-          <div class="jobs-latest">
-            <div class="img-thumb">
-              <%= image_tag("features/img3.png") %>
-            </div>
-            <div class="content">
-              <h3><a href="job-details.html">Web Developer</a></h3>
-              <p class="brand">MagNews</p>
-              <div class="tags">
-                <span><i class="lni-map-marker"></i> New York</span>
-                <span><i class="lni-user"></i>John Smith</span>
-              </div>
-              <span class="full-time">Full Time</span>
-            </div>
-            <div class="save-icon">
-              <a href="#"><i class="lni-heart-filled"></i></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6 col-md-6 col-xs-12">
-          <div class="jobs-latest">
-            <div class="img-thumb">
-              <%= image_tag("features/img4.png") %>
-            </div>
-            <div class="content">
-              <h3><a href="job-details.html">UX Designer</a></h3>
-              <p class="brand">AmazeSoft</p>
-              <div class="tags">
-                <span><i class="lni-map-marker"></i> New York</span>
-                <span><i class="lni-user"></i>John Smith</span>
-              </div>
-              <span class="full-time">Full Time</span>
-            </div>
-            <div class="save-icon">
-              <a href="#"><i class="lni-heart-filled"></i></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6 col-md-6 col-xs-12">
-          <div class="jobs-latest">
-            <div class="img-thumb">
-              <%= image_tag("features/img5.png") %>
-            </div>
-            <div class="content">
-              <h3><a href="job-details.html">Digital Marketer</a></h3>
-              <p class="brand">Bingo</p>
-              <div class="tags">
-                <span><i class="lni-map-marker"></i> New York</span>
-                <span><i class="lni-user"></i>John Smith</span>
-              </div>
-              <span class="part-time">Part Time</span>
-            </div>
-            <div class="save-icon">
-              <a href="#"><i class="lni-heart-filled"></i></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6 col-md-6 col-xs-12">
-          <div class="jobs-latest">
-            <div class="img-thumb">
-              <%= image_tag("features/img6.png") %>
-            </div>
-            <div class="content">
-              <h3><a href="job-details.html">Web Developer</a></h3>
-              <p class="brand">MagNews</p>
-              <div class="tags">
-                <span><i class="lni-map-marker"></i> New York</span>
-                <span><i class="lni-user"></i>John Smith</span>
-              </div>
-              <span class="full-time">Full Time</span>
-            </div>
-            <div class="save-icon">
-              <a href="#"><i class="lni-heart-filled"></i></a>
-            </div>
-          </div>
-        </div>
+        <% end %>
+        
         <div class="col-12 text-center mt-4">
-          <a href="job-page.html" class="btn btn-common">Browse All Jobs</a>
+          <%= link_to t("browse_companies"), companies_path, class: "btn btn-common" %>
         </div>
       </div>
     </div>
