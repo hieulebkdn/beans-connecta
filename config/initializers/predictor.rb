@@ -1,1 +1,1 @@
-Predictor.redis = Redis.new(:url => "redis://localhost:6379/0")
+Predictor.redis = Redis.new(url: ENV["REDIS_URL"], timeout: 100)
