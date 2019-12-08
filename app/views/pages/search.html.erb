@@ -1,4 +1,3 @@
-<%= javascript_include_tag 'autocomplete-rails.js', 'rails.js'%>
 <div class="page-header">
   <div class="container">
     <div class="row">
@@ -48,7 +47,7 @@
         <% @jobs.each do |job|%>
           <a class="job-listings" href=<%= job_path(id: job.id) %>>
             <div class="row">
-              <div class="col-lg-6 col-md-6 col-xs-12">
+              <div class="col-lg-5 col-md-5 col-xs-12">
                 <div class="job-company-logo">
                   <% if job.company_logo.attached? %>
                     <%= image_tag(job.company_logo, class: "job-icon")%>
@@ -57,15 +56,23 @@
                   <% end%>
                 </div>
                 <div class="job-details">
-                  <h3><%= truncate(job.title, length: 44) %></h3>
+                  <% if job.title.length > 40 %>
+                  <h3><%= job.title %></h3>
                   <span class="company-neme">
                     <%= job.company_name %>
                   </span>
+                  <% else %>
+                    <h3><%= job.title %></h3>
+                    </br>    
+                    <span class="company-neme">
+                      <%= job.company_name %>
+                    </span>
+                  <% end%>
                 </div>
               </div>
-              <div class="col-lg-2 col-md-2 col-xs-12 text-center">
+              <div class="col-lg-3 col-md-3 col-xs-12 text-center">
                 <span class="btn-open">
-                  <%= job.quantity %> Open Position
+                  <%= calc_diff_hours(job.deadline).to_s + " hours remain" %>
                 </span>
               </div>
               <div class="col-lg-2 col-md-2 col-xs-12 text-center">

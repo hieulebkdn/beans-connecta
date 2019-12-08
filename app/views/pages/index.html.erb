@@ -76,7 +76,7 @@
               </div>
               <div class="col-lg-2 col-md-2 col-xs-12 text-center">
                 <span class="btn-open">
-                  <%= latest_job.quantity %> Open Position
+                  <%= latest_job.quantity.to_s + t("open_position") %>
                 </span>
               </div>
               <div class="col-lg-2 col-md-2 col-xs-12 text-right">
@@ -88,7 +88,7 @@
                 <span class="btn-full-time"><%= latest_job.category_name %></span>
               </div>
               <div class="col-lg-2 col-md-2 col-xs-12 text-right">
-                <span class="btn-apply">Apply Now</span>
+                <span class="btn-apply"><%= t "view_detail" %></span>
               </div>
             </div>
           </a>

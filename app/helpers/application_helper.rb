@@ -19,6 +19,14 @@ module ApplicationHelper
     datetime.strftime("%m %b %Y %I:%M%p")
   end
 
+  def format_date_deadline(datetime)
+    datetime.strftime("%m %b")
+  end
+
+  def calc_diff_hours datetime
+    (datetime.to_i - Time.now.to_i) / 3600 
+  end
+
   def simple_format(text, html_options = {}, options = {})
     wrapper_tag = options.fetch(:wrapper_tag, :p)
 
