@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+    before_action :load_categories, only: %i(index) 
     def about
     end
 
@@ -10,14 +11,22 @@ class PagesController < ApplicationController
     end 
 
     def search
-        search = params[:term].present? ? params[:term] : nil
-        if search
-            @jobs = Job.search(search)
-        else
+        term = params[:term].present? ? params[:term] : ""
+        location = params[:location]
+        search = [term, location].compact.join(' ')
+        if params[:term].blank? && params[:location].blank?
             @pagy, @jobs = pagy(Job.all, items: 10)
+        else
+            @jobs = Job.search(search, operator: "and", fields: ["title^10", "position", "workplace", "category"], misspellings: {below: 2})
         end
     end
 
     def login
+    end
+
+    protected
+    def load_categories
+		@categories = Category.all
+		@quantity_per_category = Category.quantity_per_each
     end
 end

@@ -64,16 +64,18 @@
               気になる
               <%= @job.get_upvotes.size %>
             <% end %>
-            <% if current_user.liked? @job %>
-              <%= link_to "", like_job_path(@job), remote: true,
+            <% if current_user %>
+              <% if current_user.liked? @job %>
+                <%= link_to "", like_job_path(@job), remote: true,
                         id: "like_#{@job.id}",
                         class: "fa fa-heart",
                         method: :put %>
-            <% else %>
-              <%= link_to "", like_job_path(@job), remote: true,
+              <% else %>
+                <%= link_to "", like_job_path(@job), remote: true,
                         id: "like_#{@job.id}",
                         class: "fa fa-heart-o",
                         method: :put %>
+              <% end %>
             <% end %>
           </div>
         </div>

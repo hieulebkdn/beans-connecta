@@ -1,3 +1,4 @@
+<%= javascript_include_tag 'autocomplete-rails.js', 'rails.js'%>
 <div class="page-header">
   <div class="container">
     <div class="row">
@@ -10,21 +11,20 @@
             <div class="row justify-content-center">
               <div class="col-lg-5 col-md-5 col-xs-12">
                 <div class="form-group">
-                  <%= form.text_field :term, class: "form-control", placeholder: params[:term].nil?? t("search_placeholder") : params[:term] %>
+                  <%= form.text_field :term, class: "form-control", value: params[:term] ,placeholder: t("search_placeholder")%>
                 </div>
               </div>
               <div class="col-lg-5 col-md-5 col-xs-12">
                 <div class="form-group">
                   <div class="search-category-container">
                     <label class="styled-select">
-                      <select>
-                        <option value="none"><%= t "location" %></option>
-                        <option value="none">New York</option>
-                        <option value="none">California</option>
-                        <option value="none">Washington</option>
-                        <option value="none">Birmingham</option>
-                        <option value="none">Chicago</option>
-                        <option value="none">Phoenix</option>
+                      <select name = "location">
+                        <option value="">All</option>
+                        <option value="Hanoi">Hanoi</option>
+                        <option value="Danang">Danang</option>
+                        <option value="Hochiminh">Hochiminh</option>
+                        <option value="Tokyo">Tokyo</option>
+                        <option value="Osaka">Osaka</option>
                       </select>
                     </label>
                   </div>
