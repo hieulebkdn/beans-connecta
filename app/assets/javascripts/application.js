@@ -20,6 +20,7 @@
 //= require_tree .
 //= require moment
 //= require tempusdominus-bootstrap-4
+//= require social-share-button
 // direct_uploads.js
 
 addEventListener("direct-upload:initialize", event => {

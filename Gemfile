@@ -25,6 +25,7 @@ gem "acts_as_votable"
 gem "elasticsearch-ruby"
 gem "elasticsearch-model"
 gem "elasticsearch-rails"
+gem "social-share-button"
 
 #UI gem
 gem "city-state"

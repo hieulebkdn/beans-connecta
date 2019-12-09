@@ -149,11 +149,8 @@
                   <div class="clearfix"></div>
                 </div>
               </form>
-              <ul class="mt-4 footer-social">
-                <li><a class="facebook" href="#"><i class="lni-facebook-filled"></i></a></li>
-                <li><a class="twitter" href="#"><i class="lni-twitter-filled"></i></a></li>
-                <li><a class="linkedin" href="#"><i class="lni-linkedin-fill"></i></a></li>
-                <li><a class="google-plus" href="#"><i class="lni-google-plus"></i></a></li>
+              <ul class="mt-4 footer-social social-icons">
+                <%= social_share_button_tag(@job.title, desc: @job.title) %>
               </ul>
               <div class="meta-tag">
                 <span class="meta-part"><a href="#"><i class="lni-star"></i><%= t "write_review" %></a></span>

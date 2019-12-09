@@ -300,3 +300,17 @@ input:checked+.slider:before {
     max-width: 50px;
     max-height: 45px;
 }
+
+.social-share-button .ssb-icon {
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-size: 44px 46px !important;
+    display: inline-block !important;
+    height: 50px !important;
+    width: 60px !important;
+}
+
+.social-share-button {
+    right: 1px;
+    top: 0px;
+}
