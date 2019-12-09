@@ -2,8 +2,8 @@ require 'job_recommender'
 class Job < ApplicationRecord
   has_many :applies, class_name: Apply.name, foreign_key: "job_id"
 	acts_as_votable
-	searchkick(word_middle: %i(title position workplace category), 
-						 searchable: [:title, :position],
+	searchkick(word_start: %i(title position workplace category), 
+						 searchable: [:title, :position, :workplace, :category],
 						 language: "english",
 						 synonyms: [["specialist", "chuyên viên"], ["manager", "quản lý"], ["Hochiminh", "HCM"],["Hanoi", "HN"]])
 

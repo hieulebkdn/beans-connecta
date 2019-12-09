@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
 	include Pagy::Backend
 	before_action :configure_permitted_parameters, if: :devise_controller?
 	before_action :set_locale
+	before_action :load_categories
 	require 'company_recommender'
 	require 'job_recommender'
 
@@ -27,5 +28,10 @@ class ApplicationController < ActionController::Base
 		devise_parameter_sanitizer.permit(:sign_up) do |user_params|
 			user_params.permit(:email, :password, :password_confirmation, :role, :profile)
 		end
+	end
+
+	def load_categories
+		@categories = Category.all
+		@quantity_per_category = Category.quantity_per_each
 	end
 end

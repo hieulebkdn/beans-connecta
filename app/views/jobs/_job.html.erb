@@ -4,7 +4,7 @@
     <div class="manager-content">
       <div class="manager-info">
         <div class="manager-name">
-          <h4>><%= link_to job.title, job_path(job.id) %></h4> 
+          <h4><%= link_to job.title, job_path(job.id) %></h4> 
           <h5><%= job.position %></h5>
         </div>
         <div class="manager-meta">
@@ -14,7 +14,7 @@
     </div>
     <div class="update-date">
       <p class="status">
-        <%= format_date_default(job.created_at)  %>
+        <%= t("created_at") + format_date_default(job.created_at).to_s  %>
       </p>
       <div class="action-btn">
         <%= link_to t("edit"), edit_job_path(id: job.id), remote: true, class:"btn btn-xs btn-gray" %>

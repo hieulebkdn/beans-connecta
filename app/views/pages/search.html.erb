@@ -8,29 +8,12 @@
         <div class="job-search-form bg-cyan job-featured-search">
           <%= form_with(url: search_path, id: "search-form", method: :get) do |form| %>
             <div class="row justify-content-center">
-              <div class="col-lg-5 col-md-5 col-xs-12">
+              <div class="col-lg-8 col-md-8 col-xs-12">
                 <div class="form-group">
                   <%= form.text_field :term, class: "form-control", value: params[:term] ,placeholder: t("search_placeholder")%>
                 </div>
               </div>
-              <div class="col-lg-5 col-md-5 col-xs-12">
-                <div class="form-group">
-                  <div class="search-category-container">
-                    <label class="styled-select">
-                      <select name = "location">
-                        <option value="">All</option>
-                        <option value="Hanoi">Hanoi</option>
-                        <option value="Danang">Danang</option>
-                        <option value="Hochiminh">Hochiminh</option>
-                        <option value="Tokyo">Tokyo</option>
-                        <option value="Osaka">Osaka</option>
-                      </select>
-                    </label>
-                  </div>
-                  <i class="lni-map-marker"></i>
-                </div>
-              </div>
-              <div class="col-lg-1 col-md-1 col-xs-12">
+              <div class="col-lg-2 col-md-2 col-xs-12">
                 <a href="javascript:$('#search-form').submit();", class="button"><i class="lni-search"></i></a>
               </div>
             </div>

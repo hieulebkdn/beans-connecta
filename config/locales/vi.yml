@@ -28,7 +28,7 @@ vi:
   register: "Đăng kí"
 
   profile: "Hồ sơ"
-  manage_account: "Quản lí tài khoản"
+  manage_account: "Quản lý tài khoản"
   my_profile: "Hồ sơ của tôi"
   update_profile: "Cập nhật hồ sơ"
   experience: "Kinh nghiệm"
@@ -69,7 +69,7 @@ vi:
   update_company_profile: "Cập nhật thông tin công ty"
   manage_job: "Tin tuyển dụng"
   manage_interview: "Lịch phỏng vấn"
-  manage_company: "Quản lí công ty"
+  manage_company: "Quản lý công ty"
   requirement: "Yêu cầu"
 
   create: "Hoàn thành"
@@ -129,7 +129,7 @@ vi:
   share: "Chia sẻ"
 
   alljob: "Tất cả việc làm"
-  manage_apply: "Quản lý đơn ứng tuyển"
+  manage_apply: "Đơn ứng tuyển"
   view_cv: "Xem hồ sơ"
   applicant_list: "Danh sách ứng tuyển"
   manage_applicant: "Quản lý người ứng tuyển"
@@ -137,6 +137,8 @@ vi:
 
   approve: "Chấp nhận"
   decline: "Từ chối"
+
+  created_at: "Đăng lúc "
 
   pages:
     index:
@@ -188,7 +190,7 @@ vi:
       detail_placeholder: "Trình độ, khả năng"
     index: 
       new_skill: "Kĩ năng mới"
-      manage_skill: "Quản lí kĩ năng"
+      manage_skill: "Quản lý kĩ năng"
     delete:
       flash_delete: "Xóa kĩ năng thành công！"
       flash_delete_fail: "Xóa kĩ năng thất bại, xin thử lại."

@@ -7,35 +7,18 @@
             <%= t ".content1" %></h2>
           <p><%= t "quote" %></p>
           <div class="job-search-form">
-            <form>
+            <%= form_with(url: search_path, id: "search-form", method: :get) do |form| %>
               <div class="row">
-                <div class="col-lg-5 col-md-5 col-xs-12">
+                <div class="col-lg-10 col-md-10 col-xs-12">
                   <div class="form-group">
-                    <input class="form-control" type="text" placeholder="Job Title or Company Name">
-                  </div>
-                </div>
-                <div class="col-lg-5 col-md-5 col-xs-12">
-                  <div class="form-group">
-                    <div class="search-category-container">
-                      <label class="styled-select">
-                        <select name = "location">
-                          <option value="">All</option>
-                          <option value="Hanoi">Hanoi</option>
-                          <option value="Danang">Danang</option>
-                          <option value="Hochiminh">Hochiminh</option>
-                          <option value="Tokyo">Tokyo</option>
-                          <option value="Osaka">Osaka</option>
-                        </select>
-                      </label>
-                    </div>
-                    <i class="lni-map-marker"></i>
+                    <%= form.text_field :term, class: "form-control", value: params[:term] ,placeholder: t("search_placeholder")%>
                   </div>
                 </div>
                 <div class="col-lg-2 col-md-2 col-xs-12">
-                  <button type="submit" class="button"><i class="lni-search"></i></button>
+                  <a href="javascript:$('#search-form').submit();", class="button"><i class="lni-search"></i></a>
                 </div>
               </div>
-            </form>
+            <% end %>
           </div>
         </div>
       </div>
@@ -64,7 +47,7 @@
                   <% if latest_job.company_logo.attached? %>
                     <%= image_tag(latest_job.company_logo, class: "job-icon")%>
                   <% else %>
-                    <%= image_tag 'features/img2.png', class: "job-icon" %>
+                    <%= image_tag 'features/default.png', class: "job-icon" %>
                   <% end%>
                 </div>
                 <div class="job-details">
@@ -92,52 +75,51 @@
               </div>
             </div>
           </a>
-          <% end%>
-        </div>
-        <div class="col-12 text-center mt-4">
-          <%= link_to t("browse_jobs"), search_path, class: "btn btn-common" %>
-        </div>
+        <% end%>
+      </div>
+      <div class="col-12 text-center mt-4">
+        <%= link_to t("browse_jobs"), search_path, class: "btn btn-common" %>
       </div>
     </div>
-  </section>
-  <section id="latest-jobs" class="section bg-gray">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title"><%= t (".most_active_company") %></h2>
-        <p><%= t (".most_active_company_description") %></p>
-      </div>
-      <div class="row">
-        <% @activity_companies.each_with_index do |company,index| %>
-          <div class="col-lg-6 col-md-6 col-xs-12">
-            <div class="jobs-latest">
-              <div class="img-thumb">
-                <% if company.logo.attached? %>
-                  <%= image_tag(company.logo)%>
-                <% else %>
-                  <%= image_tag('features/img2.png') %>
-                <% end%>
+  </div>
+</section>
+<section id="latest-jobs" class="section bg-gray">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title"><%= t (".most_active_company") %></h2>
+      <p><%= t (".most_active_company_description") %></p>
+    </div>
+    <div class="row">
+      <% @activity_companies.each_with_index do |company,index| %>
+        <div class="col-lg-6 col-md-6 col-xs-12">
+          <div class="jobs-latest">
+            <div class="img-thumb job-icon">
+              <% if company.logo.attached? %>
+                <%= image_tag(company.logo, size: '40') %>
+              <% else %>
+                <%= image_tag('features/default.png') %>
+              <% end%>
+            </div>
+            <div class="content">
+              <h3><a href="job-details.html"><%= company.name %></a></h3>
+              <p class="brand"><i class="fa fa-map-marker"></i> <%= company.address %></p>
+              <div class="tags">
+                <span><i class="fa fa-globe"></i><%= company.country %></span>
+                <span><i class="fa fa-users"></i><%= company.scale %></span>
               </div>
-              <div class="content">
-                <h3><a href="job-details.html"><%= company.name %></a></h3>
-                <p class="brand"><i class="fa fa-map-marker"></i> <%= company.address %></p>
-                <div class="tags">
-                  <span><i class="fa fa-globe"></i><%= company.country %></span>
-                  <span><i class="fa fa-users"></i><%= company.scale %></span>
-                </div>
-                <span class="full-time"><%= @jobs_count[index] %> active jobs</span>
-              </div>
-              <div class="save-icon">
-                <a href="#"><i class="lni-heart-filled"></i></a>
-              </div>
+              <span class="full-time"><%= @jobs_count[index] %> active jobs</span>
+            </div>
+            <div class="save-icon">
+              <a href="#"><i class="lni-heart-filled"></i></a>
             </div>
           </div>
-        <% end %>
-        
-        <div class="col-12 text-center mt-4">
-          <%= link_to t("browse_companies"), companies_path, class: "btn btn-common" %>
         </div>
+      <% end %>
+      <div class="col-12 text-center mt-4">
+        <%= link_to t("browse_companies"), companies_path, class: "btn btn-common" %>
       </div>
     </div>
-  </section>
-  <%= render "layouts/howitwork"%>
-  <%= render "layouts/download"%>
+  </div>
+</section>
+<%= render "layouts/howitwork"%>
+<%= render "layouts/download"%>

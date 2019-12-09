@@ -114,7 +114,7 @@ jp:
   apply: すぐに申し込み
   job_description: 仕事内容
   job_requirement: 応募条件
-  similar_job: 同様の仕事
+  similar_job: 同様の求人
   job_location: 職場
   share_job: この求人を共有する
   view_detail: 詳細に見る
@@ -137,6 +137,8 @@ jp:
 
   approve: 承認
   decline: 断り
+
+  created_at: 作成
   
   pages:
     index:
