@@ -8,7 +8,7 @@
           <% if @job.company_logo.attached? %>
             <%= image_tag(@job.company_logo, class: "img-wrapper")%>
           <% else %>
-            <%= image_tag('features/img2.png', class: "img-wrapper") %>
+            <%= image_tag('features/default.png', class: "img-wrapper") %>
           <% end%>
           <div class="content">
             <h3 class="product-title"><%= @job.title %></h3>
@@ -52,7 +52,7 @@
               <div class="row">
                 <div class="col-lg-4 col-md-4 col-xs-12">
                   <div class="counter-box">
-                    <div class="icon"><i class="lni-briefcase"></i></div>
+                    <div class="icon"><i class="lni-star"></i></div>
                     <div class="fact-count">
                       <h3><span class="counter"><%= @job.annual_salary %></span>$</h3>
                       <p>Yearly</p>
@@ -70,7 +70,7 @@
                 </div>
                 <div class="col-lg-4 col-md-4 col-xs-12">
                   <div class="counter-box">
-                    <div class="icon"><i class="lni-save"></i></div>
+                    <div class="icon"><i class="lni-briefcase"></i></div>
                     <div class="fact-count">
                       <h3><span class="counter"><%= @job.exp_year %></span></h3>
                       <p>years experience</p>
@@ -95,12 +95,14 @@
               <% if current_user.liked? @job %>
                 <%= link_to "", like_job_path(@job), remote: true,
                         id: "like_#{@job.id}",
-                        class: "fa fa-heart",
+                        class: "fa fa-heart fa-3x",
+                        style: "color:red",
                         method: :put %>
               <% else %>
                 <%= link_to "", like_job_path(@job), remote: true,
                         id: "like_#{@job.id}",
-                        class: "fa fa-heart-o",
+                        class: "fa fa-heart-o fa-3x",
+                        style: "color:red",
                         method: :put %>
               <% end %>
             <% end %>
@@ -120,7 +122,7 @@
             <% if @job.company_logo.attached? %>
               <%= image_tag(@job.company_logo, class: "img-about-section")%>
             <% else %>
-              <%= image_tag('features/img2.png', class: "img-about-section")%>
+              <%= image_tag('features/default.png', class: "img-about-section")%>
             <% end %>
             <% 
 =end %>
@@ -175,7 +177,7 @@
               <% if similar_job.company_logo.attached? %>
                 <%= image_tag similar_job.company_logo, class: "logo-small-icon" %>
               <% else%>
-                <%= image_tag('features/img2.png') %>
+                <%= image_tag('features/default.png') %>
               <% end%>
             </div>
             <div class="content">

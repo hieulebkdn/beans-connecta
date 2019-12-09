@@ -138,7 +138,8 @@ jp:
   approve: 承認
   decline: 断り
 
-  created_at: 作成
+  created_at: "作成: "
+  company_job: 様のすべての求人
   
   pages:
     index:

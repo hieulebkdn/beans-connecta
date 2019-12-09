@@ -9,12 +9,12 @@
     </div>
   </div>
 </div>
-<div class="section">
+<div class="section bg-cyan">
   <div class="container">
     <div class="row">
       <%= render ("layouts/company_sidebar")%>
       <div class="col-lg-9 col-md-9 col-xs-12">
-        <div class="job-alerts-item jobs">
+        <div class="page-login-form box">
           <h3 class="alerts-title"><%= t("manage_job") %></h3>
           <div id="new-job">
             <%= link_to t("new_job"), new_job_path, remote: true, class:"btn btn-common btn-sm" %>

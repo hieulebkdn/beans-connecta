@@ -14,101 +14,101 @@
     <div class="row">
       <%= render ("layouts/candidate_sidebar")%>
       <div class="col-lg-9 col-md-9 col-xs-12">
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-lg-12 col-md-12 col-xs-12">
-                <div class="page-login-form box">
-                  <h3>
-                    <%= t("create_profile") %>
-                  </h3>
-                  <%= form_for(@candidate, url: candidate_update_profile_path(id: @candidate.id), html: {class: "login-form", multipart: true}) do |form| %>
-                    <div class="row">
-                      <div class="col-md-6 col-xs-6 col-lg-6">
-                        <div class="form-group">
-                          <div class="input-icon">
-                            <i class="lni-user"></i>
-                            <%= form.text_field :name, autofocus: true, class: "form-control", placeholder: t("yourname") %>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-2 col-xs-2 col-lg-2">
-                        <div class="form-group">
-                          <div class="input-icon">
-                            <i class="lni-heart"></i>
-                            <%= form.text_field :gender, class: "form-control", placeholder: t("gender") %>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-4 col-xs-4 col-lg-4">
-                        <div class="form-group">
-                          <div class="input-icon">
-                            <i class="lni-apartment"></i>
-                            <%= form.text_field :city, class: "form-control", placeholder: t("city") %>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-6 col-xs-6 col-lg-6">
-                        <div class="form-group">
-                          <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
-                            <div class="input-icon">
-                              <i class="lni-gift"></i>
-                            </div>
-                            <%= form.text_field(:dob, class: "form-control datetimepicker-input", data: {target:"#datetimepicker1"}, placeholder: t("dob") ) %>
-                            <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
-                              <div class="input-group-text"><i class="fa fa-calendar"></i>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6 col-xs-6 col-lg-6">
-                        <div class="form-group">
-                          <div class="input-icon">
-                            <i class="lni-home"></i>
-                            <%= form.text_field :address, class: "form-control", placeholder: t("address") %>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-6 col-xs-6 col-lg-6">
-                        <div class="form-group">
-                          <div class="input-icon">
-                            <i class="lni-phone"></i>
-                            <%= form.text_field :phone, class: "form-control", placeholder: t("phone") %>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6 col-xs-6 col-lg-6">
-                        <div class="form-group">
-                          <div class="input-icon">
-                            <i class="lni-book"></i>
-                            <%= form.text_field :specialty, class: "form-control", placeholder: t("specialty") %>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-0 col-xs-0 col-lg-0">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-12 col-md-12 col-xs-12">
+              <div class="page-login-form box">
+                <h3>
+                  <%= t("create_profile") %>
+                </h3>
+                <%= form_for(@candidate, url: candidate_update_profile_path(id: @candidate.id), html: {class: "login-form", multipart: true}) do |form| %>
+                  <div class="row">
+                    <div class="col-md-6 col-xs-6 col-lg-6">
                       <div class="form-group">
                         <div class="input-icon">
-                          <i class="lni-pencil"></i>
-                          <%= form.text_area :objective, class: "form-control", placeholder: t("objective") %>
+                          <i class="lni-user"></i>
+                          <%= form.text_field :name, autofocus: true, class: "form-control", placeholder: t("yourname") %>
                         </div>
                       </div>
                     </div>
+                    <div class="col-md-3 col-xs-3 col-lg-3">
+                      <div class="search-category-container">
+                        <div class="input-icon">
+                          <i class="lni-heart"></i>
+                          <%= form.select(:gender, [["Male", "male"], ["Female", "female"]], {}, {class: "form-control styled-select"}) %>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-3 col-xs-3 col-lg-3">
+                      <div class="form-group">
+                        <div class="input-icon">
+                          <i class="lni-apartment"></i>
+                          <%= form.text_field :city, class: "form-control", placeholder: t("city") %>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 col-xs-6 col-lg-6">
+                      <div class="form-group">
+                        <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
+                          <div class="input-icon">
+                            <i class="lni-gift"></i>
+                          </div>
+                          <%= form.text_field(:dob, class: "form-control datetimepicker-input", data: {target:"#datetimepicker1"}, placeholder: t("dob") ) %>
+                          <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+                            <div class="input-group-text"><i class="fa fa-calendar"></i>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-xs-6 col-lg-6">
+                      <div class="form-group">
+                        <div class="input-icon">
+                          <i class="lni-home"></i>
+                          <%= form.text_field :address, class: "form-control", placeholder: t("address") %>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 col-xs-6 col-lg-6">
+                      <div class="form-group">
+                        <div class="input-icon">
+                          <i class="lni-phone"></i>
+                          <%= form.text_field :phone, class: "form-control", placeholder: t("phone") %>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-xs-6 col-lg-6">
+                      <div class="form-group">
+                        <div class="input-icon">
+                          <i class="lni-book"></i>
+                          <%= form.text_field :specialty, class: "form-control", placeholder: t("specialty") %>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-0 col-xs-0 col-lg-0">
                     <div class="form-group">
-                      <%= form.file_field :avatar, direct_upload: true, class: "form-control" %>
+                      <div class="input-icon">
+                        <i class="lni-pencil"></i>
+                        <%= form.text_area :objective, class: "form-control", placeholder: t("objective") %>
+                      </div>
                     </div>
-                    <div class="actions">
-                      <%= form.submit t("update"), class: "btn btn-common log-btn" %>
-                    </div>
-                  <% end %>
-                </div>
+                  </div>
+                  <div class="form-group">
+                    <%= form.file_field :avatar, direct_upload: true, class: "form-control" %>
+                  </div>
+                  <div class="actions">
+                    <%= form.submit t("update"), class: "btn btn-common log-btn" %>
+                  </div>
+                <% end %>
               </div>
             </div>
           </div>
+        </div>
       </div>
     </div>
   </div>

@@ -17,7 +17,6 @@
                 </ul>
               </div>
             <% end %>
-
             <div class="row">
               <div class="col-md-6 col-xs-6 col-lg-6">
                 <div class="form-group">
@@ -27,12 +26,11 @@
                   </div>
                 </div>
               </div>
-
               <div class="col-md-2 col-xs-2 col-lg-2">
-                <div class="form-group">
+                <div class="search-category-container">
                   <div class="input-icon">
                     <i class="lni-heart"></i>
-                    <%= form.text_field :gender, class: "form-control", placeholder: t("gender") %>
+                    <%= form.select(:gender, [["Male", "male"], ["Female", "female"]], {}, {class: "form-control styled-select"}) %>
                   </div>
                 </div>
               </div>
@@ -44,21 +42,20 @@
                   </div>
                 </div>
               </div>
-              </div>
-
-              <div class="row">
+            </div>
+            <div class="row">
               <div class="col-md-6 col-xs-6 col-lg-6">
-              <div class="form-group">
-                <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
-                  <div class="input-icon">
-                    <i class="lni-gift"></i>
-                  </div>
+                <div class="form-group">
+                  <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
+                    <div class="input-icon">
+                      <i class="lni-gift"></i>
+                    </div>
                     <%= form.text_field(:dob, class: "form-control datetimepicker-input", data: {target:"#datetimepicker1"}, placeholder: t("dob") ) %>
-                  <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
-                    <div class="input-group-text"><i class="fa fa-calendar"></i>
+                    <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+                      <div class="input-group-text"><i class="fa fa-calendar"></i>
+                      </div>
                     </div>
                   </div>
-                </div>
                 </div>
               </div>
               <div class="col-md-6 col-xs-6 col-lg-6">
@@ -70,7 +67,6 @@
                 </div>
               </div>
             </div>
-
             <div class="row">
               <div class="col-md-6 col-xs-6 col-lg-6">
                 <div class="form-group">
@@ -80,7 +76,6 @@
                   </div>
                 </div>
               </div>
-
               <div class="col-md-6 col-xs-6 col-lg-6">
                 <div class="form-group">
                   <div class="input-icon">
@@ -89,27 +84,24 @@
                   </div>
                 </div>
               </div>
-              </div>
-
+            </div>
             <div class="col-md-0 col-xs-0 col-lg-0">
-                <div class="form-group">
-                  <div class="input-icon">
-                    <i class="lni-pencil"></i>
-                    <%= form.text_area :objective, class: "form-control", placeholder: t("objective") %>
-                  </div>
+              <div class="form-group">
+                <div class="input-icon">
+                  <i class="lni-pencil"></i>
+                  <%= form.text_area :objective, class: "form-control", placeholder: t("objective") %>
                 </div>
               </div>
-
-              <div class="form-group">
-                <%= form.file_field :avatar, direct_upload: true, class: "form-control" %>
-              </div>
-
-              <div class="actions">
-                <%= form.submit t("create"), class: "btn btn-common log-btn" %>
-              </div>
-            <% end %>
-          </div>
+            </div>
+            <div class="form-group">
+              <%= form.file_field :avatar, direct_upload: true, class: "form-control" %>
+            </div>
+            <div class="actions">
+              <%= form.submit t("create"), class: "btn btn-common log-btn" %>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
