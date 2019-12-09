@@ -1,7 +1,7 @@
 vi:
   home: "Trang chủ"
   job: "Việc làm"
-  company: "Nhà tuyển dụng"
+  company: "Công ty"
   blog: "Bài viết"
   contact: "Liên hệ"
   signup: "Đăng kí"
@@ -27,6 +27,117 @@ vi:
   retype_pass: "Xác nhận mật khẩu"
   register: "Đăng kí"
 
+  profile: "Hồ sơ"
+  manage_account: "Quản lí tài khoản"
+  my_profile: "Hồ sơ của tôi"
+  update_profile: "Cập nhật hồ sơ"
+  experience: "Kinh nghiệm"
+  skill: "Kĩ năng"
+  update_experience: "Cập nhật kinh nghiệm"
+  manage_experience: "Cập nhật kĩ năng"
+  update_skill: "Cập nhật kĩ năng"
+  bookmark: "Yêu thích"
+  noti: "Thông báo"
+  change_password: "Đổi mật khẩu"
+  update: "Cập nhật"
+
+  create_profile: "Tạo hồ sơ"
+  yourname: "Tên của bạn"
+  gender: "Giới tính"
+  city: "Thành phố"
+  dob: "Ngày sinh"
+  address: "Địa chỉ"
+  phone: "Số điện thoại"
+  specialty: "Chuyên môn"
+  objective: "Giới thiệu bản thân"
+  avatar: "Ảnh đại diện"
+  upload_avatar: "Tải lên ảnh đại diện"
+  detail: "Chi tiết"
+  from: "Từ"
+  to: "đến"
+  position: "Vị trí "
+  company_description: "Mô tả công ty"
+  scale: "VD: 200-500"
+  company_website: "Trang chủ công ty"
+  already_have_company: "Bạn đã có tài khoản?"
+
+  findjob: "Tìm kiếm việc làm"
+  no_experience: "Chưa thêm kinh nghiệm nào."
+  no_skill: "Chưa thêm kĩ năng nào."
+
+  notifications: "Thông báo "
+  update_company_profile: "Cập nhật thông tin công ty"
+  manage_job: "Tin tuyển dụng"
+  manage_interview: "Lịch phỏng vấn"
+  manage_company: "Quản lí công ty"
+  requirement: "Yêu cầu"
+
+  create: "Hoàn thành"
+  delete: "Xóa"
+  edit: "Sửa"
+  cancel: "Hủy bỏ"
+
+  new_experience: "Thêm kinh nghiệm"
+  add_experience: "Xác nhận"
+  create_company: "Tạo hồ sơ công ty"
+  create_candidate: "Tạo hồ sơ cá nhân"
+  company_name: "Tên công ty"
+
+  title: "Tiêu đề"
+  quantity: "Số lượng tuyển"
+  description: "Mô tả"
+  new_job: "Tin tuyển dụng mới"
+  add_job: "Thêm tin này "
+  update_job: "Cập nhật tin này"
+  benefit: "Phúc lợi"
+  rank: "Cấp bậc"
+  new_job_title: "Tin tuyển dụng mới"
+  deadline: "Hạn cuối"
+  exp_year: "Năm kinh nghiệm"
+  update_job_title: "Cập nhật tin tuyển dụng"
+  workplace: "Nơi làm việc"
+  job_title: "VD. Tuyển 3 Senior Java làm việc tại TPHCM"
+  job_position: "VD. Backend Engineer"
+  job_deadline: "2019-12-24 00:00"
+  job_quantity: "~(người)"
+  job_expyear: "~(năm)"
+  job_description: "Giải thích, chi tiết về công việc"
+  job_requirement: "Yêu cầu ứng tuyển"
+  job_workplace: "ABC Tower, quận Hai Bà Trưng, Hà Nội"
+  job_field: "Lĩnh vực"
+  job_annual_salary: "Lương năm"
+  annual_salary: "Lương năm"
+  search_placeholder: "Từ khóa tiêu đề, thư mục, vị trí..."
+  location: "Địa điểm"
+  category: "Category"
+  category_description: "Thư mục việc làm phổ biến nhất"
+  apply: "Ứng tuyển"
+  job_description: "Nội dung công việc"
+  job_requirement: "Yêu cầu ứng tuyển"
+  similar_job: "Tin tuyển dụng tương tự"
+  job_location: "Nơi làm việc"
+  share_job: "Chia sẻ tin tuyển dụng"
+  view_detail: "Xem chi tiết"
+  apply_this: "Ứng tuyển"
+  coverletter: "Thư tự giới thiệu"
+  coverletter_placeholder: "Viết vài điều mà bạn nghĩ có thể gây ấn tượng với người tuyển dụng :)"
+  browse_jobs: "Tất cả việc làm"
+  browse_companies: "Tất cả công ty"
+
+  write_review: "Đánh giá"
+  report: "Báo cáo"
+  share: "Chia sẻ"
+
+  alljob: "Tất cả việc làm"
+  manage_apply: "Quản lý đơn ứng tuyển"
+  view_cv: "Xem hồ sơ"
+  applicant_list: "Danh sách ứng tuyển"
+  manage_applicant: "Quản lý người ứng tuyển"
+  open_position: " vị trí mở"
+
+  approve: "Chấp nhận"
+  decline: "Từ chối"
+
   pages:
     index:
       content0: "Tìm kiếm"
@@ -38,77 +149,139 @@ vi:
       most_active_company: "Nhà tuyển dụng năng nổ"
       most_active_company_description: "Hãy trở thành một phần của chúng tôi!"
 
+  applies:
+    create:
+      flash_create: "Ứng tuyển thành công!"
+    apply:
+      flash_approve: "Chấp nhận đơn ứng tuyển！"
+    decline:
+      flash_decline: "Từ chối đơn ứng tuyển！"
+
   candidates: 
     show:
-      profile: Hồ sơ
-      aboutme: About me
-      experience: Kinh nghiệm
-      skill : Kĩ năng
+      profile: "Hồ sơ"
+      aboutme: "About me"
+      experience: "Kinh nghiệm"
+      skill : "Kĩ năng"
+    update:
+      flash_update: "Cập nhật hồ sơ thành công!"
+    create:
+      flash_create: "Tạo hồ sơ cá nhân thành công"
+
+  companies:
+    create:
+      flash_create: "会社のプロフィールが正常に作成されました！"
+
+  skills:
+    create:
+      flash_create: "Tạo kĩ năng thành công!"
+      flash_create_fail: "Tạo kĩ năng thất bại, xin thử lại."
+    edit:
+      tag: "Thẻ kĩ năng"
+      tag_placeholder: "VD. HTML"
+      detail_placeholder: "Trình độ, khả năng"
+    update:
+      flash_update: "Cập nhật kĩ năng thành công！"
+    form:
+      tag: "Thẻ kĩ năng"
+      tag_placeholder: "VD. HTML"
+      detail_placeholder: "Trình độ, khả năng"
+    index: 
+      new_skill: "Kĩ năng mới"
+      manage_skill: "Quản lí kĩ năng"
+    delete:
+      flash_delete: "Xóa kĩ năng thành công！"
+      flash_delete_fail: "Xóa kĩ năng thất bại, xin thử lại."
+
+  experiences:
+    create:
+      flash_create: "Tạo kinh nghiệm thành công!"
+      flash_create_fail: "Tạo kinh nghiệm thất bại, xin thử lại."
+    update:
+      flash_update: "Cập nhật kinh nghiệm thành công!"
+      flash_update_fail: "Cập nhật kinh nghiệm thất bại, xin thử lại."
+    delete:
+      flash_delete: "Xóa kinh nghiệm thành công"
+      flash_delete_fail: "Xóa kinh nghiệm thất bại, xin thử lại."
+    
+  jobs:
+    create:
+      flash_create: "Tạo tin tuyển dụng thành công!"
+      flash_create_fail: "Tạo tin tuyển dụng thất bại, xin thử lại."
+    update:
+      flash_update: "Tin tuyển dụng đã được cập nhật!"
+      flash_update_fail: "Cập nhật thất bại, xin thử lại."
+    delete:
+      flash_delete: "Đã xóa tin tuyển dụng!"
+      flash_delete_fail: "Xóa thất bại, xin thử lại."
+
   date:
     order:
       - :day
       - :month
       - :year
 
+  datetime:
+    order:
+      - :day
+      - :month
+      - :year
+      - :hour
+      - :minute
+
   devise:
     confirmations:
-      confirmed: "Your email address has been successfully confirmed."
-      send_instructions: "You will receive an email with instructions for how to confirm your email address in a few minutes."
-      send_paranoid_instructions: "If your email address exists in our database, you will receive an email with instructions for how to confirm your email address in a few minutes."
+      confirmed: "Xác nhận tài khoản thành công! Bạn hiện đang đăng nhập."
+      send_instructions: "Bạn sẽ nhận được email hướng dẫn xác nhận tài khoản trong vài phút nữa."
+      send_paranoid_instructions: "Nếu email của bạn có trong hệ thống, bạn sẽ nhận được email hướng dẫn xác nhận tài khoản trong một vài phút nữa."
     failure:
-      already_authenticated: "You are already signed in."
-      inactive: "Your account is not activated yet."
-      invalid: "Invalid %{authentication_keys} or password."
-      locked: "Your account is locked."
-      last_attempt: "You have one more attempt before your account is locked."
-      not_found_in_database: "Invalid %{authentication_keys} or password."
-      timeout: "Your session expired. Please sign in again to continue."
-      unauthenticated: "You need to sign in or sign up before continuing."
-      unconfirmed: "You have to confirm your email address before continuing."
+      already_authenticated: "Bạn đã đăng nhập."
+      inactive: "Tài khoản của bạn chưa được kích hoạt."
+      invalid: "Email hoặc mật khẩu không chính xác."
+      invalid_token: "Mã xác nhận không chính xác."
+      locked: "Tài khoản của bạn đã bị khóa."
+      not_found_in_database: "Email hoặc mật khẩu không chính xác."
+      timeout: "Phiên làm việc của bạn đã kết thúc, bạn cần đăng nhập lại để tiếp tục."
+      unauthenticated: "Bạn cần phải đăng nhập hoặc đăng ký trước khi tiếp tục."
+      unconfirmed: "Bạn cần phải xác nhận tài khoản trước khi tiếp tục."
     mailer:
       confirmation_instructions:
-        subject: "Confirmation instructions"
+        subject: "Hướng dẫn xác nhận tài khoản"
       reset_password_instructions:
-        subject: "Reset password instructions"
+        subject: "Hướng dẫn thiết lập lại mật khẩu"
       unlock_instructions:
-        subject: "Unlock instructions"
-      email_changed:
-        subject: "Email Changed"
-      password_change:
-        subject: "Password Changed"
+        subject: "Hướng dẫn mở khóa tài khoản"
     omniauth_callbacks:
-      failure: "Could not authenticate you from %{kind} because \"%{reason}\"."
-      success: "Successfully authenticated from %{kind} account."
+      failure: 'Không thể đăng nhập qua tài khoản %{kind} vì "%{reason}".'
+      success: "Đăng nhập thành công bằng tài khoản %{kind}."
     passwords:
-      no_token: "You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided."
-      send_instructions: "You will receive an email with instructions on how to reset your password in a few minutes."
-      send_paranoid_instructions: "If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes."
-      updated: "Your password has been changed successfully. You are now signed in."
-      updated_not_active: "Your password has been changed successfully."
+      no_token: "Bạn chỉ có thể truy cập trang này từ email đặt lại mật khẩu. Nếu bạn truy cập từ email đặt lại mật khẩu, xin chắc chắn rằng bạn dùng đường dẫn đầy đủ trong email."
+      send_instructions: "Bạn sẽ nhận được email hướng dẫn thiết lập lại mật khẩu trong vài phút nữa."
+      send_paranoid_instructions: "Nếu email của bạn có trong hệ thống, bạn sẽ nhận được đường dẫn khôi phục mật khẩu trong vài phút nữa qua email."
+      updated: "Đổi mật khẩu thành công! Bạn hiện đang đăng nhập."
+      updated_not_active: "Mật khẩu đã được đổi thành công."
     registrations:
-      destroyed: "Bye! Your account has been successfully cancelled. We hope to see you again soon."
-      signed_up: "Welcome! You have signed up successfully."
-      signed_up_but_inactive: "You have signed up successfully. However, we could not sign you in because your account is not yet activated."
-      signed_up_but_locked: "You have signed up successfully. However, we could not sign you in because your account is locked."
-      signed_up_but_unconfirmed: "A message with a confirmation link has been sent to your email address. Please follow the link to activate your account."
-      update_needs_confirmation: "You updated your account successfully, but we need to verify your new email address. Please check your email and follow the confirmation link to confirm your new email address."
-      updated: "Your account has been updated successfully."
-      updated_but_not_signed_in: "Your account has been updated successfully, but since your password was changed, you need to sign in again"
+      destroyed: "Tạm biệt! Tài khoản của bạn đã được xóa. Chúng tôi hy vọng sẽ sớm gặp lại bạn."
+      signed_up: "Xin chào! Bạn đã đăng ký thành công."
+      signed_up_but_inactive: "Bạn đã đăng ký thành công. Tuy nhiên, bạn cần phải kích hoạt tài khoản trước khi có thể đăng nhập được."
+      signed_up_but_locked: "Bạn đã đăng ký thành công. Tuy nhiên tài khoản của bạn đã bị khóa nên không thể đăng nhập được."
+      signed_up_but_unconfirmed: "Một email chứa đường dẫn xác nhận tài khoản đã được gửi cho bạn. Bạn vui lòng kiểm tra email."
+      update_needs_confirmation: "Tài khoản của bạn được cập nhật thành công, nhưng bạn cần xác nhận địa chỉ email mới. Vui lòng kiểm tra email và nhấn vào đường dẫn xác nhận tài khoản để hoàn tất việc thay đổi địa chỉ email."
+      updated: "Cập nhật tài khoản thành công."
     sessions:
-      signed_in: "Signed in successfully."
-      signed_out: "Signed out successfully."
-      already_signed_out: "Signed out successfully."
+      signed_in: "Đăng nhập thành công."
+      signed_out: "Đăng xuất thành công."
     unlocks:
-      send_instructions: "You will receive an email with instructions for how to unlock your account in a few minutes."
-      send_paranoid_instructions: "If your account exists, you will receive an email with instructions for how to unlock it in a few minutes."
-      unlocked: "Your account has been unlocked successfully. Please sign in to continue."
+      send_instructions: "Bạn sẽ nhận được email hướng dẫn cách mở khóa tài khoản trong vài phút nữa."
+      send_paranoid_instructions: "Nếu tài khoản của bạn tồn tại, bạn sẽ nhận được email hướng dẫn cách mở khóa tài khoản trong vài phút nữa."
+      unlocked: "Tài khoản của bạn đã được mở khóa thành công. Vui lòng đăng nhập để tiếp tục."
   errors:
     messages:
-      already_confirmed: "was already confirmed, please try signing in"
-      confirmation_period_expired: "needs to be confirmed within %{period}, please request a new one"
-      expired: "has expired, please request a new one"
-      not_found: "not found"
-      not_locked: "was not locked"
+      already_confirmed: "đã được xác nhận, vui lòng đăng nhập để tiếp tục."
+      confirmation_period_expired: 'cần được xác nhận trong %{period}, xin vui lòng yêu cầu mã mới.'
+      expired: "đã hết hạn, vui lòng gửi yêu cầu mới."
+      not_found: "Không tìm thấy"
+      not_locked: "Không bị khóa"
       not_saved:
-        one: "1 error prohibited this %{resource} from being saved:"
-        other: "%{count} errors prohibited this %{resource} from being saved:"
+        one: '1 lỗi khi lưu %{resource}:'
+        other: '%{count} lỗi khi lưu %{resource}:'
