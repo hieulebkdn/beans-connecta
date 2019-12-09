@@ -30,6 +30,8 @@ Rails.application.routes.draw do
     resources :experiences
     resources :skills
 
+    get "/candidate/:id/bookmarks", to: "bookmarks#index", as: "bookmark"
+
     get "/about", to: "pages#about"
     get "/index", to: "pages#index"
     get "/login", to: "pages#login"

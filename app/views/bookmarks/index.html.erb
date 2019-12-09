@@ -1,0 +1,49 @@
+<div class="page-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="inner-header">
+          <h3><%= t("profile") %></h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<section id="job-listings" class="section bg-cyan">
+  <div class="container">
+    <div class="row">
+      <%= render ("layouts/candidate_sidebar")%>
+      <div class="col-md-9 col-sm-9 col-xs-12">
+        <% @jobs.each do |job| %>
+          <a class="job-listings" href="<%= job_path(job.id) %>">
+            <div class="row">
+              <div class="col-lg-7 col-md-7 col-xs-12">
+                <div class="job-company-logo">
+                  <% if job.company_logo.attached? %>
+                    <%= image_tag(job.company_logo, class: "job-icon")%>
+                  <% else %>
+                    <%= image_tag 'features/default.png', class: "job-icon" %>
+                  <% end%>
+                </div>
+                <div class="job-details">
+                  <h3><%= job.title %></h3>
+                  <span class="company-neme">
+                    <%= job.company_name %>
+                  </span>
+                </div>
+              </div>
+              <div class="col-lg-2 col-md-2 col-xs-12 text-center">
+                <div class="location">
+                  <i class="lni-map-marker"></i> <%= job.workplace %>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-3 col-xs-12 text-right">
+                <span class="btn-apply"><%= t "apply" %></span>
+              </div>
+            </div>
+          </a>
+        <% end%>
+      </div>
+    </div>
+  </div>
+</div>
