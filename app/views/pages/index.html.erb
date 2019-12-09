@@ -93,7 +93,7 @@
       <% @activity_companies.each_with_index do |company,index| %>
         <div class="col-lg-6 col-md-6 col-xs-12">
           <div class="jobs-latest">
-            <div class="img-thumb job-icon">
+            <div class="img-thumb">
               <% if company.logo.attached? %>
                 <%= image_tag(company.logo, size: '40') %>
               <% else %>

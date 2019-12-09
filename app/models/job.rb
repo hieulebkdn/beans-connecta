@@ -5,7 +5,7 @@ class Job < ApplicationRecord
 	searchkick(word_start: %i(title position workplace category), 
 						 searchable: [:title, :position, :workplace, :category],
 						 language: "english",
-						 synonyms: [["specialist", "chuyên viên"], ["manager", "quản lý"], ["Hochiminh", "HCM"],["Hanoi", "HN"]])
+						 synonyms: [["specialist", "chuyên viên"], ["manager", "quản lý"], ["Hochiminh", "HCM"],["Hanoi", "HN"], ["chuyên gia","specialist"]])
 
 	def search_data
 		{

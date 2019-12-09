@@ -16,11 +16,7 @@
             <div class="tags">
               <span><i class="fa fa-id-card"></i> <%= @job.position %></span>
               <span><i class="fa fa-map-marker"></i> <%= @job.workplace %></span>
-              <span><i class="fa fa-users"></i> <%= @job.quantity %> open position</span>
             </div>
-          </div>
-          <div class="content">
-            <div class="counter" data-counterup-time="1500" data-counterup-delay="30" data-counterup-beginat="100"><%= @job.annual_salary.to_i %></div>
           </div>
         </div>
       </div>
@@ -52,6 +48,37 @@
     <div class="row justify-content-between">
       <div class="col-lg-8 col-md-12 col-xs-12">
         <div class="content-area">
+          <section id="counter" class="bg-gray">
+              <div class="row">
+                <div class="col-lg-4 col-md-4 col-xs-12">
+                  <div class="counter-box">
+                    <div class="icon"><i class="lni-briefcase"></i></div>
+                    <div class="fact-count">
+                      <h3><span class="counter"><%= @job.annual_salary %></span>$</h3>
+                      <p>Yearly</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-xs-12">
+                  <div class="counter-box">
+                    <div class="icon"><i class="lni-user"></i></div>
+                    <div class="fact-count">
+                      <h3><span class="counter"><%= @job.quantity %></span></h3>
+                      <p>Open position</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-xs-12">
+                  <div class="counter-box">
+                    <div class="icon"><i class="lni-save"></i></div>
+                    <div class="fact-count">
+                      <h3><span class="counter"><%= @job.exp_year %></span></h3>
+                      <p>years experience</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </section>
           <h5><%= t "job_description" %></h5>
           <%= simple_format @job.description %>
           <h5><%= t "job_requirement" %></h5>

@@ -12,14 +12,17 @@
 <div class="about section">
   <div class="container">
     <div class="row">
-      <div class="col-lg-6 col-md-6 col-xs-12">
+      <div class="col-lg-8 col-md-8 col-xs-12">
         <div class="about-content">
           <h3>About <%= @company.name %></h3>
-          <p><%= @company.description %></p>
+            <p><i class="fa fa-map-marker fa-fw green-icon"></i> <%= @company.address %></p>
+            <p><i class="fa fa-group fa-fw green-icon"></i> <%= @company.scale %> 社員</p>
+            <p><i class="fa fa-internet-explorer fa-fw green-icon"></i> <%= @company.website %></p>
+            <p><i class="fa fa-book fa-fw green-icon"></i> <%= @company.description %></p>
           <a href="#" class="btn btn-common">View jobs</a>
         </div>
       </div>
-      <div class="col-lg-6 col-md-6 col-xs-12">
+      <div class="col-lg-4 col-md-4 col-xs-12">
         <% if @company.logo.attached? %>
         <%= image_tag(@company.logo, class: "img-fluid float-right", style: "width:250px; height:250px") %>
         <% else %>
@@ -72,3 +75,14 @@
   </div>
 </section>
 <%= render "layouts/howitwork"%>
+<script>
+  $('.counter').counterUp({
+      delay: 10,
+      time: 2000,
+      offset: 70,
+      beginAt: 100,
+      formatter: function (n) {
+        return n.replace(/,/g, '.');
+      }
+  });
+</script>
