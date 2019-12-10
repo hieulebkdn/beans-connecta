@@ -11,7 +11,7 @@ set :stage, :production
 set :rails_env, :production
 set :deploy_to, "/deploy/apps/beansconnecta"
 set :branch, :master
-server "18.217.190.19", user: "socold", roles: %w(web app db)
+server "3.134.225.90", user: "socold", roles: %w(web app db)
 
 
 # role-based syntax

@@ -55,7 +55,7 @@
               </div>
               <div class="col-lg-3 col-md-3 col-xs-12 text-center">
                 <span class="btn-open">
-                  <%= calc_diff_hours(job.deadline).to_s + " hours remain" %>
+                  <%= t("nokori") + calc_diff_hours(job.deadline).to_s + t("hours_remain") %>
                 </span>
               </div>
               <div class="col-lg-2 col-md-2 col-xs-12 text-center">

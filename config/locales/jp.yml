@@ -140,7 +140,9 @@ jp:
 
   created_at: "作成: "
   company_job: 様のすべての求人
-  
+  view_jobs: "求人を見る"
+  nokori: "残り"
+  hours_remain: "時間"
   pages:
     index:
       content0: あなたの人生に

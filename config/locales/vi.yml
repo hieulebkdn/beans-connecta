@@ -140,7 +140,9 @@ vi:
 
   created_at: "Đăng lúc "
   company_job: " bảng tin tuyển dụng"
-
+  view_jobs: "Xem việc làm"
+  nokori: "Còn "
+  hours_remain: " giờ"
   pages:
     index:
       content0: "Tìm kiếm"
