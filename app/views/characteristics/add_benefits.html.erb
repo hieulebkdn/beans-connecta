@@ -199,11 +199,10 @@
   	$('#form-tags-4').tagsInput({
       'unique': true,
   		'minChars': 2,
-  		'maxChars': 10,
-  		'limit': 5,
-  		'validationPattern': new RegExp('^[a-zA-Z]+$'),
+  		'maxChars': 25,
+			'max': 8,
   		'autocomplete': {
-  			source: <%=raw @source.to_json %>
+  			source: <%=raw autocomplete_benefit.to_json %>
   		}
   	});
   

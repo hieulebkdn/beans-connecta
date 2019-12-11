@@ -41,5 +41,4 @@ module ApplicationHelper
       }.join("\n\n").html_safe
     end
   end
-
 end

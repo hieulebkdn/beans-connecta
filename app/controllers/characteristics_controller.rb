@@ -11,7 +11,7 @@ class CharacteristicsController < ApplicationController
   def update_benefits
     current_user.benefit_list.add(params[:benefit_tags])
     current_user.save
-    metadata = current_user.benefit_list.gsub(/,/, ' ').squish
+    metadata = current_user.benefit_list.join(' ').gsub(/,/, ' ').squish
     current_user.characteristic.update(benefit: metadata)
     redirect_to edit_interests_path
   end
