@@ -30,6 +30,11 @@ Rails.application.routes.draw do
     resources :experiences
     resources :skills
 
+    get "/characteristics/benefits", to: "characteristics#add_benefits", as: "edit_benefits"
+    put "/characteristics/benefits", to: "characteristics#update_benefits", as: "update_benefits"
+    get "/characteristics/interests", to: "characteristics#add_interests", as: "edit_interests"
+    put "/characteristics/interests", to: "characteristics#update_interests", as: "update_interests"
+
     get "/candidate/:id/bookmarks", to: "bookmarks#index", as: "bookmark"
 
     get "/about", to: "pages#about"

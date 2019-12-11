@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_11_114964) do
+ActiveRecord::Schema.define(version: 2019_12_11_143626) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -66,6 +66,16 @@ ActiveRecord::Schema.define(version: 2019_12_11_114964) do
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "icon_class", default: "lni-world"
+  end
+
+  create_table "characteristics", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "interest"
+    t.text "benefit"
+    t.text "profile"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_characteristics_on_user_id"
   end
 
   create_table "companies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -212,6 +222,7 @@ ActiveRecord::Schema.define(version: 2019_12_11_114964) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "applies", "candidates"
   add_foreign_key "applies", "jobs"
+  add_foreign_key "characteristics", "users"
   add_foreign_key "companies", "categories"
   add_foreign_key "experiences", "candidates"
   add_foreign_key "jobs", "categories"
