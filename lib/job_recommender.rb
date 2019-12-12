@@ -11,7 +11,12 @@ class JobRecommender
     def self.add_job(job)
         instance.companies.add_to_set(job.company_id, job.id)
         instance.categories.add_to_set(job.category_id, job.id)
-        instance.salaries.add_to_set((job.annual_salary.to_f.fdiv(1000).ceil, job.id)
+        instance.salaries.add_to_set(job.annual_salary.to_f.fdiv(1000).ceil(), job.id)
+        position_grams = position_grams.squish.gsub(/[^0-9A-Za-z ]/, '').split(" ")
+        position_grams.each do |ngram|
+            instance.positions.add_to_set(ngram, job.id)
+        end
+        instance.process_items!(job.id) 
 
         #uh-oh i know this suck
         # position_grams = job.position.downcase
@@ -21,11 +26,6 @@ class JobRecommender
         # position_grams = position_grams.gsub(/ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ/,'o')
         # position_grams = position_grams.gsub(/ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ/,'u')
         #nah, forget about it
-        position_grams = position_grams.squish.gsub(/[^0-9A-Za-z ]/, '').split(" ")
-        position_grams.each do |ngram|
-            instance.positions.add_to_set(ngram, job.id)
-        end
-        instance.process_items!(job.id) 
     end
 
     def self.delete_job(job)

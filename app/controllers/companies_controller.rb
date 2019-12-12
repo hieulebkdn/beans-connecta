@@ -18,7 +18,7 @@ class CompaniesController < ApplicationController
         if @company.save
             update_user_profile
             flash[:success] = t(".flash_create")
-            redirect_to controller: "pages", action: "index"
+            redirect_to edit_benefits_path
         else
             render :new
         end

@@ -1,11 +1,5 @@
 class CharacteristicsController < ApplicationController
   def add_benefits
-    @source = [
-      'apple',
-      'banana',
-      'orange',
-      'pizza'
-    ]
   end
 
   def update_benefits
@@ -17,12 +11,6 @@ class CharacteristicsController < ApplicationController
   end
 
   def add_interests
-    @source = [
-      'apple',
-      'banana',
-      'orange',
-      'pizza'
-    ]
   end
 
   def update_interests
