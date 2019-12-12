@@ -3,7 +3,6 @@ class ApplicationController < ActionController::Base
 	before_action :configure_permitted_parameters, if: :devise_controller?
 	before_action :set_locale
 	before_action :load_categories
-	require 'company_recommender'
 	require 'job_recommender'
 
 	rescue_from CanCan::AccessDenied do
