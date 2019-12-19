@@ -12,6 +12,7 @@ class User < ApplicationRecord
   delegate :name, to: :candidate, prefix: true, allow_nil: true
   delegate :name, to: :company, prefix: true, allow_nil: true
 
+	scope :candidate_list, -> { where(:role => 0)}
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,

@@ -143,6 +143,9 @@ vi:
   view_jobs: "Xem việc làm"
   nokori: "Còn "
   hours_remain: " giờ"
+  employees: " nhân viên"
+  likes: " người thích"
+  
   pages:
     index:
       content0: "Tìm kiếm"

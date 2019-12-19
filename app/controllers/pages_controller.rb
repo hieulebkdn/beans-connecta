@@ -20,4 +20,13 @@ class PagesController < ApplicationController
     
     def login
     end
+
+    protected
+    def load_perfect_matched_company
+        @recommender = CharacteristicRecommender.instance
+        similar_ids = @recommender.similarities_for(current_user.id).map(&:to_i)
+        candidate_ids = User.candidate_list.pluck(:id)
+        matched_company_ids = (similar_ids - candidate_ids).first(3)
+        @matched_company = Company.load_in_list matched_company_ids
+    end
 end

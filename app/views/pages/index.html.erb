@@ -101,7 +101,7 @@
               <% end%>
             </div>
             <div class="content">
-              <h3><a href="job-details.html"><%= company.name %></a></h3>
+              <h3><a href="<%= company_path(company) %>"><%= company.name %></a></h3>
               <p class="brand"><i class="fa fa-map-marker"></i> <%= company.address %></p>
               <div class="tags">
                 <span><i class="fa fa-globe"></i><%= company.country %></span>

@@ -86,10 +86,9 @@
           <h5><%= t "deadline" %></h5>
           <p><%= format_date_default @job.deadline %></p>
           <div class= row>
-            <%= link_to '応募', new_apply_path(job_id: @job.id),  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window', class: 'btn btn-common'}  %>
+            <%= link_to t("apply"), new_apply_path(job_id: @job.id),  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window', class: 'btn btn-common'}  %>
             <%= link_to like_job_path(@job), method: :put, class: "btn btn-info btn-bookmark" do %>
-              気になる
-              <%= @job.get_upvotes.size %>
+              <%= @job.get_upvotes.size.to_s + t("likes") %>
             <% end %>
             <% if current_user %>
               <% if current_user.liked? @job %>
@@ -128,7 +127,7 @@
 =end %>
             <h3>About <%= @job.company_name %></h3>
             <p><i class="fa fa-map-marker fa-fw green-icon"></i> <%= @job.company_address %></p>
-            <p><i class="fa fa-group fa-fw green-icon"></i> <%= @job.company_scale %> 社員</p>
+            <p><i class="fa fa-group fa-fw green-icon"></i> <%= @job.company_scale.to_s + t("employees") %></p>
             <p><i class="fa fa-internet-explorer fa-fw green-icon"></i> <%= @job.company_website %></p>
             <p><i class="fa fa-info fa-fw green-icon"></i> <%= truncate @job.company_description, length: 200 %></p>
             <%= link_to 'read more', company_path(@job.company.id) %>

@@ -143,6 +143,8 @@ jp:
   view_jobs: "求人を見る"
   nokori: "残り"
   hours_remain: "時間"
+  likes: "気に入る人"
+  employess: "人"
   pages:
     index:
       content0: あなたの人生に

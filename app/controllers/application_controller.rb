@@ -1,9 +1,11 @@
 class ApplicationController < ActionController::Base
+	require 'characteristic_recommender'
+	require 'job_recommender'
+
 	include Pagy::Backend
 	before_action :configure_permitted_parameters, if: :devise_controller?
 	before_action :set_locale
 	before_action :load_categories
-	require 'job_recommender'
 
 	rescue_from CanCan::AccessDenied do
 		respond_to do |format|
