@@ -14,7 +14,7 @@
                 </div>
               </div>
               <div class="col-lg-2 col-md-2 col-xs-12">
-                <a href="javascript:$('#search-form').submit();", class="button"><i class="lni-search"></i></a>
+                <a href="javascript:$('#search-form').submit();" class="button" id ="search-me"><i class="lni-search"></i></a>
               </div>
             </div>
           <% end %>
@@ -76,3 +76,16 @@
     </div>
   </div>
 </section>
+
+<script>
+var ENTER = 13; 
+
+function enter_search(e){
+  key = e.which;
+  if(key == ENTER){
+    $('a#search-me').trigger('click');
+  }
+}
+
+$(document).on('keydown', enter_search); 
+</script>

@@ -5,5 +5,5 @@ class Candidate < ApplicationRecord
   has_many :skills
   has_many :experiences
 
-    validates :name, length: {maximum: 100}
+  validates :name, length: {maximum: 100}
 end
