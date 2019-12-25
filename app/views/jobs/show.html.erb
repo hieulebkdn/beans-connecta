@@ -87,23 +87,23 @@
           <p><%= format_date_default @job.deadline %></p>
           <div class= row>
             <%= link_to t("apply"), new_apply_path(job_id: @job.id),  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window', class: 'btn btn-common'}  %>
-            <%= link_to like_job_path(@job), method: :put, class: "btn btn-info btn-bookmark" do %>
-              <%= @job.get_upvotes.size.to_s + t("likes") %>
-            <% end %>
             <% if current_user %>
               <% if current_user.liked? @job %>
                 <%= link_to "", like_job_path(@job), remote: true,
                         id: "like_#{@job.id}",
-                        class: "fa fa-heart fa-3x",
+                        class: "fa fa-heart fa-3x padding-heart",
                         style: "color:red",
                         method: :put %>
               <% else %>
                 <%= link_to "", like_job_path(@job), remote: true,
                         id: "like_#{@job.id}",
-                        class: "fa fa-heart-o fa-3x",
+                        class: "fa fa-heart-o fa-3x padding-heart",
                         style: "color:red",
                         method: :put %>
               <% end %>
+            <% end %>
+            <%= link_to like_job_path(@job), method: :put, class: "btn btn-info btn-bookmark btn-sm disabled" do %>
+              <%= @job.get_upvotes.size.to_s + t("likes") %>
             <% end %>
           </div>
         </div>
@@ -186,7 +186,7 @@
                 <span><i class="fa fa-map-marker"></i><%= similar_job.workplace %></span>
                 <span><i class="fa fa-briefcase"></i><%= similar_job.category_name %></span>
               </div>
-              <span class="full-time">Yearly <%= similar_job.annual_salary %> $</span>
+              <span class="full-time"><%= t("yearly") + similar_job.annual_salary.to_s %> $</span>
             </div>
           </div>
         </div>

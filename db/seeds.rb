@@ -1351,11 +1351,51 @@
 # 		description: job[:description], requirement: job[:requirement], category_id: job[:category_id])
 # end
 
-def company_logo(file_name)
-	File.open(File.join(Rails.root, "/custom/companies/#{file_name}.png"))
-end
+# def company_logo(file_name)
+# 	File.open(File.join(Rails.root, "/custom/companies/#{file_name}.png"))
+# end
 
-companies_list = Company.first 30
-companies_list.each do |company|
-	company.logo.attach(io: company_logo(company.id.to_s), filename: File.join(Rails.root, "/custom/companies/#{company.id.to_s}.png"),content_type: "image/png")
-end
+# companies_list = Company.first 30
+# companies_list.each do |company|
+# 	company.logo.attach(io: company_logo(company.id.to_s), filename: File.join(Rails.root, "/custom/companies/#{company.id.to_s}.png"),content_type: "image/png")
+# end
+
+companies_email = [
+	["fpt@gg.com",1,],
+	["logivan@gg.com",2],
+	["kiwieconnect@gg.com",3],
+	["hansencx@gg.com",4],
+	["person@gg.com",5],
+	["ekino@gg.com",6],
+	["grab@gg.com",7],
+	["ateam@gg.com",8],
+	["fecredit@gg.com",9],
+	["aia@gg.com",10],
+	["truonghai@gg.com",11],
+	["digilie@gg.com",12],
+	["tienphong@gg.com",13],
+	["worwagpharma@gg.com",14],
+	["toylogic@gg.com",15],
+	["colorclub@gg.com",16],
+	["tettojsc@gg.com",17],
+	["dalathasfarm@gg.com",18],
+	["icogroup@gg.com",19],
+	["vndirect@gg.com",20],
+	["bizreach@gg.com",21],
+	["sunasterisk@gg.com",22],
+	["evnfinance@gg.com",23],
+	["prudential@gg.com",24],
+	["bidv@gg.com",25],
+	["sunsnack@gg.com",26],
+	["lottemart@gg.com",27],
+	["vng@gg.com",28],
+	["fujifilm@gg.com",29],
+	["hungyen@gg.com",30],
+	]
+
+	30.times do |n|
+		email = companies_email[n][0].to_s
+		password = "password"
+		profile = companies_email[n][1]
+		User.create!(email: email, password: password, password_confirmation: password, role: :company, profile: profile)
+	end

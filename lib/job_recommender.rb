@@ -3,9 +3,9 @@ class JobRecommender
     include Predictor::Base
     include Singleton
     
-    input_matrix :companies, weight: 2.0, measure: :sorensen_coefficient # Use Sorenson over Jaccard
+    input_matrix :companies, weight: 1.0, measure: :sorensen_coefficient # Use Sorenson over Jaccard
     input_matrix :categories, weight: 2.0, measure: :sorensen_coefficient # Use Sorenson over Jaccard
-    input_matrix :positions, weight: 3.0, measure: :sorensen_coefficient
+    input_matrix :positions, weight: 2.0, measure: :sorensen_coefficient
     input_matrix :salaries, weight: 1.0, measure: :sorensen_coefficient # Use Sorenson over Jaccard
     input_matrix :users, weight: 1.0, measure: :sorensen_coefficient
     def self.add_job(job)
