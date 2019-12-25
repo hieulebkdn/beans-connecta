@@ -1039,94 +1039,102 @@
 #   User.create! email: email, password: password, password_confirmation: password
 # end
 
-# autocomplete_benefit =[
-#   "teamspirit", "toptalent ", "workhardplayharder",
-#   "certifiedpayroll", "health insurance", "vacation/paid timeoff", 
-#   "performance bonuses", "paid sick days", "401(k)",
-#   "retirement plan and/or pension", "flexible schedule",
-#   "office perks", "employee development programs", "tuition reimbursement", 
-#   "employee discounts", "gym membership",
-#   "wellness programs", "stock options ", "equity", "diversity program", 
-#   "insurance", "shuttle service", "allowances",
-#   "company trip", "training", "annual leave", "incentive bonus", 
-#   "salary review", "womencare", "family insurance", "beauty care",
-#   "maternity leave", "children care", "support house", "learning system",
-#   "young", "pension", "travel expenses pay", "compete", "dynamic", "high salary", "free drinking",
-#   "macbook pro", "4k monitor", "ipad", "team buildings", "parties", "large connection", "social status",
-#   "13th salary", "yearly performance bonus"
-#   ]
+autocomplete_benefit =[
+  "teamspirit", "toptalent ", "workhardplayharder",
+  "certifiedpayroll", "health insurance", "vacation/paid timeoff", 
+  "performance bonuses", "paid sick days", "401(k)",
+  "retirement plan and/or pension", "flexible schedule",
+  "office perks", "employee development programs", "tuition reimbursement", 
+  "employee discounts", "gym membership",
+  "wellness programs", "stock options ", "equity", "diversity program", 
+  "insurance", "shuttle service", "allowances",
+  "company trip", "training", "annual leave", "incentive bonus", 
+  "salary review", "womencare", "family insurance", "beauty care",
+  "maternity leave", "children care", "support house", "learning system",
+  "young", "pension", "travel expenses pay", "compete", "dynamic", "high salary", "free drinking",
+  "macbook pro", "4k monitor", "ipad", "team buildings", "parties", "large connection", "social status",
+  "13th salary", "yearly performance bonus"
+  ]
 
-# autocomplete_interest = [
-#   "agile","japanese","english","python","java","ruby","rails","c#",
-#   "frontend","backend","infra","visualbasic","excel","uniti3d",
-#   "phpadmin","posgresql","reactjs","nodejs","vuejs","php","technical",
-#   "training","sales","marketing","reporting","strategy","research",
-#   "analytical","engineering","policies","budget","finance","project
-#   management","health","customer service","documentation","content",
-#   "presentation","presentations","safety","accounting","regulations",
-#   "metrics","database","analytics","distribution","coaching","testing",
-#   "vendors","consulting","writing","contracts","inventory","retail",
-#   "healthcare","regulatory","scheduling","construction","logistics","mobile",
-#   "c (programming language)","pharmaceutical","erp","tax","service delivery",
-#   "account management","business process","electronics","pr","javascript",
-#   "assembly","digital marketing","linux","facebook","spreadsheets","recruit",
-#   "sharepoint","hotel","ordering","branding","life cycle","real estate",
-#   "relationship management","researching","process improvements","chemistry",
-#   "saas","cad","sales experience","mathematics","customer-facing","audio",
-#   "project management skills","six sigma","hospitality","mechanical engineering",
-#   "auditing","employee relations","android","security clearance","licensing",
-#   "adobe","warehouse","business strategy","pmp","data management","quality
-#   control","reconciliation","css","business analysis","financial analysis",
-#   "ecommerce","business intelligence","c++","client service","publishing",
-#   "supervising","complex projects","key performance indicators","scrum",
-#   "photoshop","sports","e-commerce","journalism","d","data collection",
-#   "higher education","marketing programs","financial management","business plans",
-#   "user experience","client relationships","cloud","analytical skills","internal
-#   stakeholders","product marketing","regulatory requirements","information security",
-#   "supply chain management","python","accounts payable","industry experience",
-#   "autocad","purchase orders","acquisitions","tv","instrumentation","strategic
-#   direction","law enforcement","call center","experiments","technical skills",
-#   "human resource","business cases","build relationships","invoicing","support
-#   services","marketing strategy","operating systems","biology","start-up",
-#   "electrical engineering","routing","marketing plans","business management",
-#   "iphone","algorithms","architectures","microsoft word","emea","intranet",
-#   "sops","sas","digital media","financial reporting","project delivery","seo",
-#   "operational excellence","standard operating procedures","c#","technical knowledge",
-#   "talent management","stakeholder management","tablets","cms","analyze data",
-#   "financial statements","microsoft office suite","fitness","value proposition",
-#   "industry trends","rfp","broadcast","portfolio management","fabrication",
-#   "ux","financial performance","customer requirements","psychology","marketing
-#   materials","resource management","physics","business planning","analysis",
-#   "leadership development","relationship building","sdlc","aws","kpi","jira",
-#   "pharmacy","project plan","ms excel","fda","test plans","variances",
-#   "ui","financing","internal customers","medical device","counsel","inventory
-#   management","performance metrics","lighting","outsourcing","indesign",
-#   "management consulting","graphic design","transport","information management",
-#   ".net","startup","matrix","front-end","project planning","business systems",
-#   "accounts receivable","public health","hris","german","in-store","data
-#   center","matlab","employee engagement","cost effective","sales management",
-#   "api","adobe creative suite","root cause","vendor management","hotels",
-#   "segmentation","contract management","gis","photography","internal
-#   communications","client services","ibm","financial reports","cpr",
-#   "scripting","migration","software engineering","mis","ms project","os",
-#   "daily operations","product design","etl","peoplesoft","apis","test cases",
-#   "internal controls","telecom","cfa","big data","vmware","statistical
-#   analysis","solidworks","prototype","lan","sci","budget management",
-#   "unix","rfps","flex","gaap","experimental","cpg","information system",
-#   "operations management","sql server","affiliate","computer software","manage
-#   projects","litigation","it infrastructure","ios","html5","circuits",
-#   "machine learning","risk assessment","dns","analyzing data"
-#   ]
+autocomplete_interest = [
+  "agile","japanese","english","python","java","ruby","rails","c#",
+  "frontend","backend","infra","visualbasic","excel","uniti3d",
+  "phpadmin","posgresql","reactjs","nodejs","vuejs","php","technical",
+  "training","sales","marketing","reporting","strategy","research",
+  "analytical","engineering","policies","budget","finance","project
+  management","health","customer service","documentation","content",
+  "presentation","presentations","safety","accounting","regulations",
+  "metrics","database","analytics","distribution","coaching","testing",
+  "vendors","consulting","writing","contracts","inventory","retail",
+  "healthcare","regulatory","scheduling","construction","logistics","mobile",
+  "c (programming language)","pharmaceutical","erp","tax","service delivery",
+  "account management","business process","electronics","pr","javascript",
+  "assembly","digital marketing","linux","facebook","spreadsheets","recruit",
+  "sharepoint","hotel","ordering","branding","life cycle","real estate",
+  "relationship management","researching","process improvements","chemistry",
+  "saas","cad","sales experience","mathematics","customer-facing","audio",
+  "project management skills","six sigma","hospitality","mechanical engineering",
+  "auditing","employee relations","android","security clearance","licensing",
+  "adobe","warehouse","business strategy","pmp","data management","quality
+  control","reconciliation","css","business analysis","financial analysis",
+  "ecommerce","business intelligence","c++","client service","publishing",
+  "supervising","complex projects","key performance indicators","scrum",
+  "photoshop","sports","e-commerce","journalism","d","data collection",
+  "higher education","marketing programs","financial management","business plans",
+  "user experience","client relationships","cloud","analytical skills","internal
+  stakeholders","product marketing","regulatory requirements","information security",
+  "supply chain management","python","accounts payable","industry experience",
+  "autocad","purchase orders","acquisitions","tv","instrumentation","strategic
+  direction","law enforcement","call center","experiments","technical skills",
+  "human resource","business cases","build relationships","invoicing","support
+  services","marketing strategy","operating systems","biology","start-up",
+  "electrical engineering","routing","marketing plans","business management",
+  "iphone","algorithms","architectures","microsoft word","emea","intranet",
+  "sops","sas","digital media","financial reporting","project delivery","seo",
+  "operational excellence","standard operating procedures","c#","technical knowledge",
+  "talent management","stakeholder management","tablets","cms","analyze data",
+  "financial statements","microsoft office suite","fitness","value proposition",
+  "industry trends","rfp","broadcast","portfolio management","fabrication",
+  "ux","financial performance","customer requirements","psychology","marketing
+  materials","resource management","physics","business planning","analysis",
+  "leadership development","relationship building","sdlc","aws","kpi","jira",
+  "pharmacy","project plan","ms excel","fda","test plans","variances",
+  "ui","financing","internal customers","medical device","counsel","inventory
+  management","performance metrics","lighting","outsourcing","indesign",
+  "management consulting","graphic design","transport","information management",
+  ".net","startup","matrix","front-end","project planning","business systems",
+  "accounts receivable","public health","hris","german","in-store","data
+  center","matlab","employee engagement","cost effective","sales management",
+  "api","adobe creative suite","root cause","vendor management","hotels",
+  "segmentation","contract management","gis","photography","internal
+  communications","client services","ibm","financial reports","cpr",
+  "scripting","migration","software engineering","mis","ms project","os",
+  "daily operations","product design","etl","peoplesoft","apis","test cases",
+  "internal controls","telecom","cfa","big data","vmware","statistical
+  analysis","solidworks","prototype","lan","sci","budget management",
+  "unix","rfps","flex","gaap","experimental","cpg","information system",
+  "operations management","sql server","affiliate","computer software","manage
+  projects","litigation","it infrastructure","ios","html5","circuits",
+	"machine learning","risk assessment","dns","analyzing data", 
+	"HTML5", "CSS", "Django", "Node.js", "Laravel", "React", "C#",  "Java", "C++", 
+	"JavaScript", "Python", "PHP", "Objective-C", "AJAX", "ASP.NET", "Ruby", "Golang", "Blockchain", "Bitcoin", 
+	"Ripple", "Ethereum", "Bitcoin", "Cash", "Monero", "Litecoin", "Kubernetes", "Docker", "Azure", "AWS", 
+	"Machine Learning", "TensorFlow", "scikit-learn", "Google Cloud ML Engine", "AML", "Operating Systems",
+	"Microsoft", "Windows", "macOS", "Linux", "Network", "Security", "OSCP", "CISSP", "Cisco", "CCNA", "CEH",
+	"CompTIA", "Security+", "AutoCAD", "MATLAB", "Verilog", "Simulink", "Pspice", "Multisim", "ETAP", "Virtualization", 
+	"VMware", "vSphere", "Hyper-V", "QEMU", "Oracle VM", "VirtualBox", "XEN",  "Big Data", "Statistical analysis", 
+	"data mining", "database management", "eCommerce", "Magento", "PrestaShop", "Joomla", "OpenCart", "WooCommerce", "Shopify"
+  ]
 
 # 20.times do |n|
 #   characteristic = Characteristic.find n+1
 #   benefit = ""
 #   interest = ""
 #   8.times do |i|
-#     benefit += (autocomplete_benefit[1+rand(30)].to_s + " ")
+#     benefit += (autocomplete_benefit[1+rand(49)].to_s + " ")
 #   end
 #   8.times do |i|
-#     interest += (autocomplete_interest[1+rand(60)].to_s + " ")
+#     interest += (autocomplete_interest[1+rand(375)].to_s + " ")
 #   end
 #   characteristic.update(benefit: benefit)
 #   characteristic.update(interest: interest)
@@ -1360,42 +1368,102 @@
 # 	company.logo.attach(io: company_logo(company.id.to_s), filename: File.join(Rails.root, "/custom/companies/#{company.id.to_s}.png"),content_type: "image/png")
 # end
 
-companies_email = [
-	["fpt@gg.com",1,],
-	["logivan@gg.com",2],
-	["kiwieconnect@gg.com",3],
-	["hansencx@gg.com",4],
-	["person@gg.com",5],
-	["ekino@gg.com",6],
-	["grab@gg.com",7],
-	["ateam@gg.com",8],
-	["fecredit@gg.com",9],
-	["aia@gg.com",10],
-	["truonghai@gg.com",11],
-	["digilie@gg.com",12],
-	["tienphong@gg.com",13],
-	["worwagpharma@gg.com",14],
-	["toylogic@gg.com",15],
-	["colorclub@gg.com",16],
-	["tettojsc@gg.com",17],
-	["dalathasfarm@gg.com",18],
-	["icogroup@gg.com",19],
-	["vndirect@gg.com",20],
-	["bizreach@gg.com",21],
-	["sunasterisk@gg.com",22],
-	["evnfinance@gg.com",23],
-	["prudential@gg.com",24],
-	["bidv@gg.com",25],
-	["sunsnack@gg.com",26],
-	["lottemart@gg.com",27],
-	["vng@gg.com",28],
-	["fujifilm@gg.com",29],
-	["hungyen@gg.com",30],
-	]
+# companies_email = [
+# 	["fpt@gg.com",1,],
+# 	["logivan@gg.com",2],
+# 	["kiwieconnect@gg.com",3],
+# 	["hansencx@gg.com",4],
+# 	["person@gg.com",5],
+# 	["ekino@gg.com",6],
+# 	["grab@gg.com",7],
+# 	["ateam@gg.com",8],
+# 	["fecredit@gg.com",9],
+# 	["aia@gg.com",10],
+# 	["truonghai@gg.com",11],
+# 	["digilie@gg.com",12],
+# 	["tienphong@gg.com",13],
+# 	["worwagpharma@gg.com",14],
+# 	["toylogic@gg.com",15],
+# 	["colorclub@gg.com",16],
+# 	["tettojsc@gg.com",17],
+# 	["dalathasfarm@gg.com",18],
+# 	["icogroup@gg.com",19],
+# 	["vndirect@gg.com",20],
+# 	["bizreach@gg.com",21],
+# 	["sunasterisk@gg.com",22],
+# 	["evnfinance@gg.com",23],
+# 	["prudential@gg.com",24],
+# 	["bidv@gg.com",25],
+# 	["sunsnack@gg.com",26],
+# 	["lottemart@gg.com",27],
+# 	["vng@gg.com",28],
+# 	["fujifilm@gg.com",29],
+# 	["hungyen@gg.com",30],
+# 	]
 
-	30.times do |n|
-		email = companies_email[n][0].to_s
-		password = "password"
-		profile = companies_email[n][1]
-		User.create!(email: email, password: password, password_confirmation: password, role: :company, profile: profile)
+# 	30.times do |n|
+# 		email = companies_email[n][0].to_s
+# 		password = "password"
+# 		profile = companies_email[n][1]
+# 		User.create!(email: email, password: password, password_confirmation: password, role: :company, profile: profile)
+# 	end
+
+
+	# 20.times do |n|
+	# 	name = Faker::Name.name
+	# 	dob = Faker::Date.birthday
+	# 	address = Faker::Address.street_address
+	# 	objective = Faker::Movies::Ghostbusters.quote + "\n" + Faker::Movies::BackToTheFuture.quote + "\n" + Faker::Movies::StarWars.quote + "\n" + Faker::Movie.quote
+	# 	specialty = Faker::Job.title
+	# 	phone = Faker::PhoneNumber.phone_number_with_country_code
+	# 	city = Faker::Address.state
+		
+	# 	Candidate.create!(name: name, dob: dob, address: address, objective: objective, specialty: specialty, phone: phone, city: city)
+		
+	# end
+	
+	# 20.times do |n|
+	# 	u = User.find n+1
+	# 	u.update(profile: n+1)
+	# 	u.save
+	# end
+
+	# 20.times do |n|
+	# 	name = Faker::Company.name
+	# 	position = Faker::Job.position
+	# 	first_day= Faker::Date.between(from: 8.years.ago, to: 6.years.ago)
+	# 	last_day= Faker::Date.between(from: 6.years.ago, to: 4.years.ago)
+	# 	description = Faker::Lorem.paragraph_by_chars(number: 256, supplemental: false)
+
+	# 	name2 = Faker::Company.name
+	# 	position2 = Faker::Job.position
+	# 	first_day2= Faker::Date.between(from: 4.years.ago, to: 2.years.ago)
+	# 	last_day2= Faker::Date.between(from: 2.years.ago, to: 1.month.ago)
+	# 	description2 = Faker::Lorem.paragraph_by_chars(number: 256, supplemental: false)
+
+	# 	Experience.create!(company_name: name, position: position, first_day: first_day, last_day: last_day, description: description, candidate_id: n+1)
+	# 	Experience.create!(company_name: name2, position: position2, first_day: first_day2, last_day: last_day2, description: description2, candidate_id: n+1)
+	# end
+
+	# candidate_skills = ["HTML5", "CSS", "Django", "Node.js", "Laravel", "React", "C#",  "Java", "C++", 
+	# "JavaScript", "Python", "PHP", "Objective-C", "AJAX", "ASP.NET", "Ruby", "Golang", "Blockchain", "Bitcoin", 
+	# "Ripple", "Ethereum", "Bitcoin", "Cash", "Monero", "Litecoin", "Kubernetes", "Docker", "Azure", "AWS", 
+	# "Machine Learning", "TensorFlow", "scikit-learn", "Google Cloud ML Engine", "AML", "Operating Systems",
+	# "Microsoft", "Windows", "macOS", "Linux", "Network", "Security", "OSCP", "CISSP", "Cisco", "CCNA", "CEH",
+	# "CompTIA", "Security+", "AutoCAD", "MATLAB", "Verilog", "Simulink", "Pspice", "Multisim", "ETAP", "Virtualization", 
+	# "VMware", "vSphere", "Hyper-V", "QEMU", "Oracle VM", "VirtualBox", "XEN",  "Big Data", "Statistical analysis", 
+	# "data mining", "database management", "eCommerce", "Magento", "PrestaShop", "Joomla", "OpenCart", "WooCommerce", "Shopify"]
+	# 20.times do |n|
+	# 		4.times do |i|
+  #   		Skill.create! tag: candidate_skills[1+rand(73)].to_s, description: Faker::Job.education_level, candidate_id: n+1
+  # 		end
+	# end
+
+	def candidate_logo(file_name)
+		File.open(File.join(Rails.root, "/custom/candidates/#{file_name}.png"))
+	end
+	
+	candidates_list = Candidate.first 20
+	candidates_list.each do |candidate|
+		candidate.avatar.attach(io: candidate_logo(candidate.id.to_s), filename: File.join(Rails.root, "/custom/candidates/#{candidate.id.to_s}.png"),content_type: "image/png")
 	end

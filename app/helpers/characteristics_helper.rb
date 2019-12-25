@@ -78,7 +78,15 @@ module CharacteristicsHelper
     "unix","rfps","flex","gaap","experimental","cpg","information system",
     "operations management","sql server","affiliate","computer software","manage
     projects","litigation","it infrastructure","ios","html5","circuits",
-    "machine learning","risk assessment","dns","analyzing data"
+    "machine learning","risk assessment","dns","analyzing data",
+    "HTML5", "CSS", "Django", "Node.js", "Laravel", "React", "C#",  "Java", "C++", 
+    "JavaScript", "Python", "PHP", "Objective-C", "AJAX", "ASP.NET", "Ruby", "Golang", "Blockchain", "Bitcoin", 
+    "Ripple", "Ethereum", "Bitcoin", "Cash", "Monero", "Litecoin", "Kubernetes", "Docker", "Azure", "AWS", 
+    "Machine Learning", "TensorFlow", "scikit-learn", "Google Cloud ML Engine", "AML", "Operating Systems",
+    "Microsoft", "Windows", "macOS", "Linux", "Network", "Security", "OSCP", "CISSP", "Cisco", "CCNA", "CEH",
+    "CompTIA", "Security+", "AutoCAD", "MATLAB", "Verilog", "Simulink", "Pspice", "Multisim", "ETAP", "Virtualization", 
+    "VMware", "vSphere", "Hyper-V", "QEMU", "Oracle VM", "VirtualBox", "XEN",  "Big Data", "Statistical analysis", 
+    "data mining", "database management", "eCommerce", "Magento", "PrestaShop", "Joomla", "OpenCart", "WooCommerce", "Shopify"
     ]
   end
 end

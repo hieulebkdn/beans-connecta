@@ -36,7 +36,7 @@
           </div>
           <div class="about-me item">
             <h3><%= t(".aboutme") %></h3>
-            <p><%= @candidate.objective %></p>
+            <p><%= simple_format @candidate.objective %></p>
           </div>
           <div class="work-experence item">
             <h3><%= t(".experience") %></h3>
@@ -47,7 +47,7 @@
               <h4><%= exp.position %></h4>
               <h5><%= exp.company_name %></h5>
               <span class="date">From <%= exp.first_day %> to <%= exp.last_day %></span>
-              <p><%= exp.description %></p>
+              <p><%= simple_format exp.description %></p>
               <br>
             <% end %>
           </div>
