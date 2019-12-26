@@ -31,6 +31,41 @@
   </div>
 </header>
 <%= render "layouts/category" %>
+<%= render "layouts/information" %>
+<% if @matched_companies %>
+<section id="featured" class="section bg-gray pb-45">
+  <div class="container">
+      <div class="section-header">
+      <h2 class="section-title"><%= t ("match_companies") %></h2>
+      <p><%= t ("match_companies_description") %></p>
+    </div>
+    <div class="row">
+      <% @matched_companies.each do |company| %>
+        <div class="col-lg-4 col-md-6 col-xs-12">
+          <div class="job-featured">
+            <div class="icon">
+              <% if company.logo.attached? %>
+                <%= image_tag company.logo, class: "logo-small-icon" %>
+              <% else %>
+                <%= image_tag('features/default.png') %>
+              <% end %>
+            </div>
+            <div class="content">
+              <h3><%= link_to company.name, company_path(company.id) %></h3>
+              <p class="brand"><%= truncate(company.description, length: 60) %></p>
+              <div class="tags">
+                <span><i class="fa fa-map-marker"></i><%= company.city %></span>
+                <span><i class="lni-user"></i><%= company.scale %></span>
+              </div>
+              <span class="full-time"><%= t "view_jobs" %></span>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
+<% end %>
 <section id="job-listings" class="section bg-cyan">
   <div class="container">
     <div class="section-header">

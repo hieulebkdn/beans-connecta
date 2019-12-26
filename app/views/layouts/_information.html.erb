@@ -1,0 +1,53 @@
+<section id="counter" class="section bg-gray">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 col-md-6 col-xs-12">
+        <div class="counter-box">
+          <div class="icon"><i class="lni-home"></i></div>
+          <div class="fact-count">
+            <h3><span class="counter">820</span></h3>
+            <p><%= t("job_posted") %></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-xs-12">
+        <div class="counter-box">
+          <div class="icon"><i class="lni-briefcase"></i></div>
+          <div class="fact-count">
+            <h3><span class="counter">300</span></h3>
+            <p><%= t("all_companies") %></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-xs-12">
+        <div class="counter-box">
+          <div class="icon"><i class="lni-pencil-alt"></i></div>
+          <div class="fact-count">
+            <h3><span class="counter">220</span></h3>
+            <p><%= t("all_candidates") %></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-xs-12">
+        <div class="counter-box">
+          <div class="icon"><i class="lni-save"></i></div>
+          <div class="fact-count">
+            <h3><span class="counter">485</span></h3>
+            <p><%= t("applications") %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  $('.counter').counterUp({
+      delay: 10,
+      time: 1800,
+      offset: 70,
+      beginAt: 100,
+      formatter: function (n) {
+        return n.replace(/,/g, '.');
+      }
+  });
+</script>

@@ -273,7 +273,7 @@ button:focus {
 .page-header {
     padding: 90px 0 25px;
     position: relative;
-    background: url(../images/banner1.jpg)
+    background: url(../images/banner1.png)
 }
 
 .page-header .inner-header {
@@ -4240,7 +4240,8 @@ footer .menu li .small-title {
 }
 
 #counter .counter-box {
-    padding: 30px 0
+    padding: 30px 0;
+    margin-left: 45px;
 }
 
 #counter .counter-box .icon {

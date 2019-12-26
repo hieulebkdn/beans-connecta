@@ -146,7 +146,14 @@ vi:
   employees: " nhân viên"
   likes: " người thích"
   yearly: "Lương năm "
-  
+
+  match_companies_description: "Trước khi bạn bắt đầu, hãy xem danh sách các công ty hàng đầu mà chúng tôi cung cấp để hiểu rõ hơn về lý do tại sao các công ty này hoàn hảo cho bạn"
+  match_companies: "Công ty hoàn hảo cho bạn"
+  job_posted: "tin tuyển dụng"
+  all_companies: "công ty"
+  all_candidates: "ứng viên"
+  applications: "đơn ứng tuyển"
+  company_search_placeholder: "Từ khóa tên công ty hoặc vị trí"
   pages:
     index:
       content0: "Tìm kiếm"

@@ -7,6 +7,7 @@ class PagesController < ApplicationController
         activity_companies_jobs = Company.most_activity
         @activity_companies = Company.find activity_companies_jobs.map(&:first)
         @jobs_count = activity_companies_jobs.map(&:second)
+        load_perfect_matched_company
     end 
     
     def search
@@ -26,7 +27,7 @@ class PagesController < ApplicationController
         @recommender = CharacteristicRecommender.instance
         similar_ids = @recommender.similarities_for(current_user.id).map(&:to_i)
         candidate_ids = User.candidate_list.pluck(:id)
-        matched_company_ids = (similar_ids - candidate_ids).first(3)
-        @matched_company = Company.load_in_list matched_company_ids
+        matched_company_ids = User.find((similar_ids - candidate_ids).first(3)).pluck :profile
+        @matched_companies = Company.find matched_company_ids
     end
 end

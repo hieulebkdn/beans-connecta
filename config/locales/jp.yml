@@ -144,8 +144,16 @@ jp:
   nokori: "残り"
   hours_remain: "時間"
   likes: "気に入る人"
-  employess: "人"
+  employees: "人"
   yearly: "年給 "
+  match_companies_description: "Before you get started, look at the list of top companies we provided
+and dig into their jobs to get a better idea of why they
+were identified. "
+  match_companies: "あなたの完璧なマッチ会社"
+  job_posted: "制裁した求人"
+  all_companies: "会社が募集している"
+  all_candidates: "応募者"
+  applications: "応募書"
 
   pages:
     index:

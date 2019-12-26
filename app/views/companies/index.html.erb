@@ -3,14 +3,14 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="inner-header">
-          <h3>Find Job</h3>
+          <h3><%= t "company" %></h3>
         </div>
         <div class="job-search-form bg-cyan job-featured-search">
           <form>
             <div class="row justify-content-center">
               <div class="col-lg-8 col-md-8 col-xs-12">
                 <div class="form-group">
-                  <input class="form-control" type="text" placeholder="Company Name or Location">
+                  <input class="form-control" type="text" placeholder=<%= t("company_search_placeholder") %>>
                 </div>
               </div>
               <div class="col-lg-2 col-md-2 col-xs-12">
@@ -30,11 +30,15 @@
         <div class="col-lg-4 col-md-6 col-xs-12">
           <div class="job-featured">
             <div class="icon">
-              <%= image_tag("features/img4.png") %>
+              <% if company.logo.attached? %>
+                <%= image_tag company.logo, class: "logo-small-icon" %>
+              <% else %>
+                <%= image_tag('features/default.png') %>
+              <% end %>
             </div>
             <div class="content">
               <h3><%= link_to company.name, company_path(company) %></h3>
-              <p class="brand"><%= truncate(company.description) %></p>
+              <p class="brand"><%= truncate(company.description, length: 60) %></p>
               <div class="tags">
                 <span><i class="lni-map-marker"></i> <%= company.city %></span>
                 <span><i class="lni-user"></i><%= company.scale %></span>
