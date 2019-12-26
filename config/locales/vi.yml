@@ -153,7 +153,7 @@ vi:
   all_companies: "công ty"
   all_candidates: "ứng viên"
   applications: "đơn ứng tuyển"
-  company_search_placeholder: "Từ khóa tên công ty hoặc vị trí"
+  company_search_placeholder: "Tên công ty hoặc vị trí"
   pages:
     index:
       content0: "Tìm kiếm"

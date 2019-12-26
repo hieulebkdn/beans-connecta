@@ -154,6 +154,7 @@ were identified. "
   all_companies: "会社が募集している"
   all_candidates: "応募者"
   applications: "応募書"
+  company_search_placeholder: "会社名あるいは職場"
 
   pages:
     index:

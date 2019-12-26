@@ -7,7 +7,9 @@ class PagesController < ApplicationController
         activity_companies_jobs = Company.most_activity
         @activity_companies = Company.find activity_companies_jobs.map(&:first)
         @jobs_count = activity_companies_jobs.map(&:second)
-        load_perfect_matched_company
+        if current_user
+            load_perfect_matched_company
+        end
     end 
     
     def search
