@@ -1,3 +1,4 @@
+require 'job_recommender'
 class PagesController < ApplicationController
     def about
     end
@@ -16,6 +17,10 @@ class PagesController < ApplicationController
         search = params[:term].present? ? params[:term] : nil
         if search
             @jobs = Job.search(search)
+            @recommender_jobs = @jobs.first(5).pluck(:id)
+            if current_user
+                process_recommender(@recommender_jobs)
+            end
         else
             @pagy, @jobs = pagy(Job.all, items: 10)
         end
@@ -31,5 +36,9 @@ class PagesController < ApplicationController
         candidate_ids = User.candidate_list.pluck(:id)
         matched_company_ids = User.find((similar_ids - candidate_ids).first(3)).pluck :profile
         @matched_companies = Company.find matched_company_ids
+    end
+
+    def process_recommender jobs_ids
+        JobRecommender.update_after_search(current_user.id, jobs_ids)
     end
 end

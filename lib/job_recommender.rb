@@ -8,6 +8,7 @@ class JobRecommender
     input_matrix :positions, weight: 2.0, measure: :sorensen_coefficient
     input_matrix :salaries, weight: 1.0, measure: :sorensen_coefficient # Use Sorenson over Jaccard
     input_matrix :users, weight: 1.0, measure: :sorensen_coefficient
+
     def self.add_job(job)
         instance.companies.add_to_set(job.company_id, job.id)
         instance.categories.add_to_set(job.category_id, job.id)
@@ -34,4 +35,11 @@ class JobRecommender
     def self.delete_job(job)
         instance.delete_item!(job.id)
     end    
+
+    def self.update_after_search(user_id, jobs_ids)
+        jobs_ids.each do |job_id|
+            instance.users.add_to_set(user_id, job_id)
+            instance.process_items(job_id)
+        end
+    end
 end

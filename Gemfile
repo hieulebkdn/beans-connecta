@@ -27,6 +27,7 @@ gem "elasticsearch-model"
 gem "elasticsearch-rails"
 gem "social-share-button"
 gem "acts-as-taggable-on", "~> 6.0"
+gem "whenever", :require => false
 
 #UI gem
 gem "city-state"

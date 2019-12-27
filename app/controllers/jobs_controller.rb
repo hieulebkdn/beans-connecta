@@ -1,6 +1,5 @@
+require 'job_recommender'
 class JobsController < ApplicationController
-  require 'job_recommender'
-
   prepend_before_action :set_job, only: %i(edit update destroy show like unlike)
   before_action :load_company_jobs, only: %i(index)
   before_action :load_default_benefits_ranks, only: %i(new create edit update)
