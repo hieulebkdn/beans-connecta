@@ -154,6 +154,9 @@ vi:
   all_candidates: "ứng viên"
   applications: "đơn ứng tuyển"
   company_search_placeholder: "Tên công ty hoặc vị trí"
+  match_jobs: "Việc làm hoàn hảo cho bạn"
+  match_jobs_description: "Luôn quan tâm đến những gì bạn trông đợi, chúng tôi gợi ý cho bạn các việc làm phù hợp với bạn nhất"
+  
   pages:
     index:
       content0: "Tìm kiếm"

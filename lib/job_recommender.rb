@@ -39,7 +39,12 @@ class JobRecommender
     def self.update_after_search(user_id, jobs_ids)
         jobs_ids.each do |job_id|
             instance.users.add_to_set(user_id, job_id)
-            instance.process_items(job_id)
+            instance.process_items!(job_id)
         end
+    end
+
+    def self.update_after_bookmark(user_id, job_id)
+        instance.users.add_to_set(user_id, job_id)
+        instance.process_items!(job_id)
     end
 end

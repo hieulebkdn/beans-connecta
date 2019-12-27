@@ -13,6 +13,7 @@ class AppliesController < ApplicationController
   def create        
     @apply = Apply.new apply_params
     if @apply.save
+      process_recommender(@appy.job_id)
       flash[:success] = t(".flash_create")
       redirect_to job_path @apply.job_id
     end
@@ -59,4 +60,8 @@ class AppliesController < ApplicationController
     redirect_to root_path
   end
   
+  def process_recommender
+    return if current_user
+
+  end
 end

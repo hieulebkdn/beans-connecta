@@ -8,9 +8,8 @@ class PagesController < ApplicationController
         activity_companies_jobs = Company.most_activity
         @activity_companies = Company.find activity_companies_jobs.map(&:first)
         @jobs_count = activity_companies_jobs.map(&:second)
-        if current_user
-            load_perfect_matched_company
-        end
+        load_perfect_matched_companies
+        load_perfect_matched_jobs
     end 
     
     def search
@@ -18,9 +17,7 @@ class PagesController < ApplicationController
         if search
             @jobs = Job.search(search)
             @recommender_jobs = @jobs.first(5).pluck(:id)
-            if current_user
-                process_recommender(@recommender_jobs)
-            end
+            process_recommender
         else
             @pagy, @jobs = pagy(Job.all, items: 10)
         end
@@ -30,7 +27,8 @@ class PagesController < ApplicationController
     end
 
     protected
-    def load_perfect_matched_company
+    def load_perfect_matched_companies
+        return if current_user.nil?
         @recommender = CharacteristicRecommender.instance
         similar_ids = @recommender.similarities_for(current_user.id).map(&:to_i)
         candidate_ids = User.candidate_list.pluck(:id)
@@ -38,7 +36,16 @@ class PagesController < ApplicationController
         @matched_companies = Company.find matched_company_ids
     end
 
-    def process_recommender jobs_ids
-        JobRecommender.update_after_search(current_user.id, jobs_ids)
+    def load_perfect_matched_jobs
+        return if current_user.nil?
+        @job_recommender = JobRecommender.instance
+        predict_ids = @job_recommender.predictions_for(current_user.id, matrix_label: :users).map(&:to_i).first(6)
+        @matched_jobs = Job.find predict_ids
+    end
+
+    def process_recommender
+        return if current_user.nil?
+        return if @recommender_jobs.nil?
+        JobRecommender.update_after_search(current_user.id, @recommender_jobs)
     end
 end

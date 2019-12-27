@@ -33,40 +33,74 @@
 <%= render "layouts/category" %>
 <%= render "layouts/information" %>
 <% if @matched_companies %>
-<section id="featured" class="section bg-gray pb-45">
-  <div class="container">
+  <section id="featured" class="section bg-gray pb-45">
+    <div class="container">
       <div class="section-header">
-      <h2 class="section-title"><%= t ("match_companies") %></h2>
-      <p><%= t ("match_companies_description") %></p>
-    </div>
-    <div class="row">
-      <% @matched_companies.each do |company| %>
-        <div class="col-lg-4 col-md-6 col-xs-12">
-          <div class="job-featured">
-            <div class="icon">
-              <% if company.logo.attached? %>
-                <%= image_tag company.logo, class: "logo-small-icon" %>
-              <% else %>
-                <%= image_tag('features/default.png') %>
-              <% end %>
-            </div>
-            <div class="content">
-              <h3><%= link_to company.name, company_path(company.id) %></h3>
-              <p class="brand"><%= truncate(company.description, length: 60) %></p>
-              <div class="tags">
-                <span><i class="fa fa-map-marker"></i><%= company.city %></span>
-                <span><i class="lni-user"></i><%= company.scale %></span>
+        <h2 class="section-title"><%= t ("match_companies") %></h2>
+        <p><%= t ("match_companies_description") %></p>
+      </div>
+      <div class="row">
+        <% @matched_companies.each do |company| %>
+          <div class="col-lg-4 col-md-6 col-xs-12">
+            <div class="job-featured">
+              <div class="icon">
+                <% if company.logo.attached? %>
+                  <%= image_tag company.logo, class: "logo-small-icon" %>
+                <% else %>
+                  <%= image_tag('features/default.png') %>
+                <% end %>
               </div>
-              <span class="full-time"><%= t "view_jobs" %></span>
+              <div class="content">
+                <h3><%= link_to company.name, company_path(company.id) %></h3>
+                <p class="brand"><%= truncate(company.description, length: 60) %></p>
+                <div class="tags">
+                  <span><i class="fa fa-map-marker"></i><%= company.city %></span>
+                  <span><i class="lni-user"></i><%= company.scale %></span>
+                </div>
+                <span class="full-time"><%= t "view_jobs" %></span>
+              </div>
             </div>
           </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 <% end %>
-<section id="job-listings" class="section bg-cyan">
+<% if @matched_jobs %>
+  <section id="featured" class="section bg-cyan">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title"><%= t ("match_jobs") %></h2>
+        <p><%= t ("match_jobs_description") %></p>
+      </div>
+      <div class="row">
+        <% @matched_jobs.each do |job| %>
+          <div class="col-lg-4 col-md-6 col-xs-12">
+            <div class="job-featured">
+              <div class="icon">
+                <% if job.company_logo.attached? %>
+                  <%= image_tag job.company_logo, class: "logo-small-icon" %>
+                <% else %>
+                  <%= image_tag('features/default.png') %>
+                <% end %>
+              </div>
+              <div class="content">
+                <h3><%= link_to job.title, job_path(job.id) %></h3>
+                <p class="brand"><%= job.company_name %></p>
+                <div class="tags">
+                  <span><i class="fa fa-map-marker"></i><%= job.workplace %></span>
+                  <span><i class="lni-user"></i><%= job.position %></span>
+                </div>
+                <span class="full-time"><%= t "view_jobs" %></span>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </section>
+<% end %>
+<section id="job-listings" class="section bg-gray">
   <div class="container">
     <div class="section-header">
       <h2 class="section-title"><%= t (".recent_job") %></h2>
@@ -118,7 +152,7 @@
     </div>
   </div>
 </section>
-<section id="latest-jobs" class="section bg-gray">
+<section id="latest-jobs" class="section bg-cyan">
   <div class="container">
     <div class="section-header">
       <h2 class="section-title"><%= t (".most_active_company") %></h2>
