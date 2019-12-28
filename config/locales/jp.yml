@@ -160,6 +160,8 @@ were identified. "
   applied_job: "応募書"
   applied: "作成: "
   not_found: "この操作ができなくてなりました!"
+  applied_list_title: "応募書管理"
+  applied_list: "あなたの応募書"
 
   pages:
     index:

@@ -38,8 +38,13 @@
         </div>
       </div>
       <div class="col-lg-2 col-md-2 col-xs-12">
+      <% if @is_applied %>
+        <%= link_to 'Applied', new_apply_path(job_id: @job.id),  
+          {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window', class: 'btn btn-oubo disabled', "aria-disabled" => "true"} %>
+      <% else %>
         <%= link_to 'Apply', new_apply_path(job_id: @job.id),  
           {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window', class: 'btn-oubo'}  %>
+      <% end %>
       </div>
     </div>
   </div>

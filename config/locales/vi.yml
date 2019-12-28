@@ -71,6 +71,8 @@ vi:
   manage_interview: "Lịch phỏng vấn"
   manage_company: "Quản lý công ty"
   requirement: "Yêu cầu"
+  applied_list_title: "Quản lý đơn ứng tuyển"
+  applied_list: "Đơn ứng tuyển của bạn"
 
   create: "Hoàn thành"
   delete: "Xóa"

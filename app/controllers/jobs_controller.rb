@@ -1,6 +1,7 @@
 require 'job_recommender'
 class JobsController < ApplicationController
   prepend_before_action :set_job, only: %i(edit update destroy show like unlike)
+  before_action :check_applied, only: :show
   before_action :load_company_jobs, only: %i(index)
   before_action :load_default_benefits_ranks, only: %i(new create edit update)
   before_action :load_job_benefits_status, only: %i(edit update)
@@ -144,5 +145,13 @@ class JobsController < ApplicationController
       @recommender = JobRecommender.instance
       similar_ids = @recommender.similarities_for(@job.id).map(&:to_i).first(3)
       @similar_jobs = Job.load_in_list similar_ids
+    end
+
+    def check_applied
+      if current_user
+        @is_applied = Candidate.is_applied current_user.id, @job.id
+      else
+        @is_applied = false
+      end
     end
 end
