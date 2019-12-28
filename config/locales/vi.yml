@@ -305,5 +305,5 @@ vi:
       not_found: "Không tìm thấy"
       not_locked: "Không bị khóa"
       not_saved:
-        one: '1 lỗi khi lưu %{resource}:'
-        other: '%{count} lỗi khi lưu %{resource}:'
+        one: '1 lỗi đã xảy ra:'
+        other: '%{count} lỗi đã xảy ra:'

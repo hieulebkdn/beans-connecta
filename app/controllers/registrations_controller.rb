@@ -35,7 +35,10 @@ class RegistrationsController < Devise::RegistrationsController
         else
           clean_up_passwords resource
           set_minimum_password_length
-          respond_with resource
+          respond_to do |format|
+              format.html { redirect_to new_user_registration_path(:role => resource.role), :flash => { :danger => resource.errors.full_messages.to_sentence}}
+              format.json { render json: resource.errors, status: :unprocessable_entity }
+          end
         end
       end
     end
@@ -43,5 +46,5 @@ class RegistrationsController < Devise::RegistrationsController
     def update
       super
     end
-    
+
   end 
