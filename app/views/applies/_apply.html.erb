@@ -1,41 +1,79 @@
-<div id= <%= apply.id %>>
-  <div class="manager-resumes-item">
-    <div class="manager-content">
-      <a href="<%= candidate_path(apply.candidate_id) %>">
-        <% if apply.candidate.avatar.attached? %>
-          <%= image_tag(apply.candidate.avatar, class: "resume-thumb")%>
-        <% else %>
-          <%= image_tag 'jobs/avatar-1.jpg', class: "resume-thumb" %>
-        <% end %>
-      </a>
-      <div class="manager-info">
-        <div class="manager-name">
-          <h4><%= link_to apply.candidate_name, candidate_path(apply.candidate_id) %></h4>
-          <h5><%= apply.candidate_specialty %></h5>
-          <% if apply.status == "WAITING"%>
-            <h5 class = "badge badge-pill badge-info">WATING</h5>
+<% if current_user.company? %>
+  <div id= <%= apply.id %>>
+    <div class="manager-resumes-item">
+      <div class="manager-content">
+        <a href="<%= candidate_path(apply.candidate_id) %>">
+          <% if apply.candidate.avatar.attached? %>
+            <%= image_tag(apply.candidate.avatar, class: "resume-thumb")%>
+          <% else %>
+            <%= image_tag 'jobs/avatar-1.jpg', class: "resume-thumb" %>
+          <% end %>
+        </a>
+        <div class="manager-info">
+          <div class="manager-name">
+            <h4><%= link_to apply.candidate_name, candidate_path(apply.candidate_id) %></h4>
+            <h5><%= apply.candidate_specialty %></h5>
+            <% if apply.status == "WAITING"%>
+              <h5 class = "badge badge-pill badge-info">WATING</h5>
             <% elsif apply.status == "APPROVED" %>
-            <h5 class = "badge badge-pill badge-success">APPROVED</h5>
+              <h5 class = "badge badge-pill badge-success">APPROVED</h5>
             <% else %>
-            <h5 class = "badge badge-pill badge-warning">DECLINED</h5>
+              <h5 class = "badge badge-pill badge-warning">DECLINED</h5>
             <% end %>
-        </div>
-        <div class="manager-meta">
-          <span class="rate"><%= apply.job_title %></span>
-          <span class="rate"><%= apply.job_position %></span>
+          </div>
+          <div class="manager-meta">
+            <span class="rate"><%= apply.job_title %></span>
+            <span class="rate"><%= apply.job_position %></span>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="update-date">
-      <p class="status">
-        <%= apply.cover_letter %>
-      </p>
-      <div class="action-btn">
-        <%= link_to t("view_cv"), preview_path(id: apply.candidate_id), 
+      <div class="update-date">
+        <p class="status">
+          <%= apply.cover_letter %>
+        </p>
+        <div class="action-btn">
+          <%= link_to t("view_cv"), preview_path(id: apply.candidate_id), 
           {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window', class: 'btn btn-xs btn-gray'}  %>
-        <%= link_to t("decline"), decline_path(apply.id), method: :put, data: {confirm: "Are you sure?", remote: true}, class: "btn btn-xs btn-danger" %>
-        <%= link_to t("approve"), approve_path(apply.id), method: :put, data: {confirm: "Are you sure?", remote: true}, class: "btn btn-xs btn-success" %>
+          <%= link_to t("decline"), decline_path(apply.id), method: :put, data: {confirm: "Are you sure?", remote: true}, class: "btn btn-xs btn-danger" %>
+          <%= link_to t("approve"), approve_path(apply.id), method: :put, data: {confirm: "Are you sure?", remote: true}, class: "btn btn-xs btn-success" %>
+        </div>
       </div>
     </div>
   </div>
-</div>
+<% else %>
+  <div id= <%= apply.id %>>
+    <div class="manager-resumes-item">
+      <div class="manager-content">
+        <a href="<%= job_path(apply.job_id) %>">
+          <% if apply.job.company.logo.attached? %>
+            <%= image_tag(apply.job.company.logo, class: "resume-thumb")%>
+          <% else %>
+            <%= image_tag 'features/default.png', class: "resume-thumb" %>
+          <% end %>
+        </a>
+        <div class="manager-info">
+          <div class="manager-name">
+            <h4><%= link_to apply.job.company_name, job_path(apply.job_id) %></h4>
+            <h5><%= truncate apply.job.title, length: 45 %></h5>
+            <% if apply.status == "WAITING"%>
+              <h5 class = "badge badge-pill badge-info">WATING</h5>
+            <% elsif apply.status == "APPROVED" %>
+              <h5 class = "badge badge-pill badge-success">APPROVED</h5>
+            <% else %>
+              <h5 class = "badge badge-pill badge-warning">DECLINED</h5>
+            <% end %>
+          </div>
+          <div class="manager-meta">
+            <span class="rate"><%= t("applied") + format_date_default(apply.created_at).to_s %></span>
+            <span class="rate"><%= apply.job_position %></span>
+          </div>
+        </div>
+      </div>
+      <div class="update-date">
+        <p class="status">
+          <%= apply.cover_letter %>
+        </p>
+      </div>
+    </div>
+  </div>
+<% end %>

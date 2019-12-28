@@ -1,3 +1,4 @@
+<% if can? :read, @candidate %>
 <div class="page-header">
   <div class="container">
     <div class="row">
@@ -9,10 +10,14 @@
     </div>
   </div>
 </div>
-<div class="section bg-cyan">
+<div class="section">
   <div class="container">
     <div class="row">
+    <% if can? :manage, @candidate %>
       <%= render ("layouts/candidate_sidebar")%>
+      <% else %>
+      <%= render ("layouts/company_sidebar")%>
+      <% end %>
       <div class="col-lg-9 col-md-9 col-xs-12">
         <div class="inner-box my-resume">
           <div class="author-resume">
@@ -22,6 +27,9 @@
               <% end %>
             </div>
             <div class="author-info">
+          <div class="row">
+            <div class="col-lg-7 col-md-7 col-xs-12">
+            
               <h3><%= @candidate.name %></h3>
               <p class="sub-title"><%= @candidate.specialty %></p>
               <p><span class="address"><i class="lni-map-marker"></i><%= @candidate.address %></span>, <strong><%= @candidate.city %></strong></p>
@@ -32,6 +40,19 @@
                 <a href="https://bit.ly/39fpZfM" class="google"><i class="lni-google-plus"></i></a>
                 <a href="https://www.linkedin.com/company/bizreach-service/about/" class="linkedin"><i class="lni-linkedin-fill"></i></a>
               </div>
+              </div>
+            <div class="col-lg-5 col-md-5 col-xs-12">
+            <h3><%= t(".skill") %></h3>
+            <% if @skills.count == 0 %>
+              <%= t("no_skill") %>
+            <% end %>
+            <% @skills.each do |skill| %>
+              <span class="badge badge-pill badge-success"><%= skill.tag %></span>   <%= skill.description %>
+              <br>
+            <% end %>
+              </div>
+              </div>
+
             </div>
           </div>
           <div class="about-me item">
@@ -51,20 +72,13 @@
               <br>
             <% end %>
           </div>
-          <div class="education item">
-            <h3><%= t(".skill") %></h3>
-            <% if @skills.count == 0 %>
-              <%= t("no_skill") %>
-            <% end %>
-            <% @skills.each do |skill| %>
-              <h4><%= skill.tag %></h4>
-              <p><%= skill.description %></p>
-              <br>
-            <% end %>
-          </div>
+          
         </div>
       </div>
     </div>
   </div>
 </div>
 </div>
+<% else %>
+<%= render "layouts/forbidden" %>
+<% end %>

@@ -10,5 +10,6 @@ class Apply < ApplicationRecord
   delegate :specialty, to: :candidate, prefix: true, allow_nil: true	
   delegate :title, to: :job, prefix: true, allow_nil: true	
   delegate :position, to: :job, prefix: true, allow_nil: true	
+  delegate :name, to: :company, prefix: true, allow_nil: true	
   
 end

@@ -6,8 +6,8 @@
       <li><%= link_to t("update_profile"), candidate_edit_profile_path(id: current_user.profile), method: :get %></li>
       <li><%= link_to t("update_experience"), candidate_edit_experience_path(id: current_user.profile), method: :get %></li>
       <li><%= link_to t("update_skill"), candidate_edit_skill_path(id: current_user.profile), method: :get %></li>
+      <li><%= link_to t("applied_job"), candidate_applied_path(id: current_user.id)%> <span class="notinumber"><%= current_user.find_liked_items.count%></span></li>
       <li><%= link_to t("bookmark"), bookmark_path(id: current_user.id)%> <span class="notinumber"><%= current_user.find_liked_items.count%></span></li>
-      <li><%= link_to t("change_password"), candidate_path(id: current_user.profile) %></li>
       <li><%= link_to t("signout"), destroy_user_session_path, method: :delete %></li>
     </ul>
   </div>

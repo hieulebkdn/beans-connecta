@@ -1,6 +1,7 @@
 class AppliesController < ApplicationController
   before_action :load_company, only: :manage
   before_action :load_apply, only: %i(approve decline)
+  before_action :load_candidate, only: :check
   
   def new
     @apply = Apply.new
@@ -21,6 +22,10 @@ class AppliesController < ApplicationController
 
   def manage
     @pagy, @applies = pagy(@company.get_applies, items: 5)
+  end
+
+  def check
+    @pagy, @applies = pagy(@candidate.get_applies, items: 5)
   end
 
   def approve
@@ -47,10 +52,22 @@ class AppliesController < ApplicationController
   end
 
   def load_company
-    @company = Company.find_by id: current_user.profile
-    return if @company
-    flash[:danger] = t "not_found"
+    if current_user && current_user.company?
+      @company = Company.find_by id: current_user.profile
+      return if @company
+    end
     redirect_to root_path
+    flash[:danger] = t "not_found"
+  end
+
+  def load_candidate
+    if current_user && current_user.candidate?
+      @candidate = Candidate.find_by id: current_user.profile
+      byebug
+      return if @candidate
+    end
+    redirect_to root_path
+    flash[:danger] = t "not_found"
   end
 
   def load_apply

@@ -6,4 +6,9 @@ class Candidate < ApplicationRecord
   has_many :experiences
 
   validates :name, length: {maximum: 100}
+
+  def get_applies
+    applies_ids = self.applies.latest
+    return applies_ids
+  end
 end

@@ -109,7 +109,7 @@ vi:
   annual_salary: "Lương năm"
   search_placeholder: "Từ khóa tiêu đề, thư mục, vị trí..."
   location: "Địa điểm"
-  category: "Category"
+  category: "Ngành nghề"
   category_description: "Thư mục việc làm phổ biến nhất"
   apply: "Ứng tuyển"
   job_description: "Nội dung công việc"
@@ -156,6 +156,9 @@ vi:
   company_search_placeholder: "Tên công ty hoặc vị trí"
   match_jobs: "Việc làm hoàn hảo cho bạn"
   match_jobs_description: "Luôn quan tâm đến những gì bạn trông đợi, chúng tôi gợi ý cho bạn các việc làm phù hợp với bạn nhất"
+  applied_job: "Đơn ứng tuyển"
+  applied: "Tạo lúc: "
+  not_found: "Bạn không thể thực hiện hành động này!"
   
   pages:
     index:
@@ -179,7 +182,7 @@ vi:
   candidates: 
     show:
       profile: "Hồ sơ"
-      aboutme: "About me"
+      aboutme: "Giới thiệu bản thân"
       experience: "Kinh nghiệm"
       skill : "Kĩ năng"
     update:

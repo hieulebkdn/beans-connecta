@@ -157,6 +157,9 @@ were identified. "
   company_search_placeholder: "会社名、職場"
   match_jobs: "あなたの完璧なマッチ求人"
   match_jobs_description: "あなたが期待するものに常に気配りいたします。私たちは最も合った求人をお進めます。"
+  applied_job: "応募書"
+  applied: "作成: "
+  not_found: "この操作ができなくてなりました!"
 
   pages:
     index:

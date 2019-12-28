@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     get "/candidates/:id/edit_experience", to: "experiences#index", as: "candidate_edit_experience"
     get "/candidates/:id/edit_skill", to: "skills#index", as: "candidate_edit_skill"
     get "/candidates/:id/preview", to: "candidates#preview", as: "preview"
+    get "/candidates/:id/applied", to: "applies#check", as: "candidate_applied"
     
     resources :companies
     patch "/companies/:id/update", to: "companies#update", as: "update_company"

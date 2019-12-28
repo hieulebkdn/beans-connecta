@@ -1,3 +1,4 @@
+<% if can? :read, @job %>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
 <div class="page-header">
@@ -55,7 +56,7 @@
                     <div class="icon"><i class="lni-star"></i></div>
                     <div class="fact-count">
                       <h3><span class="counter"><%= @job.annual_salary %></span>$</h3>
-                      <p>Yearly</p>
+                      <p>yearly</p>
                     </div>
                   </div>
                 </div>
@@ -64,7 +65,7 @@
                     <div class="icon"><i class="lni-user"></i></div>
                     <div class="fact-count">
                       <h3><span class="counter"><%= @job.quantity %></span></h3>
-                      <p>Open position</p>
+                      <p>open position</p>
                     </div>
                   </div>
                 </div>
@@ -205,3 +206,6 @@
       }
   });
 </script>
+<% else %>
+<%= render "layouts/forbidden" %>
+<% end %>
