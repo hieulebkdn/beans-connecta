@@ -1035,6 +1035,9 @@ end
 
 20.times do |n|
   email = "user#{n+1}@gg.com"
+  if n == 0
+    email = "hieulebkdn@gmail.com"
+  end 
   password = "password"
   User.create! email: email, password: password, password_confirmation: password
 end
@@ -1126,20 +1129,6 @@ autocomplete_interest = [
 	"data mining", "database management", "eCommerce", "Magento", "PrestaShop", "Joomla", "OpenCart", "WooCommerce", "Shopify"
   ]
 
-20.times do |n|
-  characteristic = Characteristic.find n+1
-  benefit = ""
-  interest = ""
-  8.times do |i|
-    benefit += (autocomplete_benefit[1+rand(49)].to_s + " ")
-  end
-  8.times do |i|
-    interest += (autocomplete_interest[1+rand(375)].to_s + " ")
-  end
-  characteristic.update(benefit: benefit)
-  characteristic.update(interest: interest)
-  characteristic.save
-end
 
 
 jobs_ver_unknown = [
@@ -1408,7 +1397,6 @@ companies_email = [
 		User.create!(email: email, password: password, password_confirmation: password, role: :company, profile: profile)
 	end
 
-
 	20.times do |n|
 		name = Faker::Name.name
 		dob = Faker::Date.birthday
@@ -1492,11 +1480,11 @@ jobs.each do |job|
   job.save
 end
 
-20.times do |i|
-  10.times do |j|
-    cover_letter = Faker::Lorem.paragraph_by_chars(number: 256, supplemental: false)
-    if rand(2)
-      Apply.create cover_letter: cover_letter, candidate_id: i+1, job_id: j+1
-    end
-  end
-end
+# 20.times do |i|
+#   10.times do |j|
+#     cover_letter = Faker::Lorem.paragraph_by_chars(number: 256, supplemental: false)
+#     if rand(2)
+#       Apply.create cover_letter: cover_letter, candidate_id: i+1, job_id: j+1
+#     end
+#   end
+# end

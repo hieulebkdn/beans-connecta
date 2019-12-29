@@ -13,6 +13,7 @@ class PagesController < ApplicationController
     end 
     
     def search
+        load_perfect_matched_jobs
         search = params[:term].present? ? params[:term] : nil
         if search
             @jobs = Job.search(search)

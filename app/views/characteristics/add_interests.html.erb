@@ -11,7 +11,7 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="inner-header">
-          <h3>What field are you interested in?</h3>
+          <h3><%= t "interestss" %></h3>
         </div>
       </div>
     </div>
@@ -23,7 +23,7 @@
     <div class="col-lg-12 col-md-12 col-xs-12">
       <div class="page-login-form box">
         <h3>
-          Follow some interesting field listed below
+          <%= t "interestss_description" %>
         </h3>
         <%= form_with(url: update_interests_path, id: "interest-form", method: :put) do |form| %>
         <div class="row">
@@ -31,7 +31,7 @@
             <input id="form-tags-4" name="interest_tags" type="text" value="" class="form-control">
           </div>
           <div class="col-lg-4 col-md-84 col-xs-4">
-            <a href="javascript:$('#interest-form').submit();" class="btn btn-success form-control">Get Started</a>
+            <a href="javascript:$('#interest-form').submit();" class="btn btn-success form-control"><%= t "get_started" %></a>
           </div>
         </div>
         <% end %>
@@ -42,7 +42,6 @@
 
 <section class="all-categories section">
   <div class="container">
-    <h2 class="categories-title">Browse All Categories</h2>
     <div class="row">
       <div class="col-lg-12 col-sm-12 col-xs-12">
         <h3 class="cat-title">Business <span>(33 Sub Categories)</span></h3>

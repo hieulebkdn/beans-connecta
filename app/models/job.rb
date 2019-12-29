@@ -3,16 +3,17 @@ class Job < ApplicationRecord
   has_many :applies, class_name: Apply.name, foreign_key: "job_id"
 	acts_as_votable
 	searchkick(word_start: %i(title position workplace category), 
-						 searchable: [:title, :position, :workplace, :category],
+						 searchable: [:title, :position, :workplace, :category, :company],
 						 language: "english",
-						 synonyms: [["specialist", "chuyên viên"], ["manager", "quản lý"], ["Hochiminh", "HCM"],["Hanoi", "HN"], ["chuyên gia","specialist"]])
+						 synonyms: [["specialist", "chuyên viên"], ["manager", "quản lý"], ["Hochiminh", "HCM"],["Hanoi", "HN"], ["chuyên gia","specialist"], ["developer","engineer"]])
 
 	def search_data
 		{
 			title: title,
 			position: position,
 			workplace: workplace,
-			category: category_name
+			category: category_name,
+			company: company_name
 		}
 	end
 

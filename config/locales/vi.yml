@@ -164,6 +164,12 @@ vi:
   bookmar_job: "Việc làm đã lưu"
   disable: "Vô hiệu hóa"
   activate: "Kích hoạt"
+  benefitss: "Xác định môi trường làm việc hoàn hảo cho bạn"
+  benefitss_description: "Nhập vào các chế độ, phúc lợi mà bạn muốn nhận được"
+  next: "Tiếp tục"
+  interestss: "Lĩnh vực của bạn"
+  interestss_description: "Hãy cho chúng tôi biết lĩnh vực nào mà bạn đang quan tâm"
+  get_started: "Bắt đầu!"
   
   pages:
     index:

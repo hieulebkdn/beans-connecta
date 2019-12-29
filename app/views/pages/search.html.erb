@@ -24,6 +24,9 @@
   </div>
 </div>
 <section id="job-listings" class="section bg-cyan">
+  <div class="section-header">
+    <p>Hiển thị <%= @jobs.length %> việc làm cho bạn </p>
+  </div>
   <div class="container">
     <div class="row">
       <div class="col-lg-12 col-md-12 col-xs-12">
@@ -82,7 +85,40 @@
     </div>
   </div>
 </section>
-
+<% if @matched_jobs.length >=3 %>
+  <section id="featured" class="section bg-cyan">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title"><%= t ("match_jobs") %></h2>
+        <p><%= t ("match_jobs_description") %></p>
+      </div>
+      <div class="row">
+        <% @matched_jobs.each do |job| %>
+          <div class="col-lg-4 col-md-6 col-xs-12">
+            <div class="job-featured">
+              <div class="icon">
+                <% if job.company_logo.attached? %>
+                  <%= image_tag job.company_logo, class: "logo-small-icon" %>
+                <% else %>
+                  <%= image_tag('features/default.png') %>
+                <% end %>
+              </div>
+              <div class="content">
+                <h3><%= link_to job.title, job_path(job.id) %></h3>
+                <p class="brand"><%= job.company_name %></p>
+                <div class="tags">
+                  <span><i class="fa fa-map-marker"></i><%= job.workplace %></span>
+                  <span><i class="lni-user"></i><%= job.position %></span>
+                </div>
+                <span class="full-time"><%= t "view_jobs" %></span>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </section>
+<% end %>
 <script>
 var ENTER = 13; 
 
