@@ -1,6 +1,6 @@
 require 'job_recommender'
 class JobsController < ApplicationController
-  prepend_before_action :set_job, only: %i(edit update destroy show like unlike)
+  prepend_before_action :set_job, only: %i(edit update destroy show like unlike disable activate)
   before_action :check_applied, only: :show
   before_action :load_company_jobs, only: %i(index)
   before_action :load_default_benefits_ranks, only: %i(new create edit update)
@@ -52,10 +52,19 @@ class JobsController < ApplicationController
   def destroy
       if @job.destroy
           respond_to do |format|
-              format.js
               format.html { redirect_to company_edit_job_path(current_user.profile), notice: t(".flash_delete")}
           end
       end
+  end
+
+  def disable
+    @job.update(is_active: false)
+    redirect_to company_edit_job_url(current_user.profile), notice: t(".flash_disabled")
+  end
+
+  def activate
+    @job.update(is_active: true)
+    redirect_to company_edit_job_url(current_user.profile), notice: t(".flash_activated")
   end
 
   def like 
@@ -149,7 +158,7 @@ class JobsController < ApplicationController
 
     def check_applied
       if current_user
-        @is_applied = Candidate.is_applied current_user.id, @job.id
+        @is_applied = Candidate.is_applied current_user.profile, @job.id
       else
         @is_applied = false
       end

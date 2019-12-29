@@ -22,11 +22,8 @@
         <span><%= @candidate.specialty %></span></h2>
       <span><strong>Skills: </strong></span>
       <% @skills.each do |skill| %>
-        <span class="badge badge-info"><%= skill.tag %></span>
-        <br>
+        <span class="badge badge-success"><%= skill.tag %></span>
       <% end %>
-      <span class="badge badge-info">Adobe CS 5.5</span>
-      <span class="badge badge-info">Microsoft Office</span>
       <p><%= @candidate.objective %></p>
       <span>
         <ul>

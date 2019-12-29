@@ -157,10 +157,13 @@ vi:
   applications: "đơn ứng tuyển"
   company_search_placeholder: "Tên công ty hoặc vị trí"
   match_jobs: "Việc làm hoàn hảo cho bạn"
-  match_jobs_description: "Luôn quan tâm đến những gì bạn trông đợi, chúng tôi gợi ý cho bạn các việc làm phù hợp với bạn nhất"
+  match_jobs_description: "Luôn quan tâm đến những gì bạn trông đợi, chúng tôi gợi ý cho bạn các việc làm phù hợp nhất"
   applied_job: "Đơn ứng tuyển"
   applied: "Tạo lúc: "
   not_found: "Bạn không thể thực hiện hành động này!"
+  bookmar_job: "Việc làm đã lưu"
+  disable: "Vô hiệu hóa"
+  activate: "Kích hoạt"
   
   pages:
     index:
@@ -176,7 +179,7 @@ vi:
   applies:
     create:
       flash_create: "Ứng tuyển thành công!"
-    apply:
+    approve:
       flash_approve: "Chấp nhận đơn ứng tuyển！"
     decline:
       flash_decline: "Từ chối đơn ứng tuyển！"
@@ -238,6 +241,10 @@ vi:
     delete:
       flash_delete: "Đã xóa tin tuyển dụng!"
       flash_delete_fail: "Xóa thất bại, xin thử lại."
+    disable:
+      flash_disabled: "Đã vô hiệu hóa tin tuyển dụng"
+    activate: 
+      flash_activated: "Đã mở tin tuyển dụng, xin hãy kiểm tra hạn cuối"
 
   date:
     order:

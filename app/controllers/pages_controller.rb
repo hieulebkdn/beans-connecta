@@ -28,6 +28,7 @@ class PagesController < ApplicationController
 
     protected
     def load_perfect_matched_companies
+        @matched_companies || []
         return if current_user.nil?
         @recommender = CharacteristicRecommender.instance
         similar_ids = @recommender.similarities_for(current_user.id).map(&:to_i)
@@ -37,6 +38,7 @@ class PagesController < ApplicationController
     end
 
     def load_perfect_matched_jobs
+        @matched_jobs ||= []
         return if current_user.nil?
         @job_recommender = JobRecommender.instance
         predict_ids = @job_recommender.predictions_for(current_user.id, matrix_label: :users).map(&:to_i).first(6)

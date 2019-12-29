@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h3>Hi <%= @user.email %></h3>
+    <p>
+      Đơn ứng tuyển của bạn vào vị trí <%= @job.position %> của công ty <%= @job.company_name %> đã được phản hồi!
+    </p>
+    <% if @apply.status == "APPROVED"%>
+    <p>
+      Xin chúc mừng, đơn ứng tuyển của bạn đã được chấp nhận!
+    </p>
+    <% else %>
+    <p>
+      Rất tiếc, đơn ứng tuyển của bạn đã bị từ chối.
+    </p>
+    <% end %>
+    <p>
+      Cảm ơn sự quan tâm của bạn!
+      Thân ái.
+    </p>
+  </body>
+</html>

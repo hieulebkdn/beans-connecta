@@ -9,6 +9,7 @@
         </div>
         <div class="manager-meta">
           <span class="rate"><%= t("annual_salary") + " " + job.annual_salary.to_s %><i class="fa fa-dollar"></i></span>
+          <span class="rate"><%= job.category_name %></span>
         </div>
       </div>
     </div>
@@ -18,9 +19,12 @@
       </p>
       <div class="action-btn">
         <%= link_to t("edit"), edit_job_path(id: job.id), remote: true, class:"btn btn-xs btn-gray" %>
-        <%= link_to t("delete"), job, method: :delete, data: {confirm: "Are you sure?", remote: true}, class: "btn btn-xs btn-danger" %>
+        <% if job.is_active? %>
+          <%= link_to t("disable"), disable_job_path(id: job.id), method: :put, class: "btn btn-xs btn-danger" %>
+        <% else %>
+          <%= link_to t("activate"), activate_job_path(id: job.id) , method: :put, class: "btn btn-xs btn-success" %>
+        <% end %>
       </div>
     </div>
-    
   </div>
 </div>

@@ -34,8 +34,8 @@
         <div class="action-btn">
           <%= link_to t("view_cv"), preview_path(id: apply.candidate_id), 
           {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window', class: 'btn btn-xs btn-gray'}  %>
-          <%= link_to t("decline"), decline_path(apply.id), method: :put, data: {confirm: "Are you sure?", remote: true}, class: "btn btn-xs btn-danger" %>
-          <%= link_to t("approve"), approve_path(apply.id), method: :put, data: {confirm: "Are you sure?", remote: true}, class: "btn btn-xs btn-success" %>
+          <%= link_to t("decline"), decline_path(apply.id), method: :put, class: "btn btn-xs btn-danger" %>
+          <%= link_to t("approve"), approve_path(apply.id), method: :put, class: "btn btn-xs btn-success" %>
         </div>
       </div>
     </div>

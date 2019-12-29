@@ -42,8 +42,13 @@
         <%= link_to 'Applied', new_apply_path(job_id: @job.id),  
           {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window', class: 'btn btn-oubo disabled', "aria-disabled" => "true"} %>
       <% else %>
+        <% if @job.is_active? %>
         <%= link_to 'Apply', new_apply_path(job_id: @job.id),  
           {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window', class: 'btn-oubo'}  %>
+          <% else %>
+          <%= link_to 'Expired', new_apply_path(job_id: @job.id),  
+          {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window', class: 'btn btn-oubo disabled', "aria-disabled" => "true"} %>
+          <% end %>
       <% end %>
       </div>
     </div>
@@ -92,7 +97,9 @@
           <h5><%= t "deadline" %></h5>
           <p><%= format_date_default @job.deadline %></p>
           <div class= row>
+            <% if @job.is_active? && !@is_applied%>
             <%= link_to t("apply"), new_apply_path(job_id: @job.id),  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window', class: 'btn btn-common'}  %>
+            <% end %>
             <% if current_user %>
               <% if current_user.liked? @job %>
                 <%= link_to "", like_job_path(@job), remote: true,

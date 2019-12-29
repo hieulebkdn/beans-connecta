@@ -14,6 +14,8 @@ class AppliesController < ApplicationController
   def create        
     @apply = Apply.new apply_params
     if @apply.save
+      @job = Job.find @apply.job_id
+      ApplicationMailer.noti_applied(current_user, @job).deliver
       flash[:success] = t(".flash_create")
       redirect_to job_path @apply.job_id
     end
@@ -29,19 +31,23 @@ class AppliesController < ApplicationController
 
   def approve
     if @apply.update_attribute(:status, 1)
+      @job = Job.find @apply.job_id
+      @user = User.where(role: "candidate", profile: @apply.candidate_id).first
+      @user ||= User.find 1
+      ApplicationMailer.noti_response(@user, @job, @apply).deliver
       flash[:success] = t(".flash_approve")
-      respond_to do |format|
-        format.js {render inline: "location.reload();" }
-      end
+      redirect_to company_applies_url(current_user.profile)
     end
   end
 
   def decline
     if @apply.update_attribute(:status, 2)
+      @job = Job.find @apply.job_id
+      @user = User.where(role: "candidate", profile: @apply.candidate_id).first
+      @user ||= User.find 1
+      ApplicationMailer.noti_response(@user, @job, @apply).deliver
       flash[:success] = t(".flash_decline")
-      respond_to do |format|
-        format.js {render inline: "location.reload();" }
-      end
+      redirect_to company_applies_url(current_user.profile)
     end
   end
 

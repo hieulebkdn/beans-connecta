@@ -162,6 +162,8 @@ were identified. "
   not_found: "この操作ができなくてなりました!"
   applied_list_title: "応募書管理"
   applied_list: "あなたの応募書"
+  bookmar_job: "気になる求人"
+
 
   pages:
     index:
@@ -239,6 +241,10 @@ were identified. "
     delete:
       flash_delete: 求人は正常に削除されました！
       flash_delete_fail: 求人の削除に失敗しました。
+    disable:
+      flash_disabled: "この求人は無効になっています！"
+    activate: 
+      flash_activated: "この求人が有効化されています。締め切りを確認してください！"
 
   date:
     order:

@@ -437,7 +437,7 @@ art_job = [
     "category_id": 1,
     "title": "AR Accountant (At Least 5+ Years)",
     "workplace": "Ho Chi Minh",
-    "annual_salary": "01000",
+    "annual_salary": "10000",
     "description": "•\tControl OD/AR as the target\n•\tCoordinate with sales team to collect AR & outstanding by following 4 Steps system\n•\tPropose the solutions to reduce Overdue issues\n•\tReport overdue accounts to line Manager for adjustments, write- off or collections\n•\tGeneral responsibility in book-keeping and reporting of accounts receivable\n•\tFollowing AR aging to make sure all credit notes, over-collection, short-collection items must be cleaned up, input memo per guidelines\n•\tFollow credit customers list to update, renew timely and correctly\n•\tCommunicate with customers/operators/sales for related account receivable matters efficiently\n•\tRegular update of received payment list\n•\tSending SOA to client per guidelines. Contact and solve disputes/issues internally and externally.\n•\tOther duties assigned by Finance Manager",
     "requirement": "•\tSAP accounting software (FI/MM) is preferred.\n•\tUniversity degree, at least 5+ years of experience working in accounting & finance\n•\tExperience in Auditing/ Audit field is preferred.\n•\tHard working, proactive, able to work under high pressure\n•\tStrong communication skills, good at written and verbal both in Vietnamese and English\n•\tAbility to work independently and in a team\n•\tProactive & problem-solving skill is preferred",
     "deadline": "14/01/2020"
@@ -1150,7 +1150,7 @@ jobs_ver_unknown = [
       "category_id": 6,
       "exp_year": 5,
       "title": "[HCM] 02 Solution Architects–Up to $2000",
-      "annual_salary": "1200",
+      "annual_salary": "12000",
       "deadline": "15/01/2020",
       "workplace": "Hồ Chí Minh",
       "description": "Làm việc với vài trò Solution Architect trong các dự án của FWI.CCG\nTham gia các hoạt động presales tại các thị trường nước ngoàiưnXây dựng, tư vấn giải pháp cho các khách hàng tiềm năng cũng như các dự án đang chạy\nXử lý các technical issue trong quá trình làm dự án\nXây dựng năng lực công nghệ trong tổ chức",

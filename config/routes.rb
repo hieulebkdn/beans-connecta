@@ -27,6 +27,9 @@ Rails.application.routes.draw do
     resources :jobs
     put "/jobs/:id/like", to: "jobs#like", as:"like_job"
     put "/jobs/:id/unlike", to: "jobs#unlike", as: "unlike_job"
+    put "/jobs/:id/disable", to: "jobs#disable", as: "disable_job"
+    put "/jobs/:id/activate", to: "jobs#activate", as: "activate_job"
+
 
     resources :experiences
     resources :skills
