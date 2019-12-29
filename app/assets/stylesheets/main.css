@@ -273,7 +273,7 @@ button:focus {
 .page-header {
     padding: 90px 0 25px;
     position: relative;
-    background: url(../images/banner1.png)
+    background: url(../../../public/images/banner1.png)
 }
 
 .page-header .inner-header {

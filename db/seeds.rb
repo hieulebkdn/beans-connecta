@@ -324,7 +324,7 @@ art_job = [
     "exp_year": 1,
     "position": "Trình Dược Viên",
     "company_id": 14,
-    "category_id": 6,
+    "category_id": 8,
     "title": "Trình Dược Viên Làm Việc Tại Cơ Sở Y Tế Tư Nhân (Hồ Chí Minh và Hà Nội)",
     "company_name": "VĂN PHÒNG ĐẠI DIỆN WORWAG PHARMA GMBH & CO.KG TẠI THÀNH PHỐ HỒ CHÍ MINH (ĐỨC)",
     "workplace": "HCM&HN",
@@ -645,7 +645,7 @@ partime_job = [
   {
     "quantity": 2,
     "company_id": 19,
-    "category_id": 8,
+    "category_id": 3,
     "position": "Giáo viên tiếng Hàn",
     "title": "Giáo Viên Tiếng Hàn (Part Time)",
     "workplace": "Dong Nai",
@@ -658,7 +658,7 @@ partime_job = [
   {
     "quantity": 2,
     "company_id": 19,
-    "category_id": 8,
+    "category_id": 3,
     "position": "Giáo viên tiếng Nhật",
     "title": "Giáo Viên Tiếng Nhật (Part Time)",
     "workplace": "Dong Nai",
@@ -671,7 +671,7 @@ partime_job = [
   {
     "quantity": 2,
     "company_id": 19,
-    "category_id": 8,
+    "category_id": 3,
     "position": "Giáo viên tiếng Đài",
     "title": "Giáo Viên Tiếng Đài (Part Time)",
     "workplace": "Dong Nai",
