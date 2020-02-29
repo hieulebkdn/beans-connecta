@@ -238,7 +238,7 @@ GEM
     predictor (2.3.1)
       redis (>= 3.0.0)
     public_suffix (4.0.1)
-    puma (3.8.2)
+    puma (3.12.3)
     rack (2.0.8)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
@@ -381,7 +381,7 @@ DEPENDENCIES
   pagy (= 3.5.1)
   popper_js (~> 1.14.5)
   predictor
-  puma (= 3.8.2)
+  puma (= 3.12.3)
   rails (= 6.0.0)
   rails-i18n
   redis
