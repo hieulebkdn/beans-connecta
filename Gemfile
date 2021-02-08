@@ -13,7 +13,7 @@ gem "omniauth"
 gem "bcrypt", "~> 3.1.7"
 
 #Tool
-gem "carrierwave", "1.2.2"
+gem "carrierwave", "1.3.2"
 gem "faker", :git => "https://github.com/faker-ruby/faker.git", :branch => "master"
 gem "rails-i18n"
 gem "pagy", "3.5.1"
